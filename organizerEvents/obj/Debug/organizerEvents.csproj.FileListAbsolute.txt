@@ -1,0 +1,5 @@
+C:\Users\rajta\Source\Repos\organizerEvents\organizerEvents\obj\Debug\organizerEvents.csprojAssemblyReference.cache
+C:\Users\rajta\Source\Repos\organizerEvents\organizerEvents\obj\Debug\MainWindow.g.cs
+C:\Users\rajta\Source\Repos\organizerEvents\organizerEvents\obj\Debug\App.g.cs
+C:\Users\rajta\Source\Repos\organizerEvents\organizerEvents\obj\Debug\organizerEvents_MarkupCompile.cache
+C:\Users\rajta\Source\Repos\organizerEvents\organizerEvents\obj\Debug\organizerEvents_MarkupCompile.lref
