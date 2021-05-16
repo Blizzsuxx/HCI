@@ -1,0 +1,24 @@
+﻿<Window x:Class="WpfApp1.DodavacReci"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:WpfApp1"
+        mc:Ignorable="d"
+        Title="DodavacReci" Height="450" Width="800">
+    <Grid RenderTransformOrigin="0.487,0.493">
+        <TextBox x:Name="textBox" HorizontalAlignment="Left" Height="34" Margin="392,10,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="230" SpellCheck.IsEnabled="True" FontSize="20" TextAlignment="Center" TextChanged="textBox_TextChanged"/>
+        <TextBox x:Name="textBox_Copy" HorizontalAlignment="Left" Height="258" Margin="41,69,0,0" TextWrapping="Wrap" Text="Opis" VerticalAlignment="Top" Width="656" SpellCheck.IsEnabled="True" FontSize="20" TextAlignment="Center"/>
+        <TextBlock x:Name="textBlock" HorizontalAlignment="Left" Margin="208,10,0,0" TextWrapping="Wrap" Text="Nepoznata rec:" VerticalAlignment="Top" Height="34" Width="179" FontSize="20" TextAlignment="Center"/>
+        <Button Margin="697,327,9.6,10" RenderTransformOrigin="0.5,0.5" Background="White" BorderBrush="White">
+            <Button.Resources>
+                <Style TargetType="{x:Type Border}">
+                    <Setter Property="CornerRadius" Value="100"/>
+                </Style>
+            </Button.Resources>
+            <StackPanel>
+                <Image Source="../resources/plus.png" />
+            </StackPanel>
+        </Button>
+    </Grid>
+</Window>
