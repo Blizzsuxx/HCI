@@ -4,17 +4,17 @@
 winexe
 C#
 .cs
-C:\Users\ALIENWARE\source\repos\WpfApp1\WpfApp1\obj\Debug\
+C:\Users\rajta\Source\Repos\organizerEvents\HCI\WpfApp1\obj\Debug\
 WpfApp1
 none
 false
 DEBUG;TRACE
-C:\Users\ALIENWARE\source\repos\WpfApp1\WpfApp1\App.xaml
-5-1408171728
+C:\Users\rajta\Source\Repos\organizerEvents\HCI\WpfApp1\App.xaml
+9-2075315401
 
-25-338980340
+29-1426591405
 13-1505183044
-View\LoginWIndow.xaml;View\ZadaciWindow.xaml;View\Recnik.xaml;View\DodavacReci.xaml;View\KalendarWindow.xaml;
+View\DodavanjeOrganizatora.xaml;View\PregledJedneProslave.xaml;View\PregledOrganizatora.xaml;View\LoginWIndow.xaml;View\PregledProslava.xaml;View\ZadaciWindow.xaml;View\Recnik.xaml;View\DodavacReci.xaml;View\KalendarWindow.xaml;
 
 True
 
