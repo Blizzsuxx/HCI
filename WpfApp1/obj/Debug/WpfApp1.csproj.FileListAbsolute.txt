@@ -75,3 +75,7 @@ C:\Users\rajta\Source\Repos\organizerEvents\HCI\WpfApp1\obj\Debug\View\Dodavanje
 C:\Users\rajta\Source\Repos\organizerEvents\HCI\WpfApp1\obj\Debug\View\PregledJedneProslave.baml
 C:\Users\rajta\Source\Repos\organizerEvents\HCI\WpfApp1\obj\Debug\View\PregledOrganizatora.baml
 C:\Users\rajta\Source\Repos\organizerEvents\HCI\WpfApp1\obj\Debug\View\PregledProslava.baml
+C:\Users\rajta\Source\Repos\organizerEvents\HCI\WpfApp1\obj\Debug\View\FormaOrganizacije.g.cs
+C:\Users\rajta\Source\Repos\organizerEvents\HCI\WpfApp1\obj\Debug\View\PregledJednogOrganizatora.g.cs
+C:\Users\rajta\Source\Repos\organizerEvents\HCI\WpfApp1\obj\Debug\View\FormaOrganizacije.baml
+C:\Users\rajta\Source\Repos\organizerEvents\HCI\WpfApp1\obj\Debug\View\PregledJednogOrganizatora.baml

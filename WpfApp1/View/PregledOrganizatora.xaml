@@ -6,7 +6,7 @@
         xmlns:local="clr-namespace:WpfApp1"
         mc:Ignorable="d"
         Title="PregledOrganizatora" Height="450" Width="800">
-    <Grid>
+    <Grid >
 
 
 
@@ -61,6 +61,7 @@
                     <GridViewColumn Header="Broj proslava" Width="75" DisplayMemberBinding="{Binding Mail}" />
                     <GridViewColumn Header="Broj telefona" Width="150" DisplayMemberBinding="{Binding Mail}" />
                     <GridViewColumn Header="Profil" Width="40" DisplayMemberBinding="{Binding Mail}" />
+                    <GridViewColumn Header="Pozovi" Width="40" DisplayMemberBinding="{Binding Mail}" />
                 </GridView>
             </ListView.View>
         </ListView>
