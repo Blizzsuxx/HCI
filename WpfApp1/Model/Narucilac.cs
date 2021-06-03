@@ -8,6 +8,8 @@ namespace organizerEvents.model
 {
     public class Narucilac: Korisnik
     {
+       
+
         public List<ZahtevZaProslavu> Zahtevi { get; set; }
         public List<Proslava> Proslave { get; set; }
 
@@ -20,6 +22,14 @@ namespace organizerEvents.model
             
             this.Zahtevi = zahtevi;
             this.Proslave = proslave;
+        }
+
+        public Narucilac(string ime, string prezime, string email, string korisnickoIme)
+        {
+            this.Ime = ime;
+            this.Prezime = prezime;
+            this.Email = email;
+            this.KorisnickoIme = korisnickoIme;
         }
     }
 }

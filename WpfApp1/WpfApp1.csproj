@@ -55,6 +55,9 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="Controler\NarucilacKontroler.cs" />
+    <Compile Include="Controler\OrganizatorKontroler.cs" />
+    <Compile Include="Controler\ProslavaKontroler.cs" />
     <Compile Include="Model\Administrator.cs" />
     <Compile Include="Model\Dogovor.cs" />
     <Compile Include="Model\Gost.cs" />
@@ -79,6 +82,9 @@
     <Compile Include="View\FormaOrganizacije.xaml.cs">
       <DependentUpon>FormaOrganizacije.xaml</DependentUpon>
     </Compile>
+    <Compile Include="View\KreiranjeNovePonude.xaml.cs">
+      <DependentUpon>KreiranjeNovePonude.xaml</DependentUpon>
+    </Compile>
     <Compile Include="View\OdobravanjeReci.xaml.cs">
       <DependentUpon>OdobravanjeReci.xaml</DependentUpon>
     </Compile>
@@ -99,6 +105,9 @@
     </Compile>
     <Compile Include="View\ProfilKorisnika.xaml.cs">
       <DependentUpon>ProfilKorisnika.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\UnosNovogSaradnika.xaml.cs">
+      <DependentUpon>UnosNovogSaradnika.xaml</DependentUpon>
     </Compile>
     <Compile Include="View\ZadaciWindow.xaml.cs">
       <DependentUpon>ZadaciWindow.xaml</DependentUpon>
@@ -121,6 +130,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="View\FormaOrganizacije.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\KreiranjeNovePonude.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -161,6 +174,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="View\ProfilKorisnika.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\UnosNovogSaradnika.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -234,5 +251,6 @@
   <ItemGroup>
     <Resource Include="resources\plus.png" />
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

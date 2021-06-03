@@ -13,15 +13,15 @@
         <Label Content="Lozinka" HorizontalAlignment="Left" Margin="33,210,0,0" VerticalAlignment="Top" RenderTransformOrigin="-1.197,-0.142" FontSize="18" Height="33" Width="144"/>
         <Label Content="E-mail" HorizontalAlignment="Left" Margin="33,260,0,0" VerticalAlignment="Top" RenderTransformOrigin="-1.197,-0.142" FontSize="18" Height="33" Width="144"/>
         <Label Content="Broj telefona" HorizontalAlignment="Left" Margin="33,310,0,0" VerticalAlignment="Top" RenderTransformOrigin="-1.197,-0.142" FontSize="18" Height="33" Width="144"/>
-        <TextBox HorizontalAlignment="Left" Height="33" Margin="182,60,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="266" FontSize="18"/>
-        <TextBox HorizontalAlignment="Left" Height="33" Margin="182,110,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="266" FontSize="18"/>
-        <TextBox HorizontalAlignment="Left" Height="33" Margin="182,160,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="266" FontSize="18"/>
-        <TextBox HorizontalAlignment="Left" Height="33" Margin="182,210,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="266" FontSize="18"/>
-        <TextBox HorizontalAlignment="Left" Height="33" Margin="182,260,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="266" FontSize="18"/>
-        <TextBox HorizontalAlignment="Left" Height="33" Margin="182,310,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="266" FontSize="18"/>
+        <TextBox HorizontalAlignment="Left" Height="33" Margin="182,60,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="266" FontSize="18" x:Name="ime"/>
+        <TextBox HorizontalAlignment="Left" Height="33" Margin="182,110,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="266" FontSize="18" x:Name="prezime"/>
+        <TextBox HorizontalAlignment="Left" Height="33" Margin="182,160,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="266" FontSize="18" x:Name="korIme"/>
+        <TextBox HorizontalAlignment="Left" Height="33" Margin="182,210,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="266" FontSize="18" x:Name="lozinka"/>
+        <TextBox HorizontalAlignment="Left" Height="33" Margin="182,260,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="266" FontSize="18" x:Name="email"/>
+        <TextBox HorizontalAlignment="Left" Height="33" Margin="182,310,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="266" FontSize="18" x:Name="brTel"/>
         <Image Source="../resources/user.png" HorizontalAlignment="Left" Height="154" Margin="568,60,0,0" VerticalAlignment="Top" Width="157"/>
-        <Button Content="Sacuvaj promene" HorizontalAlignment="Left" Margin="512,313,0,0" VerticalAlignment="Top" Width="225" Height="30"/>
-        <Button Content="Odbaci promene" HorizontalAlignment="Left" Margin="512,364,0,0" VerticalAlignment="Top" Width="225" RenderTransformOrigin="-1.211,1.528" Height="27"/>
+        <Button Content="Sacuvaj promene" HorizontalAlignment="Left" Margin="512,313,0,0" VerticalAlignment="Top" Width="225" Height="30" x:Name="SacuvajPromene" Click="SacuvajPromene_Click"/>
+        <Button Content="Odbaci promene" HorizontalAlignment="Left" Margin="512,364,0,0" VerticalAlignment="Top" Width="225" RenderTransformOrigin="-1.211,1.528" Height="27" x:Name="Odbaci" Click="Odbaci_Click" />
 
     </Grid>
 </Window>

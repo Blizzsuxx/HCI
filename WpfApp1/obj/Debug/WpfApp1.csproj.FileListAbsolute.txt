@@ -79,3 +79,15 @@ C:\Users\rajta\Source\Repos\organizerEvents\HCI\WpfApp1\obj\Debug\View\FormaOrga
 C:\Users\rajta\Source\Repos\organizerEvents\HCI\WpfApp1\obj\Debug\View\PregledJednogOrganizatora.g.cs
 C:\Users\rajta\Source\Repos\organizerEvents\HCI\WpfApp1\obj\Debug\View\FormaOrganizacije.baml
 C:\Users\rajta\Source\Repos\organizerEvents\HCI\WpfApp1\obj\Debug\View\PregledJednogOrganizatora.baml
+C:\Users\rajta\Source\Repos\organizerEvents\HCI\WpfApp1\obj\Debug\View\AzuriranjeProfila.g.cs
+C:\Users\rajta\Source\Repos\organizerEvents\HCI\WpfApp1\obj\Debug\View\KreiranjeNovePonude.g.cs
+C:\Users\rajta\Source\Repos\organizerEvents\HCI\WpfApp1\obj\Debug\View\OdobravanjeReci.g.cs
+C:\Users\rajta\Source\Repos\organizerEvents\HCI\WpfApp1\obj\Debug\View\PregledKorisnika.g.cs
+C:\Users\rajta\Source\Repos\organizerEvents\HCI\WpfApp1\obj\Debug\View\ProfilKorisnika.g.cs
+C:\Users\rajta\Source\Repos\organizerEvents\HCI\WpfApp1\obj\Debug\View\UnosNovogSaradnika.g.cs
+C:\Users\rajta\Source\Repos\organizerEvents\HCI\WpfApp1\obj\Debug\View\AzuriranjeProfila.baml
+C:\Users\rajta\Source\Repos\organizerEvents\HCI\WpfApp1\obj\Debug\View\KreiranjeNovePonude.baml
+C:\Users\rajta\Source\Repos\organizerEvents\HCI\WpfApp1\obj\Debug\View\OdobravanjeReci.baml
+C:\Users\rajta\Source\Repos\organizerEvents\HCI\WpfApp1\obj\Debug\View\PregledKorisnika.baml
+C:\Users\rajta\Source\Repos\organizerEvents\HCI\WpfApp1\obj\Debug\View\ProfilKorisnika.baml
+C:\Users\rajta\Source\Repos\organizerEvents\HCI\WpfApp1\obj\Debug\View\UnosNovogSaradnika.baml

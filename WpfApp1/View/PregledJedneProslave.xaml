@@ -7,13 +7,13 @@
         mc:Ignorable="d"
         Title="PregledJedneProslave" Height="450" Width="800">
     <Grid Background="LightBlue">
-        <TextBox HorizontalAlignment="Left" Height="23" Margin="113,55,0,0" TextWrapping="Wrap"  VerticalAlignment="Top" Width="158"/>
-        <TextBox HorizontalAlignment="Left" Height="23" Margin="113,105,0,0" TextWrapping="Wrap"  VerticalAlignment="Top" Width="158"/>
-        <TextBox HorizontalAlignment="Left" Height="23" Margin="113,160,0,0" TextWrapping="Wrap"  VerticalAlignment="Top" Width="158"/>
-        <TextBox HorizontalAlignment="Left" Height="23" Margin="113,215,0,0" TextWrapping="Wrap"  VerticalAlignment="Top" Width="158"/>
-        <TextBox HorizontalAlignment="Left" Height="23" Margin="113,270,0,0" TextWrapping="Wrap"  VerticalAlignment="Top" Width="158"/>
-        <TextBox HorizontalAlignment="Left" Height="23" Margin="113,325,0,0" TextWrapping="Wrap"  VerticalAlignment="Top" Width="158" RenderTransformOrigin="-0.027,0.617"/>
-        <TextBox HorizontalAlignment="Left" Height="23" Margin="113,380,0,0" TextWrapping="Wrap"  VerticalAlignment="Top" Width="158"/>
+        <TextBox HorizontalAlignment="Left" Height="23" Margin="113,55,0,0" TextWrapping="Wrap"  VerticalAlignment="Top" Width="211" x:Name="kIme"/>
+        <TextBox HorizontalAlignment="Left" Height="23" Margin="113,105,0,0" TextWrapping="Wrap"  VerticalAlignment="Top" Width="211" x:Name="org"/>
+        <TextBox HorizontalAlignment="Left" Height="23" Margin="113,160,0,0" TextWrapping="Wrap"  VerticalAlignment="Top" Width="211" x:Name="Datum"/>
+        <TextBox HorizontalAlignment="Left" Height="23" Margin="113,215,0,0" TextWrapping="Wrap"  VerticalAlignment="Top" Width="211" x:Name="budzet"/>
+        <TextBox HorizontalAlignment="Left" Height="23" Margin="113,270,0,0" TextWrapping="Wrap"  VerticalAlignment="Top" Width="211" x:Name="brGostiju"/>
+        <TextBox HorizontalAlignment="Left" Height="23" Margin="113,325,0,0" TextWrapping="Wrap"  VerticalAlignment="Top" Width="211" />
+        <TextBox HorizontalAlignment="Left" Height="23" Margin="113,380,0,0" TextWrapping="Wrap"  VerticalAlignment="Top" Width="211" x:Name="mesto"/>
         <Label Content="Korisnik" HorizontalAlignment="Left" Margin="10,50,0,0" VerticalAlignment="Top" RenderTransformOrigin="-0.542,0.578" Width="85"/>
         <Label Content="Organizator" HorizontalAlignment="Left" Margin="10,105,0,0" VerticalAlignment="Top" RenderTransformOrigin="-0.542,0.578" Width="85"/>
         <Label Content="Mesto" HorizontalAlignment="Left" Margin="10,380,0,0" VerticalAlignment="Top" RenderTransformOrigin="-0.542,0.578" Width="85"/>
@@ -22,10 +22,14 @@
         <Label Content="Broj gostiju" HorizontalAlignment="Left" Margin="10,270,0,0" VerticalAlignment="Top" RenderTransformOrigin="-0.542,0.578" Width="85"/>
         <Label Content="Zaboravila sam sta" HorizontalAlignment="Left" Margin="10,325,0,0" VerticalAlignment="Top" RenderTransformOrigin="-0.542,0.578" Width="85"/>
         <Menu HorizontalAlignment="Left" Height="21" Margin="0,10,-0.4,0" VerticalAlignment="Top" Width="794"/>
-        <ComboBox HorizontalAlignment="Left" Margin="546,54,0,0" VerticalAlignment="Top" Width="120"/>
+        <ComboBox HorizontalAlignment="Left" x:Name="odabir" Margin="546,54,0,0" VerticalAlignment="Top" Width="120" ItemsSource="{Binding Path=saradnici}"
+                  DisplayMemberPath="Naziv"
+                  SelectedValuePath="Naziv"
+                  SelectedValue="{Binding Path=saradnik}"
+                  SelectionChanged="cmbColors_SelectionChanged"/>
         <Label Content="Odaberi saradnika" HorizontalAlignment="Left" Margin="423,50,0,0" VerticalAlignment="Top" Height="26" Width="141" RenderTransformOrigin="0.168,0.473"/>
 
-        <TextBlock HorizontalAlignment="Left" Margin="423,102,0,0" TextWrapping="Wrap" Text="Pregled cele ponude od tog saradnika ovo je text box, naci kako granice da se dodaju okvir"   VerticalAlignment="Top" Height="136" Width="344"/>
+        <TextBlock HorizontalAlignment="Left" Margin="423,102,0,0" TextWrapping="Wrap" Text="Pregled cele ponude od tog saradnika ovo je text box, naci kako granice da se dodaju okvir"   VerticalAlignment="Top" Height="136" Width="344" x:Name="cenovnik"/>
         <TextBlock HorizontalAlignment="Left" Margin="423,243,0,0" TextWrapping="Wrap" Text="Ovde dodju slike, naci kako granice da se dodaju okvir"   VerticalAlignment="Top" Height="136" Width="344"/>
 
     </Grid>

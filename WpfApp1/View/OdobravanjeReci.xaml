@@ -7,7 +7,7 @@
         mc:Ignorable="d"
         Title="OdobravanjeReci" Height="450" Width="800">
     <Grid Background="LightBlue">
-        <TextBox x:Name="textBox" HorizontalAlignment="Left" Height="34" Margin="220,10,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="477" SpellCheck.IsEnabled="True" FontSize="20" TextAlignment="Center" TextChanged="textBox_TextChanged"/>
+        <TextBox x:Name="textBox" HorizontalAlignment="Left" Height="34" Margin="220,10,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="477" SpellCheck.IsEnabled="True" FontSize="20" TextAlignment="Center" />
         <TextBox x:Name="textBox_Copy" HorizontalAlignment="Left" Height="258" Margin="41,69,0,0" TextWrapping="Wrap"  VerticalAlignment="Top" Width="656" SpellCheck.IsEnabled="True" FontSize="20" TextAlignment="Center"/>
         <TextBlock x:Name="textBlock" HorizontalAlignment="Left" Margin="41,10,0,0" TextWrapping="Wrap" Text="Nepoznata rec:" VerticalAlignment="Top" Height="34" Width="179" FontSize="20" TextAlignment="Center"/>
         <Button Margin="706,343,8.6,8" RenderTransformOrigin="0.5,0.5" Background="White" BorderBrush="White">

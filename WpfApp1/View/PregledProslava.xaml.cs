@@ -11,6 +11,8 @@ using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
+using WpfApp1.Controler;
+using organizerEvents.model;
 
 namespace WpfApp1.View
 {
@@ -19,9 +21,20 @@ namespace WpfApp1.View
     /// </summary>
     public partial class PregledProslava : Window
     {
+       ProslavaKontroler proslaveKontroler { get; set; }
         public PregledProslava()
         {
             InitializeComponent();
+            McDataGrid.ItemsSource = pronadjiProslave();
+        }
+
+        private List<Proslava> pronadjiProslave()
+        {
+            this.proslaveKontroler = new ProslavaKontroler();
+
+            List<Proslava> zaSlanje = this.proslaveKontroler.ucitaj();
+            return zaSlanje;
+
         }
     }
 }

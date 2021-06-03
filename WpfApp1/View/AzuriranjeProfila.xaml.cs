@@ -23,5 +23,21 @@ namespace WpfApp1.View
         {
             InitializeComponent();
         }
+
+        private void SacuvajPromene_Click(object sender, RoutedEventArgs e)
+        {
+            String Ime = ime.Text;
+            String Prezime = prezime.Text;
+            String BrTel = brTel.Text;
+            String KorisnickoIme = korIme.Text;
+            String Email = email.Text;
+            String Lozinka = lozinka.Text;
+
+        }
+
+        private void Odbaci_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
     }
 }
