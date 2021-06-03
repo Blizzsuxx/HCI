@@ -11,16 +11,27 @@ using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
+using organizerEvents.model;
+using WpfApp1.Controler;
 
 namespace WpfApp1
 {
     /// <summary>
     /// Interaction logic for Window4.xaml
     /// </summary>
-    public partial class KalendarWindow : Window
+    public partial class PregledOrganizatora : Window
     {
-       
-        private void Button_Click(object sender, RoutedEventArgs e)
+        OrganizatorKontroler kontroler { get; set; }
+        public PregledOrganizatora()
+        {
+            InitializeComponent();
+
+            kontroler = new OrganizatorKontroler();
+            this.organizatori.ItemsSource = kontroler.dobaviSveOrganizatore();
+
+        }
+
+            private void Button_Click(object sender, RoutedEventArgs e)
         {
 
         }

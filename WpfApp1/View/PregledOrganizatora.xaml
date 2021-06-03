@@ -52,14 +52,14 @@
         <Button Content="Proslave" HorizontalAlignment="Left" Margin="130,22,0,0" VerticalAlignment="Top" Width="75" Background="LightBlue"/>
         <Button Content="Saradnici" HorizontalAlignment="Left" Margin="230,22,0,0" VerticalAlignment="Top" Width="75" Background="LightBlue"/>
         <Button Content="Korisnici" HorizontalAlignment="Left" Margin="332,22,0,0" VerticalAlignment="Top" Width="75" Background="LightBlue"/>
-        <ListView HorizontalAlignment="Left" Height="303" Margin="130,98,0,0" VerticalAlignment="Top" Width="654">
+        <ListView x:Name="organizatori" HorizontalAlignment="Left" Height="303" Margin="130,98,0,0" VerticalAlignment="Top" Width="654">
             <ListView.View>
                 <GridView>
                     <GridViewColumn Header="Slika" Width="110" DisplayMemberBinding="{Binding Name}" />
-                    <GridViewColumn Header="Ime" Width="120" DisplayMemberBinding="{Binding Name}" />
-                    <GridViewColumn Header="Prezime" Width="110" DisplayMemberBinding="{Binding Age}" />
-                    <GridViewColumn Header="Broj proslava" Width="75" DisplayMemberBinding="{Binding Mail}" />
-                    <GridViewColumn Header="Broj telefona" Width="150" DisplayMemberBinding="{Binding Mail}" />
+                    <GridViewColumn Header="Ime" Width="120" DisplayMemberBinding="{Binding Ime}" />
+                    <GridViewColumn Header="Prezime" Width="110" DisplayMemberBinding="{Binding Prezime}" />
+                    <GridViewColumn Header="Mejl" Width="75" DisplayMemberBinding="{Binding Email}" />
+                    <GridViewColumn Header="Broj telefona" Width="150" DisplayMemberBinding="{Binding BrojTelefona}" />
                     <GridViewColumn Header="Profil" Width="40" DisplayMemberBinding="{Binding Mail}" />
                     <GridViewColumn Header="Pozovi" Width="40" DisplayMemberBinding="{Binding Mail}" />
                 </GridView>

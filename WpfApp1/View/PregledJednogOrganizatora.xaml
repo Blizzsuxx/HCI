@@ -19,22 +19,22 @@
 
 
         </StackPanel>
-        <Label Content="Ime i prezime" HorizontalAlignment="Left" Margin="122,50,0,0" VerticalAlignment="Top" Height="24" Width="119"/>
+        <Label Content="Ime i prezime" HorizontalAlignment="Left" Margin="122,50,0,0" VerticalAlignment="Top" Height="24" Width="119" />
         <Label Content="Broj telefona" HorizontalAlignment="Left" Margin="122,80,0,0" VerticalAlignment="Top" Height="24" Width="119"/>
         <Label Content="e-mail" HorizontalAlignment="Left" Margin="122,110,0,0" VerticalAlignment="Top" Height="24" Width="119"/>
         <Label Content="Korisnicko ime" HorizontalAlignment="Left" Margin="122,140,0,0" VerticalAlignment="Top" Height="24" Width="119"/>
-        <TextBox HorizontalAlignment="Left" Height="20" Margin="241,50,0,0" TextWrapping="Wrap"  VerticalAlignment="Top" Width="306" FontSize="18"/>
-        <TextBox HorizontalAlignment="Left" Height="20" Margin="241,144,0,0" TextWrapping="Wrap"  VerticalAlignment="Top" Width="306" FontSize="18"/>
-        <TextBox HorizontalAlignment="Left" Height="20" Margin="241,84,0,0" TextWrapping="Wrap"  VerticalAlignment="Top" Width="306" FontSize="18"/>
-        <TextBox HorizontalAlignment="Left" Height="20" Margin="241,114,0,0" TextWrapping="Wrap"  VerticalAlignment="Top" Width="306" FontSize="18"/>
-        <ListView HorizontalAlignment="Left" Height="222" Margin="10,188,0,0" VerticalAlignment="Top" Width="774">
+        <TextBox HorizontalAlignment="Left" Height="20" Margin="241,50,0,0" TextWrapping="Wrap"  VerticalAlignment="Top" Width="306" FontSize="14" x:Name="ime"/>
+        <TextBox HorizontalAlignment="Left" Height="20" Margin="241,144,0,0" TextWrapping="Wrap"  VerticalAlignment="Top" Width="306" FontSize="14" x:Name="kIme"/>
+        <TextBox HorizontalAlignment="Left" Height="20" Margin="241,84,0,0" TextWrapping="Wrap"  VerticalAlignment="Top" Width="306" FontSize="14" x:Name="brTel"/>
+        <TextBox HorizontalAlignment="Left" Height="20" Margin="241,114,0,0" TextWrapping="Wrap"  VerticalAlignment="Top" Width="306" FontSize="14" x:Name="email"/>
+        <ListView HorizontalAlignment="Left" Height="222" Margin="10,188,0,0" VerticalAlignment="Top" Width="774" x:Name="Proslave">
             <ListView.View>
                 <GridView>
                     <GridViewColumn/>
                     <GridViewColumn Header="Slika" Width="110" DisplayMemberBinding="{Binding Name}" />
-                    <GridViewColumn Header="Mesto" Width="120" DisplayMemberBinding="{Binding Name}" />
-                    <GridViewColumn Header="Daatum" Width="120" DisplayMemberBinding="{Binding Name}" />
-                    <GridViewColumn Header="Broj gostiju" Width="120" DisplayMemberBinding="{Binding Name}" />
+                    <GridViewColumn Header="Mesto" Width="120" DisplayMemberBinding="{Binding Mesto.NazivMesta}" />
+                    <GridViewColumn Header="Daatum" Width="120" DisplayMemberBinding="{Binding DatumVreme}" />
+                    <GridViewColumn Header="Broj gostiju" Width="120" DisplayMemberBinding="{Binding BrojGostiju}" />
 
                 </GridView>
             </ListView.View>

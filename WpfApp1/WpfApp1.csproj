@@ -58,6 +58,7 @@
     <Compile Include="Controler\NarucilacKontroler.cs" />
     <Compile Include="Controler\OrganizatorKontroler.cs" />
     <Compile Include="Controler\ProslavaKontroler.cs" />
+    <Compile Include="Controler\RecnikKontroler.cs" />
     <Compile Include="Model\Administrator.cs" />
     <Compile Include="Model\Dogovor.cs" />
     <Compile Include="Model\Gost.cs" />

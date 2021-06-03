@@ -21,8 +21,10 @@ namespace WpfApp1.View
     /// </summary>
     public partial class DodavanjeOrganizatora : Window
     {
+        OrganizatorKontroler kontroler { get; set; }
         public DodavanjeOrganizatora()
         {
+            kontroler = new OrganizatorKontroler();
             InitializeComponent();
         }
        
@@ -35,7 +37,7 @@ namespace WpfApp1.View
             String Ime = ime.Text;
             String Prezime = prezime.Text;
             Double Plata = Double.Parse(plata.Text); //TODO num
-            //organizatorKontroler.dodajOrganizatora(KorisnickoIme,Lozinka,BrTel,Email,Ime, Prezime, Plata);
+            kontroler.dodajOrganizatora(KorisnickoIme,Lozinka,BrTel,Email,Ime, Prezime, Plata);
 
 
         }
