@@ -14,17 +14,20 @@ namespace WpfApp1.Controler
         internal List<Proslava> ucitaj()
         {
             this.sveProslave = new List<Proslava>();
-            Proslava p1 = new Proslava(DateTime.Now, 10000, "rodjendan");
-            Proslava p2 = new Proslava(DateTime.Now, 10000, "svadba");
-            Proslava p3 = new Proslava(DateTime.Now, 10000, "zurka");
-            this.sveProslave.Add(p1);
-            this.sveProslave.Add(p2);
-            this.sveProslave.Add(p3);
+            /* Proslava p1 = new Proslava(DateTime.Now, 10000, "rodjendan");
+             Proslava p2 = new Proslava(DateTime.Now, 10000, "svadba");
+             Proslava p3 = new Proslava(DateTime.Now, 10000, "zurka");
+             this.sveProslave.Add(p1);
+             this.sveProslave.Add(p2);
+             this.sveProslave.Add(p3);*/
+            this.sveProslave.Add(dobaviProslavu(1));
+            this.sveProslave.Add(dobaviProslavu(1));
+            this.sveProslave.Add(dobaviProslavu(1));
             return this.sveProslave;
         }
 
         internal Proslava dobaviProslavu(int v)
-        {
+        { 
             Proslava proslava = new Proslava();
             Narucilac narucilac = new Narucilac();
             narucilac.Ime = "Natasa";

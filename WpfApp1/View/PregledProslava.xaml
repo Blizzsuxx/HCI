@@ -8,7 +8,19 @@
         Title="PregledProslava" Height="450" Width="800">
     <Grid Background="LightBlue">
         <Label Content="Proslave" HorizontalAlignment="Left" Margin="10,57,0,0" VerticalAlignment="Top" Height="35" Width="108" FontSize="20"/>
-        <DataGrid VerticalScrollBarVisibility="Visible"   Height="297" HorizontalAlignment="Left" Margin="10,113,0,0"  Name="McDataGrid"     VerticalAlignment="Top" Width="774" />
+        <ListView x:Name="Proslave" HorizontalAlignment="Left" Height="300" Margin="10,101,0,0" VerticalAlignment="Top" Width="774">
+            <ListView.View>
+                <GridView>
+                    <GridViewColumn Header="Slika" Width="110" DisplayMemberBinding="{Binding Name}" />
+                    <GridViewColumn Header="Ime organizatora" Width="120" DisplayMemberBinding="{Binding Organizator.Ime}" />
+                    <GridViewColumn Header="Prezime organizatora" Width="110" DisplayMemberBinding="{Binding Organizator.Prezime}" />
+                    <GridViewColumn Header="Broj gostiju" Width="75" DisplayMemberBinding="{Binding BrojGostiju}" />
+                    <GridViewColumn Header="Mesto" Width="150" DisplayMemberBinding="{Binding Mesto.NazivMesta}" />
+                    <GridViewColumn Header="Ime narucioca" Width="40" DisplayMemberBinding="{Binding Narucilac.Ime}" />
+                    <GridViewColumn Header="Prezime narucioca" Width="40" DisplayMemberBinding="{Binding Narucilac.Prezime}" />
+                </GridView>
+            </ListView.View>
+        </ListView>
         <TextBox HorizontalAlignment="Left" Height="35" Margin="279,61,0,0" TextWrapping="Wrap" Text="Trazi" VerticalAlignment="Top" Width="258" FontSize="20"/>
         <Button  HorizontalAlignment="Left" Margin="567,61,0,0" VerticalAlignment="Top" Width="35" RenderTransformOrigin="0.112,-0.115" Height="31">
 

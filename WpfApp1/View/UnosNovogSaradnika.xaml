@@ -7,14 +7,18 @@
         mc:Ignorable="d"
         Title="UnosNovogSaradnika" Height="450" Width="800">
     <Grid Background="LightBlue">
-        <Label Content="Unos novog saradnika" HorizontalAlignment="Left" Margin="245,10,0,0" VerticalAlignment="Top" Width="274" FontSize="18"/>
+        <Label Content="Unos novog saradnika" HorizontalAlignment="Left" Margin="160,10,0,0" VerticalAlignment="Top" Width="274" FontSize="18"/>
         <Label Content="Naziv" HorizontalAlignment="Left" Margin="10,49,0,0" VerticalAlignment="Top" Width="130" FontSize="18"/>
         <Label Content="Tip" HorizontalAlignment="Left" Margin="10,99,0,0" VerticalAlignment="Top" Width="130" FontSize="18"/>
         <Label Content="Mesto" HorizontalAlignment="Left" Margin="10,149,0,0" VerticalAlignment="Top" Width="130" FontSize="18"/>
         <Label Content="Opis" HorizontalAlignment="Left" Margin="10,199,0,0" VerticalAlignment="Top" Width="130" FontSize="18"/>
-        <TextBox HorizontalAlignment="Left" Height="34" Margin="140,49,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="628"/>
-        <TextBox HorizontalAlignment="Left" Height="34" Margin="140,99,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="628"/>
-        <TextBox HorizontalAlignment="Left" Height="34" Margin="140,149,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="628"/>
-        <TextBox HorizontalAlignment="Left" Height="114" Margin="140,209,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="628"/>
+        <TextBox HorizontalAlignment="Left" Height="34" Margin="140,49,0,0" TextWrapping="Wrap"  VerticalAlignment="Top" Width="294" x:Name="Naziv"/>
+        <TextBox HorizontalAlignment="Left" Height="34" Margin="140,99,0,0" TextWrapping="Wrap"  VerticalAlignment="Top" Width="294" x:Name="Tip"/>
+        <TextBox HorizontalAlignment="Left" Height="34" Margin="140,149,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="294" x:Name="Mesto"/>
+        <TextBox HorizontalAlignment="Left" Height="114" Margin="140,209,0,0" TextWrapping="Wrap"  VerticalAlignment="Top" Width="294" x:Name="Opis"/>
+        <Label Content="Unos cenovnika" HorizontalAlignment="Left" Margin="453,10,0,0" VerticalAlignment="Top" Width="274" FontSize="18"/>
+        <Label Content="mozda ne ide ovde cenovnik" HorizontalAlignment="Left" Margin="453,75,0,0" VerticalAlignment="Top" Width="274" FontSize="18"/>
+        <Button Content="Sacuvaj saradnika" HorizontalAlignment="Left" Margin="140,357,0,0" VerticalAlignment="Top" Width="294" Height="34" Click="Button_Click"/>
+
     </Grid>
 </Window>

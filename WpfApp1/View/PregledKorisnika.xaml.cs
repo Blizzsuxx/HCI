@@ -25,22 +25,15 @@ namespace WpfApp1.View
 
         public PregledKorisnika()
         {
-            
-
-            InitializeComponent();
-            McDataGrid.ItemsSource = pronadjinarucioce();
-        }
-      
-       
-        private List<Narucilac> pronadjinarucioce()
-        {
             narucilackontroler = new NarucilacKontroler();
 
-            List<Narucilac> zaSlanje = narucilackontroler.ucitaj();
-            return zaSlanje;
+            InitializeComponent();
+            this.Korisnici.ItemsSource = narucilackontroler.ucitaj();
 
         }
 
+
+        
        
     }
 }

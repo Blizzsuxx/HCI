@@ -24,17 +24,11 @@ namespace WpfApp1.View
        ProslavaKontroler proslaveKontroler { get; set; }
         public PregledProslava()
         {
+            proslaveKontroler = new ProslavaKontroler();
             InitializeComponent();
-            McDataGrid.ItemsSource = pronadjiProslave();
+            this.Proslave.ItemsSource = this.proslaveKontroler.ucitaj();
         }
 
-        private List<Proslava> pronadjiProslave()
-        {
-            this.proslaveKontroler = new ProslavaKontroler();
-
-            List<Proslava> zaSlanje = this.proslaveKontroler.ucitaj();
-            return zaSlanje;
-
-        }
+        
     }
 }

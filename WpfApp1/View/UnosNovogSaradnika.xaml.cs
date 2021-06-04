@@ -11,6 +11,8 @@ using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
+using WpfApp1.Controler;
+using organizerEvents.model;
 
 namespace WpfApp1.View
 {
@@ -19,9 +21,21 @@ namespace WpfApp1.View
     /// </summary>
     public partial class UnosNovogSaradnika : Window
     {
+        private SaradnikKontroler kontroler { get; set; }
         public UnosNovogSaradnika()
         {
+            kontroler = new SaradnikKontroler();
             InitializeComponent();
+        }
+
+        private void Button_Click(object sender, RoutedEventArgs e)
+        {
+            String ime = this.Naziv.Text;
+            String opis = this.Opis.Text;
+            String mesto = this.Naziv.Text;
+            String tip = this.Tip.Text;
+            kontroler.dodajSaradnika(ime, mesto, opis, tip);
+
         }
     }
 }

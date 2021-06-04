@@ -12,9 +12,18 @@
             <ColumnDefinition Width="527*"/>
         </Grid.ColumnDefinitions>
 
-        <DataGrid VerticalScrollBarVisibility="Visible"   Height="322" HorizontalAlignment="Left" Margin="10,88,0,0"  Name="McDataGrid"     VerticalAlignment="Top" Width="774" Grid.ColumnSpan="2" >
+        <ListView x:Name="Korisnici" Height="300" Margin="10,101,9.6,0" VerticalAlignment="Top" Grid.ColumnSpan="2">
+            <ListView.View>
+                <GridView>
+                    <GridViewColumn Header="Slika" Width="110" DisplayMemberBinding="{Binding Name}" />
+                    <GridViewColumn Header="Ime" Width="120" DisplayMemberBinding="{Binding Ime}" />
+                    <GridViewColumn Header="Prezime" Width="110" DisplayMemberBinding="{Binding Prezime}" />
+                    <GridViewColumn Header="Broj telefona" Width="75" DisplayMemberBinding="{Binding BrojTelefona}" />
+                    <GridViewColumn Header="Korisnicko ime" Width="150" DisplayMemberBinding="{Binding KorisnickoIme}" />
+                </GridView>
+            </ListView.View>
+        </ListView>
 
-        </DataGrid>
         <TextBox HorizontalAlignment="Left" Height="31" Margin="8.2,41,0,0" HorizontalScrollBarVisibility="Visible" TextWrapping="Wrap" Text="Trazi" VerticalAlignment="Top" Width="248" FontSize="20" Grid.Column="1"/>
         <Button  HorizontalAlignment="Left" Margin="263.2,41,0,0" VerticalAlignment="Top" Width="35" RenderTransformOrigin="0.112,-0.115" Height="31" Grid.Column="1">
 
