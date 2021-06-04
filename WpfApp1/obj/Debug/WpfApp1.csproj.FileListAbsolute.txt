@@ -91,3 +91,5 @@ C:\Users\rajta\Source\Repos\organizerEvents\HCI\WpfApp1\obj\Debug\View\Odobravan
 C:\Users\rajta\Source\Repos\organizerEvents\HCI\WpfApp1\obj\Debug\View\PregledKorisnika.baml
 C:\Users\rajta\Source\Repos\organizerEvents\HCI\WpfApp1\obj\Debug\View\ProfilKorisnika.baml
 C:\Users\rajta\Source\Repos\organizerEvents\HCI\WpfApp1\obj\Debug\View\UnosNovogSaradnika.baml
+C:\Users\rajta\Source\Repos\organizerEvents\HCI\WpfApp1\obj\Debug\View\PregledSvihSaradnika.g.cs
+C:\Users\rajta\Source\Repos\organizerEvents\HCI\WpfApp1\obj\Debug\View\PregledSvihSaradnika.baml

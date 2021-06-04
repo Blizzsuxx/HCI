@@ -20,5 +20,16 @@ namespace WpfApp1.Controler
             saradnici.Add(novSaradnik);
         
         }
+        public List<Saradnik> ucitaj() {
+
+            saradnici = new List<Saradnik>();
+            Saradnik s1 = new Saradnik("cvecara pcelica", "novi sad", "neki","cvecara");
+            Saradnik s2 = new Saradnik("cvecara pcelica", "novi sad", "neki", "cvecara");
+            Saradnik s3 = new Saradnik("cvecara pcelica", "novi sad", "neki", "cvecara");
+            saradnici.Add(s1);saradnici.Add(s2);saradnici.Add(s3);
+
+            return saradnici;
+
+        }
     }
 }
