@@ -1,0 +1,17 @@
+[
+  {
+    "Plata": 0,
+    "ZahteviId": [],
+    "ProslaveId": [
+      1
+    ],
+    "DogovoriId": [],
+    "Ime": "Andrija",
+    "Id": 1,
+    "Prezime": "Vojnovic",
+    "BrojTelefona": "0628546914",
+    "Email": "andrijavojnovic@gmail.com",
+    "KorisnickoIme": "andros",
+    "Sifra": "andrija"
+  }
+]

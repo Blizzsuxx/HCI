@@ -2,26 +2,43 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using System.Text.Json.Serialization;
 using System.Threading.Tasks;
 
 namespace organizerEvents.model
 {
     public class Proslava
     {
-
+        public long Id { get; set; }
         public String Naslov { get; set; }
         public DateTime DatumVreme { get; set; }
         public int BrojGostiju { get; set; }
         public double Budzet { get; set; }
         public String Tip { get; set; }
+
+        public long MestoId { get; set; }
+        [JsonIgnore]
         public Mesto Mesto { get; set; }
         public String Opis { get; set; }
-        public Organizator Organizator { get; set; }
 
+        public long OrganizatorId { get; set; }
+        [JsonIgnore]
+        public Organizator Organizator { get; set; }
+        public long NarucilacId { get; set; }
+        [JsonIgnore]
         public Narucilac Narucilac { get; set; }
+
+        public List<long> PorukeId { get; set; }
+        [JsonIgnore]
         public List <Poruke> Poruke { get; set; }
+        public List<int> ZadaciId { get; set; }
+        [JsonIgnore]
         public List<ToDo> Zadaci { get; set; }
+        public List<long> DogovoriId { get; set; }
+        [JsonIgnore]
         public List<Dogovor> Dogovori { get; set; }
+        public List<long> GodstiId { get; set; }
+        [JsonIgnore]
         public List<Gost> Gosti { get; set; }
 
         public Proslava()

@@ -7,7 +7,8 @@ using System.Threading.Tasks;
 namespace organizerEvents.model
 {
     public class Saradnik
-    { 
+    {
+        public long Id { get; set; }
         public String Naziv { get; set; }
         public String Mesto { get; set; }
         public String Opis { get; set; }

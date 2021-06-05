@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using System.Text.Json.Serialization;
 using System.Threading.Tasks;
 
 namespace organizerEvents.model
@@ -15,7 +16,12 @@ namespace organizerEvents.model
     }
     public class Dogovor
     {
+        public long StanjeId { get; set; }
+        [JsonIgnore]
         public Stanje Stanje { get; set; }
+
+        public long PonudaId { get; set; }
+        [JsonIgnore]
         public Ponuda Ponuda { get; set; }
 
         public Dogovor() { }

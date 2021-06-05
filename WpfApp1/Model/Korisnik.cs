@@ -7,8 +7,9 @@ using System.Threading.Tasks;
 namespace organizerEvents.model
 {
     public abstract class Korisnik
-    {
+    {   
         public String Ime { get; set; }
+        public long Id { get; set; }
         public String Prezime { get; set; }
         public String BrojTelefona { get; set; }
         public String Email { get; set; }
