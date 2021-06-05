@@ -151,3 +151,28 @@ C:\SIIT\Novi Semestar\Interakcija covjek racunar\WpfApp1\obj\Debug\View\Test.g.c
 C:\SIIT\Novi Semestar\Interakcija covjek racunar\WpfApp1\obj\Debug\App.baml
 C:\SIIT\Novi Semestar\Interakcija covjek racunar\WpfApp1\obj\Debug\View\Test.baml
 C:\SIIT\Novi Semestar\Interakcija covjek racunar\WpfApp1\obj\Debug\WpfApp1.csproj.CopyComplete
+C:\Users\Korisnik\Desktop\hci\WpfApp1\obj\Debug\WpfApp1.csprojAssemblyReference.cache
+C:\Users\Korisnik\Desktop\hci\WpfApp1\obj\Debug\View\AzuriranjeProfila.g.cs
+C:\Users\Korisnik\Desktop\hci\WpfApp1\obj\Debug\View\DodavanjeOrganizatora.g.cs
+C:\Users\Korisnik\Desktop\hci\WpfApp1\obj\Debug\View\FormaOrganizacije.g.cs
+C:\Users\Korisnik\Desktop\hci\WpfApp1\obj\Debug\View\KreiranjeNovePonude.g.cs
+C:\Users\Korisnik\Desktop\hci\WpfApp1\obj\Debug\View\OdobravanjeReci.g.cs
+C:\Users\Korisnik\Desktop\hci\WpfApp1\obj\Debug\View\PregledJedneProslave.g.cs
+C:\Users\Korisnik\Desktop\hci\WpfApp1\obj\Debug\View\PregledJednogOrganizatora.g.cs
+C:\Users\Korisnik\Desktop\hci\WpfApp1\obj\Debug\View\PregledKorisnika.g.cs
+C:\Users\Korisnik\Desktop\hci\WpfApp1\obj\Debug\View\PregledOrganizatora.g.cs
+C:\Users\Korisnik\Desktop\hci\WpfApp1\obj\Debug\View\LoginWIndow.g.cs
+C:\Users\Korisnik\Desktop\hci\WpfApp1\obj\Debug\View\PregledProslava.g.cs
+C:\Users\Korisnik\Desktop\hci\WpfApp1\obj\Debug\View\PregledSvihSaradnika.g.cs
+C:\Users\Korisnik\Desktop\hci\WpfApp1\obj\Debug\View\ProfilKorisnika.g.cs
+C:\Users\Korisnik\Desktop\hci\WpfApp1\obj\Debug\View\Test.g.cs
+C:\Users\Korisnik\Desktop\hci\WpfApp1\obj\Debug\View\UnosNovogSaradnika.g.cs
+C:\Users\Korisnik\Desktop\hci\WpfApp1\obj\Debug\View\ZadaciWindow.g.cs
+C:\Users\Korisnik\Desktop\hci\WpfApp1\obj\Debug\View\Recnik.g.cs
+C:\Users\Korisnik\Desktop\hci\WpfApp1\obj\Debug\View\DodavacReci.g.cs
+C:\Users\Korisnik\Desktop\hci\WpfApp1\obj\Debug\View\KalendarWindow.g.cs
+C:\Users\Korisnik\Desktop\hci\WpfApp1\obj\Debug\App.g.cs
+C:\Users\Korisnik\Desktop\hci\WpfApp1\obj\Debug\WpfApp1_MarkupCompile.cache
+C:\Users\Korisnik\Desktop\hci\WpfApp1\obj\Debug\WpfApp1_MarkupCompile.lref
+C:\Users\Korisnik\Desktop\hci\WpfApp1\obj\Debug\WpfApp1.exe
+C:\Users\Korisnik\Desktop\hci\WpfApp1\obj\Debug\WpfApp1.pdb
