@@ -2,12 +2,14 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using System.Text.Json.Serialization;
 using System.Threading.Tasks;
 
 namespace organizerEvents.model
 {
     public class ZahtevZaProslavu
     {
+        public long Id { get; set; }
         public String Naslov { get; set; }
         public DateTime DatumVreme { get; set; }
         public int BrojGostiju { get; set; }
@@ -15,9 +17,11 @@ namespace organizerEvents.model
         public String Tip { get; set; }
         public String Mesto { get; set; }
         public String Opis { get; set; }
-
+        public long OrganizatorId { get; set; }
+        [JsonIgnore]
         public Organizator Organizator { get; set; }
-
+        public long NarucilacId { get; set; }
+        [JsonIgnore]
         public Narucilac Narucilac { get; set; }
 
         public ZahtevZaProslavu()

@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using System.Text.Json.Serialization;
 using System.Threading.Tasks;
 
 namespace organizerEvents.model
@@ -9,8 +10,12 @@ namespace organizerEvents.model
     public class Narucilac: Korisnik
     {
        
-
+        public List<long> ZahteviId { get; set; }
+        [JsonIgnore]
         public List<ZahtevZaProslavu> Zahtevi { get; set; }
+
+        public List<long> ProslaveId { get; set; }
+        [JsonIgnore]
         public List<Proslava> Proslave { get; set; }
 
         public Narucilac()
@@ -26,6 +31,10 @@ namespace organizerEvents.model
 
         public Narucilac(string ime, string prezime, string email, string korisnickoIme)
         {
+            this.Proslave = new List<Proslava>();
+            this.ProslaveId = new List<long>();
+            this.Zahtevi = new List<ZahtevZaProslavu>();
+            this.ZahteviId = new List<long>();
             this.Ime = ime;
             this.Prezime = prezime;
             this.Email = email;

@@ -8,7 +8,7 @@ namespace organizerEvents.model
 {
     public class Gost
     {
-
+        public long Id { get; set; }
         public String Ime { get; set; }
         public String Prezime { get; set; }
         public String PosebanZahtev{ get; set; }
