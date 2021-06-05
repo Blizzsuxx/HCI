@@ -8,6 +8,7 @@ namespace organizerEvents.model
 {
     public class RecnikPojmova
     {
+        public long Id { get; set; }
         public Dictionary<String, String> Pojmovi { get; set; }
         public Dictionary<String, String> ZahteviZaRecnik { get; set; }
 

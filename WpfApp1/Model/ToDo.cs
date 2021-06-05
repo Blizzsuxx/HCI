@@ -2,12 +2,17 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using System.Text.Json.Serialization;
 using System.Threading.Tasks;
 
 namespace organizerEvents.model
 {
     public class ToDo
     {
+        public long Id { get; set; }
+
+        public List<long> PonudeId { get; set; }
+        [JsonIgnore]
         public List<Ponuda> Ponude { get; set; }
         public String OpisZadatka { get; set; }
         public Stanje StanjeZadatka { get; set; }

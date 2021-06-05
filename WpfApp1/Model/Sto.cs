@@ -2,17 +2,26 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using System.Text.Json.Serialization;
 using System.Threading.Tasks;
 
 namespace organizerEvents.model
 {
     public class Sto
     {
+        public long Id { get; set; }
         public int BrojStola { get; set; }
         public String TipStola { get; set; }
         public String Opis { get; set; }
         public int BrojLjudi { get; set; }
+
+        public List<long> GostiId { get; set; }
+        [JsonIgnore]
         public List<Gost> Gosti { get; set; }
+
+        public long DogovorId { get; set; }
+
+        [JsonIgnore]
         public Dogovor Dogovor { get; set; }
 
 
