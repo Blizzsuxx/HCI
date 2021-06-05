@@ -55,6 +55,11 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="Controler\NarucilacKontroler.cs" />
+    <Compile Include="Controler\OrganizatorKontroler.cs" />
+    <Compile Include="Controler\ProslavaKontroler.cs" />
+    <Compile Include="Controler\RecnikKontroler.cs" />
+    <Compile Include="Controler\SaradnikKontroler.cs" />
     <Compile Include="Model\Administrator.cs" />
     <Compile Include="Model\Dogovor.cs" />
     <Compile Include="Model\Gost.cs" />
@@ -70,6 +75,45 @@
     <Compile Include="Model\Sto.cs" />
     <Compile Include="Model\ToDo.cs" />
     <Compile Include="Model\ZahtevZaProslavu.cs" />
+    <Compile Include="View\AzuriranjeProfila.xaml.cs">
+      <DependentUpon>AzuriranjeProfila.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\DodavanjeOrganizatora.xaml.cs">
+      <DependentUpon>DodavanjeOrganizatora.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\FormaOrganizacije.xaml.cs">
+      <DependentUpon>FormaOrganizacije.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\KreiranjeNovePonude.xaml.cs">
+      <DependentUpon>KreiranjeNovePonude.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\OdobravanjeReci.xaml.cs">
+      <DependentUpon>OdobravanjeReci.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\PregledJedneProslave.xaml.cs">
+      <DependentUpon>PregledJedneProslave.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\PregledJednogOrganizatora.xaml.cs">
+      <DependentUpon>PregledJednogOrganizatora.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\PregledKorisnika.xaml.cs">
+      <DependentUpon>PregledKorisnika.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\PregledOrganizatora.xaml.cs">
+      <DependentUpon>PregledOrganizatora.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\PregledProslava.xaml.cs">
+      <DependentUpon>PregledProslava.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\PregledSvihSaradnika.xaml.cs">
+      <DependentUpon>PregledSvihSaradnika.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\ProfilKorisnika.xaml.cs">
+      <DependentUpon>ProfilKorisnika.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\UnosNovogSaradnika.xaml.cs">
+      <DependentUpon>UnosNovogSaradnika.xaml</DependentUpon>
+    </Compile>
     <Compile Include="View\ZadaciWindow.xaml.cs">
       <DependentUpon>ZadaciWindow.xaml</DependentUpon>
     </Compile>
@@ -82,6 +126,42 @@
     <Compile Include="View\KalendarWindow.xaml.cs">
       <DependentUpon>KalendarWindow.xaml</DependentUpon>
     </Compile>
+    <Page Include="View\AzuriranjeProfila.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\DodavanjeOrganizatora.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\FormaOrganizacije.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\KreiranjeNovePonude.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\OdobravanjeReci.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\PregledJedneProslave.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\PregledJednogOrganizatora.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\PregledKorisnika.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\PregledOrganizatora.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
     <Page Include="View\LoginWIndow.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
@@ -94,6 +174,22 @@
       <DependentUpon>LoginWIndow.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
+    <Page Include="View\PregledProslava.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\PregledSvihSaradnika.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\ProfilKorisnika.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\UnosNovogSaradnika.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="View\ZadaciWindow.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -164,5 +260,6 @@
   <ItemGroup>
     <Resource Include="resources\plus.png" />
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

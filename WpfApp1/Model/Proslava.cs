@@ -8,6 +8,7 @@ namespace organizerEvents.model
 {
     public class Proslava
     {
+
         public String Naslov { get; set; }
         public DateTime DatumVreme { get; set; }
         public int BrojGostiju { get; set; }
@@ -45,6 +46,13 @@ namespace organizerEvents.model
             this.Zadaci = zadaci;
             this.Dogovori = dogovori;
             this.Gosti = gosti;
+        }
+
+        public Proslava(DateTime now, int budzet, String tip)
+        {
+            this.DatumVreme = now;
+            this.Budzet = budzet;
+            this.Tip = tip;
         }
     }
 }
