@@ -30,13 +30,284 @@ namespace organizerEvents.Controler
 
         public static void ucitajPodatke()
         {
-           
+            DataBase.ucitajAdministratore();
+            DataBase.ucitajGoste();
+            DataBase.ucitajSaradnike();
+
+            DataBase.ucitajDogovore();
+            DataBase.ucitajMesta();
+            DataBase.ucitajNarucioce();
+            DataBase.ucitajOrganizatore();
+            DataBase.ucitajPonude();
+            DataBase.ucitajPoruke();
+            DataBase.ucitajProslave();
+            DataBase.ucitajRecnikePojmova();
+            DataBase.ucitajStolove();
+            DataBase.ucitajToDos();
+            DataBase.ucitajZahteveZaProslavu();
+
+            DataBase.uveziDogovore();
+            DataBase.uveziMesta();
+            DataBase.uveziNarucioce();
+            DataBase.uveziOrganizatore();
+            DataBase.uveziPonude();
+            DataBase.uveziPoruke();
+            DataBase.uveziProslave();
+            DataBase.uveziStolove();
+            DataBase.uveziToDos();
+
+
+        }
+
+        private static void uveziToDos()
+        {
+            foreach(ToDo todo in DataBase.toDos)
+            {
+                foreach(long ponudaId in todo.PonudeId)
+                {
+                    foreach (Ponuda ponuda in DataBase.ponude)
+                    {
+                        if (ponuda.Id == ponudaId)
+                        {
+                            todo.Ponude.Add(ponuda);
+                        }
+                    }
+                }
+            }
+        }
+
+        private static void uveziStolove()
+        {
+            foreach(Sto sto in DataBase.stolovi)
+            {
+                foreach (long gostId in sto.GostiId)
+                {
+                    foreach (Gost gost in DataBase.gosti)
+                    {
+                        if (gost.Id == gostId)
+                        {
+                            sto.Gosti.Add(gost);
+                        }
+                    }
+                }
+
+                
+                    foreach (Dogovor dogovor in DataBase.dogovori)
+                    {
+                        if (dogovor.Id == sto.DogovorId)
+                        {
+                        sto.Dogovor = dogovor;
+                        }
+                    }
+                
+            }
+        }
+
+        private static void uveziProslave()
+        {
+            foreach(Proslava proslava in DataBase.proslave)
+            {
+                foreach(Mesto mesto in DataBase.mesta)
+                {
+                    if(mesto.Id == proslava.MestoId)
+                    {
+                        proslava.Mesto = mesto;
+                    }
+                }
+                foreach(long porukaId in proslava.PorukeId)
+                {
+                    foreach (Poruke poruke in DataBase.poruke)
+                    {
+                        if (poruke.Id == porukaId)
+                        {
+                            proslava.Poruke.Add(poruke);
+                        }
+                    }
+                }
+
+                foreach (long zadatakId in proslava.ZadaciId)
+                {
+                    foreach (ToDo zadatak in DataBase.toDos)
+                    {
+                        if (zadatak.Id == zadatakId)
+                        {
+                            proslava.Zadaci.Add(zadatak);
+                        }
+                    }
+                }
+
+                foreach (long dogovorId in proslava.DogovoriId)
+                {
+                    foreach (Dogovor dogovor in DataBase.dogovori)
+                    {
+                        if (dogovor.Id == dogovorId)
+                        {
+                            proslava.Dogovori.Add(dogovor);
+                        }
+                    }
+                }
+
+                foreach (long gostId in proslava.GodstiId)
+                {
+                    foreach (Gost gost in DataBase.gosti)
+                    {
+                        if (gost.Id == gostId)
+                        {
+                            proslava.Gosti.Add(gost);
+                        }
+                    }
+                }
+            }
+        }
+
+        private static void uveziPoruke()
+        {
+           foreach(Poruke poruke in DataBase.poruke)
+            {
+                foreach(Administrator admin in DataBase.administratori)
+                {
+                    if (poruke.AutorId == admin.Id)
+                    {
+                        poruke.Autor = (Korisnik)admin;
+                    }
+                }
+                foreach(Narucilac   gost in DataBase.narucioci)
+                {
+                    if(poruke.AutorId == gost.Id)
+                    {
+                        poruke.Autor = (Korisnik)gost;
+                    }
+                }
+                foreach (Organizator ogranizator in DataBase.organizatori)
+                {
+                    if (poruke.AutorId == ogranizator.Id)
+                    {
+                        poruke.Autor = (Korisnik)ogranizator;
+                    }
+                }
+
+            }
+        }
+
+        private static void uveziPonude()
+        {
+            foreach(Ponuda ponuda in DataBase.ponude){
+                foreach(Saradnik saradnik in DataBase.saradnici)
+                {
+                    if (ponuda.SaradnikId == saradnik.Id)
+                    {
+                        ponuda.Saradnik = saradnik;
+                    }
+                }
+            }
+        }
+
+        private static void uveziOrganizatore()
+        {
+            foreach(Organizator organizator in DataBase.organizatori)
+            {
+                foreach(long zahtevId in organizator.ZahteviId)
+                {
+                    foreach (ZahtevZaProslavu zahtev in DataBase.zahtevZaProslave)
+                    {
+                        if (zahtev.Id == zahtevId)
+                        {
+                            organizator.Zahtevi.Add(zahtev);
+                            zahtev.Organizator = organizator;
+                        }
+                    }
+
+
+                }
+                foreach (long proslavaId in organizator.ProslaveId)
+                {
+                    foreach (Proslava proslava in DataBase.proslave)
+                    {
+                        if (proslava.Id == proslavaId)
+                        {
+                            organizator.Proslave.Add(proslava);
+                            proslava.Organizator = organizator;
+                        }
+                    }
+                }
+
+                foreach(long dogovorId in organizator.DogovoriId)
+                {
+                    foreach (Dogovor dogovor in DataBase.dogovori)
+                    {
+                        if (dogovor.Id == dogovorId)
+                        {
+                            organizator.Dogovori.Add(dogovor);
+                        }
+                    }
+                }
+            }
+        }
+
+        private static void uveziNarucioce()
+        {
+           foreach(Narucilac narucilac in DataBase.narucioci)
+            {
+                foreach(long zahtevId in narucilac.ZahteviId)
+                {
+                    foreach(ZahtevZaProslavu zahtev in DataBase.zahtevZaProslave)
+                    {
+                        if (zahtev.Id == zahtevId)
+                        {
+                            narucilac.Zahtevi.Add(zahtev);
+                            zahtev.Narucilac = narucilac;
+                        }
+                    }
+                }
+                foreach (long proslavaId in narucilac.ProslaveId)
+                {
+                    foreach (Proslava proslava in DataBase.proslave)
+                    {
+                        if (proslava.Id == proslavaId)
+                        {
+                            narucilac.Proslave.Add(proslava);
+                            proslava.Narucilac = narucilac;
+                        }
+                    }
+                }
+            }
+        }
+
+        private static void uveziMesta()
+        {
+            foreach(Mesto mesto in DataBase.mesta){
+                foreach(long stoId in mesto.StoloviId)
+                {
+                    foreach(Sto sto in DataBase.stolovi)
+                    {
+                        if (stoId == sto.Id)
+                        {
+                            mesto.Stolovi.Add(sto);
+                        }
+                    }
+                }
+            }
+        }
+
+        private static void uveziDogovore()
+        {
+            //setovane ponude u podogovrima
+           foreach(Dogovor dogovor in DataBase.dogovori){
+                foreach(Ponuda ponuda in DataBase.ponude)
+                {
+                    if (dogovor.PonudaId == ponuda.Id)
+                    {
+                        dogovor.Ponuda = ponuda;
+                    }
+                }
+            }
+
         }
 
         public static void sacuvajPodatke()
         {
             
-            DataBase.sacuvajOrganizatore();
+            //sacuvajOrganizatore();
             
         }
 
@@ -54,7 +325,7 @@ namespace organizerEvents.Controler
                 JsonSerializer.Deserialize<List<Organizator>>(organizatori);
         }
 
-        public void ucitajAdministratore()
+        public static void ucitajAdministratore()
         {
             string administratori = File.ReadAllText("Administartori.json");
             DataBase.administratori =
@@ -69,7 +340,7 @@ namespace organizerEvents.Controler
         }
 
 
-        public void ucitajDogovore()
+        public static void ucitajDogovore()
         {
             string dogovor = File.ReadAllText("Dogovori.json");
             DataBase.dogovori =
@@ -83,7 +354,7 @@ namespace organizerEvents.Controler
             File.WriteAllText("Dogovori.json", dogovori);
         }
 
-        public void ucitajGoste()
+        public static void ucitajGoste()
         {
             string gosti = File.ReadAllText("Gosti.json");
             DataBase.gosti =
@@ -97,7 +368,7 @@ namespace organizerEvents.Controler
             File.WriteAllText("Gosti.json", gosti);
         }
 
-        public void ucitajMesta()
+        public static  void ucitajMesta()
         {
             string mesta = File.ReadAllText("Mesta.json");
             DataBase.mesta =
@@ -112,7 +383,7 @@ namespace organizerEvents.Controler
         }
 
 
-        public void ucitajNarucioce()
+        public static void ucitajNarucioce()
         {
             string narucioci = File.ReadAllText("Narucioci.json");
             DataBase.narucioci =
@@ -126,7 +397,7 @@ namespace organizerEvents.Controler
             File.WriteAllText("Narucioci.json", narucioci);
         }
 
-        public void ucitajPonude()
+        public static void ucitajPonude()
         {
             string ponude = File.ReadAllText("Ponude.json");
             DataBase.ponude =
@@ -142,7 +413,7 @@ namespace organizerEvents.Controler
 
 
 
-        public void ucitajPoruke()
+        public static void ucitajPoruke()
         {
             string poruke = File.ReadAllText("Poruke.json");
             DataBase.poruke =
@@ -157,7 +428,7 @@ namespace organizerEvents.Controler
         }
 
 
-        public void ucitajProslave()
+        public static void ucitajProslave()
         {
             string proslave = File.ReadAllText("Proslave.json");
             DataBase.proslave =
@@ -172,7 +443,7 @@ namespace organizerEvents.Controler
         }
 
 
-        public void ucitajRecnikePojmova()
+        public static void ucitajRecnikePojmova()
         {
             string recniciPojmova = File.ReadAllText("RecniciPojmova.json");
             DataBase.recniciPojmova =
@@ -187,7 +458,7 @@ namespace organizerEvents.Controler
         }
 
 
-        public void ucitajSaradnike()
+        public static void ucitajSaradnike()
         {
             string saradnici = File.ReadAllText("Saradnici.json");
             DataBase.saradnici =
@@ -201,7 +472,7 @@ namespace organizerEvents.Controler
             File.WriteAllText("Saradnici.json", saradnici);
         }
 
-        public void ucitajStolove()
+        public static void ucitajStolove()
         {
             string stolovi = File.ReadAllText("Stolovi.json");
             DataBase.stolovi =
@@ -215,7 +486,7 @@ namespace organizerEvents.Controler
             File.WriteAllText("Stolovi.json", stolovi);
         }
 
-        public void ucitajToDos()
+        public static void ucitajToDos()
         {
             string toDos = File.ReadAllText("ToDos.json");
             DataBase.toDos =
@@ -230,7 +501,7 @@ namespace organizerEvents.Controler
         }
 
 
-        public void ucitajZahteveZaProslavu()
+        public static void ucitajZahteveZaProslavu()
         {
             string zahtevZaProslave = File.ReadAllText("ZahteviZaProslave.json");
             DataBase.zahtevZaProslave =

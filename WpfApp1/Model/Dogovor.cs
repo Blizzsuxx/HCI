@@ -16,8 +16,7 @@ namespace organizerEvents.model
     }
     public class Dogovor
     {
-        public long StanjeId { get; set; }
-        [JsonIgnore]
+        public long Id { get; set; }
         public Stanje Stanje { get; set; }
 
         public long PonudaId { get; set; }
