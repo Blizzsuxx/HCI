@@ -52,7 +52,7 @@
                         <DataTemplate>
                             <Button
       ToolTip="Obrisi"
-      Click="delete_task_on_click"
+      PreviewMouseDown="delete_task_on_click"
       Content="{materialDesign:PackIcon Kind=Delete}" />
 
 
