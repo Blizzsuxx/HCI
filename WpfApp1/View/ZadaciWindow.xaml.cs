@@ -94,13 +94,6 @@ namespace WpfApp1
         }
     }
 
-    public class ZadatakModel
-    {
-        public bool Odradjen { get; set; }
-
-        public string Ime { get; set; }
-
-    }
 
 
 }

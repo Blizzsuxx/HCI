@@ -14,6 +14,8 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 using MaterialDesignThemes.Wpf;
+using organizerEvents.model;
+using WpfApp1.View;
 
 namespace WpfApp1
 {
@@ -35,12 +37,36 @@ namespace WpfApp1
             this.Show();
         }
 
-        private void button_Click(object sender, RoutedEventArgs e)
+        public void proveriSifru(object sender, RoutedEventArgs e)
         {
-            if (textBox_Copy.Text.Equals("admin"))
+            if (Lozinka.Password.Length < 8)
+            {
+                Lozinka.BorderBrush = Brushes.DarkRed;
+                HintAssist.SetHelperText(Lozinka, "Sifra mora imati 8 ili vise karaktera");
+                HintAssist.SetForeground(Lozinka, Brushes.DarkRed);
+                Lozinka.Foreground = Brushes.DarkRed;
+            }
+            else
+            {
+                Lozinka.BorderBrush = Brushes.Black;
+                Lozinka.Foreground = Brushes.Black;
+            }
+        }
+
+        private void validate(string text, ValidationRule validator)
+        {
+            var result = validator.Validate(text, null);
+            if (!result.IsValid)
+                throw new Exception("Molimo vas da ispravno popunite sva polja " + text + " je nevalidan");
+
+        }
+
+        private void button_Click_login(object sender, RoutedEventArgs e)
+        {
+            if (KorisnickoImeV.Text.Equals("admin"))
             {
 
-            } else if (textBox_Copy.Text.Equals("org"))
+            } else if (KorisnickoImeV.Text.Equals("org"))
             {
                 //organizerEvents.Controler.DataBase.trenutniKorisnik = organuzator;
                 ZadaciWindow zadaci = new ZadaciWindow();
@@ -48,50 +74,38 @@ namespace WpfApp1
                 zadaci.Show();
                 this.Hide();
                 return;
-            } else if (textBox_Copy.Text.Equals("nar"))
+            } else if (KorisnickoImeV.Text.Equals("nar"))
             {
 
             }
-            foreach (var admin in organizerEvents.Controler.DataBase.administratori)
+            Korisnik korisnik = DataBase.nadjiKorisnika(KorisnickoImeV.Text, Lozinka.Password);
+            if(korisnik is Administrator)
             {
-                if ((admin.Sifra.Equals(passwordBox.Password) && admin.KorisnickoIme.Equals(textBox_Copy.Text)) )
-                {
-                    organizerEvents.Controler.DataBase.trenutniKorisnik = admin;
-                    return;
-                } 
-   
-            }
-            foreach (var organuzator in organizerEvents.Controler.DataBase.organizatori )
+                return;
+            } else if(korisnik is Organizator)
             {
-                if ((organuzator.Sifra.Equals(passwordBox.Password) && organuzator.KorisnickoIme.Equals(textBox_Copy.Text)) )
-                {
-                    organizerEvents.Controler.DataBase.trenutniKorisnik = organuzator;
-                    ZadaciWindow zadaci = new ZadaciWindow();
-                    zadaci.Closed += new EventHandler(this.Otvori_ovaj_prozor);
-                    zadaci.Show();
-                    this.Hide();
-                    return;
-                }
-
-            }
-            foreach (var narucioci in organizerEvents.Controler.DataBase.narucioci )
+                ZadaciWindow zadaci = new ZadaciWindow();
+                zadaci.Closed += new EventHandler(this.Otvori_ovaj_prozor);
+                zadaci.Show();
+                this.Hide();
+                return;
+            } else if(korisnik is Narucilac)
             {
-                if ((narucioci.Sifra.Equals(passwordBox.Password) && narucioci.KorisnickoIme.Equals(textBox_Copy.Text)))
-                {
-                    organizerEvents.Controler.DataBase.trenutniKorisnik = narucioci;
-                    return;
-                }
-
+                return;
             }
-            HintAssist.SetHelperText(passwordBox, "Pogresna Sifra i/ili Korisnicko Ime");
+            HintAssist.SetHelperText(Lozinka, "Pogresna Sifra i/ili Korisnicko Ime");
 
 
 
         }
 
-        private void textBox_Copy_TextChanged(object sender, TextChangedEventArgs e)
-        {
 
+        private void button_Click_registracija(object sender, RoutedEventArgs e)
+        {
+            RegistracijaWindow zadaci = new RegistracijaWindow();
+            zadaci.Closed += new EventHandler(this.Otvori_ovaj_prozor);
+            zadaci.Show();
+            this.Hide();
         }
     }
 }

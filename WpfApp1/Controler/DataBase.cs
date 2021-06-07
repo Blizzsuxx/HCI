@@ -680,5 +680,64 @@ namespace organizerEvents.Controler
             File.WriteAllText("ZahteviZaProslave.json", zahtevZaProslave);
         }
 
+        public static Korisnik nadjiKorisnika(string username)
+        {
+            foreach (var admin in administratori)
+            {
+                if (admin.KorisnickoIme.Equals(username))
+                {
+                    return admin;
+                }
+
+            }
+            foreach (var organuzator in organizerEvents.Controler.DataBase.organizatori)
+            {
+                if (organuzator.KorisnickoIme.Equals(username))
+                {
+                    return organuzator;
+                }
+
+            }
+            foreach (var narucioci in organizerEvents.Controler.DataBase.narucioci)
+            {
+                if (narucioci.KorisnickoIme.Equals(username))
+                {
+                    return narucioci;
+                }
+
+            }
+            return null;
+        }
+
+
+        public static Korisnik nadjiKorisnika(string username, string password)
+        {
+            foreach (var admin in administratori)
+            {
+                if (admin.KorisnickoIme.Equals(username) && password.Equals(admin.Sifra))
+                {
+                    return admin;
+                }
+
+            }
+            foreach (var organuzator in organizerEvents.Controler.DataBase.organizatori)
+            {
+                if (organuzator.KorisnickoIme.Equals(username) && password.Equals(organuzator.Sifra))
+                {
+                    return organuzator;
+                }
+
+            }
+            foreach (var narucioci in organizerEvents.Controler.DataBase.narucioci)
+            {
+                if (narucioci.KorisnickoIme.Equals(username) && password.Equals(narucioci.Sifra))
+                {
+                    return narucioci;
+                }
+
+            }
+            return null;
+        }
+
     }
 }

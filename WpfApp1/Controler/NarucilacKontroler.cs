@@ -24,5 +24,7 @@ namespace WpfApp1.Controler
             return SviNarucioci;
         }
 
+
+
     }
 }
