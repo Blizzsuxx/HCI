@@ -41,15 +41,17 @@
         </Rectangle>
 
 
-
-        <StackPanel x:Name="zadaciStackPanel" Orientation="Vertical" Margin="124,99,9.6,0">
+        <ScrollViewer>
+            <Grid>
+                <StackPanel x:Name="zadaciStackPanel" Orientation="Vertical" Margin="124,99,9.6,0">
                 
 
 
 
-        </StackPanel>
-        
-        <TextBlock x:Name="textBlock" HorizontalAlignment="Left" Margin="124,65,0,0" TextWrapping="Wrap" Text="Zadaci za danas" VerticalAlignment="Top" Height="47" Width="183" FontSize="20"/>
+            </StackPanel>
+            <TextBlock x:Name="textBlock" HorizontalAlignment="Left" Margin="124,65,0,0" TextWrapping="Wrap" Text="Zadaci za danas" VerticalAlignment="Top" Height="47" Width="183" FontSize="20"/>
+            </Grid>
+        </ScrollViewer>
         <StackPanel HorizontalAlignment="Left" Height="53" VerticalAlignment="Top" Width="794" Margin="0,0,-0.4,0"/>
 
 
