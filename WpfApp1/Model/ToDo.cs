@@ -16,7 +16,22 @@ namespace organizerEvents.model
         public List<Ponuda> Ponude { get; set; }
         public String OpisZadatka { get; set; }
         public Stanje StanjeZadatka { get; set; }
-        public ToDo() { }
+
+        public Boolean Odradjen
+        {
+            get
+            {
+                return StanjeZadatka.Equals(Stanje.Dogovoreno);
+            }
+            set
+            {
+                StanjeZadatka = Stanje.Dogovoreno;
+            }
+        }
+        public ToDo() {
+            this.Ponude = new List<Ponuda>();
+            this.PonudeId = new List<long>();
+        }
         public ToDo(List<Ponuda> ponude, String opis, Stanje stanje)
         {
             this.Ponude = ponude;

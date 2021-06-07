@@ -51,6 +51,7 @@
       <HintPath>..\packages\System.Buffers.4.5.1\lib\net461\System.Buffers.dll</HintPath>
     </Reference>
     <Reference Include="System.Data" />
+    <Reference Include="System.Drawing" />
     <Reference Include="System.Memory, Version=4.0.1.1, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
       <HintPath>..\packages\System.Memory.4.5.4\lib\net461\System.Memory.dll</HintPath>
     </Reference>
@@ -73,6 +74,7 @@
     <Reference Include="System.ValueTuple, Version=4.0.3.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
       <HintPath>..\packages\System.ValueTuple.4.5.0\lib\net47\System.ValueTuple.dll</HintPath>
     </Reference>
+    <Reference Include="System.Windows.Forms" />
     <Reference Include="System.Xml" />
     <Reference Include="Microsoft.CSharp" />
     <Reference Include="System.Core" />
@@ -91,6 +93,7 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="Controler\DataBase.cs" />
     <Compile Include="Controler\NarucilacKontroler.cs" />
     <Compile Include="Controler\OrganizatorKontroler.cs" />
     <Compile Include="Controler\ProslavaKontroler.cs" />
@@ -114,6 +117,9 @@
     <Compile Include="View\AzuriranjeProfila.xaml.cs">
       <DependentUpon>AzuriranjeProfila.xaml</DependentUpon>
     </Compile>
+    <Compile Include="View\CRUDBar.xaml.cs">
+      <DependentUpon>CRUDBar.xaml</DependentUpon>
+    </Compile>
     <Compile Include="View\DodavanjeOrganizatora.xaml.cs">
       <DependentUpon>DodavanjeOrganizatora.xaml</DependentUpon>
     </Compile>
@@ -122,6 +128,9 @@
     </Compile>
     <Compile Include="View\KreiranjePonuda.xaml.cs">
       <DependentUpon>KreiranjePonuda.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\MenuBar.xaml.cs">
+      <DependentUpon>MenuBar.xaml</DependentUpon>
     </Compile>
     <Compile Include="View\OdobravanjeReci.xaml.cs">
       <DependentUpon>OdobravanjeReci.xaml</DependentUpon>
@@ -153,6 +162,12 @@
     <Compile Include="View\Test.xaml.cs">
       <DependentUpon>Test.xaml</DependentUpon>
     </Compile>
+    <Compile Include="View\ToDoUserControl.xaml.cs">
+      <DependentUpon>ToDoUserControl.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\ToggleButtonUserControl.xaml.cs">
+      <DependentUpon>ToggleButtonUserControl.xaml</DependentUpon>
+    </Compile>
     <Compile Include="View\UnosNovogSaradnika.xaml.cs">
       <DependentUpon>UnosNovogSaradnika.xaml</DependentUpon>
     </Compile>
@@ -172,6 +187,10 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="View\CRUDBar.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="View\DodavanjeOrganizatora.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -181,6 +200,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="View\KreiranjePonuda.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\MenuBar.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -233,6 +256,14 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="View\Test.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\ToDoUserControl.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\ToggleButtonUserControl.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

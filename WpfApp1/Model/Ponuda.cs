@@ -13,6 +13,8 @@ namespace organizerEvents.model
         public String Naziv { get; set; }
         public String Opis { get; set; }
 
+        
+
         public String Tip { get; set; }
         
         public long SaradnikId { get; set; }

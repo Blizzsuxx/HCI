@@ -29,7 +29,12 @@ namespace organizerEvents.model
             this.Stolovi = stolovi;
         
         }
-        public Mesto() { }
+        public Mesto() {
+
+            this.Stolovi = new List<Sto>();
+            this.StoloviId = new List<long>();
+
+        }
 
     }
 }
