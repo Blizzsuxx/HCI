@@ -6,6 +6,7 @@
         xmlns:local="clr-namespace:WpfApp1"
         mc:Ignorable="d"
         
+        Closed="closed_event"
         
         xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes" xmlns:local11="clr-namespace:WpfApp1.Controler"
         TextElement.Foreground="{DynamicResource MaterialDesignBody}"
@@ -43,8 +44,6 @@
                 Width="368"
                 HorizontalAlignment="Left"
               x:Name="Lozinka"
-                LostFocus="proveriSifru"
-                PasswordChanged="proveriSifru"
               materialDesign:HintAssist.Hint="Šifra"
                 
               materialDesign:HintAssist.HelperText="Unesite Šifru"

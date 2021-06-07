@@ -110,8 +110,10 @@ namespace organizerEvents.Controler
             {
                 BrojTelefona = "1231",
                 Id = 1,
-                Ime ="Andrija",
-                Prezime = "Vojvnovic"
+                Ime = "Andrija",
+                Prezime = "Vojvnovic",
+                KorisnickoIme = "Andrija",
+                Sifra="password"
 
             };
             DataBase.administratori.Add(admin);
@@ -716,12 +718,14 @@ namespace organizerEvents.Controler
             {
                 if (admin.KorisnickoIme.Equals(username) && password.Equals(admin.Sifra))
                 {
+                    
                     return admin;
                 }
 
             }
             foreach (var organuzator in organizerEvents.Controler.DataBase.organizatori)
             {
+                Console.WriteLine(organuzator.KorisnickoIme);
                 if (organuzator.KorisnickoIme.Equals(username) && password.Equals(organuzator.Sifra))
                 {
                     return organuzator;

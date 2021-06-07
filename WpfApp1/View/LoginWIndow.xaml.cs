@@ -28,7 +28,7 @@ namespace WpfApp1
         public MainWindow()
         {
             InitializeComponent();
-            //DataBase.ucitajPodatke();
+            DataBase.ucitajPodatke();
             //DataBase.inicijalizujPodatke();
         }
 
@@ -37,21 +37,7 @@ namespace WpfApp1
             this.Show();
         }
 
-        public void proveriSifru(object sender, RoutedEventArgs e)
-        {
-            if (Lozinka.Password.Length < 8)
-            {
-                Lozinka.BorderBrush = Brushes.DarkRed;
-                HintAssist.SetHelperText(Lozinka, "Sifra mora imati 8 ili vise karaktera");
-                HintAssist.SetForeground(Lozinka, Brushes.DarkRed);
-                Lozinka.Foreground = Brushes.DarkRed;
-            }
-            else
-            {
-                Lozinka.BorderBrush = Brushes.Black;
-                Lozinka.Foreground = Brushes.Black;
-            }
-        }
+
 
         private void validate(string text, ValidationRule validator)
         {
@@ -63,23 +49,12 @@ namespace WpfApp1
 
         private void button_Click_login(object sender, RoutedEventArgs e)
         {
-            if (KorisnickoImeV.Text.Equals("admin"))
-            {
-
-            } else if (KorisnickoImeV.Text.Equals("org"))
-            {
-                //organizerEvents.Controler.DataBase.trenutniKorisnik = organuzator;
-                ZadaciWindow zadaci = new ZadaciWindow();
-                zadaci.Closed += new EventHandler(this.Otvori_ovaj_prozor);
-                zadaci.Show();
-                this.Hide();
-                return;
-            } else if (KorisnickoImeV.Text.Equals("nar"))
-            {
-
-            }
+            
             Korisnik korisnik = DataBase.nadjiKorisnika(KorisnickoImeV.Text, Lozinka.Password);
-            if(korisnik is Administrator)
+            Console.WriteLine(korisnik);
+            Console.WriteLine("AAA");
+
+            if (korisnik is Administrator)
             {
                 return;
             } else if(korisnik is Organizator)
@@ -94,7 +69,8 @@ namespace WpfApp1
                 return;
             }
             HintAssist.SetHelperText(Lozinka, "Pogresna Sifra i/ili Korisnicko Ime");
-
+            KorisnickoImeV.Foreground = Brushes.DarkRed;
+            Lozinka.Foreground = Brushes.DarkRed;
 
 
         }
@@ -106,6 +82,11 @@ namespace WpfApp1
             zadaci.Closed += new EventHandler(this.Otvori_ovaj_prozor);
             zadaci.Show();
             this.Hide();
+        }
+
+        private void closed_event(object sender, System.EventArgs e)
+        {
+            DataBase.sacuvajPodatke();
         }
     }
 }
