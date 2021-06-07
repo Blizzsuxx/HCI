@@ -161,6 +161,10 @@ ClientBin/
 *.publishsettings
 node_modules/
 
+
+WpfApp1/.vs
+/.vs
+
 # RIA/Silverlight projects
 Generated_Code/
 
