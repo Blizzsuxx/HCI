@@ -27,6 +27,7 @@ namespace organizerEvents.Controler
         public static List<Sto> stolovi = new List<Sto>();
         public static List<ToDo> toDos = new List<ToDo>();
         public static List<ZahtevZaProslavu> zahtevZaProslave =  new List<ZahtevZaProslavu>();
+        public static Korisnik trenutniKorisnik;
 
         public static void ucitajPodatke()
         {

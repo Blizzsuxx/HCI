@@ -5,80 +5,36 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:WpfApp1"
         mc:Ignorable="d"
-        Title="Window1" Height="450" Width="800">
+        Title="Test" Height="450" Width="800"
+        
+        xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes" xmlns:local1="clr-namespace:WpfApp1.View"
+        TextElement.Foreground="{DynamicResource MaterialDesignBody}"
+        TextElement.FontWeight="Regular"
+        TextElement.FontSize="13"
+        TextOptions.TextFormattingMode="Ideal"
+        TextOptions.TextRenderingMode="Auto"
+        Background="{DynamicResource MaterialDesignPaper}"
+        FontFamily="{DynamicResource MaterialDesignFont}"
+        d:DataContext="{d:DesignInstance local:ZadaciWindow}"
+        >
+
     <Grid>
-        <Button Click="Button_Click_1" Width="40" Height="40" Margin="10,10,738.6,365" RenderTransformOrigin="0.5,0.5" Background="White" BorderBrush="White">
-            <Button.Resources>
-                <Style TargetType="{x:Type Border}">
-                    <Setter Property="CornerRadius" Value="100"/>
-                </Style>
-            </Button.Resources>
-            <StackPanel>
-                <Image Source="../resources/help.png" />
-            </StackPanel>
-        </Button>
+        <local1:MenuBar></local1:MenuBar>
 
 
-
-
-
-
-        <Button Width="40" Height="40" Margin="478,10,269.6,365" RenderTransformOrigin="0.5,0.5" Background="White" BorderBrush="White">
-            <Button.Resources>
-                <Style TargetType="{x:Type Border}">
-                    <Setter Property="CornerRadius" Value="100"/>
-                </Style>
-            </Button.Resources>
-            <StackPanel>
-                <Image Source="../resources/user.png" />
-            </StackPanel>
-        </Button>
-        <Button Height="40" Width="40" Margin="528,3,219.6,367" RenderTransformOrigin="0.5,0.5" Background="White" BorderBrush="White">
-            <Button.Resources>
-                <Style TargetType="{x:Type Border}">
-                    <Setter Property="CornerRadius" Value="100"/>
-                </Style>
-            </Button.Resources>
-            <StackPanel>
-                <Image Source="../resources/spreadsheet-table.png" />
-            </StackPanel>
-        </Button>
-        <Button Click="Button_Click" Width="40" Height="40" Margin="592,10,155.6,365" RenderTransformOrigin="0.5,0.5" Background="White" BorderBrush="White">
-            <Button.Resources>
-                <Style TargetType="{x:Type Border}">
-                    <Setter Property="CornerRadius" Value="100"/>
-                </Style>
-            </Button.Resources>
-            <StackPanel>
-                <Image Source="../resources/Simple_icon_table.svg.png" />
-            </StackPanel>
-        </Button>
-        <Button Height="40" Width="40" Margin="655,3,93.6,367" RenderTransformOrigin="0.5,0.5" Background="White" BorderBrush="White">
-            <Button.Resources>
-                <Style TargetType="{x:Type Border}">
-                    <Setter Property="CornerRadius" Value="100"/>
-                </Style>
-            </Button.Resources>
-            <StackPanel>
-                <Image Source="../resources/notification.png" />
-            </StackPanel>
-        </Button>
-        <Button Width="40" Height="40" Margin="705,10,43.6,365" RenderTransformOrigin="0.5,0.5" Background="White" BorderBrush="White">
-            <Button.Resources>
-                <Style TargetType="{x:Type Border}">
-                    <Setter Property="CornerRadius" Value="100"/>
-                </Style>
-            </Button.Resources>
-            <StackPanel>
-                <Image Source="../resources/message.png" />
-            </StackPanel>
-        </Button>
-        <Rectangle HorizontalAlignment="Left" Height="2" Margin="0,58,-0.4,0" Stroke="Black" VerticalAlignment="Top" Width="794">
+        <local1:CRUDBar Margin="-1,53,0.6,-53"></local1:CRUDBar>
+        <Rectangle HorizontalAlignment="Left" Height="362" Margin="-1,58,0,0" Stroke="Black" VerticalAlignment="Top" Width="120">
             <Rectangle.Fill>
                 <ImageBrush/>
             </Rectangle.Fill>
         </Rectangle>
-        <Rectangle HorizontalAlignment="Left" Height="362" Margin="-1,58,0,0" Stroke="Black" VerticalAlignment="Top" Width="120">
+
+
+
+
+
+
+        <Rectangle HorizontalAlignment="Left" Height="2" Margin="0,58,-0.4,0" Stroke="Black" VerticalAlignment="Top" Width="794">
             <Rectangle.Fill>
                 <ImageBrush/>
             </Rectangle.Fill>
@@ -87,17 +43,19 @@
 
             <DataGrid.Columns>
 
-
+            
 
                 <DataGridTemplateColumn Header="Odradjen">
+                    
+                    
                     <DataGridTemplateColumn.CellTemplate>
                         <DataTemplate >
-                            <CheckBox Focusable="False" IsChecked="{Binding Path=Odradjen, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"  
-                                      HorizontalAlignment="Left" VerticalAlignment="Center">
-                                <CheckBox.LayoutTransform>
-                                    <ScaleTransform ScaleX="2" ScaleY="2" />
-                                </CheckBox.LayoutTransform>
-                            </CheckBox>
+                            <ToggleButton
+            VerticalAlignment="Center"
+            IsChecked="{Binding Path=Odradjen, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"
+            Style="{StaticResource MaterialDesignActionLightToggleButton}"
+            Content="{Binding Ime}" />
+                            
                         </DataTemplate>
                     </DataGridTemplateColumn.CellTemplate>
                 </DataGridTemplateColumn>
@@ -113,16 +71,12 @@
                 <DataGridTemplateColumn Header="delete">
                     <DataGridTemplateColumn.CellTemplate>
                         <DataTemplate>
-                            <Button Width="40" Height="40" RenderTransformOrigin="0.5,0.5" Background="White" BorderBrush="White">
-                                <Button.Resources>
-                                    <Style TargetType="{x:Type Border}">
-                                        <Setter Property="CornerRadius" Value="100"/>
-                                    </Style>
-                                </Button.Resources>
-                                <StackPanel>
-                                    <Image Source="../resources/delete.png" />
-                                </StackPanel>
-                            </Button>
+                            <Button
+      ToolTip="Obrisi"
+      Click="delete_task_on_click"
+      Content="{materialDesign:PackIcon Kind=Delete}" />
+                            
+
                         </DataTemplate>
                     </DataGridTemplateColumn.CellTemplate>
                 </DataGridTemplateColumn>
