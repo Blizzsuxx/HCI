@@ -15,11 +15,11 @@ using System.Windows.Shapes;
 namespace WpfApp1.View
 {
     /// <summary>
-    /// Interaction logic for KreiranjeNovePonude.xaml
+    /// Interaction logic for KreiranjePonuda.xaml
     /// </summary>
-    public partial class KreiranjeNovePonude : Window
+    public partial class KreiranjePonuda : Window
     {
-        public KreiranjeNovePonude()
+        public KreiranjePonuda()
         {
             InitializeComponent();
         }

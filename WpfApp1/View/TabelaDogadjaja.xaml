@@ -1,0 +1,184 @@
+﻿<Window x:Class="WpfApp1.View.TabelaDogadjaja"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:WpfApp1.View"
+        mc:Ignorable="d"
+        Title="Tabela Događaja" Height="450" Width="800"
+        xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+        TextElement.Foreground="{DynamicResource MaterialDesignBody}"
+        TextElement.FontWeight="Regular"
+        TextElement.FontSize="13"
+        TextOptions.TextFormattingMode="Ideal"
+        TextOptions.TextRenderingMode="Auto"
+        Background="{DynamicResource MaterialDesignPaper}"
+        FontFamily="{DynamicResource MaterialDesignFont}">
+    <Window.Resources>
+        
+    </Window.Resources>
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="20"></ColumnDefinition>
+            <ColumnDefinition Width="*"></ColumnDefinition>
+            <ColumnDefinition Width="20"></ColumnDefinition>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="5"></RowDefinition>
+            <RowDefinition Height="auto"></RowDefinition>
+            <RowDefinition Height="auto"></RowDefinition>
+            <RowDefinition Height="*"></RowDefinition>
+            <RowDefinition Height="20"></RowDefinition>
+        </Grid.RowDefinitions>
+
+        <Rectangle Grid.Row="1" Grid.Column="0" Fill="MediumPurple" />
+        <Rectangle Grid.Row="1" Grid.Column="1" Fill="MediumPurple" />
+        <Rectangle Grid.Row="1" Grid.Column="2" Fill="MediumPurple" />
+
+        <Rectangle Grid.Row="4" Grid.Column="0" Fill="MediumPurple" />
+        <Rectangle Grid.Row="4" Grid.Column="1" Fill="MediumPurple" />
+        <Rectangle Grid.Row="4" Grid.Column="2" Fill="MediumPurple" />
+        
+        <TextBlock Grid.Column="1" Grid.Row="1" Foreground="White"
+                   FontWeight="UltraBlack" FontSize="18" Text="Tabela Događaja"
+                   Margin="0,10,0,10" HorizontalAlignment="Center"></TextBlock>
+
+        <Button Grid.Column="1" Grid.Row="2" Margin="5,10,5,5" HorizontalAlignment="Right"
+                Width="25px" Height="25px" Foreground="White"
+          Style="{StaticResource MaterialDesignFloatingActionMiniLightButton}"
+          ToolTip="Pomoć.">
+                    <materialDesign:PackIcon
+            Kind="QuestionMark"
+             />
+        </Button>
+        <Button Grid.Column="1" Grid.Row="2" Margin="5,10,40,5" HorizontalAlignment="Right"
+                Width="25px" Height="25px" Foreground="White"
+          Style="{StaticResource MaterialDesignFloatingActionMiniLightButton}"
+          ToolTip="Brisanje.">
+            <materialDesign:PackIcon
+            Kind="Delete"
+             />
+        </Button>
+        <Button Grid.Column="1" Grid.Row="2" Margin="5,10,75,5" HorizontalAlignment="Right"
+                Width="25px" Height="25px" Foreground="White"
+          Style="{StaticResource MaterialDesignFloatingActionMiniLightButton}"
+          ToolTip="Undo.">
+            <materialDesign:PackIcon
+            Kind="Undo"
+             />
+        </Button>
+        <Button Grid.Column="1" Grid.Row="2" Margin="5,10,5,5" HorizontalAlignment="Left"
+                Width="25px" Height="25px" Foreground="White"
+          Style="{StaticResource MaterialDesignFloatingActionMiniLightButton}"
+          ToolTip="Tabela događaja.">
+            <materialDesign:PackIcon
+            Kind="Table"
+             />
+        </Button>
+        <Button Grid.Column="1" Grid.Row="2" Margin="40,10,5,5" HorizontalAlignment="Left"
+                Width="25px" Height="25px" Foreground="White"
+          Style="{StaticResource MaterialDesignFloatingActionMiniLightButton}"
+          ToolTip="Kalendar događaja.">
+            <materialDesign:PackIcon
+            Kind="Calendar"
+             />
+        </Button>
+        <Button Grid.Column="1" Grid.Row="2" Margin="75,10,5,5" HorizontalAlignment="Left"
+                Width="25px" Height="25px" Foreground="White"
+          Style="{StaticResource MaterialDesignFloatingActionMiniLightButton}"
+          ToolTip="Obavještenja.">
+            <materialDesign:PackIcon
+            Kind="Bell"
+             />
+        </Button>
+        <Button Grid.Column="1" Grid.Row="2" Margin="110,10,5,5" HorizontalAlignment="Left"
+                Width="25px" Height="25px" Foreground="White"
+          Style="{StaticResource MaterialDesignFloatingActionMiniLightButton}"
+          ToolTip="Poruka.">
+            <materialDesign:PackIcon
+            Kind="Message"
+             />
+        </Button>
+
+        <DataGrid Grid.Column="1" Grid.Row="3" Margin="0,10,0,0"
+            ItemsSource="{Binding Items1}"
+            CanUserAddRows="False"
+            AutoGenerateColumns="False"
+            HeadersVisibility="All"
+            >
+            
+            
+            <DataGrid.Columns>
+                
+                <materialDesign:DataGridTextColumn
+                    Width="Auto"
+                    Binding="{Binding Code}"
+                    Header="Vrijeme"
+                    ElementStyle="{StaticResource MaterialDesignDataGridTextColumnStyle}"
+                    EditingElementStyle="{StaticResource MaterialDesignDataGridTextColumnEditingStyle}">
+
+                   
+                    
+                    </materialDesign:DataGridTextColumn>
+                    
+                <!-- if you want to use the pop up style (MaterialDesignDataGridTextColumnPopupEditingStyle), you must use MaterialDataGridTextColumn -->
+                <materialDesign:DataGridTextColumn
+                    Header="Datum"
+                     Width="Auto"
+                    ElementStyle="{StaticResource MaterialDesignDataGridTextColumnStyle}"
+                    EditingElementStyle="{StaticResource MaterialDesignDataGridTextColumnPopupEditingStyle}">
+                    <materialDesign:DataGridTextColumn.Binding>
+                        <Binding
+                            Path="Name">
+                        </Binding>
+                    </materialDesign:DataGridTextColumn.Binding>
+                    
+                </materialDesign:DataGridTextColumn>
+            <!-- set a max length to get an indicator in the editor -->
+                <DataGridTextColumn
+                    Header="Naziv Događaja"
+                     Width="Auto"
+                    ElementStyle="{StaticResource MaterialDesignDataGridTextColumnStyle}"
+                    EditingElementStyle="{StaticResource MaterialDesignDataGridTextColumnEditingStyle}">
+                    
+                    <DataGridTextColumn.Binding>
+                        <Binding
+                            Path="Description">
+                        </Binding>
+                    </DataGridTextColumn.Binding>
+                    
+                </DataGridTextColumn>
+
+                <DataGridTextColumn
+                    Header="Budžet"
+                     Width="Auto"
+                    ElementStyle="{StaticResource MaterialDesignDataGridTextColumnStyle}"
+                    EditingElementStyle="{StaticResource MaterialDesignDataGridTextColumnEditingStyle}">
+
+                    <DataGridTextColumn.Binding>
+                        <Binding
+                            Path="Description">
+                        </Binding>
+                    </DataGridTextColumn.Binding>
+
+                </DataGridTextColumn>
+
+                <DataGridTextColumn
+                    Header="Tip Proslave"
+                     Width="Auto"
+                    ElementStyle="{StaticResource MaterialDesignDataGridTextColumnStyle}"
+                    EditingElementStyle="{StaticResource MaterialDesignDataGridTextColumnEditingStyle}">
+
+                    <DataGridTextColumn.Binding>
+                        <Binding
+                            Path="Description">
+                        </Binding>
+                    </DataGridTextColumn.Binding>
+
+                </DataGridTextColumn>
+
+                
+            </DataGrid.Columns>
+        </DataGrid>
+    </Grid>
+</Window>
