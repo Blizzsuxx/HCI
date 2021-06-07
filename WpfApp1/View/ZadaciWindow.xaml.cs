@@ -12,6 +12,10 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
 using System.Collections.ObjectModel;
+using organizerEvents.model;
+using organizerEvents.Controler;
+using WpfApp1.View;
+using System.Windows.Controls.Primitives;
 
 namespace WpfApp1
 {
@@ -26,44 +30,50 @@ namespace WpfApp1
 
     public partial class ZadaciWindow : Window
     {
-
-        public List<ZadatakModel> lista { get; set; }
         public ZadaciWindow()
         {
             InitializeComponent();
+            List<Proslava> proslave = new List<Proslava>();
+            proslave.Add(new Proslava { Zadaci = new List<ToDo>(), Opis="opis proslave", Naslov="Naslov Proslave" });
+            proslave[0].Zadaci.Add(new ToDo { Ponude= new List<Ponuda>(), OpisZadatka="Opis Zadatka", StanjeZadatka=Stanje.Uradjeno});
+            proslave[0].Zadaci[0].Ponude.Add(new Ponuda { Naziv = "naziv", Opis = "Opis" });
+            foreach(var proslava in proslave)
+            {
+                Expander expander = new Expander();
+                expander.Header = proslava.Naslov;
+                zadaciStackPanel.Children.Add(expander);
+                StackPanel expanderPanel = new StackPanel();
+                expanderPanel.Margin = new Thickness(50, 0, 0, 0);
+                expander.Content = expanderPanel;
+                foreach(var zadatak in proslava.Zadaci)
+                {
+                    Expander zadatakExpander = new Expander();
+                    
+                    zadatakExpander.Header = zadatak.OpisZadatka;
+                    
+                    StackPanel zadatakPanel = new StackPanel();
+                    zadatakExpander.Content = zadatakPanel;
 
-            lista = new List<ZadatakModel>();
+                    WrapPanel wrapPanel = new WrapPanel();
+                    ToggleButtonUserControl toggle = new ToggleButtonUserControl(zadatak);
+                    toggle.DataContext = this.DataContext;
+                    wrapPanel.Children.Add(toggle);
+                    wrapPanel.Children.Add(zadatakExpander);
 
-            ZadatakModel m1 = new ZadatakModel();
-            ZadatakModel m2 = new ZadatakModel();
-            ZadatakModel m3 = new ZadatakModel();
-            m1.Odradjen = true;
-            m2.Odradjen = false;
-            m3.Odradjen = true;
-            m1.Ime = "zasadi cvece";
-            m2.Ime = "vataj zijale";
-            m3.Ime = "napravi listu";
-            lista.Add(m1);
-            lista.Add(m2);
-            lista.Add(m3);
-            zadaciGrid.ItemsSource = lista;
+                    expanderPanel.Children.Add(wrapPanel);
+                    zadatakPanel.Children.Add(new ToDoUserControl(zadatak.Ponude));
+                }
+            }
 
 
         }
 
-        private void zadaciGrid_SelectionChanged(object sender, SelectionChangedEventArgs e)
-        {
-
-        }
+        
 
 
 
 
-        private void delete_task_on_click(object sender, RoutedEventArgs e)
-        {
-            KalendarWindow w = new KalendarWindow();
-            w.Show();
-        }
+        
 
         private void Button_Click_3(object sender, RoutedEventArgs e)
         {
@@ -77,8 +87,10 @@ namespace WpfApp1
 
         }
 
-
-
+        private void ToggleButton_Checked(object sender, RoutedEventArgs e)
+        {
+            
+        }
     }
 
     public class ZadatakModel

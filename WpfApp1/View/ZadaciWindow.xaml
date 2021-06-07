@@ -39,61 +39,18 @@
                 <ImageBrush/>
             </Rectangle.Fill>
         </Rectangle>
-        <DataGrid HeadersVisibility="None" GridLinesVisibility="None" AutoGenerateColumns="False" x:Name="zadaciGrid" HorizontalAlignment="Left" Height="303" Margin="124,117,-0.4,0" VerticalAlignment="Top" Width="670" Background="White" SelectionChanged="zadaciGrid_SelectionChanged" BorderBrush="White">
 
-            <DataGrid.Columns>
 
-            
 
-                <DataGridTemplateColumn Header="Odradjen">
-                    
-                    
-                    <DataGridTemplateColumn.CellTemplate>
-                        <DataTemplate >
-                            <ToggleButton
-            VerticalAlignment="Center"
-            IsChecked="{Binding Path=Odradjen, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"
-            Style="{StaticResource MaterialDesignActionLightToggleButton}"
-            Content="{Binding Ime}" />
-                            
-                        </DataTemplate>
-                    </DataGridTemplateColumn.CellTemplate>
-                </DataGridTemplateColumn>
+        <StackPanel x:Name="zadaciStackPanel" Orientation="Vertical" Margin="124,99,9.6,0">
+                
 
-                <DataGridTemplateColumn Header="ImeZadatka">
-                    <DataGridTemplateColumn.CellTemplate>
-                        <DataTemplate>
-                            <TextBlock FontSize="20" Text="{Binding Ime}"  />
-                        </DataTemplate>
-                    </DataGridTemplateColumn.CellTemplate>
-                </DataGridTemplateColumn>
 
-                <DataGridTemplateColumn Header="delete">
-                    <DataGridTemplateColumn.CellTemplate>
-                        <DataTemplate>
-                            <Button
-      ToolTip="Obrisi"
-      Click="delete_task_on_click"
-      Content="{materialDesign:PackIcon Kind=Delete}" />
-                            
 
-                        </DataTemplate>
-                    </DataGridTemplateColumn.CellTemplate>
-                </DataGridTemplateColumn>
-
-            </DataGrid.Columns>
-
-        </DataGrid>
+        </StackPanel>
+        
         <TextBlock x:Name="textBlock" HorizontalAlignment="Left" Margin="124,65,0,0" TextWrapping="Wrap" Text="Zadaci za danas" VerticalAlignment="Top" Height="47" Width="183" FontSize="20"/>
         <StackPanel HorizontalAlignment="Left" Height="53" VerticalAlignment="Top" Width="794" Margin="0,0,-0.4,0"/>
-
-
-
-
-
-
-
-
 
 
 

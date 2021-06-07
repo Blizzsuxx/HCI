@@ -159,6 +159,12 @@
     <Compile Include="View\Test.xaml.cs">
       <DependentUpon>Test.xaml</DependentUpon>
     </Compile>
+    <Compile Include="View\ToDoUserControl.xaml.cs">
+      <DependentUpon>ToDoUserControl.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\ToggleButtonUserControl.xaml.cs">
+      <DependentUpon>ToggleButtonUserControl.xaml</DependentUpon>
+    </Compile>
     <Compile Include="View\UnosNovogSaradnika.xaml.cs">
       <DependentUpon>UnosNovogSaradnika.xaml</DependentUpon>
     </Compile>
@@ -243,6 +249,14 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="View\Test.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\ToDoUserControl.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\ToggleButtonUserControl.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
