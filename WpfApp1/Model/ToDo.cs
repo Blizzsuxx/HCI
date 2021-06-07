@@ -28,7 +28,6 @@ namespace organizerEvents.model
                 StanjeZadatka = Stanje.Dogovoreno;
             }
         }
-        public ToDo() { }
         public ToDo() {
             this.Ponude = new List<Ponuda>();
             this.PonudeId = new List<long>();
