@@ -25,7 +25,12 @@ namespace organizerEvents.model
         public Dogovor Dogovor { get; set; }
 
 
-        public Sto(){}
+        public Sto(){
+            this.Gosti = new List<Gost>();
+            this.GostiId = new List<long>();
+           
+        
+        }
         public Sto(int brStola, String tipS, string opis, int brLjudi, ref List<Gost> gosti, Dogovor dogovor) {
             this.BrojStola = brStola;
             this.BrojLjudi = brLjudi;

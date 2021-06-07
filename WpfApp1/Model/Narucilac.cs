@@ -20,7 +20,10 @@ namespace organizerEvents.model
 
         public Narucilac()
         {
-
+            this.Zahtevi = new List<ZahtevZaProslavu>();
+            this.ZahteviId = new List<long>();
+            this.Proslave = new List<Proslava>();
+            this.ProslaveId = new List<long>();
         }
         public Narucilac(String ime, String prezime, String brojTelefona, String email, String korisnickoIme, String sifra,  ref List<ZahtevZaProslavu> zahtevi, ref List<Proslava> proslave) : base(ime, prezime, brojTelefona, email, korisnickoIme, sifra)
         {

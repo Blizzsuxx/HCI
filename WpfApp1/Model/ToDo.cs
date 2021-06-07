@@ -29,6 +29,10 @@ namespace organizerEvents.model
             }
         }
         public ToDo() { }
+        public ToDo() {
+            this.Ponude = new List<Ponuda>();
+            this.PonudeId = new List<long>();
+        }
         public ToDo(List<Ponuda> ponude, String opis, Stanje stanje)
         {
             this.Ponude = ponude;
