@@ -19,6 +19,11 @@
           Style="{StaticResource MaterialDesignActionToggleButton}"
           ToolTip="MaterialDesignActionLightToggleButton"
           Content="{materialDesign:PackIcon Kind=EmoticonSad}"
-          materialDesign:ToggleButtonAssist.OnContent="{materialDesign:PackIcon Kind=EmoticonHappy}" />     
+          materialDesign:ToggleButtonAssist.OnContent="{materialDesign:PackIcon Kind=EmoticonHappy}" />
+        <Button
+            Style="{StaticResource MaterialDesignRaisedButton}"
+            
+            ToolTip="Resource name: MaterialDesignRaisedButton"
+            Content="_MID" Margin="133,194,490.6,194" />
     </Grid>
 </Window>

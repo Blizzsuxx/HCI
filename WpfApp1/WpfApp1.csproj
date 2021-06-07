@@ -120,8 +120,8 @@
     <Compile Include="View\FormaOrganizacije.xaml.cs">
       <DependentUpon>FormaOrganizacije.xaml</DependentUpon>
     </Compile>
-    <Compile Include="View\KreiranjeNovePonude.xaml.cs">
-      <DependentUpon>KreiranjeNovePonude.xaml</DependentUpon>
+    <Compile Include="View\KreiranjePonuda.xaml.cs">
+      <DependentUpon>KreiranjePonuda.xaml</DependentUpon>
     </Compile>
     <Compile Include="View\OdobravanjeReci.xaml.cs">
       <DependentUpon>OdobravanjeReci.xaml</DependentUpon>
@@ -177,7 +177,7 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="View\KreiranjeNovePonude.xaml">
+    <Page Include="View\KreiranjePonuda.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
