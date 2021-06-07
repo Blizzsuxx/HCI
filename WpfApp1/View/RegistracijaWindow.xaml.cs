@@ -51,30 +51,24 @@ namespace WpfApp1.View
             }
         }
 
-        private void validate(string text, ValidationRule validator)
-        {
-            var result = validator.Validate(text, null);
-            if (!result.IsValid)
-                throw new Exception("Molimo vas da ispravno popunite sva polja " + text + " je nevalidan");
-            
-        }
+
 
         private void Button_Click(object sender, RoutedEventArgs e)
         {
             try
             {
                 UsernameValidator usernameValidator = new UsernameValidator();
-                validate(KorisnickoImeV.Text, usernameValidator);
+                Validator.validate(KorisnickoImeV.Text, usernameValidator);
 
                 NoEmptyFieldValidator noEmptyFieldValidator = new NoEmptyFieldValidator();
-                validate(ImeV.Text, noEmptyFieldValidator);
-                validate(PrezimeV.Text, noEmptyFieldValidator);
+                Validator.validate(ImeV.Text, noEmptyFieldValidator);
+                Validator.validate(PrezimeV.Text, noEmptyFieldValidator);
 
                 EmailValidator emailValidator = new EmailValidator();
-                validate(EmailV.Text, emailValidator);
+                Validator.validate(EmailV.Text, emailValidator);
 
                 NumbersValidator numbersValidator = new NumbersValidator();
-                validate(BrojTelefonaV.Text, numbersValidator);
+                Validator.validate(BrojTelefonaV.Text, numbersValidator);
                 if (Lozinka.Password.Length < 8)
                     throw new Exception("Molimo vas da ispravno popunite sva polja " + "sifra" + " je nevalidna");
             } catch(Exception ex)

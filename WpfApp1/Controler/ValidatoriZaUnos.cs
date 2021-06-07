@@ -12,6 +12,18 @@ using System.Text.RegularExpressions;
 
 namespace WpfApp1.Controler
 {
+    public class Validator
+    {
+        public static void validate(string text, ValidationRule validator)
+        {
+            var result = validator.Validate(text, null);
+            if (!result.IsValid)
+                throw new Exception("Molimo vas da ispravno popunite sva polja " + text + " je nevalidan");
+
+        }
+    }
+
+
     class UsernameValidator : ValidationRule
     {
         public override ValidationResult Validate(object value, CultureInfo cultureInfo)
@@ -80,4 +92,6 @@ namespace WpfApp1.Controler
             return ValidationResult.ValidResult;
         }
     }
+
+    
 }
