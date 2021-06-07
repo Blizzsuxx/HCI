@@ -6,7 +6,7 @@
         xmlns:local="clr-namespace:WpfApp1.View"
         mc:Ignorable="d"
         Title="AzuriranjeProfila" Height="450" Width="800">
-    <Grid Background="LightBlue">
+    <Grid Background="White">
         <Label Content="Ime" HorizontalAlignment="Left" Margin="33,60,0,0" VerticalAlignment="Top" RenderTransformOrigin="-1.197,-0.142" FontSize="18" Height="33" Width="144"/>
         <Label Content="Prezime" HorizontalAlignment="Left" Margin="33,110,0,0" VerticalAlignment="Top" RenderTransformOrigin="-1.197,-0.142" FontSize="18" Height="33" Width="144"/>
         <Label Content="Korisnicko ime" HorizontalAlignment="Left" Margin="33,160,0,0" VerticalAlignment="Top" RenderTransformOrigin="-1.197,-0.142" FontSize="18" Height="33" Width="144"/>

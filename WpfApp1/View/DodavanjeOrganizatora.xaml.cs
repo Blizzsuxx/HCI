@@ -30,13 +30,15 @@ namespace WpfApp1.View
        
         private void Sacuvaj_Organizatora_Click(object sender, RoutedEventArgs e)
         {
-            String KorisnickoIme = korIme.Text;
-            String Lozinka = lozinka.Password;
-            String BrTel = brTel.Text;
-            String Email = email.Text;
-            String Ime = ime.Text;
-            String Prezime = prezime.Text;
-            Double Plata = Double.Parse(plata.Text); //TODO num
+            String KorisnickoIme = this.Kime.Text;
+            String Lozinka = this.Lozinka.Text;
+            String BrTel = this.BrTel.Text;
+            String Email = this.Email.Text;
+           
+            String Ime = this.Ime.Text;
+            String Prezime = this.Prezime.Text;
+            Double Plata = Double.Parse(this.Plata.Text); //TODO num
+            Console.WriteLine(KorisnickoIme); Console.WriteLine("-----------------------------------------------");
             kontroler.dodajOrganizatora(KorisnickoIme,Lozinka,BrTel,Email,Ime, Prezime, Plata);
 
 

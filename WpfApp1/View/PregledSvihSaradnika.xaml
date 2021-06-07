@@ -5,18 +5,50 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:WpfApp1.View"
         mc:Ignorable="d"
-        Title="PregledSvihSaradnika" Height="450" Width="800">
-    <Grid Background="LightBlue">
-        <Label Content="Pregled saradnika" HorizontalAlignment="Left" Margin="296,10,0,0" VerticalAlignment="Top" Height="34" Width="181" FontSize="16"/>
-        <ListView x:Name="Saradnici" HorizontalAlignment="Left" Height="300" Margin="10,101,0,0" VerticalAlignment="Top" Width="774">
+        Title="PregledSvihSaradnika" Height="450" Width="800"
+                xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+        TextElement.Foreground="{DynamicResource MaterialDesignBody}"
+        TextElement.FontWeight="Regular"
+        TextElement.FontSize="13"
+        TextOptions.TextFormattingMode="Ideal"
+        TextOptions.TextRenderingMode="Auto"
+        Background="{DynamicResource MaterialDesignPaper}"
+        FontFamily="{DynamicResource MaterialDesignFont}"
+        
+        >
+    <Grid Background="White">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="20"></ColumnDefinition>
+            <ColumnDefinition Width="*"></ColumnDefinition>
+            <ColumnDefinition Width="20"></ColumnDefinition>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="20"></RowDefinition>
+            <RowDefinition Height="auto"></RowDefinition>
+            <RowDefinition Height="*"></RowDefinition>
+            <RowDefinition Height="20"></RowDefinition>
+        </Grid.RowDefinitions>
+        <Rectangle Grid.Row="1" Grid.Column="1" Fill="MediumPurple" />
+        <Rectangle Grid.Row="1" Grid.Column="2" Fill="MediumPurple" />
+        <Rectangle Grid.Row="1" Grid.Column="0" Fill="MediumPurple" />
+        <Rectangle Grid.Row="1" Grid.Column="3" Fill="MediumPurple" />
+
+        <Rectangle Grid.Row="4" Grid.Column="1" Fill="MediumPurple" />
+        <Rectangle Grid.Row="4" Grid.Column="2" Fill="MediumPurple" />
+        <Rectangle Grid.Row="4" Grid.Column="0" Fill="MediumPurple" />
+        <Rectangle Grid.Row="4" Grid.Column="3" Fill="MediumPurple" />
+        <TextBlock Grid.Column="1" Grid.Row="1" Foreground="White"
+                   FontWeight="UltraBlack" FontSize="24" Text="Pregled saradnika"
+                   Margin="0,10,0,10" HorizontalAlignment="Center" Grid.ColumnSpan="2"></TextBlock>
+        <ListView x:Name="Saradnici" HorizontalAlignment="Left"   VerticalAlignment="Top"  Grid.Column="1" Grid.Row="2" Grid.RowSpan="2">
             <ListView.View>
-                <GridView>
-                    <GridViewColumn Header="Slika" Width="110" DisplayMemberBinding="{Binding Name}" />
-                    <GridViewColumn Header="Naziv" Width="120" DisplayMemberBinding="{Binding Naziv}" />
-                    <GridViewColumn Header="Mesto" Width="110" DisplayMemberBinding="{Binding Mesto}" />
-                    <GridViewColumn Header="Tip" Width="75" DisplayMemberBinding="{Binding Tip}" />
-                    <GridViewColumn Header="Opis" Width="150" DisplayMemberBinding="{Binding Opis}" />
-                    <GridViewColumn Header="Pregled" Width="150"  />
+                <GridView >
+                    <GridViewColumn Header="Slika"  DisplayMemberBinding="{Binding Name}" />
+                    <GridViewColumn Header="Naziv" DisplayMemberBinding="{Binding Naziv}" />
+                    <GridViewColumn Header="Mesto"  DisplayMemberBinding="{Binding Mesto}" />
+                    <GridViewColumn Header="Tip"  DisplayMemberBinding="{Binding Tip}" />
+                    <GridViewColumn Header="Opis" DisplayMemberBinding="{Binding Opis}" />
+                    <GridViewColumn Header="Pregled"   />
 
                 </GridView>
             </ListView.View>

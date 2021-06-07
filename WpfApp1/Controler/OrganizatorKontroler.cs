@@ -16,7 +16,7 @@ namespace WpfApp1.Controler
         
         public bool dodajOrganizatora(String KorisnickoIme, String Lozinka, String BrTel, String Email, String Ime, String Prezime, double plata )
         {
-
+            if (SviOrganizatori == null) { SviOrganizatori = new List<Organizator>(); }
             foreach(Organizator org in SviOrganizatori) {
                 if (org.Email.Equals(Email))
                 {

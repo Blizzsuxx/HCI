@@ -4,18 +4,64 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:WpfApp1.View"
+         xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
         mc:Ignorable="d"
-        Title="OdobravanjeReci" Height="450" Width="800">
-    <Grid Background="LightBlue">
-        <TextBox x:Name="naziv" HorizontalAlignment="Left" Height="34" Margin="220,10,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="477" SpellCheck.IsEnabled="True" FontSize="20" TextAlignment="Center" />
-        <TextBox x:Name="opis" HorizontalAlignment="Left" Height="258" Margin="41,69,0,0" TextWrapping="Wrap"  VerticalAlignment="Top" Width="656" SpellCheck.IsEnabled="True" FontSize="20" TextAlignment="Center"/>
-        <TextBlock x:Name="textBlock" HorizontalAlignment="Left" Margin="41,10,0,0" TextWrapping="Wrap" Text="Nepoznata rec:" VerticalAlignment="Top" Height="34" Width="179" FontSize="20" TextAlignment="Center"/>
-        <Button Margin="706,343,8.6,8" RenderTransformOrigin="0.5,0.5" Background="White" BorderBrush="White">
+          d:DesignHeight="450" d:DesignWidth="800"
+        Title="OdobravanjeReci" Height="450" Width="800"
+        
+        TextElement.Foreground="{DynamicResource MaterialDesignBody}"
+        TextElement.FontWeight="Regular"
+        TextElement.FontSize="13"
+        TextOptions.TextFormattingMode="Ideal"
+        TextOptions.TextRenderingMode="Auto"
+        Background="{DynamicResource MaterialDesignPaper}"
+        FontFamily="{DynamicResource MaterialDesignFont}">
+    <Grid Background="White">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="20"></ColumnDefinition>
+            
+            <ColumnDefinition Width="*"></ColumnDefinition>
+            <ColumnDefinition Width="20"></ColumnDefinition>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="20"></RowDefinition>
+            <RowDefinition Height="auto"></RowDefinition>
+            <RowDefinition Height="auto"></RowDefinition>
+            <RowDefinition Height="*"></RowDefinition>
+            <RowDefinition Height="auto"></RowDefinition>
+            <RowDefinition Height="20"></RowDefinition>
+        </Grid.RowDefinitions>
+        <Rectangle Grid.Row="1" Grid.Column="1" Fill="MediumPurple" />
+        <Rectangle Grid.Row="1" Grid.Column="2" Fill="MediumPurple" />
+        <Rectangle Grid.Row="1" Grid.Column="0" Fill="MediumPurple" />
+        <Rectangle Grid.Row="1" Grid.Column="4" Fill="MediumPurple" />
 
-            <StackPanel>
-                <Image Source="../resources/delete2.png" Height="76" Width="85" />
-            </StackPanel>
-        </Button>
-        <Button Content="Sacuvaj" HorizontalAlignment="Left" Margin="538,364,0,0" VerticalAlignment="Top" Width="139" Height="46" FontSize="24" Background="White" x:Name="sacuvaj" Click="sacuvaj_Click"/>
+        <Rectangle Grid.Row="6" Grid.Column="1" Fill="MediumPurple" />
+        <Rectangle Grid.Row="6" Grid.Column="2" Fill="MediumPurple" />
+        <Rectangle Grid.Row="6" Grid.Column="0" Fill="MediumPurple" />
+        <Rectangle Grid.Row="6" Grid.Column="4" Fill="MediumPurple" />
+        <TextBlock Grid.Column="1" Grid.Row="1" Foreground="White"
+                   FontWeight="UltraBlack" FontSize="24" Text="Odobravanje reci"
+                   Margin="0,10,0,10" HorizontalAlignment="Center" Grid.ColumnSpan="2"></TextBlock>
+        <TextBlock Grid.Column="1" Grid.Row="2"  x:Name="naziv"
+                   HorizontalAlignment="Center" Margin="0,12,0,0" FontWeight="SemiBold" Foreground="MediumPurple" FontSize="20" Text="Naziv"></TextBlock>
+
+        <TextBlock x:Name="opis" Grid.Column="1" Grid.Row="3" HorizontalAlignment="Left"  TextWrapping="Wrap" Text="Nepoznata rec:" VerticalAlignment="Top" FontSize="20" TextAlignment="Center"/>
+
+        <Button Grid.Column="1" Grid.Row="4"  x:Name="Sacuvaj" Click="sacuvaj_Click"
+                Margin="25,10,0,5"
+                HorizontalAlignment="Left"
+                Foreground="White" Background="MediumPurple"
+          Style="{StaticResource MaterialDesignRaisedLightButton}"
+          ToolTip="Resource name: MaterialDesignRaisedLightButton"
+          Content="_Kreiraj" />
+        <Button Grid.Column="1" Grid.Row="4"  x:Name="Izbrisi" Click="izbrisi_Click"
+                Margin="132,10.2,0,5"
+                HorizontalAlignment="Left"
+                Foreground="White" Background="MediumPurple"
+          Style="{StaticResource MaterialDesignRaisedLightButton}"
+          ToolTip="Resource name: MaterialDesignRaisedLightButton"
+          Content="_Izbrisi" />
+
     </Grid>
 </Window>
