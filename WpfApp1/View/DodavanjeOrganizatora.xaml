@@ -6,30 +6,197 @@
         xmlns:local="clr-namespace:WpfApp1.View"
         mc:Ignorable="d"
 
-    Title="DodavanjeOrganizatora" Height="450" Width="800">
-    <Grid Background="LightBlue">
-        
-        <Label Content="Unos novog organizatora" HorizontalAlignment="Left" Margin="249,23,0,0" VerticalAlignment="Top" Height="43" Width="284" FontSize="22
-               "/>
-        <Label Content="Ime" HorizontalAlignment="Left" Margin="31,70,0,0" VerticalAlignment="Top" Height="45" Width="142" FontSize="18"/>
-        <Label Content="Prezime" HorizontalAlignment="Left" Margin="31,120,0,0" VerticalAlignment="Top" Height="29" Width="142" FontSize="18"/>
-        <Label Content="E-mail" HorizontalAlignment="Left" Margin="31,170,0,0" VerticalAlignment="Top" Height="29" Width="142" FontSize="18"/>
-        <Label Content="Broj telefona" HorizontalAlignment="Left" Margin="31,220,0,0" VerticalAlignment="Top" Height="48" Width="142" FontSize="18"/>
-        <Label Content="Plata" HorizontalAlignment="Left" Margin="31,370,0,0" VerticalAlignment="Top" Height="29" Width="142" FontSize="18"/>
-        <Label Content="Korisnicko ime" HorizontalAlignment="Left" Margin="31,270,0,0" VerticalAlignment="Top" Height="29" Width="142" FontSize="18"/>
-        <Label Content="Lozinka" HorizontalAlignment="Left" Margin="31,320,0,0" VerticalAlignment="Top" Height="29" Width="142" FontSize="18"/>
-        <PasswordBox HorizontalAlignment="Left" Margin="250,320,0,0" VerticalAlignment="Top" Height="29" Width="312" x:Name="lozinka"/>
-        <TextBox HorizontalAlignment="Left" Height="29" Margin="250,270,0,0" TextWrapping="Wrap"  VerticalAlignment="Top" Width="312" FontSize="18" x:Name="korIme"></TextBox>
-        <TextBox HorizontalAlignment="Left" Height="29" Margin="250,220,0,0" TextWrapping="Wrap"  VerticalAlignment="Top" Width="312" FontSize="18" x:Name="brTel"/>
-        <TextBox HorizontalAlignment="Left" Height="29" Margin="250,170,0,0" TextWrapping="Wrap"  VerticalAlignment="Top" Width="312" FontSize="18" x:Name="email"/>
-        <TextBox HorizontalAlignment="Left" Height="29" Margin="250,120,0,0" TextWrapping="Wrap"  VerticalAlignment="Top" Width="312" FontSize="18" x:Name="prezime"/>
-        <TextBox HorizontalAlignment="Left" Height="29" Margin="250,70,0,0" TextWrapping="Wrap"  VerticalAlignment="Top" Width="312" FontSize="18"  x:Name="ime"/>
-        <TextBox HorizontalAlignment="Left"  Height="29" Margin="250,370,0,0" TextWrapping="Wrap"  VerticalAlignment="Top" Width="312" FontSize="18"  x:Name="plata"/>
+    Title="DodavanjeOrganizatora" Height="450" Width="800"
+         xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+        TextElement.Foreground="{DynamicResource MaterialDesignBody}"
+        TextElement.FontWeight="Regular"
+        TextElement.FontSize="13"
+        TextOptions.TextFormattingMode="Ideal"
+        TextOptions.TextRenderingMode="Auto"
+        Background="{DynamicResource MaterialDesignPaper}"
+        FontFamily="{DynamicResource MaterialDesignFont}">
+    <Grid Background="White">
 
-        <Button Content="Sacuvaj organizatora" HorizontalAlignment="Left" 
-                Margin="601,360,0,0" Background="White" VerticalAlignment="Top" Width="183"
-                Height="37" FontSize="18" x:Name="sacuvaj_organizatora" Click="Sacuvaj_Organizatora_Click"
-                />
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="20"></ColumnDefinition>
+            <ColumnDefinition Width="*"></ColumnDefinition>
+            <ColumnDefinition Width="*"></ColumnDefinition>
+            <ColumnDefinition Width="20"></ColumnDefinition>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="20"></RowDefinition>
+            <RowDefinition Height="auto"></RowDefinition>
+            <RowDefinition Height="auto"></RowDefinition>
+            <RowDefinition Height="auto"></RowDefinition>
+            <RowDefinition Height="auto"></RowDefinition>
+            <RowDefinition Height="auto"></RowDefinition>
+            <RowDefinition Height="auto"></RowDefinition>
+            <RowDefinition Height="auto"></RowDefinition>
+            <RowDefinition Height="auto"></RowDefinition>
+            <RowDefinition Height="*"></RowDefinition>
+            <RowDefinition Height="20"></RowDefinition>
+        </Grid.RowDefinitions>
+        <Rectangle Grid.Row="1" Grid.Column="1" Fill="MediumPurple" />
+        <Rectangle Grid.Row="1" Grid.Column="2" Fill="MediumPurple" />
+        <Rectangle Grid.Row="1" Grid.Column="0" Fill="MediumPurple" />
+        <Rectangle Grid.Row="1" Grid.Column="4" Fill="MediumPurple" />
+
+        <Rectangle Grid.Row="11" Grid.Column="1" Fill="MediumPurple" />
+        <Rectangle Grid.Row="11" Grid.Column="2" Fill="MediumPurple" />
+        <Rectangle Grid.Row="11" Grid.Column="0" Fill="MediumPurple" />
+        <Rectangle Grid.Row="11" Grid.Column="4" Fill="MediumPurple" />
+
+
+        <TextBlock Grid.Column="1" Grid.Row="1" Foreground="White"
+                   FontWeight="UltraBlack" FontSize="24" Text="Dodavanje organizatora"
+                   Margin="0,10,0,10" HorizontalAlignment="Center" Grid.ColumnSpan="2"></TextBlock>
+        <TextBlock Grid.Column="1" Grid.Row="2"
+                   HorizontalAlignment="Center" Margin="0,12,0,0" FontWeight="SemiBold" Foreground="MediumPurple" FontSize="20" Text="Ime"></TextBlock>
+        <TextBlock Grid.Column="1" Grid.Row="3"
+                   HorizontalAlignment="Center"  Margin="0,12,0,0" FontWeight="SemiBold" Foreground="MediumPurple" FontSize="20" Text="Prezime"></TextBlock>
+        <TextBlock Grid.Column="1" Grid.Row="4"
+                   HorizontalAlignment="Center" Margin="0,12,0,0" FontWeight="SemiBold" Foreground="MediumPurple" FontSize="20" Text="E-mail"></TextBlock>
+        <TextBlock Grid.Column="1" Grid.Row="5"
+                  HorizontalAlignment="Center"  Margin="0,12,0,0" FontWeight="SemiBold" Foreground="MediumPurple" FontSize="20" Text="Broj telefona"></TextBlock>
+        <TextBlock Grid.Column="1" Grid.Row="6" 
+                   HorizontalAlignment="Center" Margin="0,12,0,0" FontWeight="SemiBold" Foreground="MediumPurple" FontSize="20" Text="Plata"></TextBlock>
+
+        <TextBlock Grid.Column="1" Grid.Row="7"
+                  HorizontalAlignment="Center"  Margin="0,12,0,0" FontWeight="SemiBold" Foreground="MediumPurple" FontSize="20" Text="Korisnicko ime"></TextBlock>
+        <TextBlock Grid.Column="1" Grid.Row="8"
+                   HorizontalAlignment="Center" Margin="0,12,0,0" FontWeight="SemiBold" Foreground="MediumPurple" FontSize="20" Text="Lozinka"></TextBlock>
+
+
+        <TextBox Grid.Column="2" Grid.Row="2" x:Name="Ime"
+                 HorizontalAlignment="Center"
+          Style="{StaticResource MaterialDesignFloatingHintTextBox}"
+          materialDesign:HintAssist.Hint="     Ime"
+          Width="150"
+          materialDesign:ValidationAssist.UsePopup="True"
+          
+          ToolTip="Use a popup which can escape the bounds of the control where space is limited">
+            <TextBox.Text>
+                <Binding
+                  Path="Ime"
+                  UpdateSourceTrigger="PropertyChanged">
+
+                </Binding>
+            </TextBox.Text>
+        </TextBox>
+
+        <TextBox Grid.Column="2" Grid.Row="3" x:Name="Prezime"
+          Style="{StaticResource MaterialDesignFloatingHintTextBox}"
+          materialDesign:HintAssist.Hint="     Prezime"
+          Width="150"
+          materialDesign:ValidationAssist.UsePopup="True"
+          HorizontalAlignment="Center"
+          ToolTip="Use a popup which can escape the bounds of the control where space is limited">
+            <TextBox.Text>
+                <Binding
+                  Path="Prezime"
+                  UpdateSourceTrigger="PropertyChanged">
+
+                </Binding>
+            </TextBox.Text>
+        </TextBox>
+
+        <TextBox Grid.Column="2" Grid.Row="4" x:Name="Email"
+          Style="{StaticResource MaterialDesignFloatingHintTextBox}"
+          materialDesign:HintAssist.Hint="     Email"
+          Width="150"
+          materialDesign:ValidationAssist.UsePopup="True"
+          HorizontalAlignment="Center"
+          ToolTip="Use a popup which can escape the bounds of the control where space is limited">
+
+            <TextBox.Text>
+                <Binding
+                  Path="Email"
+                  UpdateSourceTrigger="PropertyChanged">
+
+                </Binding>
+            </TextBox.Text>
+
+        </TextBox>
+
+        <TextBox Grid.Column="2" Grid.Row="5" x:Name="BrTel"
+          Style="{StaticResource MaterialDesignFloatingHintTextBox}"
+          materialDesign:HintAssist.Hint="     BrTel"
+          Width="150"
+          materialDesign:ValidationAssist.UsePopup="True"
+          HorizontalAlignment="Center"
+          ToolTip="Use a popup which can escape the bounds of the control where space is limited">
+            <TextBox.Text>
+                <Binding
+                  Path="BrTel"
+                  UpdateSourceTrigger="PropertyChanged">
+
+                </Binding>
+            </TextBox.Text>
+        </TextBox>
+
+       
+        
+        <TextBox Grid.Column="2" Grid.Row="6" x:Name="Plata"
+          Style="{StaticResource MaterialDesignFloatingHintTextBox}"
+          materialDesign:HintAssist.Hint="     Plata"
+          Width="150"
+          materialDesign:ValidationAssist.UsePopup="True"
+          HorizontalAlignment="Center"
+          ToolTip="Use a popup which can escape the bounds of the control where space is limited">
+            <TextBox.Text>
+                <Binding
+                  Path="Plata"
+                  UpdateSourceTrigger="PropertyChanged">
+
+                </Binding>
+            </TextBox.Text>
+        </TextBox>
+        <TextBox Grid.Column="2" Grid.Row="7" x:Name="Kime"
+          Style="{StaticResource MaterialDesignFloatingHintTextBox}"
+          materialDesign:HintAssist.Hint="     Kime"
+          Width="150"
+          materialDesign:ValidationAssist.UsePopup="True"
+          HorizontalAlignment="Center"
+          ToolTip="Use a popup which can escape the bounds of the control where space is limited">
+            <TextBox.Text>
+                <Binding
+                  Path="Kime"
+                  UpdateSourceTrigger="PropertyChanged">
+
+                </Binding>
+            </TextBox.Text>
+        </TextBox>
+        <TextBox Grid.Column="2" Grid.Row="8" x:Name="Lozinka"
+          Style="{StaticResource MaterialDesignFloatingHintTextBox}"
+          materialDesign:HintAssist.Hint="     Lozinka"
+          Width="150"
+          materialDesign:ValidationAssist.UsePopup="True"
+          HorizontalAlignment="Center"
+          ToolTip="Use a popup which can escape the bounds of the control where space is limited">
+            <TextBox.Text>
+                <Binding
+                  Path="Lozinka"
+                  UpdateSourceTrigger="PropertyChanged">
+
+                </Binding>
+            </TextBox.Text>
+        </TextBox>
+
+        <Button Grid.Column="2" Grid.Row="9"  x:Name="sacuvaj_organizatora" Click="Sacuvaj_Organizatora_Click"
+                Margin="25,10,0,5"
+                HorizontalAlignment="Left"
+                Foreground="White" Background="MediumPurple"
+          Style="{StaticResource MaterialDesignRaisedLightButton}"
+          ToolTip="Resource name: MaterialDesignRaisedLightButton"
+          Content="_Kreiraj" />
+
+        <Button Grid.Column="1" Grid.Row="9" 
+                Margin="30,10,5,5"
+                HorizontalAlignment="Right"
+                Foreground="White" Background="MediumPurple"
+            Style="{StaticResource MaterialDesignOutlinedButton}"
+            ToolTip="MaterialDesignOutlinedButton"
+            Content="Odustani" />
 
     </Grid>
 </Window>

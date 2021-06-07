@@ -5,13 +5,49 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:WpfApp1.View"
         mc:Ignorable="d"
-        Title="PregledProslava" Height="450" Width="800">
-    <Grid Background="LightBlue">
-        <Label Content="Proslave" HorizontalAlignment="Left" Margin="10,57,0,0" VerticalAlignment="Top" Height="35" Width="108" FontSize="20"/>
-        <ListView x:Name="Proslave" HorizontalAlignment="Left" Height="300" Margin="10,101,0,0" VerticalAlignment="Top" Width="774">
+        Title="PregledProslava" Height="450" Width="800"
+         xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+        TextElement.Foreground="{DynamicResource MaterialDesignBody}"
+        TextElement.FontWeight="Regular"
+        TextElement.FontSize="13"
+        TextOptions.TextFormattingMode="Ideal"
+        TextOptions.TextRenderingMode="Auto"
+        Background="{DynamicResource MaterialDesignPaper}"
+        FontFamily="{DynamicResource MaterialDesignFont}">
+    <Grid Background="White">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="20"></ColumnDefinition>
+            <ColumnDefinition Width="*"></ColumnDefinition>
+            <ColumnDefinition Width="*"></ColumnDefinition>
+            <ColumnDefinition Width="20"></ColumnDefinition>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="20"></RowDefinition>
+
+            <RowDefinition Height="auto"></RowDefinition>
+            <RowDefinition Height="auto"></RowDefinition>
+            <RowDefinition Height="auto"></RowDefinition>
+            <RowDefinition Height="*"></RowDefinition>
+            <RowDefinition Height="20"></RowDefinition>
+        </Grid.RowDefinitions>
+        <Rectangle Grid.Row="1" Grid.Column="1" Fill="MediumPurple" />
+        <Rectangle Grid.Row="1" Grid.Column="2" Fill="MediumPurple" />
+        <Rectangle Grid.Row="1" Grid.Column="0" Fill="MediumPurple" />
+        <Rectangle Grid.Row="1" Grid.Column="4" Fill="MediumPurple" />
+
+        <Rectangle Grid.Row="6" Grid.Column="1" Fill="MediumPurple" />
+        <Rectangle Grid.Row="6" Grid.Column="2" Fill="MediumPurple" />
+        <Rectangle Grid.Row="6" Grid.Column="0" Fill="MediumPurple" />
+        <Rectangle Grid.Row="6" Grid.Column="4" Fill="MediumPurple" />
+        <TextBlock Grid.Column="1" Grid.Row="1" Foreground="White"
+                   FontWeight="UltraBlack" FontSize="24" Text="Pregled proslava"
+                   Margin="0,10,0,10" HorizontalAlignment="Center" Grid.ColumnSpan="2"></TextBlock>
+
+
+        <ListView x:Name="Proslave" Grid.Column="1" Grid.Row="4" Grid.ColumnSpan="2" Grid.RowSpan="2">
             <ListView.View>
                 <GridView>
-                    <GridViewColumn Header="Slika" Width="110" DisplayMemberBinding="{Binding Name}" />
+                    
                     <GridViewColumn Header="Ime organizatora" Width="120" DisplayMemberBinding="{Binding Organizator.Ime}" />
                     <GridViewColumn Header="Prezime organizatora" Width="110" DisplayMemberBinding="{Binding Organizator.Prezime}" />
                     <GridViewColumn Header="Broj gostiju" Width="75" DisplayMemberBinding="{Binding BrojGostiju}" />
@@ -21,8 +57,8 @@
                 </GridView>
             </ListView.View>
         </ListView>
-        <TextBox HorizontalAlignment="Left" Height="35" Margin="279,61,0,0" TextWrapping="Wrap" Text="Trazi" VerticalAlignment="Top" Width="258" FontSize="20"/>
-        <Button  HorizontalAlignment="Left" Margin="567,61,0,0" VerticalAlignment="Top" Width="35" RenderTransformOrigin="0.112,-0.115" Height="31">
+        <TextBox Grid.Row="3" Grid.Column="1" Text="Trazi" />
+        <Button   Grid.Row="3" Grid.Column="2" Margin="0.2,0.2,235.6,299" Grid.RowSpan="3" >
 
             <Button.Resources>
                 <Style TargetType="{x:Type Border}">
@@ -30,29 +66,10 @@
                 </Style>
             </Button.Resources>
             <StackPanel>
-                <Image Source="../resources/search.png" RenderTransformOrigin="0.287,0.281" />
+                <Image Source="../resources/search.png" RenderTransformOrigin="0.287,0.281" Height="27" Width="152" />
                 <Image Source="/WpfApp1;component/resources/search.png" RenderTransformOrigin="-17.734,1.234" />
             </StackPanel>
         </Button>
-        <Menu HorizontalAlignment="Left" Height="31" Margin="0,10,-0.4,0" VerticalAlignment="Top" Width="794">
-
-            <MenuItem Header="Proslave" Width="140">
-                <MenuItem Header="Pregled proslava" IsCheckable="true"  Background="White"/>
-
-            </MenuItem>
-            <MenuItem Header="Saradnici" Width="140">
-                <MenuItem Header="Pregled saradnika" IsCheckable="true"  Background="White"/>
-                <MenuItem Header="Dodavanje saradnika" IsCheckable="true"  Background="White"/>
-            </MenuItem>
-            <MenuItem Header="Korisnici" Width="140">
-                <MenuItem Header="Pregled korisnika" IsCheckable="true"  Background="White"/>
-
-            </MenuItem>
-            <MenuItem Header="Organizatori" Width="140">
-                <MenuItem Header="Pregled organizatora" IsCheckable="true"  Background="White"/>
-
-            </MenuItem>
-        </Menu>
 
     </Grid>
 </Window>

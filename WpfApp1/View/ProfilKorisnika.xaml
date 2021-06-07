@@ -5,33 +5,170 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:WpfApp1.View"
         mc:Ignorable="d"
-        Title="ProfilKorisnika" Height="450" Width="800">
-    <Grid Background="LightBlue">
-        <Label Content="Ime" HorizontalAlignment="Left" Margin="22,159,0,0" VerticalAlignment="Top" FontSize="18" Width="65"/>
-        <Label Content="Prezime" HorizontalAlignment="Left" Margin="25,199,0,0" VerticalAlignment="Top" FontSize="18" Width="65"/>
-        <Label Content="E-mail" HorizontalAlignment="Left" Margin="25,239,0,0" VerticalAlignment="Top" FontSize="18" Width="65"/>
-        <Label Content="Korisnicko ime" HorizontalAlignment="Left" Margin="25,279,0,0" VerticalAlignment="Top" FontSize="18" Width="132"/>
-        <Label Content="Broj telefona" HorizontalAlignment="Left" Margin="25,319,0,0" VerticalAlignment="Top" FontSize="18" Width="111"/>
-        <Label Content="Broj proslava" HorizontalAlignment="Left" Margin="25,359,0,0" VerticalAlignment="Top" FontSize="18" Width="111"/>
-        <TextBox HorizontalAlignment="Left" Height="34" Margin="162,279,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="232" FontSize="18"/>
-        <TextBox HorizontalAlignment="Left" Height="34" Margin="162,359,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="232" FontSize="18"/>
-        <TextBox HorizontalAlignment="Left" Height="34" Margin="162,319,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="232" FontSize="18"/>
-        <TextBox HorizontalAlignment="Left" Height="34" Margin="162,158,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="232" FontSize="18"/>
-        <TextBox HorizontalAlignment="Left" Height="34" Margin="162,198,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="232" FontSize="18"/>
-        <TextBox HorizontalAlignment="Left" Height="34" Margin="162,238,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="232" FontSize="18"/>
-        <Image Source="../resources/user.png" HorizontalAlignment="Left" Height="98" Margin="10,56,0,0" VerticalAlignment="Top" Width="105"/>
-        <Label Content="Proslave" HorizontalAlignment="Left" Margin="427,56,0,0" VerticalAlignment="Top" FontSize="18" Width="91"/>
-        <ListView HorizontalAlignment="Left" Height="304" Margin="427,106,0,0" VerticalAlignment="Top" Width="357">
-            <ListView.View>
-                <GridView>
-                    
-                    <GridViewColumn Header="Naslov" Width="120" DisplayMemberBinding="{Binding Name}" />
-                    <GridViewColumn Header="Organizator" Width="120" DisplayMemberBinding="{Binding Name}" />
-                    <GridViewColumn Header="Detaljnije" Width="110" DisplayMemberBinding="{Binding Name}" />
-                </GridView>
-            </ListView.View>
-        </ListView>
+        Title="ProfilKorisnika" Height="450" Width="800"
+         xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+        TextElement.Foreground="{DynamicResource MaterialDesignBody}"
+        TextElement.FontWeight="Regular"
+        TextElement.FontSize="13"
+        TextOptions.TextFormattingMode="Ideal"
+        TextOptions.TextRenderingMode="Auto"
+        Background="{DynamicResource MaterialDesignPaper}"
+        FontFamily="{DynamicResource MaterialDesignFont}"
+        >
+    <Grid Background="White">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="20"></ColumnDefinition>
+            <ColumnDefinition Width="*"></ColumnDefinition>
+            <ColumnDefinition Width="*"></ColumnDefinition>
+            <ColumnDefinition Width="*"></ColumnDefinition>
+            <ColumnDefinition Width="*"></ColumnDefinition>
+            <ColumnDefinition Width="20"></ColumnDefinition>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="20"></RowDefinition>
+            <RowDefinition Height="auto"></RowDefinition>
+            <RowDefinition Height="auto"></RowDefinition>
+            <RowDefinition Height="auto"></RowDefinition>
+            <RowDefinition Height="auto"></RowDefinition>
+            <RowDefinition Height="auto"></RowDefinition>
+            <RowDefinition Height="auto"></RowDefinition>
+            <RowDefinition Height="auto"></RowDefinition>
+            <RowDefinition Height="auto"></RowDefinition>
+            <RowDefinition Height="auto"></RowDefinition>
+            <RowDefinition Height="auto"></RowDefinition>
+            <RowDefinition Height="auto"></RowDefinition>
+            <RowDefinition Height="*"></RowDefinition>
+            <RowDefinition Height="20"></RowDefinition>
+        </Grid.RowDefinitions>
+        <Rectangle Grid.Row="1" Grid.Column="1" Fill="MediumPurple" />
+        <Rectangle Grid.Row="1" Grid.Column="2" Fill="MediumPurple" />
+        <Rectangle Grid.Row="1" Grid.Column="0" Fill="MediumPurple" />
+        <Rectangle Grid.Row="1" Grid.Column="4" Fill="MediumPurple" />
+        <Rectangle Grid.Row="1" Grid.Column="3" Fill="MediumPurple" />
+        <Rectangle Grid.Row="1" Grid.Column="5" Fill="MediumPurple" />
 
 
+        <Rectangle Grid.Row="14" Grid.Column="1" Fill="MediumPurple" />
+        <Rectangle Grid.Row="14" Grid.Column="3" Fill="MediumPurple" />
+        <Rectangle Grid.Row="14" Grid.Column="5" Fill="MediumPurple" />
+        <Rectangle Grid.Row="14" Grid.Column="2" Fill="MediumPurple" />
+        <Rectangle Grid.Row="14" Grid.Column="0" Fill="MediumPurple" />
+        <Rectangle Grid.Row="14" Grid.Column="4" Fill="MediumPurple" />
+        <TextBlock Grid.Column="1" Grid.Row="1" Foreground="White"
+                   FontWeight="UltraBlack" FontSize="24" Text="Pregled korisnika"
+                   Margin="0,10,0,10" HorizontalAlignment="Center" Grid.ColumnSpan="2"></TextBlock>
+
+        <TextBlock Grid.Column="1" Grid.Row="7"
+                   HorizontalAlignment="Center" Margin="0,12,0,0" FontWeight="SemiBold" Foreground="MediumPurple" FontSize="20" Text="Ime"></TextBlock>
+        <TextBlock Grid.Column="1" Grid.Row="8"
+                   HorizontalAlignment="Center"  Margin="0,12,0,0" FontWeight="SemiBold" Foreground="MediumPurple" FontSize="20" Text="Prezime"></TextBlock>
+        <TextBlock Grid.Column="1" Grid.Row="9"
+                   HorizontalAlignment="Center" Margin="0,12,0,0" FontWeight="SemiBold" Foreground="MediumPurple" FontSize="20" Text="E-mail"></TextBlock>
+        <TextBlock Grid.Column="1" Grid.Row="10"
+                  HorizontalAlignment="Center"  Margin="0,12,0,0" FontWeight="SemiBold" Foreground="MediumPurple" FontSize="20" Text="Korisnicko ime"></TextBlock>
+        <TextBlock Grid.Column="1" Grid.Row="11"
+                   HorizontalAlignment="Center" Margin="0,12,0,0" FontWeight="SemiBold" Foreground="MediumPurple" FontSize="20" Text="Broj telefona"></TextBlock>
+        <TextBlock Grid.Column="1" Grid.Row="12"
+                   HorizontalAlignment="Center" Margin="0,12,0,0" FontWeight="SemiBold" Foreground="MediumPurple" FontSize="20" Text="Broj proslava"></TextBlock>
+        <TextBox Grid.Column="2" Grid.Row="7" x:Name="Ime"
+                 HorizontalAlignment="Center"
+          Style="{StaticResource MaterialDesignFloatingHintTextBox}"
+          materialDesign:HintAssist.Hint="     Ime"
+          Width="160"
+          materialDesign:ValidationAssist.UsePopup="True"
+          
+          ToolTip="Ime korisnika" Margin="19,0.2,9.8,35.8" Grid.RowSpan="2">
+            <TextBox.Text>
+                <Binding
+                  Path="Ime"
+                  UpdateSourceTrigger="PropertyChanged">
+
+                </Binding>
+            </TextBox.Text>
+        </TextBox>
+        <TextBox Grid.Column="2" Grid.Row="8" x:Name="Prezime"
+                 HorizontalAlignment="Center"
+          Style="{StaticResource MaterialDesignFloatingHintTextBox}"
+          materialDesign:HintAssist.Hint="     Prezime"
+          Width="160"
+          materialDesign:ValidationAssist.UsePopup="True"
+          
+          ToolTip="Unesite naziv saradnika" Margin="19,0.2,9.8,35.8" Grid.RowSpan="2">
+            <TextBox.Text>
+                <Binding
+                  Path="Prezime"
+                  UpdateSourceTrigger="PropertyChanged">
+
+                </Binding>
+            </TextBox.Text>
+        </TextBox>
+        <TextBox Grid.Column="2" Grid.Row="9" x:Name="Email"
+                 HorizontalAlignment="Center"
+          Style="{StaticResource MaterialDesignFloatingHintTextBox}"
+          materialDesign:HintAssist.Hint="     Email"
+          Width="160"
+          materialDesign:ValidationAssist.UsePopup="True"
+          
+          ToolTip="Unesite naziv saradnika" Margin="19,5.2,9.8,30.8" Grid.RowSpan="2">
+            <TextBox.Text>
+                <Binding
+                  Path="Email"
+                  UpdateSourceTrigger="PropertyChanged">
+
+                </Binding>
+            </TextBox.Text>
+        </TextBox>
+        <TextBox Grid.Column="2" Grid.Row="10" x:Name="kIme"
+                 HorizontalAlignment="Center"
+          Style="{StaticResource MaterialDesignFloatingHintTextBox}"
+          materialDesign:HintAssist.Hint="     kIme"
+          Width="160"
+          materialDesign:ValidationAssist.UsePopup="True"
+          
+          ToolTip="Unesite naziv saradnika" Margin="19,0.2,9.8,35.8" Grid.RowSpan="2">
+            <TextBox.Text>
+                <Binding
+                  Path="kIme"
+                  UpdateSourceTrigger="PropertyChanged">
+
+                </Binding>
+            </TextBox.Text>
+        </TextBox>
+        <TextBox Grid.Column="2" Grid.Row="11" x:Name="BrTelefona"
+                 HorizontalAlignment="Center"
+          Style="{StaticResource MaterialDesignFloatingHintTextBox}"
+          materialDesign:HintAssist.Hint="     Naziv"
+          Width="160"
+          materialDesign:ValidationAssist.UsePopup="True"
+          
+          ToolTip="Unesite naziv saradnika" Margin="19,0.2,9.8,151" Grid.RowSpan="2">
+            <TextBox.Text>
+                <Binding
+                  Path="BrTelefona"
+                  UpdateSourceTrigger="PropertyChanged">
+
+                </Binding>
+            </TextBox.Text>
+        </TextBox>
+        <TextBox Grid.Column="2" Grid.Row="12" x:Name="BrProslava"
+                 HorizontalAlignment="Center"
+          Style="{StaticResource MaterialDesignFloatingHintTextBox}"
+          materialDesign:HintAssist.Hint="     BrProslava"
+          Width="160"
+          materialDesign:ValidationAssist.UsePopup="True"
+          
+          ToolTip="Unesite naziv saradnika" Margin="19,0.2,9.8,110">
+            <TextBox.Text>
+                <Binding
+                  Path="BrProslava"
+                  UpdateSourceTrigger="PropertyChanged">
+
+                </Binding>
+            </TextBox.Text>
+        </TextBox>
+        <Label Grid.Column="3" Grid.Row="7" Content="Proslave" FontSize="24"></Label>
+        
+    
+    
     </Grid>
 </Window>
