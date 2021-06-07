@@ -1,4 +1,5 @@
-﻿using System;
+﻿using organizerEvents.Controler;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -23,6 +24,8 @@ namespace WpfApp1
         public MainWindow()
         {
             InitializeComponent();
+            //DataBase.ucitajPodatke();
+            //DataBase.inicijalizujPodatke();
         }
 
         private void button_Click(object sender, RoutedEventArgs e)

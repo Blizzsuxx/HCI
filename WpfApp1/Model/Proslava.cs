@@ -31,7 +31,7 @@ namespace organizerEvents.model
         public List<long> PorukeId { get; set; }
         [JsonIgnore]
         public List <Poruke> Poruke { get; set; }
-        public List<int> ZadaciId { get; set; }
+        public List<long> ZadaciId { get; set; }
         [JsonIgnore]
         public List<ToDo> Zadaci { get; set; }
         public List<long> DogovoriId { get; set; }
@@ -43,6 +43,14 @@ namespace organizerEvents.model
 
         public Proslava()
         {
+            this.Poruke = new List<Poruke>();
+            this.PorukeId = new List<long>();
+            this.Zadaci = new List<ToDo>();
+            this.ZadaciId = new List<long>();
+            this.Dogovori = new List<Dogovor>();
+            this.DogovoriId = new List<long>();
+            this.GodstiId = new List<long>();
+            this.Gosti = new List<Gost>();
 
         }
         public Proslava(String naslov, DateTime datum, int brGostiju, double budzet, String tip, Mesto mesto, String opis, Narucilac narucilac, Organizator organizator,

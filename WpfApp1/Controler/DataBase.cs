@@ -56,6 +56,175 @@ namespace organizerEvents.Controler
             DataBase.uveziStolove();
             DataBase.uveziToDos();
 
+        }
+        public static void sacuvajPodatke()
+        {
+            sacuvajAdministratore();
+            sacuvajGoste();
+            sacuvajSaradnike();
+            sacuvajMesta();
+            sacuvajStolove();
+            sacuvajDogovore();
+            sacuvajNarucioce();
+            sacuvajOrganizatore();
+            sacuvajPonude();
+            sacuvajPoruke();
+            sacuvajProslave();
+            sacuvajRecnikePojmova();
+            sacuvajToDos();
+            sacuvajZahteveZaProslavu();
+        }
+
+        public static long dobaviKorisnikId()
+        {
+            long id = 0;
+            foreach(Administrator admin in DataBase.administratori)
+            {
+                if (admin.Id > id)
+                {
+                    id = admin.Id;
+                }
+            }
+            foreach (Narucilac narucilac in DataBase.narucioci)
+            {
+                if (narucilac.Id > id)
+                {
+                    id = narucilac.Id;
+                }
+            }
+
+            foreach (Organizator organizator in DataBase.organizatori)
+            {
+                if (organizator.Id > id)
+                {
+                    id = organizator.Id;
+                }
+            }
+
+            return id;
+        }
+        public static void inicijalizujPodatke()
+        {
+            Administrator admin = new Administrator
+            {
+                BrojTelefona = "1231",
+                Id = 1,
+                Ime ="Andrija",
+                Prezime = "Vojvnovic"
+
+            };
+            DataBase.administratori.Add(admin);
+            Gost gost = new Gost
+            {
+                Ime = "Marko",
+                Prezime = "Markovic",
+                Id = 1
+            };
+            DataBase.gosti.Add(gost);
+
+            Saradnik saradnik = new Saradnik
+            {
+                Id = 1,
+                Naziv = "Firma"
+            };
+            DataBase.saradnici.Add(saradnik);
+            Mesto mesto = new Mesto
+            {
+                Id = 1,
+                NazivMesta = "Prvo mjest",
+                Broj = "1",
+                Ulica = "Prva"
+            };
+            DataBase.mesta.Add(mesto);
+
+
+            Sto sto = new Sto
+            {
+                Id = 1,
+                BrojLjudi = 100,
+                BrojStola = 10,
+                Opis = "prvi sto"
+            };
+            Sto sto2 = new Sto
+            {
+                Id = 2,
+                BrojLjudi = 100,
+                BrojStola = 10,
+                Opis = "drugi sto"
+            };
+
+            Dogovor dogovor = new Dogovor
+            {
+                Id = 1,
+                Stanje = Stanje.Dogovoreno
+            };
+            Narucilac narucilac = new Narucilac
+            {
+                Id = 2,
+                Ime = "Nrucilac",
+                Prezime = "Naruciocic",
+                KorisnickoIme = "momcina",
+                Sifra = "123"
+            };
+
+            Organizator ogranizator = new Organizator
+            {
+                Id = 2,
+                Ime = "Suki",
+                Prezime = "Suljic",
+                KorisnickoIme = "sule",
+                Sifra = "123"
+            };
+            Ponuda ponuda = new Ponuda
+            {
+                Id = 1,
+                Naziv = "Prejaka pnuda",
+                Opis = "Ne moze bolje"
+            };
+            Poruke poruka = new Poruke
+            {
+                Id = 1,
+                Text = "Ovo je tako dobar sadrzaj"
+            };
+
+            Proslava proslava = new Proslava
+            {
+                BrojGostiju = 10,
+                Id = 1,
+                Budzet = 100000
+            };
+            RecnikPojmova recnik = new RecnikPojmova
+            {
+                Id = 2
+            };
+            ToDo zadatak = new ToDo
+            {
+                Id = 2,
+                OpisZadatka = "Ovo je inicijalni zadatak"
+            };
+            ZahtevZaProslavu zahtevZaProslavu = new ZahtevZaProslavu
+            {
+                Id = 1,
+                Opis = "Zahtjev"
+            };
+            DataBase.zahtevZaProslave.Add(zahtevZaProslavu);
+            DataBase.toDos.Add(zadatak);
+            DataBase.recniciPojmova.Add(recnik);
+            proslava.Mesto = mesto;
+            proslava.MestoId = mesto.Id;
+            DataBase.proslave.Add(proslava);
+            DataBase.poruke.Add(poruka);
+            DataBase.ponude.Add(ponuda);
+            DataBase.organizatori.Add(ogranizator);
+            DataBase.dogovori.Add(dogovor);
+            DataBase.stolovi.Add(sto);
+            DataBase.stolovi.Add(sto2);
+            mesto.Stolovi.Add(sto);
+            mesto.StoloviId.Add(sto.Id);
+            mesto.Stolovi.Add(sto2);
+            mesto.StoloviId.Add(sto2.Id);
+            
+            
 
         }
 
@@ -304,12 +473,7 @@ namespace organizerEvents.Controler
 
         }
 
-        public static void sacuvajPodatke()
-        {
-            
-            //sacuvajOrganizatore();
-            
-        }
+        
 
         public static  void sacuvajOrganizatore()
         {
@@ -327,7 +491,7 @@ namespace organizerEvents.Controler
 
         public static void ucitajAdministratore()
         {
-            string administratori = File.ReadAllText("Administartori.json");
+            string administratori = File.ReadAllText("Administratori.json");
             DataBase.administratori =
                JsonSerializer.Deserialize<List<Administrator>>(administratori);
         }
