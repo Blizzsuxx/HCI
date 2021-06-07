@@ -1,0 +1,73 @@
+﻿<UserControl x:Class="WpfApp1.View.MenuBar"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:WpfApp1.View"
+             mc:Ignorable="d" 
+             d:DesignHeight="450" d:DesignWidth="800"
+             
+             
+             xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+        TextElement.Foreground="{DynamicResource MaterialDesignBody}"
+        TextElement.FontWeight="Regular"
+        TextElement.FontSize="13"
+        TextOptions.TextFormattingMode="Ideal"
+        TextOptions.TextRenderingMode="Auto"
+        Background="{DynamicResource MaterialDesignPaper}"
+             
+             >
+    
+            
+    <Grid>
+
+
+
+
+
+
+
+
+        <ToolBarTray>
+            <ToolBar
+    Style="{DynamicResource MaterialDesignToolBar}"
+    ClipToBounds="False">
+                <Button
+      ToolTip="Poruker"
+      Click="poruke_on_click"
+      Content="{materialDesign:PackIcon Kind=Message}" />
+                <Button
+      ToolTip="Obavestenja"
+      Content="{materialDesign:PackIcon Kind=Notifications}" />
+
+                <Button
+      ToolTip="Profil"
+      Content="{materialDesign:PackIcon Kind=Account}" />
+
+                <Button
+      ToolTip="Dogadjaji Kalendar"
+      Content="{materialDesign:PackIcon Kind=Event}" Click="Button_Click_2" />
+
+
+                <Button
+      ToolTip="Dogadjaji"
+      Content="{materialDesign:PackIcon Kind=Events}" />
+
+
+                <Button
+      ToolTip="Pomoc"
+      Content="{materialDesign:PackIcon Kind=Help}" Click="Button_Click_3" />
+
+
+
+
+            </ToolBar>
+        </ToolBarTray>
+
+
+
+
+
+
+    </Grid>
+</UserControl>

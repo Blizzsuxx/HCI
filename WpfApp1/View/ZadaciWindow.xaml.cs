@@ -11,18 +11,29 @@ using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
+using System.Collections.ObjectModel;
 
 namespace WpfApp1
 {
     /// <summary>
     /// Interaction logic for Window1.xaml
     /// </summary>
+    /// 
+
+
+
+
+
     public partial class ZadaciWindow : Window
     {
+
+        public List<ZadatakModel> lista { get; set; }
         public ZadaciWindow()
         {
             InitializeComponent();
-            List<ZadatakModel> lista = new List<ZadatakModel>();
+
+            lista = new List<ZadatakModel>();
+
             ZadatakModel m1 = new ZadatakModel();
             ZadatakModel m2 = new ZadatakModel();
             ZadatakModel m3 = new ZadatakModel();
@@ -36,6 +47,8 @@ namespace WpfApp1
             lista.Add(m2);
             lista.Add(m3);
             zadaciGrid.ItemsSource = lista;
+
+
         }
 
         private void zadaciGrid_SelectionChanged(object sender, SelectionChangedEventArgs e)
@@ -44,25 +57,37 @@ namespace WpfApp1
         }
 
 
-        public class ZadatakModel
-        {
-            public bool Odradjen { get; set; }
-
-            public string Ime { get; set; }
 
 
-        }
-
-        private void Button_Click(object sender, RoutedEventArgs e)
+        private void delete_task_on_click(object sender, RoutedEventArgs e)
         {
             KalendarWindow w = new KalendarWindow();
             w.Show();
         }
 
-        private void Button_Click_1(object sender, RoutedEventArgs e)
+        private void Button_Click_3(object sender, RoutedEventArgs e)
         {
             Recnik r = new Recnik();
             r.Show();
+
         }
+
+        private void poruke_on_click(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+
+
     }
+
+    public class ZadatakModel
+    {
+        public bool Odradjen { get; set; }
+
+        public string Ime { get; set; }
+
+    }
+
+
 }
