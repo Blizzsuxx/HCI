@@ -176,7 +176,8 @@ namespace organizerEvents.Controler
                 Ime = "Suki",
                 Prezime = "Suljic",
                 KorisnickoIme = "sule",
-                Sifra = "123"
+                Sifra = "123",
+                ProslaveId = new List<long> { 11 }
             };
             Ponuda ponuda = new Ponuda
             {
@@ -210,14 +211,23 @@ namespace organizerEvents.Controler
                 Id = 1,
                 Opis = "Zahtjev"
             };
+
+
+            Proslava novaProslava =new Proslava { OrganizatorId=2, Id=11, ZadaciId = new List<long> { 11 }, Opis="opis proslave", Naslov="Naslov Proslave" };
+            ToDo novTodo = new  ToDo { PonudeId = new List<long> { 11 }, Id=11, OpisZadatka="Opis Zadatka", StanjeZadatka=Stanje.Uradjeno};
+            Ponuda novaPonuda = new Ponuda { Id=11, Naziv = "naziv", Opis = "Opis" };
+
             DataBase.zahtevZaProslave.Add(zahtevZaProslavu);
             DataBase.toDos.Add(zadatak);
+            DataBase.toDos.Add(novTodo);
             DataBase.recniciPojmova.Add(recnik);
             proslava.Mesto = mesto;
             proslava.MestoId = mesto.Id;
             DataBase.proslave.Add(proslava);
+            DataBase.proslave.Add(novaProslava);
             DataBase.poruke.Add(poruka);
             DataBase.ponude.Add(ponuda);
+            DataBase.ponude.Add(novaPonuda);
             DataBase.organizatori.Add(ogranizator);
             DataBase.dogovori.Add(dogovor);
             DataBase.stolovi.Add(sto);

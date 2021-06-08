@@ -33,11 +33,12 @@ namespace WpfApp1
         public ZadaciWindow()
         {
             InitializeComponent();
-            List<Proslava> proslave = new List<Proslava>();
-            proslave.Add(new Proslava { Zadaci = new List<ToDo>(), Opis="opis proslave", Naslov="Naslov Proslave" });
-            proslave[0].Zadaci.Add(new ToDo { Ponude= new List<Ponuda>(), OpisZadatka="Opis Zadatka", StanjeZadatka=Stanje.Uradjeno});
-            proslave[0].Zadaci[0].Ponude.Add(new Ponuda { Naziv = "naziv", Opis = "Opis" });
-            foreach(var proslava in proslave)
+            //List<Proslava> proslave = new List<Proslava>();
+            //proslave.Add(new Proslava { Zadaci = new List<ToDo>(), Opis="opis proslave", Naslov="Naslov Proslave" });
+            //proslave[0].Zadaci.Add(new ToDo { Ponude= new List<Ponuda>(), OpisZadatka="Opis Zadatka", StanjeZadatka=Stanje.Uradjeno});
+            //proslave[0].Zadaci[0].Ponude.Add(new Ponuda { Naziv = "naziv", Opis = "Opis" });
+
+            foreach(var proslava in (DataBase.trenutniKorisnik as Organizator).Proslave)
             {
                 Expander expander = new Expander();
                 expander.Header = proslava.Naslov;
