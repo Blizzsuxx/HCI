@@ -35,7 +35,7 @@
         </TextBox>
         <TextBox HorizontalAlignment="Left" Height="33" Margin="182,160,0,0" TextWrapping="Wrap"  VerticalAlignment="Top" Width="266" FontSize="18" x:Name="korIme">
             <Binding
-                                      Path="KorIme"
+                                      Path="KorisnickoIme"
                                       UpdateSourceTrigger="PropertyChanged">
                 <Binding.ValidationRules>
                     <local11:UsernameValidator
@@ -43,7 +43,8 @@
                 </Binding.ValidationRules>
             </Binding>
         </TextBox>
-        <TextBox HorizontalAlignment="Left" Height="33" Margin="182,210,0,0" TextWrapping="Wrap"  VerticalAlignment="Top" Width="266" FontSize="18" x:Name="lozinka"/>
+        <TextBox HorizontalAlignment="Left" Height="33" Margin="182,210,0,0" TextWrapping="Wrap"  VerticalAlignment="Top" Width="266" FontSize="18" x:Name="lozinka" LostFocus="proveriSifru"
+                TextChanged="proveriSifru"/>
         <TextBox HorizontalAlignment="Left" Height="33" Margin="182,260,0,0" TextWrapping="Wrap"  VerticalAlignment="Top" Width="266" FontSize="18" x:Name="email">
             <Binding
                                       Path="Ime"

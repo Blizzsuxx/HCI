@@ -33,6 +33,8 @@ namespace WpfApp1.View
 
         private void Button_Click_3(object sender, RoutedEventArgs e)
         {
+            AzuriranjeProfila p = new AzuriranjeProfila();
+            p.Show();
             Recnik r = new Recnik();
             r.Show();
         }

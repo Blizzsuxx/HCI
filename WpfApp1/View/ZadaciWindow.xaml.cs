@@ -79,9 +79,10 @@ namespace WpfApp1
 
         private void Button_Click_3(object sender, RoutedEventArgs e)
         {
-            Recnik r = new Recnik();
-            r.Show();
-
+            //Recnik r = new Recnik();
+            //r.Show();
+            AzuriranjeProfila azuriranjeProfila = new AzuriranjeProfila();
+            azuriranjeProfila.Show();
         }
 
         private void poruke_on_click(object sender, RoutedEventArgs e)
