@@ -12,20 +12,16 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
 
-namespace WpfApp1
+namespace WpfApp1.View
 {
     /// <summary>
-    /// Interaction logic for Window4.xaml
+    /// Interaction logic for TabelaDogovora.xaml
     /// </summary>
-    public partial class KalendarWindow : Window
+    public partial class TabelaDogovora : Window
     {
-        public KalendarWindow()
+        public TabelaDogovora()
         {
             InitializeComponent();
-            Button b = new Button();
-            b.Content = "asd";
-            //Ponedeljak.Children.Add(b);
-            
         }
     }
 }

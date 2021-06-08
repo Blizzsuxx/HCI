@@ -12,20 +12,16 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
 
-namespace WpfApp1
+namespace WpfApp1.View
 {
     /// <summary>
-    /// Interaction logic for Window4.xaml
+    /// Interaction logic for ProzorOrganizatora.xaml
     /// </summary>
-    public partial class KalendarWindow : Window
+    public partial class ProzorOrganizatora : Window
     {
-        public KalendarWindow()
+        public ProzorOrganizatora()
         {
             InitializeComponent();
-            Button b = new Button();
-            b.Content = "asd";
-            //Ponedeljak.Children.Add(b);
-            
         }
     }
 }

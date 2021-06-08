@@ -1,0 +1,110 @@
+﻿<Window x:Class="WpfApp1.View.TabelaDogovora"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:WpfApp1.View"
+        mc:Ignorable="d"
+        Title="Tabela Dogovora" MaxHeight="430" MaxWidth="750" Height="430" Width="430"
+        xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+        TextElement.Foreground="{DynamicResource MaterialDesignBody}"
+        TextElement.FontWeight="Regular"
+        TextElement.FontSize="13"
+        TextOptions.TextFormattingMode="Ideal"
+        TextOptions.TextRenderingMode="Auto"
+        Background="{DynamicResource MaterialDesignPaper}"
+        FontFamily="{DynamicResource MaterialDesignFont}">
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="20"></ColumnDefinition>
+            <ColumnDefinition Width="*"></ColumnDefinition>
+            <ColumnDefinition Width="20"></ColumnDefinition>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="5"></RowDefinition>
+            <RowDefinition Height="auto"></RowDefinition>
+            <RowDefinition Height="auto"></RowDefinition>
+            <RowDefinition Height="*"></RowDefinition>
+            <RowDefinition Height="20"></RowDefinition>
+        </Grid.RowDefinitions>
+
+
+        <Rectangle Grid.Row="1" Grid.Column="0" Fill="MediumPurple" />
+        <Rectangle Grid.Row="1" Grid.Column="1" Fill="MediumPurple" />
+        <Rectangle Grid.Row="1" Grid.Column="2" Fill="MediumPurple" />
+
+        
+        <Rectangle Grid.Row="4" Grid.Column="0" Fill="MediumPurple" />
+        <Rectangle Grid.Row="4" Grid.Column="1" Fill="MediumPurple" />
+        <Rectangle Grid.Row="4" Grid.Column="2" Fill="MediumPurple" />
+
+        <TextBlock Grid.Column="1" Grid.Row="1" Foreground="White"
+                   FontWeight="UltraBlack" FontSize="18" Text="Tabela Dogovora"
+                   Margin="0,10,0,10" HorizontalAlignment="Center"></TextBlock>
+
+        <Button Grid.Column="1" Grid.Row="2" Margin="5,10,5,5" HorizontalAlignment="Left"
+                Width="25px" Height="25px" Foreground="White"
+          Style="{StaticResource MaterialDesignFloatingActionMiniLightButton}"
+          ToolTip="Ćaskanje.">
+            <materialDesign:PackIcon
+            Kind="Chat"
+             />
+        </Button>
+     
+        <ComboBox Grid.Column="1" Grid.Row="2" HorizontalAlignment="Right" Margin="5,10,20,5"
+          materialDesign:HintAssist.Hint="Status">
+                    <ComboBoxItem
+            Content="Dogovoreno" />
+                    <ComboBoxItem
+            Content="Uradjeno" />
+                    <ComboBoxItem
+            Content="Odbijeno" />
+                    <ComboBoxItem
+            Content="U Procesu Dogovora" />
+        </ComboBox>
+
+        <DataGrid Grid.Column="1" Grid.Row="3" Margin="0,10,0,0"
+            ItemsSource="{Binding Items1}"
+            CanUserAddRows="False"
+            AutoGenerateColumns="False"
+            HeadersVisibility="All"
+            >
+            <DataGrid.Columns>
+                <materialDesign:DataGridTextColumn
+                    Width="Auto"
+                    Binding="{Binding Code}"
+                    Header="ID"
+                    ElementStyle="{StaticResource MaterialDesignDataGridTextColumnStyle}"
+                    EditingElementStyle="{StaticResource MaterialDesignDataGridTextColumnEditingStyle}">
+                </materialDesign:DataGridTextColumn>
+
+                <!-- if you want to use the pop up style (MaterialDesignDataGridTextColumnPopupEditingStyle), you must use MaterialDataGridTextColumn -->
+                <materialDesign:DataGridTextColumn
+                    Header="Naziv"
+                     Width="Auto"
+                    ElementStyle="{StaticResource MaterialDesignDataGridTextColumnStyle}"
+                    EditingElementStyle="{StaticResource MaterialDesignDataGridTextColumnPopupEditingStyle}">
+                    <materialDesign:DataGridTextColumn.Binding>
+                        <Binding
+                            Path="Name">
+                        </Binding>
+                    </materialDesign:DataGridTextColumn.Binding>
+                </materialDesign:DataGridTextColumn>
+                
+                <!-- set a max length to get an indicator in the editor -->
+                <DataGridTextColumn
+                    Header="Stanje"
+                     Width="Auto"
+                    ElementStyle="{StaticResource MaterialDesignDataGridTextColumnStyle}"
+                    EditingElementStyle="{StaticResource MaterialDesignDataGridTextColumnEditingStyle}">
+                    <DataGridTextColumn.Binding>
+                        <Binding
+                            Path="Description">
+                        </Binding>
+                    </DataGridTextColumn.Binding>
+                </DataGridTextColumn>
+
+            </DataGrid.Columns>
+        </DataGrid>
+    </Grid>
+</Window>
