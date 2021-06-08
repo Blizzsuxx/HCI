@@ -25,7 +25,11 @@
 
                     <DataGridTemplateColumn.CellTemplate>
                         <DataTemplate >
-                            
+                            <ToggleButton
+            x:Name="dugme"
+            IsChecked = "{Binding Path=Odradjen, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"
+            Style = "{StaticResource MaterialDesignActionLightToggleButton}"
+            Content = "{Binding Path=StanjeZadatka}"/>
 
                         </DataTemplate>
                     </DataGridTemplateColumn.CellTemplate>
@@ -43,6 +47,14 @@
                     <DataGridTemplateColumn.CellTemplate>
                         <DataTemplate>
                             <TextBlock FontSize="20" Text="{Binding Opis}"  />
+                        </DataTemplate>
+                    </DataGridTemplateColumn.CellTemplate>
+                </DataGridTemplateColumn>
+
+                <DataGridTemplateColumn Header="Dogovor">
+                    <DataGridTemplateColumn.CellTemplate>
+                        <DataTemplate>
+                            <TextBlock FontSize="20" Text="{Binding DogovorIme}"  />
                         </DataTemplate>
                     </DataGridTemplateColumn.CellTemplate>
                 </DataGridTemplateColumn>

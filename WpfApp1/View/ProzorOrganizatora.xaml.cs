@@ -25,37 +25,19 @@ namespace WpfApp1.View
         {
             InitializeComponent();
 
-            //foreach (var proslava in (DataBase.trenutniKorisnik as Organizator).Proslave)
-            //{
-            //    Expander expander = new Expander();
-            //    expander.Header = proslava.Naslov;
-            //    zadaciStackPanel.Children.Add(expander);
-            //    StackPanel expanderPanel = new StackPanel();
-            //    expanderPanel.Margin = new Thickness(50, 0, 0, 0);
-
-            //    expander.Content = expanderPanel;
-            //    foreach (var zadatak in proslava.Zadaci)
-            //    {
-            //        Expander zadatakExpander = new Expander();
-
-            //        zadatakExpander.Header = zadatak.OpisZadatka;
-
-            //        StackPanel zadatakPanel = new StackPanel();
-            //        zadatakExpander.Content = zadatakPanel;
-
-            //        Grid wrapPanel = new Grid();
-            //        ToggleButtonUserControl toggle = new ToggleButtonUserControl(zadatak);
-            //        toggle.DataContext = this.DataContext;
-            //        wrapPanel.Children.Add(toggle);
-            //        wrapPanel.Children.Add(zadatakExpander);
-
-            //        expanderPanel.Children.Add(wrapPanel);
-            //        zadatakPanel.Children.Add(new ToDoUserControl(zadatak.Ponude, zadatak));
-            //    }
-            //}
+            foreach (var proslava in (DataBase.trenutniKorisnik as Organizator).Proslave)
+            {
+                Expander expander = new Expander();
+                expander.Header = proslava.Naslov;
+                telo.Children.Add(expander);
+                Grid.SetColumn(expander, 1);
+                Grid.SetRow(expander, 6);
 
 
-            
+            }
+
+
+
         }
 
         private void Button_Click(object sender, RoutedEventArgs e)

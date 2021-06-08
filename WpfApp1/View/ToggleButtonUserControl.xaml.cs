@@ -33,7 +33,7 @@ namespace WpfApp1.View
 
             InitializeComponent();
 
-
+            this.DataContext = this;
         }
 
         public event PropertyChangedEventHandler PropertyChanged = delegate { };

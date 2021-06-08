@@ -22,13 +22,11 @@ namespace WpfApp1.View
     /// </summary>
     public partial class ToDoUserControl : UserControl
     {
-        public List<Ponuda> lista { get; set; }
-        public ToDo toDo { get; set; }
-        public ToDoUserControl(List<Ponuda> ponude, ToDo toDo)
+        public List<ToDo> lista { get; set; }
+        public ToDoUserControl(List<ToDo> toDos)
         {
             InitializeComponent();
-            lista = ponude;
-            this.toDo = toDo;
+            lista = toDos;
             
 
             zadaciGrid.ItemsSource = lista;
