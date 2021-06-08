@@ -26,13 +26,25 @@ namespace WpfApp1.View
         {
             InitializeComponent();
             this.naziv.Text = "prva rec"; //todo notice
-            this.opis.Text= Kontroler.recnik.ZahteviZaRecnik["prvarec"];
+            this.opis.Text = "druga rec";// Kontroler.recnik.ZahteviZaRecnik["prvarec"];
         }
 
         private void sacuvaj_Click(object sender, RoutedEventArgs e)
         {
+            if (Kontroler == null)
+            {
+                Kontroler = new RecnikKontroler();
+            }
             bool uspelo=Kontroler.OdobriRec(this.naziv.Text);
+            Console.WriteLine("+++++++++++++++++++++++");
 
+        }
+
+        private void izbrisi_Click(object sender, RoutedEventArgs e)
+        {
+            if (Kontroler == null) { 
+            Kontroler = new RecnikKontroler();}
+            bool uspelo = Kontroler.izbrisiRec(this.naziv.Text);
         }
     }
 }

@@ -38,10 +38,14 @@ namespace WpfApp1.View
         {
 
         }
-        private void delete_task_on_click(object sender, RoutedEventArgs e)
+        private void delete_task_on_click(object sender, MouseButtonEventArgs e)
         {
-            KalendarWindow w = new KalendarWindow();
-            w.Show();
+            
+            UIElement element = (UIElement)zadaciGrid.InputHitTest(e.GetPosition(zadaciGrid));
+            int row = Grid.GetRow(element);
+            lista.RemoveAt(row);
+            zadaciGrid.ItemsSource = null;
+            zadaciGrid.ItemsSource = lista;
         }
     }
 }

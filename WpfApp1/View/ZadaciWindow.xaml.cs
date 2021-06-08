@@ -44,6 +44,7 @@ namespace WpfApp1
                 zadaciStackPanel.Children.Add(expander);
                 StackPanel expanderPanel = new StackPanel();
                 expanderPanel.Margin = new Thickness(50, 0, 0, 0);
+                
                 expander.Content = expanderPanel;
                 foreach(var zadatak in proslava.Zadaci)
                 {
@@ -54,7 +55,7 @@ namespace WpfApp1
                     StackPanel zadatakPanel = new StackPanel();
                     zadatakExpander.Content = zadatakPanel;
 
-                    WrapPanel wrapPanel = new WrapPanel();
+                    Grid wrapPanel = new Grid();
                     ToggleButtonUserControl toggle = new ToggleButtonUserControl(zadatak);
                     toggle.DataContext = this.DataContext;
                     wrapPanel.Children.Add(toggle);
@@ -93,13 +94,6 @@ namespace WpfApp1
         }
     }
 
-    public class ZadatakModel
-    {
-        public bool Odradjen { get; set; }
-
-        public string Ime { get; set; }
-
-    }
 
 
 }

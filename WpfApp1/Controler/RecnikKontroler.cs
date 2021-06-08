@@ -19,6 +19,10 @@ namespace WpfApp1.Controler
             return true;
         }
 
-
+        internal bool izbrisiRec(string text)
+        {
+            recnik.ZahteviZaRecnik.Remove(text);
+            return true;
+        }
     }
 }

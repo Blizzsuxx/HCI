@@ -32,7 +32,17 @@ namespace WpfApp1.View
         {
             String ime = this.Naziv.Text;
             String opis = this.Opis.Text;
-            String mesto = this.Naziv.Text;
+            String mesto = this.Mesto.Text;
+            String tip = this.Tip.Text;
+            kontroler.dodajSaradnika(ime, mesto, opis, tip);
+
+        }
+
+        private void Kreiraj_Click(object sender, RoutedEventArgs e)
+        {
+            String ime = this.Naziv.Text;
+            String opis = this.Opis.Text;
+            String mesto = this.Mesto.Text;
             String tip = this.Tip.Text;
             kontroler.dodajSaradnika(ime, mesto, opis, tip);
 

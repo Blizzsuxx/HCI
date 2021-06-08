@@ -14,6 +14,8 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 using MaterialDesignThemes.Wpf;
+using organizerEvents.model;
+using WpfApp1.View;
 
 namespace WpfApp1
 {
@@ -26,7 +28,7 @@ namespace WpfApp1
         public MainWindow()
         {
             InitializeComponent();
-            //DataBase.ucitajPodatke();
+            DataBase.ucitajPodatke();
             //DataBase.inicijalizujPodatke();
         }
 
@@ -35,63 +37,56 @@ namespace WpfApp1
             this.Show();
         }
 
-        private void button_Click(object sender, RoutedEventArgs e)
-        {
-            if (textBox_Copy.Text.Equals("admin"))
-            {
 
-            } else if (textBox_Copy.Text.Equals("org"))
+
+        private void validate(string text, ValidationRule validator)
+        {
+            var result = validator.Validate(text, null);
+            if (!result.IsValid)
+                throw new Exception("Molimo vas da ispravno popunite sva polja " + text + " je nevalidan");
+
+        }
+
+        private void button_Click_login(object sender, RoutedEventArgs e)
+        {
+            
+            Korisnik korisnik = DataBase.nadjiKorisnika(KorisnickoImeV.Text, Lozinka.Password);
+            Console.WriteLine(korisnik);
+            Console.WriteLine("AAA");
+
+            if (korisnik is Administrator)
             {
-                //organizerEvents.Controler.DataBase.trenutniKorisnik = organuzator;
+                return;
+            } else if(korisnik is Organizator)
+            {
                 ZadaciWindow zadaci = new ZadaciWindow();
                 zadaci.Closed += new EventHandler(this.Otvori_ovaj_prozor);
                 zadaci.Show();
                 this.Hide();
                 return;
-            } else if (textBox_Copy.Text.Equals("nar"))
+            } else if(korisnik is Narucilac)
             {
-
+                return;
             }
-            foreach (var admin in organizerEvents.Controler.DataBase.administratori)
-            {
-                if ((admin.Sifra.Equals(passwordBox.Password) && admin.KorisnickoIme.Equals(textBox_Copy.Text)) )
-                {
-                    organizerEvents.Controler.DataBase.trenutniKorisnik = admin;
-                    return;
-                } 
-   
-            }
-            foreach (var organuzator in organizerEvents.Controler.DataBase.organizatori )
-            {
-                if ((organuzator.Sifra.Equals(passwordBox.Password) && organuzator.KorisnickoIme.Equals(textBox_Copy.Text)) )
-                {
-                    organizerEvents.Controler.DataBase.trenutniKorisnik = organuzator;
-                    ZadaciWindow zadaci = new ZadaciWindow();
-                    zadaci.Closed += new EventHandler(this.Otvori_ovaj_prozor);
-                    zadaci.Show();
-                    this.Hide();
-                    return;
-                }
-
-            }
-            foreach (var narucioci in organizerEvents.Controler.DataBase.narucioci )
-            {
-                if ((narucioci.Sifra.Equals(passwordBox.Password) && narucioci.KorisnickoIme.Equals(textBox_Copy.Text)))
-                {
-                    organizerEvents.Controler.DataBase.trenutniKorisnik = narucioci;
-                    return;
-                }
-
-            }
-            HintAssist.SetHelperText(passwordBox, "Pogresna Sifra i/ili Korisnicko Ime");
-
+            HintAssist.SetHelperText(Lozinka, "Pogresna Sifra i/ili Korisnicko Ime");
+            KorisnickoImeV.Foreground = Brushes.DarkRed;
+            Lozinka.Foreground = Brushes.DarkRed;
 
 
         }
 
-        private void textBox_Copy_TextChanged(object sender, TextChangedEventArgs e)
-        {
 
+        private void button_Click_registracija(object sender, RoutedEventArgs e)
+        {
+            RegistracijaWindow zadaci = new RegistracijaWindow();
+            zadaci.Closed += new EventHandler(this.Otvori_ovaj_prozor);
+            zadaci.Show();
+            this.Hide();
+        }
+
+        private void closed_event(object sender, System.EventArgs e)
+        {
+            DataBase.sacuvajPodatke();
         }
     }
 }

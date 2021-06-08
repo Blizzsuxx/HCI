@@ -5,32 +5,135 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:WpfApp1.View"
         mc:Ignorable="d"
-        Title="PregledJedneProslave" Height="450" Width="800">
-    <Grid Background="LightBlue">
-        <TextBox HorizontalAlignment="Left" Height="23" Margin="113,55,0,0" TextWrapping="Wrap"  VerticalAlignment="Top" Width="211" x:Name="kIme"/>
-        <TextBox HorizontalAlignment="Left" Height="23" Margin="113,105,0,0" TextWrapping="Wrap"  VerticalAlignment="Top" Width="211" x:Name="org"/>
-        <TextBox HorizontalAlignment="Left" Height="23" Margin="113,160,0,0" TextWrapping="Wrap"  VerticalAlignment="Top" Width="211" x:Name="Datum"/>
-        <TextBox HorizontalAlignment="Left" Height="23" Margin="113,215,0,0" TextWrapping="Wrap"  VerticalAlignment="Top" Width="211" x:Name="budzet"/>
-        <TextBox HorizontalAlignment="Left" Height="23" Margin="113,270,0,0" TextWrapping="Wrap"  VerticalAlignment="Top" Width="211" x:Name="brGostiju"/>
-        <TextBox HorizontalAlignment="Left" Height="23" Margin="113,325,0,0" TextWrapping="Wrap"  VerticalAlignment="Top" Width="211" />
-        <TextBox HorizontalAlignment="Left" Height="23" Margin="113,380,0,0" TextWrapping="Wrap"  VerticalAlignment="Top" Width="211" x:Name="mesto"/>
-        <Label Content="Korisnik" HorizontalAlignment="Left" Margin="10,50,0,0" VerticalAlignment="Top" RenderTransformOrigin="-0.542,0.578" Width="85"/>
-        <Label Content="Organizator" HorizontalAlignment="Left" Margin="10,105,0,0" VerticalAlignment="Top" RenderTransformOrigin="-0.542,0.578" Width="85"/>
-        <Label Content="Mesto" HorizontalAlignment="Left" Margin="10,380,0,0" VerticalAlignment="Top" RenderTransformOrigin="-0.542,0.578" Width="85"/>
-        <Label Content="Datum" HorizontalAlignment="Left" Margin="10,160,0,0" VerticalAlignment="Top" RenderTransformOrigin="-0.542,0.578" Width="85"/>
-        <Label Content="Budzet" HorizontalAlignment="Left" Margin="10,215,0,0" VerticalAlignment="Top" RenderTransformOrigin="-0.542,0.578" Width="85"/>
-        <Label Content="Broj gostiju" HorizontalAlignment="Left" Margin="10,270,0,0" VerticalAlignment="Top" RenderTransformOrigin="-0.542,0.578" Width="85"/>
-        <Label Content="Zaboravila sam sta" HorizontalAlignment="Left" Margin="10,325,0,0" VerticalAlignment="Top" RenderTransformOrigin="-0.542,0.578" Width="85"/>
-        <Menu HorizontalAlignment="Left" Height="21" Margin="0,10,-0.4,0" VerticalAlignment="Top" Width="794"/>
-        <ComboBox HorizontalAlignment="Left" x:Name="odabir" Margin="546,54,0,0" VerticalAlignment="Top" Width="120" ItemsSource="{Binding Path=saradnici}"
+        Title="PregledJedneProslave" Height="450" Width="800"
+         xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+        TextElement.Foreground="{DynamicResource MaterialDesignBody}"
+        TextElement.FontWeight="Regular"
+        TextElement.FontSize="13"
+        TextOptions.TextFormattingMode="Ideal"
+        TextOptions.TextRenderingMode="Auto"
+        Background="{DynamicResource MaterialDesignPaper}"
+        FontFamily="{DynamicResource MaterialDesignFont}">
+    <Grid Background="White">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="20"></ColumnDefinition>
+            <ColumnDefinition Width="*"></ColumnDefinition>
+            <ColumnDefinition Width="*"></ColumnDefinition>
+            <ColumnDefinition Width="*"></ColumnDefinition>
+            <ColumnDefinition Width="*"></ColumnDefinition>
+            <ColumnDefinition Width="20"></ColumnDefinition>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="20"></RowDefinition>
+            <RowDefinition Height="auto"></RowDefinition>
+            <RowDefinition Height="auto"></RowDefinition>
+            <RowDefinition Height="auto"></RowDefinition>
+            <RowDefinition Height="auto"></RowDefinition>
+            <RowDefinition Height="auto"></RowDefinition>
+            <RowDefinition Height="auto"></RowDefinition>
+            <RowDefinition Height="auto"></RowDefinition>
+            <RowDefinition Height="auto"></RowDefinition>
+            <RowDefinition Height="*"></RowDefinition>
+            <RowDefinition Height="20"></RowDefinition>
+        </Grid.RowDefinitions>
+        <Rectangle Grid.Row="1" Grid.Column="1" Fill="MediumPurple" />
+        <Rectangle Grid.Row="1" Grid.Column="2" Fill="MediumPurple" />
+        <Rectangle Grid.Row="1" Grid.Column="0" Fill="MediumPurple" />
+        <Rectangle Grid.Row="1" Grid.Column="3" Fill="MediumPurple" />
+        <Rectangle Grid.Row="1" Grid.Column="5" Fill="MediumPurple" />
+        <Rectangle Grid.Row="1" Grid.Column="4" Fill="MediumPurple" />
+
+        <Rectangle Grid.Row="11" Grid.Column="1" Fill="MediumPurple" />
+        <Rectangle Grid.Row="11" Grid.Column="3" Fill="MediumPurple" />
+        <Rectangle Grid.Row="11" Grid.Column="5" Fill="MediumPurple" />
+        <Rectangle Grid.Row="11" Grid.Column="2" Fill="MediumPurple" />
+        <Rectangle Grid.Row="11" Grid.Column="0" Fill="MediumPurple" />
+        <Rectangle Grid.Row="11" Grid.Column="4" Fill="MediumPurple" />
+        <TextBlock Grid.Column="1" Grid.Row="1" Foreground="White"
+                   FontWeight="UltraBlack" FontSize="24" Text="Pregled proslave"
+                   Margin="0,10,0,10" HorizontalAlignment="Center" Grid.ColumnSpan="2"></TextBlock>
+
+        <TextBlock Grid.Column="1" Grid.Row="2"
+                   HorizontalAlignment="Center" Margin="0,12,0,0" FontWeight="SemiBold" Foreground="MediumPurple" FontSize="20" Text="Korisnik"></TextBlock>
+        <TextBlock Grid.Column="1" Grid.Row="3"
+                   HorizontalAlignment="Center"  Margin="0,12,0,0" FontWeight="SemiBold" Foreground="MediumPurple" FontSize="20" Text="Organizator"></TextBlock>
+        <TextBlock Grid.Column="1" Grid.Row="4"
+                   HorizontalAlignment="Center" Margin="0,12,0,0" FontWeight="SemiBold" Foreground="MediumPurple" FontSize="20" Text="Datum"></TextBlock>
+        <TextBlock Grid.Column="1" Grid.Row="5"
+                  HorizontalAlignment="Center"  Margin="0,12,0,0" FontWeight="SemiBold" Foreground="MediumPurple" FontSize="20" Text="Budzet"></TextBlock>
+        <TextBlock Grid.Column="1" Grid.Row="6"
+                   HorizontalAlignment="Center" Margin="0,12,0,0" FontWeight="SemiBold" Foreground="MediumPurple" FontSize="20" Text="Broj gostiju"></TextBlock>
+        <TextBlock Grid.Column="1" Grid.Row="7"
+                  HorizontalAlignment="Center"  Margin="0,12,0,0" FontWeight="SemiBold" Foreground="MediumPurple" FontSize="20" Text="Naziv mesta"></TextBlock>
+
+        <TextBox Grid.Column="2" Grid.Row="2" x:Name="kIme"
+                 HorizontalAlignment="Center"
+          Style="{StaticResource MaterialDesignFloatingHintTextBox}"
+         
+          Width="150"
+          materialDesign:ValidationAssist.UsePopup="True"
+          
+          ToolTip="Use a popup which can escape the bounds of the control where space is limited">
+
+        </TextBox>
+        <TextBox Grid.Column="2" Grid.Row="3" x:Name="org"
+                 HorizontalAlignment="Center"
+          Style="{StaticResource MaterialDesignFloatingHintTextBox}"
+         
+          Width="150"
+          materialDesign:ValidationAssist.UsePopup="True"
+          
+          ToolTip="Use a popup which can escape the bounds of the control where space is limited">
+
+        </TextBox>
+        <TextBox Grid.Column="2" Grid.Row="4" x:Name="Datum"
+                 HorizontalAlignment="Center"
+          Style="{StaticResource MaterialDesignFloatingHintTextBox}"
+         
+          Width="150"
+          materialDesign:ValidationAssist.UsePopup="True"
+          
+          ToolTip="Use a popup which can escape the bounds of the control where space is limited">
+
+        </TextBox>
+        <TextBox Grid.Column="2" Grid.Row="5"  x:Name="budzet"
+                 HorizontalAlignment="Center"
+          Style="{StaticResource MaterialDesignFloatingHintTextBox}"
+         
+          Width="150"
+          materialDesign:ValidationAssist.UsePopup="True"
+          
+          ToolTip="Use a popup which can escape the bounds of the control where space is limited">
+
+        </TextBox>
+        <TextBox Grid.Column="2" Grid.Row="6" x:Name="brGostiju"
+                 HorizontalAlignment="Center"
+          Style="{StaticResource MaterialDesignFloatingHintTextBox}"
+         
+          Width="150"
+          materialDesign:ValidationAssist.UsePopup="True"
+          
+          ToolTip="Use a popup which can escape the bounds of the control where space is limited">
+
+        </TextBox>
+        <TextBox Grid.Column="2" Grid.Row="7" x:Name="mesto"
+                 HorizontalAlignment="Center"
+          Style="{StaticResource MaterialDesignFloatingHintTextBox}"
+         
+          Width="150"
+          materialDesign:ValidationAssist.UsePopup="True"
+          
+          ToolTip="Use a popup which can escape the bounds of the control where space is limited">
+
+        </TextBox>
+        <ComboBox HorizontalAlignment="Left" x:Name="odabir" Grid.Column="3" Grid.Row="2" ItemsSource="{Binding Path=saradnici}"
                   DisplayMemberPath="Naziv"
                   SelectedValuePath="Naziv"
                   SelectedValue="{Binding Path=saradnik}"
-                  SelectionChanged="cmbColors_SelectionChanged"/>
-        <Label Content="Odaberi saradnika" HorizontalAlignment="Left" Margin="423,50,0,0" VerticalAlignment="Top" Height="26" Width="141" RenderTransformOrigin="0.168,0.473"/>
+                  SelectionChanged="cmbColors_SelectionChanged" Margin="10.2,5.2,0,5.8" Width="169"/>
+        <Label Content="Odaberite saradnika" Grid.Row="2" Grid.Column="4"/>
+        <TextBlock HorizontalAlignment="Left" Grid.Column="3" Grid.Row="3" Grid.ColumnSpan="2" Grid.RowSpan="4" x:Name="cenovnik"/>
 
-        <TextBlock HorizontalAlignment="Left" Margin="423,102,0,0" TextWrapping="Wrap" Text="Pregled cele ponude od tog saradnika ovo je text box, naci kako granice da se dodaju okvir"   VerticalAlignment="Top" Height="136" Width="344" x:Name="cenovnik"/>
-        <TextBlock HorizontalAlignment="Left" Margin="423,243,0,0" TextWrapping="Wrap" Text="Ovde dodju slike, naci kako granice da se dodaju okvir"   VerticalAlignment="Top" Height="136" Width="344"/>
 
     </Grid>
 </Window>
