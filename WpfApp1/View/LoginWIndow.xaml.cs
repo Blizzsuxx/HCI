@@ -28,8 +28,10 @@ namespace WpfApp1
         public MainWindow()
         {
             InitializeComponent();
+            //DataBase.ucitajPodatke();
+            DataBase.inicijalizujPodatke();
+            DataBase.sacuvajPodatke();
             DataBase.ucitajPodatke();
-            //DataBase.inicijalizujPodatke();
         }
 
         private void Otvori_ovaj_prozor(object sender, System.EventArgs e)
