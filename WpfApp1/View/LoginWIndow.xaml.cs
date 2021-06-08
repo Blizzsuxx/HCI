@@ -51,9 +51,7 @@ namespace WpfApp1
         {
             
             Korisnik korisnik = DataBase.nadjiKorisnika(KorisnickoImeV.Text, Lozinka.Password);
-            Console.WriteLine(korisnik);
-            Console.WriteLine("AAA");
-
+            DataBase.trenutniKorisnik = korisnik;
             if (korisnik is Administrator)
             {
                 return;
