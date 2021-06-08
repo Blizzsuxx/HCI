@@ -155,17 +155,26 @@
     <Compile Include="View\PregledOrganizatora.xaml.cs">
       <DependentUpon>PregledOrganizatora.xaml</DependentUpon>
     </Compile>
+    <Compile Include="View\PregledPonude.xaml.cs">
+      <DependentUpon>PregledPonude.xaml</DependentUpon>
+    </Compile>
     <Compile Include="View\PregledProslava.xaml.cs">
       <DependentUpon>PregledProslava.xaml</DependentUpon>
     </Compile>
     <Compile Include="View\PregledSvihSaradnika.xaml.cs">
       <DependentUpon>PregledSvihSaradnika.xaml</DependentUpon>
     </Compile>
+    <Compile Include="View\PrikazDogadjaja.xaml.cs">
+      <DependentUpon>PrikazDogadjaja.xaml</DependentUpon>
+    </Compile>
     <Compile Include="View\ProfilKorisnika.xaml.cs">
       <DependentUpon>ProfilKorisnika.xaml</DependentUpon>
     </Compile>
     <Compile Include="View\ProzorOrganizatora.xaml.cs">
       <DependentUpon>ProzorOrganizatora.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\ProzorZaDogadjaj.xaml.cs">
+      <DependentUpon>ProzorZaDogadjaj.xaml</DependentUpon>
     </Compile>
     <Compile Include="View\RegistracijaWindow.xaml.cs">
       <DependentUpon>RegistracijaWindow.xaml</DependentUpon>
@@ -270,6 +279,10 @@
       <DependentUpon>LoginWIndow.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
+    <Page Include="View\PregledPonude.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="View\PregledProslava.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -278,11 +291,19 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="View\PrikazDogadjaja.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="View\ProfilKorisnika.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="View\ProzorOrganizatora.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\ProzorZaDogadjaj.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
