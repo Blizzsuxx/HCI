@@ -59,7 +59,7 @@ namespace WpfApp1
                 return;
             } else if(korisnik is Organizator)
             {
-                ZadaciWindow zadaci = new ZadaciWindow();
+                ProzorOrganizatora zadaci = new ProzorOrganizatora();
                 zadaci.Closed += new EventHandler(this.Otvori_ovaj_prozor);
                 zadaci.Show();
                 this.Hide();
