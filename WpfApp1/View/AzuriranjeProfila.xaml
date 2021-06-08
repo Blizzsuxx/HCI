@@ -3,7 +3,7 @@
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-        xmlns:local="clr-namespace:WpfApp1.View"
+        xmlns:local="clr-namespace:WpfApp1.View" xmlns:local11="clr-namespace:WpfApp1.Controler"
         mc:Ignorable="d"
         Title="AzuriranjeProfila" Height="450" Width="800">
     <Grid Background="White">
@@ -13,12 +13,58 @@
         <Label Content="Lozinka" HorizontalAlignment="Left" Margin="33,210,0,0" VerticalAlignment="Top" RenderTransformOrigin="-1.197,-0.142" FontSize="18" Height="33" Width="144"/>
         <Label Content="E-mail" HorizontalAlignment="Left" Margin="33,260,0,0" VerticalAlignment="Top" RenderTransformOrigin="-1.197,-0.142" FontSize="18" Height="33" Width="144"/>
         <Label Content="Broj telefona" HorizontalAlignment="Left" Margin="33,310,0,0" VerticalAlignment="Top" RenderTransformOrigin="-1.197,-0.142" FontSize="18" Height="33" Width="144"/>
-        <TextBox HorizontalAlignment="Left" Height="33" Margin="182,60,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="266" FontSize="18" x:Name="ime"/>
-        <TextBox HorizontalAlignment="Left" Height="33" Margin="182,110,0,0" TextWrapping="Wrap"  VerticalAlignment="Top" Width="266" FontSize="18" x:Name="prezime"/>
-        <TextBox HorizontalAlignment="Left" Height="33" Margin="182,160,0,0" TextWrapping="Wrap"  VerticalAlignment="Top" Width="266" FontSize="18" x:Name="korIme"/>
-        <TextBox HorizontalAlignment="Left" Height="33" Margin="182,210,0,0" TextWrapping="Wrap"  VerticalAlignment="Top" Width="266" FontSize="18" x:Name="lozinka"/>
-        <TextBox HorizontalAlignment="Left" Height="33" Margin="182,260,0,0" TextWrapping="Wrap"  VerticalAlignment="Top" Width="266" FontSize="18" x:Name="email"/>
-        <TextBox HorizontalAlignment="Left" Height="33" Margin="182,310,0,0" TextWrapping="Wrap"  VerticalAlignment="Top" Width="266" FontSize="18" x:Name="brTel"/>
+        <TextBox  HorizontalAlignment="Left" Height="33" Margin="182,60,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="266" FontSize="18" x:Name="ime">
+            <Binding
+                                      Path="Ime"
+                                      UpdateSourceTrigger="PropertyChanged">
+                <Binding.ValidationRules>
+                    <local11:NoEmptyFieldValidator
+                                      ValidatesOnTargetUpdated="True"  />
+                </Binding.ValidationRules>
+            </Binding>
+        </TextBox>
+        <TextBox HorizontalAlignment="Left" Height="33" Margin="182,110,0,0" TextWrapping="Wrap"  VerticalAlignment="Top" Width="266" FontSize="18" x:Name="prezime">
+            <Binding
+                                      Path="Prezime"
+                                      UpdateSourceTrigger="PropertyChanged">
+                <Binding.ValidationRules>
+                    <local11:NoEmptyFieldValidator
+                                      ValidatesOnTargetUpdated="True"  />
+                </Binding.ValidationRules>
+            </Binding>
+        </TextBox>
+        <TextBox HorizontalAlignment="Left" Height="33" Margin="182,160,0,0" TextWrapping="Wrap"  VerticalAlignment="Top" Width="266" FontSize="18" x:Name="korIme">
+            <Binding
+                                      Path="KorisnickoIme"
+                                      UpdateSourceTrigger="PropertyChanged">
+                <Binding.ValidationRules>
+                    <local11:UsernameValidator
+                                      ValidatesOnTargetUpdated="True"  />
+                </Binding.ValidationRules>
+            </Binding>
+        </TextBox>
+        <TextBox HorizontalAlignment="Left" Height="33" Margin="182,210,0,0" TextWrapping="Wrap"  VerticalAlignment="Top" Width="266" FontSize="18" x:Name="lozinka" LostFocus="proveriSifru"
+                TextChanged="proveriSifru"/>
+        <TextBox HorizontalAlignment="Left" Height="33" Margin="182,260,0,0" TextWrapping="Wrap"  VerticalAlignment="Top" Width="266" FontSize="18" x:Name="email">
+            <Binding
+                                      Path="Ime"
+                                      UpdateSourceTrigger="PropertyChanged">
+                <Binding.ValidationRules>
+                    <local11:EmailValidator
+                                      ValidatesOnTargetUpdated="True"  />
+                </Binding.ValidationRules>
+            </Binding>
+        </TextBox>
+        <TextBox HorizontalAlignment="Left" Height="33" Margin="182,310,0,0" TextWrapping="Wrap"  VerticalAlignment="Top" Width="266" FontSize="18" x:Name="brTel">
+            <Binding
+                                      Path="Ime"
+                                      UpdateSourceTrigger="PropertyChanged">
+                <Binding.ValidationRules>
+                    <local11:NumbersValidator
+                                      ValidatesOnTargetUpdated="True"  />
+                </Binding.ValidationRules>
+            </Binding>
+        </TextBox>
         <Image Source="../resources/user.png" HorizontalAlignment="Left" Height="154" Margin="568,60,0,0" VerticalAlignment="Top" Width="157"/>
         <Button Content="Sacuvaj promene" HorizontalAlignment="Left" Margin="512,313,0,0" VerticalAlignment="Top" Width="225" Height="30" x:Name="SacuvajPromene" Click="SacuvajPromene_Click"/>
         <Button Content="Odbaci promene" HorizontalAlignment="Left" Margin="512,364,0,0" VerticalAlignment="Top" Width="225" RenderTransformOrigin="-1.211,1.528" Height="27" x:Name="Odbaci" Click="Odbaci_Click" />

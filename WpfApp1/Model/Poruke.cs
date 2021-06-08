@@ -15,7 +15,12 @@ namespace organizerEvents.model
         public Korisnik Autor { get; set; }
         public String Text { get; set; }
 
-        public Poruke() { }
+        public static long trenutniID = 1;
+
+        public Poruke() {
+            this.Id = trenutniID++;
+            
+        }
         public Poruke(Korisnik k, String text)
         {
             this.Autor = k;

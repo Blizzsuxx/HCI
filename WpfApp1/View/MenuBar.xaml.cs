@@ -1,4 +1,6 @@
-﻿using System;
+﻿using organizerEvents.Controler;
+using organizerEvents.model;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -33,13 +35,21 @@ namespace WpfApp1.View
 
         private void Button_Click_3(object sender, RoutedEventArgs e)
         {
+            
             Recnik r = new Recnik();
             r.Show();
         }
 
         private void poruke_on_click(object sender, RoutedEventArgs e)
         {
+            Chat chat = new Chat( (DataBase.trenutniKorisnik as Organizator).Proslave[0]);
+            chat.Show();
+        }
 
+        private void Button_Click(object sender, RoutedEventArgs e)
+        {
+            AzuriranjeProfila p = new AzuriranjeProfila();
+            p.Show();
         }
     }
 }

@@ -17,6 +17,8 @@ namespace WpfApp1.Controler
         public static void validate(string text, ValidationRule validator)
         {
             var result = validator.Validate(text, null);
+            Console.WriteLine(result);
+            Console.WriteLine(text);
             if (!result.IsValid)
                 throw new Exception("Molimo vas da ispravno popunite sva polja " + text + " je nevalidan");
 
@@ -35,7 +37,7 @@ namespace WpfApp1.Controler
             }
 
             Korisnik korisnik = DataBase.nadjiKorisnika(username);
-            if(korisnik != null)
+            if(korisnik != null && (DataBase.trenutniKorisnik != korisnik))
             {
                 return new ValidationResult(false, $"Taj Korisnik Vec Postoji");
             }
