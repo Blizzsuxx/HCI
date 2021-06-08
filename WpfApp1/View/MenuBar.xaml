@@ -42,7 +42,7 @@
 
                 <Button
       ToolTip="Profil"
-      Content="{materialDesign:PackIcon Kind=Account}" />
+      Content="{materialDesign:PackIcon Kind=Account}" Click="Button_Click" />
 
                 <Button
       ToolTip="Dogadjaji Kalendar"

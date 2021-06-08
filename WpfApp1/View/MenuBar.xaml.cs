@@ -33,8 +33,7 @@ namespace WpfApp1.View
 
         private void Button_Click_3(object sender, RoutedEventArgs e)
         {
-            AzuriranjeProfila p = new AzuriranjeProfila();
-            p.Show();
+            
             Recnik r = new Recnik();
             r.Show();
         }
@@ -42,6 +41,12 @@ namespace WpfApp1.View
         private void poruke_on_click(object sender, RoutedEventArgs e)
         {
 
+        }
+
+        private void Button_Click(object sender, RoutedEventArgs e)
+        {
+            AzuriranjeProfila p = new AzuriranjeProfila();
+            p.Show();
         }
     }
 }
