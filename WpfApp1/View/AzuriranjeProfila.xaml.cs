@@ -34,6 +34,7 @@ namespace WpfApp1.View
             this.DataContext = this;
             InitializeComponent();
 
+            
             ime.Text = DataBase.trenutniKorisnik.Ime;
             prezime.Text = DataBase.trenutniKorisnik.Prezime;
             email.Text = DataBase.trenutniKorisnik.Email;
