@@ -19,15 +19,21 @@ namespace organizerEvents.model
         public long Id { get; set; }
         public Stanje Stanje { get; set; }
 
-        public long PonudaId { get; set; }
-        [JsonIgnore]
-        public Ponuda Ponuda { get; set; }
+        public string Ime { get; set; }
 
-        public Dogovor() { }
-        public Dogovor(Stanje stanje, ref Ponuda ponude) {
+        public List<long> PonudeId { get; set; }
+        [JsonIgnore]
+        public List<Ponuda> Ponude { get; set; }
+
+        public Dogovor() {
+            this.PonudeId = new List<long>();
+            this.Ponude = new List<Ponuda>();
+        
+            }
+        public Dogovor(Stanje stanje, ref List<Ponuda> ponude) {
 
             this.Stanje = stanje;
-            this.Ponuda = ponude;
+            this.Ponude = ponude;
         }
     }
 }

@@ -284,14 +284,11 @@ namespace organizerEvents.Controler
         {
             foreach(ToDo todo in DataBase.toDos)
             {
-                foreach(long ponudaId in todo.PonudeId)
+                foreach(Dogovor dogovor in DataBase.dogovori)
                 {
-                    foreach (Ponuda ponuda in DataBase.ponude)
+                    if(dogovor.Id == todo.DogovorId)
                     {
-                        if (ponuda.Id == ponudaId)
-                        {
-                            todo.Ponude.Add(ponuda);
-                        }
+                        todo.Dogovor = dogovor;
                     }
                 }
             }
@@ -315,6 +312,7 @@ namespace organizerEvents.Controler
                 
                     foreach (Dogovor dogovor in DataBase.dogovori)
                     {
+                        
                         if (dogovor.Id == sto.DogovorId)
                         {
                         sto.Dogovor = dogovor;
@@ -517,13 +515,17 @@ namespace organizerEvents.Controler
         {
             //setovane ponude u podogovrima
            foreach(Dogovor dogovor in DataBase.dogovori){
-                foreach(Ponuda ponuda in DataBase.ponude)
-                {
-                    if (dogovor.PonudaId == ponuda.Id)
+               
+                    foreach (long ponudaId in dogovor.PonudeId)
                     {
-                        dogovor.Ponuda = ponuda;
+                        foreach (Ponuda ponuda in DataBase.ponude)
+                        {
+                            if (ponuda.Id == ponudaId)
+                            {
+                            dogovor.Ponude.Add(ponuda);
+                            }
+                        }
                     }
-                }
             }
 
         }
