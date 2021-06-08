@@ -94,6 +94,18 @@ namespace WpfApp1.Controler
             return ValidationResult.ValidResult;
         }
     }
+    class NumbersValidatorNumerals : ValidationRule
+    {
+        public override ValidationResult Validate(object value, CultureInfo cultureInfo)
+        {
+            string word = (string)value;
+            if (word == null || word.Length <= 0 || !Regex.Match(word, @"^([0-9]+\.?[0-9]*)$").Success)
+            {
+                return new ValidationResult(false, $"Nije Validan Broj");
+            }
 
-    
+            return ValidationResult.ValidResult;
+        }
+    }
+
 }
