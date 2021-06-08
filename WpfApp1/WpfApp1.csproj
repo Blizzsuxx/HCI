@@ -203,6 +203,9 @@
     <Compile Include="View\KalendarWindow.xaml.cs">
       <DependentUpon>KalendarWindow.xaml</DependentUpon>
     </Compile>
+    <Compile Include="View\ZahteviZaOrganizacije.xaml.cs">
+      <DependentUpon>ZahteviZaOrganizacije.xaml</DependentUpon>
+    </Compile>
     <Page Include="View\AzuriranjeProfila.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -328,6 +331,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="View\KalendarWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\ZahteviZaOrganizacije.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

@@ -1,0 +1,108 @@
+﻿<Window x:Class="WpfApp1.View.ZahteviZaOrganizacije"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:WpfApp1.View"
+        mc:Ignorable="d"
+        Title="Zahtjevi za organizaciju događaja" Height="400" Width="300" MaxHeight="430" MaxWidth="750"
+        xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+        TextElement.Foreground="{DynamicResource MaterialDesignBody}"
+        TextElement.FontWeight="Regular"
+        TextElement.FontSize="13"
+        TextOptions.TextFormattingMode="Ideal"
+        TextOptions.TextRenderingMode="Auto"
+        Background="{DynamicResource MaterialDesignPaper}"
+        FontFamily="{DynamicResource MaterialDesignFont}">
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="20"></ColumnDefinition>
+            <ColumnDefinition Width="*"></ColumnDefinition>
+            <ColumnDefinition Width="20"></ColumnDefinition>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="5"></RowDefinition>
+            <RowDefinition Height="auto"></RowDefinition>
+            <RowDefinition Height="auto"></RowDefinition>
+            <RowDefinition Height="*"></RowDefinition>
+            <RowDefinition Height="20"></RowDefinition>
+        </Grid.RowDefinitions>
+        
+        <Rectangle Grid.Row="1" Grid.Column="0" Fill="MediumPurple" />
+        <Rectangle Grid.Row="1" Grid.Column="1" Fill="MediumPurple" />
+        <Rectangle Grid.Row="1" Grid.Column="2" Fill="MediumPurple" />
+
+        <Rectangle Grid.Row="4" Grid.Column="0" Fill="MediumPurple" />
+        <Rectangle Grid.Row="4" Grid.Column="1" Fill="MediumPurple" />
+        <Rectangle Grid.Row="4" Grid.Column="2" Fill="MediumPurple" />
+
+        <TextBlock Grid.Column="1" Grid.Row="1" Foreground="White"
+                   FontWeight="UltraBlack" FontSize="18" Text="Zahtevi"
+                   Margin="0,10,0,10" HorizontalAlignment="Center"></TextBlock>
+
+
+        <Grid Grid.Row="2" Grid.Column="1">
+            <Grid.ColumnDefinitions>
+                
+                <ColumnDefinition Width="*"></ColumnDefinition>
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+               
+                <RowDefinition Height="*"></RowDefinition>
+                <RowDefinition Height="*"></RowDefinition>
+                <RowDefinition Height="*"></RowDefinition>
+                <RowDefinition Height="*"></RowDefinition>
+                <RowDefinition Height="*"></RowDefinition>
+            </Grid.RowDefinitions>
+            <Border CornerRadius="6" Grid.Column="0" Grid.Row="0"
+                BorderBrush="MediumPurple"
+               
+                BorderThickness="2"
+               >
+                <WrapPanel >
+                    <ToggleButton
+                    Content="H"
+                    Style="{StaticResource MaterialDesignActionToggleButton}"
+                    ToolTip="MaterialDesignActionToggleButton"
+                       materialDesign:ShadowAssist.ShadowDepth="Depth3" />
+                    <StackPanel>
+                        <TextBlock Margin="0,10,0,0" Text="Andrija Vojnovic" FontWeight="UltraBlack" FontSize="10"></TextBlock>
+                        <TextBlock Margin="2,0,5,10" Text="Pozdrav, zelio bih organizaciju moje svadbe"  FontSize="10"></TextBlock>
+                    </StackPanel>
+                </WrapPanel>
+            </Border>
+            <Border CornerRadius="6" Grid.Column="0" Grid.Row="1"
+                 BorderBrush="MediumPurple"
+                BorderThickness="2"
+               >
+                <WrapPanel >
+                    <ToggleButton
+                    Content="H"
+                    Style="{StaticResource MaterialDesignActionToggleButton}"
+                    ToolTip="MaterialDesignActionToggleButton"
+                       materialDesign:ShadowAssist.ShadowDepth="Depth3" />
+                    <StackPanel>
+                        <TextBlock Margin="0,10,0,0" Text="Andrija Vojnovic" FontWeight="UltraBlack" FontSize="10"></TextBlock>
+                        <TextBlock Margin="2,0,5,10" Text="Pozdrav, zelio bih organizaciju moje svadbe"  FontSize="10"></TextBlock>
+                    </StackPanel>
+                </WrapPanel>
+            </Border>
+            <Border CornerRadius="6" Grid.Column="0" Grid.Row="2"
+                 BorderBrush="MediumPurple"
+                BorderThickness="2"
+               >
+                <WrapPanel >
+                <ToggleButton
+                    Content="H"
+                    Style="{StaticResource MaterialDesignActionToggleButton}"
+                    ToolTip="MaterialDesignActionToggleButton"
+                       materialDesign:ShadowAssist.ShadowDepth="Depth3" />
+                <StackPanel>
+                    <TextBlock Margin="0,10,0,0" Text="Andrija Vojnovic" FontWeight="UltraBlack" FontSize="10"></TextBlock>
+                    <TextBlock Margin="2,0,5,10" Text="Pozdrav, zelio bih organizaciju moje svadbe"  FontSize="10"></TextBlock>
+                </StackPanel>
+            </WrapPanel>
+            </Border>
+        </Grid>
+    </Grid>
+</Window>
