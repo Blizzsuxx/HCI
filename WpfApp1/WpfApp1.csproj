@@ -117,6 +117,9 @@
     <Compile Include="View\AzuriranjeProfila.xaml.cs">
       <DependentUpon>AzuriranjeProfila.xaml</DependentUpon>
     </Compile>
+    <Compile Include="View\Chat.xaml.cs">
+      <DependentUpon>Chat.xaml</DependentUpon>
+    </Compile>
     <Compile Include="View\CRUDBar.xaml.cs">
       <DependentUpon>CRUDBar.xaml</DependentUpon>
     </Compile>
@@ -125,6 +128,9 @@
     </Compile>
     <Compile Include="View\FormaOrganizacije.xaml.cs">
       <DependentUpon>FormaOrganizacije.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\KreiranjeDogovora.xaml.cs">
+      <DependentUpon>KreiranjeDogovora.xaml</DependentUpon>
     </Compile>
     <Compile Include="View\KreiranjePonuda.xaml.cs">
       <DependentUpon>KreiranjePonuda.xaml</DependentUpon>
@@ -156,8 +162,17 @@
     <Compile Include="View\ProfilKorisnika.xaml.cs">
       <DependentUpon>ProfilKorisnika.xaml</DependentUpon>
     </Compile>
+    <Compile Include="View\ProzorOrganizatora.xaml.cs">
+      <DependentUpon>ProzorOrganizatora.xaml</DependentUpon>
+    </Compile>
     <Compile Include="View\TabelaDogadjaja.xaml.cs">
       <DependentUpon>TabelaDogadjaja.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\TabelaDogovora.xaml.cs">
+      <DependentUpon>TabelaDogovora.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\TabelaSaradnika.xaml.cs">
+      <DependentUpon>TabelaSaradnika.xaml</DependentUpon>
     </Compile>
     <Compile Include="View\Test.xaml.cs">
       <DependentUpon>Test.xaml</DependentUpon>
@@ -187,6 +202,10 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="View\Chat.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="View\CRUDBar.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -196,6 +215,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="View\FormaOrganizacije.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\KreiranjeDogovora.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -251,7 +274,19 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="View\ProzorOrganizatora.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="View\TabelaDogadjaja.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\TabelaDogovora.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\TabelaSaradnika.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
