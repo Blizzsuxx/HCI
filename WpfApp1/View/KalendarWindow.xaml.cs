@@ -24,7 +24,7 @@ namespace WpfApp1
             InitializeComponent();
             Button b = new Button();
             b.Content = "asd";
-            Ponedeljak.Children.Add(b);
+            //Ponedeljak.Children.Add(b);
             
         }
     }

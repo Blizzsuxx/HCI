@@ -24,29 +24,12 @@ namespace WpfApp1
             InitializeComponent();
 
             RecnikModel.reci.Add(new RecnikModel { Rec = "Baba", Opis = "Stara zena" });
-            Grid.ItemsSource = RecnikModel.reci;
+           
         }
 
 
 
-        private void textBox_TextChanged(object sender, TextChangedEventArgs e)
-        {
-            var box = sender as TextBox;
-            if (box.Text == "")
-            {
-
-            } else
-            {
-                Grid.ItemsSource = null;
-                Console.WriteLine(RecnikModel.reci);
-                List<RecnikModel> lista = (List<RecnikModel>)(from i in RecnikModel.reci where i.Rec.ToLower().Contains(box.Text) || i.Opis.ToLower().Contains(box.Text) select i).ToList();
-                if(lista == null)
-                {
-                    lista = new List<RecnikModel>();
-                }
-                Grid.ItemsSource = lista;
-            }
-        }
+       
 
         private void Grid_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {

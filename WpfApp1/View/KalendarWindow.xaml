@@ -3,162 +3,312 @@
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-        xmlns:local="clr-namespace:WpfApp1"
+        xmlns:local="clr-namespace:WpfApp1.View"
         mc:Ignorable="d"
-        Title="KalendarWindow" Height="450" Width="800">
+        Title="Kalendar događaja" Height="431" Width="752" MaxHeight="430" MaxWidth="750"
+        xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+        TextElement.Foreground="{DynamicResource MaterialDesignBody}"
+        TextElement.FontWeight="Regular"
+        TextElement.FontSize="13"
+        TextOptions.TextFormattingMode="Ideal"
+        TextOptions.TextRenderingMode="Auto"
+        Background="{DynamicResource MaterialDesignPaper}"
+        FontFamily="{DynamicResource MaterialDesignFont}">
+    
     <Grid>
-        <Button Width="40" Height="40" Margin="10,10,738.6,365" RenderTransformOrigin="0.5,0.5" Background="White" BorderBrush="White">
-            <Button.Resources>
-                <Style TargetType="{x:Type Border}">
-                    <Setter Property="CornerRadius" Value="100"/>
-                </Style>
-            </Button.Resources>
-            <StackPanel>
-                <Image Source="../resources/help.png" />
-            </StackPanel>
+
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="20"></ColumnDefinition>
+            <ColumnDefinition Width="*"></ColumnDefinition>
+            <ColumnDefinition Width="20"></ColumnDefinition>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="5"></RowDefinition>
+            <RowDefinition Height="auto"></RowDefinition>
+            <RowDefinition Height="auto"></RowDefinition>
+            <RowDefinition Height="auto"></RowDefinition>
+            <RowDefinition Height="*"></RowDefinition>
+            <RowDefinition Height="20"></RowDefinition>
+        </Grid.RowDefinitions>
+
+        <Rectangle Grid.Row="1" Grid.Column="0" Fill="MediumPurple" />
+        <Rectangle Grid.Row="1" Grid.Column="1" Fill="MediumPurple" />
+        <Rectangle Grid.Row="1" Grid.Column="2" Fill="MediumPurple" />
+
+        <Rectangle Grid.Row="5" Grid.Column="0" Fill="MediumPurple" />
+        <Rectangle Grid.Row="5" Grid.Column="1" Fill="MediumPurple" />
+        <Rectangle Grid.Row="5" Grid.Column="2" Fill="MediumPurple" />
+
+        <TextBlock Grid.Column="1" Grid.Row="1" Foreground="White"
+                   FontWeight="UltraBlack" FontSize="18" Text="Kalendar Događaja"
+                   Margin="0,10,0,10" HorizontalAlignment="Center"></TextBlock>
+
+
+        <Button Grid.Column="1" Grid.Row="2" Margin="5,10,5,5" HorizontalAlignment="Right"
+                Width="25px" Height="25px" Foreground="White"
+          Style="{StaticResource MaterialDesignFloatingActionMiniLightButton}"
+          ToolTip="Pomoć.">
+            <materialDesign:PackIcon
+            Kind="QuestionMark"
+             />
         </Button>
-
-
-
-
-
-
-        <Button Width="40" Height="40" Margin="478,10,269.6,365" RenderTransformOrigin="0.5,0.5" Background="White" BorderBrush="White">
-            <Button.Resources>
-                <Style TargetType="{x:Type Border}">
-                    <Setter Property="CornerRadius" Value="100"/>
-                </Style>
-            </Button.Resources>
-            <StackPanel>
-                <Image Source="../resources/user.png" />
-            </StackPanel>
+        <Button Grid.Column="1" Grid.Row="2" Margin="5,10,40,5" HorizontalAlignment="Right"
+                Width="25px" Height="25px" Foreground="White"
+          Style="{StaticResource MaterialDesignFloatingActionMiniLightButton}"
+          ToolTip="Brisanje.">
+            <materialDesign:PackIcon
+            Kind="Delete"
+             />
         </Button>
-        <Button Height="40" Width="40" Margin="528,3,219.6,367" RenderTransformOrigin="0.5,0.5" Background="White" BorderBrush="White">
-            <Button.Resources>
-                <Style TargetType="{x:Type Border}">
-                    <Setter Property="CornerRadius" Value="100"/>
-                </Style>
-            </Button.Resources>
-            <StackPanel>
-                <Image Source="../resources/spreadsheet-table.png" />
-            </StackPanel>
+        <Button Grid.Column="1" Grid.Row="2" Margin="5,10,75,5" HorizontalAlignment="Right"
+                Width="25px" Height="25px" Foreground="White"
+          Style="{StaticResource MaterialDesignFloatingActionMiniLightButton}"
+          ToolTip="Undo.">
+            <materialDesign:PackIcon
+            Kind="Undo"
+             />
         </Button>
-        <Button Width="40" Height="40" Margin="592,10,155.6,365" RenderTransformOrigin="0.5,0.5" Background="White" BorderBrush="White">
-            <Button.Resources>
-                <Style TargetType="{x:Type Border}">
-                    <Setter Property="CornerRadius" Value="100"/>
-                </Style>
-            </Button.Resources>
-            <StackPanel>
-                <Image Source="../resources/Simple_icon_table.svg.png" />
-            </StackPanel>
+        <Button Grid.Column="1" Grid.Row="2" Margin="5,10,5,5" HorizontalAlignment="Left"
+                Width="25px" Height="25px" Foreground="White"
+          Style="{StaticResource MaterialDesignFloatingActionMiniLightButton}"
+          ToolTip="Tabela događaja.">
+            <materialDesign:PackIcon
+            Kind="Table"
+             />
         </Button>
-        <Button Height="40" Width="40" Margin="655,3,93.6,367" RenderTransformOrigin="0.5,0.5" Background="White" BorderBrush="White">
-            <Button.Resources>
-                <Style TargetType="{x:Type Border}">
-                    <Setter Property="CornerRadius" Value="100"/>
-                </Style>
-            </Button.Resources>
-            <StackPanel>
-                <Image Source="../resources/notification.png" />
-            </StackPanel>
+        <Button Grid.Column="1" Grid.Row="2" Margin="40,10,5,5" HorizontalAlignment="Left"
+                Width="25px" Height="25px" Foreground="White"
+          Style="{StaticResource MaterialDesignFloatingActionMiniLightButton}"
+          ToolTip="Kalendar događaja.">
+            <materialDesign:PackIcon
+            Kind="Calendar"
+             />
         </Button>
-        <Button Width="40" Height="40" Margin="705,10,43.6,365" RenderTransformOrigin="0.5,0.5" Background="White" BorderBrush="White">
-            <Button.Resources>
-                <Style TargetType="{x:Type Border}">
-                    <Setter Property="CornerRadius" Value="100"/>
-                </Style>
-            </Button.Resources>
-            <StackPanel>
-                <Image Source="../resources/message.png" />
-            </StackPanel>
+        <Button Grid.Column="1" Grid.Row="2" Margin="75,10,5,5" HorizontalAlignment="Left"
+                Width="25px" Height="25px" Foreground="White"
+          Style="{StaticResource MaterialDesignFloatingActionMiniLightButton}"
+          ToolTip="Obavještenja.">
+            <materialDesign:PackIcon
+            Kind="Bell"
+             />
         </Button>
+        <Button Grid.Column="1" Grid.Row="2" Margin="110,10,5,5" HorizontalAlignment="Left"
+                Width="25px" Height="25px" Foreground="White"
+          Style="{StaticResource MaterialDesignFloatingActionMiniLightButton}"
+          ToolTip="Poruka.">
+            <materialDesign:PackIcon
+            Kind="Message"
+             />
+        </Button>
+        
+            <Grid Grid.Column="1" Grid.Row="3">
 
-        <Rectangle HorizontalAlignment="Left" Height="362" Margin="-1,58,0,0" Stroke="Black" VerticalAlignment="Top" Width="120">
-            <Rectangle.Fill>
-                <ImageBrush/>
-            </Rectangle.Fill>
-        </Rectangle>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="10"></ColumnDefinition>
+                <ColumnDefinition Width="*"></ColumnDefinition>
+                <ColumnDefinition Width="*"></ColumnDefinition>
+                <ColumnDefinition Width="*"></ColumnDefinition>
+                <ColumnDefinition Width="*"></ColumnDefinition>
+                <ColumnDefinition Width="*"></ColumnDefinition>
+                <ColumnDefinition Width="*"></ColumnDefinition>
+                <ColumnDefinition Width="*"></ColumnDefinition>
+                <ColumnDefinition Width="*"></ColumnDefinition>
+                <ColumnDefinition Width="10"></ColumnDefinition>
 
+            </Grid.ColumnDefinitions>
 
-        <TextBlock x:Name="textBlock_Copy6" HorizontalAlignment="Left" Margin="124,170,0,0" TextWrapping="Wrap" Text="11:00" VerticalAlignment="Top"/>
-        <TextBlock x:Name="textBlock_Copy7" HorizontalAlignment="Left" Margin="124,190,0,0" TextWrapping="Wrap" Text="12:00" VerticalAlignment="Top"/>
-        <TextBlock x:Name="textBlock_Copy8" HorizontalAlignment="Left" Margin="124,210,0,0" TextWrapping="Wrap" Text="13:00" VerticalAlignment="Top"/>
-        <TextBlock x:Name="textBlock_Copy9" HorizontalAlignment="Left" Margin="124,230,0,0" TextWrapping="Wrap" Text="14:00" VerticalAlignment="Top"/>
-        <TextBlock x:Name="textBlock_Copy10" HorizontalAlignment="Left" Margin="124,250,0,0" TextWrapping="Wrap" Text="15:00" VerticalAlignment="Top"/>
-        <TextBlock x:Name="textBlock_Copy11" HorizontalAlignment="Left" Margin="124,270,0,0" TextWrapping="Wrap" Text="16:00" VerticalAlignment="Top"/>
-        <TextBlock x:Name="textBlock_Copy12" HorizontalAlignment="Left" Margin="124,290,0,0" TextWrapping="Wrap" Text="18:00" VerticalAlignment="Top"/>
-        <TextBlock x:Name="textBlock_Copy13" HorizontalAlignment="Left" Margin="124,310,0,0" TextWrapping="Wrap" Text="19:00" VerticalAlignment="Top"/>
-        <TextBlock x:Name="textBlock_Copy14" HorizontalAlignment="Left" Margin="124,330,0,0" TextWrapping="Wrap" Text="21:00" VerticalAlignment="Top"/>
-        <TextBlock x:Name="textBlock_Copy15" HorizontalAlignment="Left" Margin="124,350,0,0" TextWrapping="Wrap" Text="22:00" VerticalAlignment="Top"/>
-        <TextBlock x:Name="textBlock_Copy16" HorizontalAlignment="Left" Margin="124,370,0,0" TextWrapping="Wrap" Text="23:00" VerticalAlignment="Top"/>
-        <TextBlock x:Name="textBlock_Copy21" HorizontalAlignment="Left" Margin="124,390,0,0" TextWrapping="Wrap" Text="00:00" VerticalAlignment="Top"/>
-        <TextBlock x:Name="textBlock_Copy17" HorizontalAlignment="Left" Margin="124,150,0,0" TextWrapping="Wrap" Text="10:00" VerticalAlignment="Top"/>
-        <TextBlock x:Name="textBlock_Copy18" HorizontalAlignment="Left" Margin="124,130,0,0" TextWrapping="Wrap" Text="9:00" VerticalAlignment="Top"/>
-        <TextBlock x:Name="textBlock_Copy19" HorizontalAlignment="Left" Margin="124,110,0,0" TextWrapping="Wrap" Text="8:00" VerticalAlignment="Top"/>
-        <TextBlock x:Name="textBlock_Copy20" HorizontalAlignment="Left" Margin="124,90,0,0" TextWrapping="Wrap" Text="7:00" VerticalAlignment="Top"/>
-        <StackPanel Orientation="Vertical" x:Name="Ponedeljak" HorizontalAlignment="Left" Height="345" Margin="169,65,0,0" VerticalAlignment="Top" Width="86">
-            <StackPanel.Background>
-                <ImageBrush/>
-            </StackPanel.Background>
-            <TextBlock x:Name="textBlock" HorizontalAlignment="Left"  TextWrapping="Wrap" Text="Ponedeljak" VerticalAlignment="Top" Background="Red" Height="25" Width="85" FontSize="15"/>
-            <Button Height="20" Content="asdasd"></Button>
-            <Button Height="20" Content="asdasd"></Button>
-            <Button Height="20" Content="asdasd"></Button>
-            <Button Height="20" Content="asdasd"></Button>
-            <Button Height="20" Content="asdasd"></Button>
-            <Button Height="20" Content="asdasd"></Button>
-            <Button Height="20" Content="asdasd"></Button>
-            <Button Height="20" Content="asdasd"></Button>
-            <Button Height="20" Content="asdasd"></Button>
-            <Button Height="20" Content="asdasd"></Button>
-            <Button Height="20" Content="asdasd"></Button>
-            <Button Height="20" Content="asdasd"></Button>
-            <Button Height="20" Content="asdasd"></Button>
-            <Button Height="20" Content="asdasd"></Button>
-            <Button Height="20" Content="asdasd"></Button>
-            <Button Height="20" Content="asdasd"></Button>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="5"></RowDefinition>
+                <RowDefinition Height="auto"></RowDefinition>
+                
+                <RowDefinition Height="*"></RowDefinition>
+                <RowDefinition Height="20"></RowDefinition>
+            </Grid.RowDefinitions>
 
-        </StackPanel>
-        <StackPanel Orientation="Vertical" x:Name="Utorak" HorizontalAlignment="Left" Height="345" Margin="255,65,0,0" VerticalAlignment="Top" Width="86">
-            <TextBlock x:Name="textBlock_Copy" HorizontalAlignment="Left"  TextWrapping="Wrap" Text="Utorak" VerticalAlignment="Top" Height="25" Width="85" FontSize="15" Background="Yellow"/>
-            <Button Height="20" Content="asdasd"></Button>
-            <Button Height="20" Content="asdasd" Visibility="Hidden"></Button>
-            <Button Height="20" Content="asdasd"></Button>
-            <Button Height="40" Content="asdasd"></Button>
-        </StackPanel>
-        <StackPanel Orientation="Vertical" x:Name="Sreda" HorizontalAlignment="Left" Height="345" Margin="341,65,0,0" VerticalAlignment="Top" Width="86">
-            <TextBlock x:Name="textBlock_Copy1" HorizontalAlignment="Left" TextWrapping="Wrap" Text="Sreda" VerticalAlignment="Top" Height="25" Width="85" FontSize="15" Background="Aqua"/>
+            <Rectangle Grid.Row="1" Grid.Column="1"  Fill="White" />
 
-        </StackPanel>
-        <StackPanel Orientation="Vertical" x:Name="Cetvrtak" HorizontalAlignment="Left" Height="345" Margin="427,65,0,0" VerticalAlignment="Top" Width="101">
-            <TextBlock x:Name="textBlock_Copy2" HorizontalAlignment="Left" TextWrapping="Wrap" Text="Cetvrtak" VerticalAlignment="Top" Height="25" Width="100" FontSize="15" Background="Orange"/>
+            <TextBlock Grid.Column="1" Grid.Row="1" Foreground="MediumPurple"
+                    FontSize="15" Text=" Sati "
+                   Margin="0,10,0,10" HorizontalAlignment="Center"></TextBlock>
+            <Rectangle Grid.Row="1" Grid.Column="2"  Fill="MediumPurple" />
 
-        </StackPanel>
-        <StackPanel Orientation="Vertical" x:Name="Petak" HorizontalAlignment="Left" Height="345" Margin="528,65,0,0" VerticalAlignment="Top" Width="87">
-            <TextBlock x:Name="textBlock_Copy3" HorizontalAlignment="Left"  TextWrapping="Wrap" Text="Petak" VerticalAlignment="Top" Height="25" Width="87" FontSize="15" Background="LawnGreen"/>
+            <TextBlock Grid.Column="2" Grid.Row="1" Foreground="White"
+                    FontSize="15" Text=" Ponedeljak "
+                   Margin="0,10,0,10" HorizontalAlignment="Center"></TextBlock>
 
-        </StackPanel>
-        <StackPanel Orientation="Vertical" x:Name="Subota" HorizontalAlignment="Left" Height="345" Margin="615,65,0,0" VerticalAlignment="Top" Width="90">
-            <TextBlock x:Name="textBlock_Copy4" HorizontalAlignment="Left"  TextWrapping="Wrap" Text="Subota" VerticalAlignment="Top" Height="25" Width="90" FontSize="15" Background="MediumPurple" Margin="0,0,-0.4,0"/>
+            <Rectangle Grid.Row="1" Grid.Column="3"  Fill="MediumPurple" />
 
-        </StackPanel>
-        <StackPanel Orientation="Vertical" x:Name="Nedelja" HorizontalAlignment="Left" Height="345" Margin="705,65,-0.4,0" VerticalAlignment="Top" Width="89">
-            <TextBlock x:Name="textBlock_Copy5" HorizontalAlignment="Left" TextWrapping="Wrap" Text="Nedelja" VerticalAlignment="Top" Height="25" Width="85" FontSize="15" Background="LightPink"/>
+            <TextBlock Grid.Column="3" Grid.Row="1" Foreground="White"
+                    FontSize="15" Text=" Utorak "
+                   Margin="0,10,0,10" HorizontalAlignment="Center"></TextBlock>
 
-        </StackPanel>
-        <Rectangle HorizontalAlignment="Left" Height="362" Margin="119,58,-0.4,0" Stroke="Black" VerticalAlignment="Top" Width="675">
-            <Rectangle.Fill>
-                <ImageBrush/>
-            </Rectangle.Fill>
-        </Rectangle>
-        <Rectangle HorizontalAlignment="Left" Height="355" Margin="169,65,-0.4,0" Stroke="Black" VerticalAlignment="Top" Width="625">
-            <Rectangle.Fill>
-                <ImageBrush/>
-            </Rectangle.Fill>
-        </Rectangle>
+            <Rectangle Grid.Row="1" Grid.Column="4"  Fill="MediumPurple" />
+
+            <TextBlock Grid.Column="4" Grid.Row="1" Foreground="White"
+                    FontSize="15" Text=" Sreda "
+                   Margin="0,10,0,10" HorizontalAlignment="Center"></TextBlock>
+
+            <Rectangle Grid.Row="1" Grid.Column="5"  Fill="MediumPurple" />
+
+            <TextBlock Grid.Column="5" Grid.Row="1" Foreground="White"
+                    FontSize="15" Text=" Četvrtak "
+                   Margin="0,10,0,10" HorizontalAlignment="Center"></TextBlock>
+
+            <Rectangle Grid.Row="1" Grid.Column="6"  Fill="MediumPurple" />
+
+            <TextBlock Grid.Column="6" Grid.Row="1" Foreground="White"
+                    FontSize="15" Text=" Petak "
+                   Margin="0,10,0,10" HorizontalAlignment="Center"></TextBlock>
+
+            <Rectangle Grid.Row="1" Grid.Column="7"  Fill="MediumPurple" />
+
+            <TextBlock Grid.Column="7" Grid.Row="1" Foreground="White"
+                    FontSize="15" Text=" Subota "
+                   Margin="0,10,0,10" HorizontalAlignment="Center"></TextBlock>
 
 
+            <Rectangle Grid.Row="1" Grid.Column="8"  Fill="MediumPurple" />
 
+            <TextBlock Grid.Column="8" Grid.Row="1" Foreground="White"
+                    FontSize="15" Text=" Nedelja "
+                   Margin="0,10,0,10" HorizontalAlignment="Center"></TextBlock>
+
+
+            
+
+        </Grid>
+
+        <ScrollViewer Grid.Row="4" Grid.Column="1"
+                    VerticalScrollBarVisibility="Auto">
+            <Grid>
+
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="10"></ColumnDefinition>
+                    <ColumnDefinition Width="*"></ColumnDefinition>
+                    <ColumnDefinition Width="*"></ColumnDefinition>
+                    <ColumnDefinition Width="*"></ColumnDefinition>
+                    <ColumnDefinition Width="*"></ColumnDefinition>
+                    <ColumnDefinition Width="*"></ColumnDefinition>
+                    <ColumnDefinition Width="*"></ColumnDefinition>
+                    <ColumnDefinition Width="*"></ColumnDefinition>
+                    <ColumnDefinition Width="*"></ColumnDefinition>
+                    <ColumnDefinition Width="10"></ColumnDefinition>
+
+                </Grid.ColumnDefinitions>
+
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="5"></RowDefinition>
+                    <RowDefinition Height="auto"></RowDefinition>
+                    <RowDefinition Height="auto"></RowDefinition>
+                    <RowDefinition Height="auto"></RowDefinition>
+                    <RowDefinition Height="auto"></RowDefinition>
+                    <RowDefinition Height="auto"></RowDefinition>
+                    <RowDefinition Height="auto"></RowDefinition>
+                    <RowDefinition Height="auto"></RowDefinition>
+                    <RowDefinition Height="auto"></RowDefinition>
+                    <RowDefinition Height="auto"></RowDefinition>
+                    <RowDefinition Height="auto"></RowDefinition>
+                    <RowDefinition Height="auto"></RowDefinition>
+                    <RowDefinition Height="auto"></RowDefinition>
+                    <RowDefinition Height="auto"></RowDefinition>
+                    <RowDefinition Height="auto"></RowDefinition>
+                    <RowDefinition Height="*"></RowDefinition>
+                    <RowDefinition Height="20"></RowDefinition>
+                </Grid.RowDefinitions>
+                <TextBlock Grid.Column="1" Grid.Row="1" Foreground="MediumPurple"
+                    FontSize="15" Text=" 7:00 "
+                   Margin="0,10,0,10" HorizontalAlignment="Center"></TextBlock>
+                <TextBlock Grid.Column="1" Grid.Row="2" Foreground="MediumPurple"
+                    FontSize="15" Text=" 8:00 "
+                   Margin="0,10,0,10" HorizontalAlignment="Center"></TextBlock>
+                <TextBlock Grid.Column="1" Grid.Row="3" Foreground="MediumPurple"
+                    FontSize="15" Text=" 9:00 "
+                   Margin="0,10,0,10" HorizontalAlignment="Center"></TextBlock>
+                <TextBlock Grid.Column="1" Grid.Row="4" Foreground="MediumPurple"
+                    FontSize="15" Text=" 10:00 "
+                   Margin="0,10,0,10" HorizontalAlignment="Center"></TextBlock>
+                <TextBlock Grid.Column="1" Grid.Row="5" Foreground="MediumPurple"
+                    FontSize="15" Text=" 11:00 "
+                   Margin="0,10,0,10" HorizontalAlignment="Center"></TextBlock>
+                <TextBlock Grid.Column="1" Grid.Row="6" Foreground="MediumPurple"
+                    FontSize="15" Text=" 12:00 "
+                   Margin="0,10,0,10" HorizontalAlignment="Center"></TextBlock>
+                <TextBlock Grid.Column="1" Grid.Row="7" Foreground="MediumPurple"
+                    FontSize="15" Text=" 13:00 "
+                   Margin="0,10,0,10" HorizontalAlignment="Center"></TextBlock>
+                <TextBlock Grid.Column="1" Grid.Row="8" Foreground="MediumPurple"
+                    FontSize="15" Text=" 14:00 "
+                   Margin="0,10,0,10" HorizontalAlignment="Center"></TextBlock>
+                <TextBlock Grid.Column="1" Grid.Row="9" Foreground="MediumPurple"
+                    FontSize="15" Text=" 15:00 "
+                   Margin="0,10,0,10" HorizontalAlignment="Center"></TextBlock>
+                <TextBlock Grid.Column="1" Grid.Row="10" Foreground="MediumPurple"
+                    FontSize="15" Text=" 16:00 "
+                   Margin="0,10,0,10" HorizontalAlignment="Center"></TextBlock>
+                <TextBlock Grid.Column="1" Grid.Row="11" Foreground="MediumPurple"
+                    FontSize="15" Text=" 17:00 "
+                   Margin="0,10,0,10" HorizontalAlignment="Center"></TextBlock>
+                <TextBlock Grid.Column="1" Grid.Row="12" Foreground="MediumPurple"
+                    FontSize="15" Text=" 18:00 "
+                   Margin="0,10,0,10" HorizontalAlignment="Center"></TextBlock>
+                <TextBlock Grid.Column="1" Grid.Row="13" Foreground="MediumPurple"
+                    FontSize="15" Text=" 19:00 "
+                   Margin="0,10,0,10" HorizontalAlignment="Center"></TextBlock>
+                <TextBlock Grid.Column="1" Grid.Row="14" Foreground="MediumPurple"
+                    FontSize="15" Text=" 20:00 "
+                   Margin="0,10,0,10" HorizontalAlignment="Center"></TextBlock>
+
+                <Button Grid.Column="2" Grid.Row="2" Margin="5,10,5,5" HorizontalAlignment="Center"
+                Width="25px" Height="25px" Foreground="White"
+                    Style="{StaticResource MaterialDesignFloatingActionMiniLightButton}"
+                        ToolTip="Dodaj zadatak.">
+                    <materialDesign:PackIcon
+                            Kind="Plus"
+                    />
+                </Button>
+
+                <Button Grid.Column="2" Grid.Row="4" Margin="5,10,5,5" HorizontalAlignment="Center"
+                Width="25px" Height="25px" Foreground="White"
+                    Style="{StaticResource MaterialDesignFloatingActionMiniLightButton}"
+                        ToolTip="Dodaj zadatak.">
+                    <materialDesign:PackIcon
+                            Kind="Plus"
+                    />
+                </Button>
+
+                <Button Grid.Column="2" Grid.Row="3" Margin="5,10,5,5" HorizontalAlignment="Center"
+                Width="25px" Height="25px" Foreground="White"
+                    Style="{StaticResource MaterialDesignFloatingActionMiniLightButton}"
+                        ToolTip="Dodaj zadatak.">
+                    
+                    <materialDesign:PackIcon
+                            Kind="Plus"
+                    />
+                </Button>
+
+
+                <Button Grid.Column="3" Grid.Row="3" Margin="5,10,5,5" HorizontalAlignment="Center"
+                Width="25px" Height="25px" Foreground="White"
+                    Style="{StaticResource MaterialDesignFloatingActionMiniLightButton}"
+                        ToolTip="Dodaj zadatak.">
+                    <materialDesign:PackIcon
+                            Kind="Plus"
+                    />
+                </Button>
+
+
+
+                <materialDesign:Card  Grid.Column="3" Grid.Row="4"
+                        Background="{DynamicResource PrimaryHueLightBrush}"
+                            Foreground="{DynamicResource PrimaryHueLightForegroundBrush}"
+                        
+                        Padding="8">
+                    <TextBlock
+                            FontSize="10"
+                            Text="Boring Text" />
+                </materialDesign:Card>
+
+            </Grid>
+            </ScrollViewer>
     </Grid>
 </Window>
