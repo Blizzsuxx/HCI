@@ -526,6 +526,13 @@ namespace organizerEvents.Controler
                             }
                         }
                     }
+                    foreach(Proslava prosla in DataBase.proslave)
+                    {
+                        if(prosla.Id == dogovor.ProslavaId)
+                    {
+                        dogovor.Proslava = prosla;
+                    }
+                    }
             }
 
         }

@@ -25,6 +25,10 @@ namespace organizerEvents.model
         [JsonIgnore]
         public List<Ponuda> Ponude { get; set; }
 
+        public long ProslavaId { get; set; }
+        [JsonIgnore]
+        public Proslava Proslava { get; set; }
+
         public Dogovor() {
             this.PonudeId = new List<long>();
             this.Ponude = new List<Ponuda>();

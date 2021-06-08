@@ -1,4 +1,6 @@
-﻿using System;
+﻿using organizerEvents.Controler;
+using organizerEvents.model;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -21,7 +23,25 @@ namespace WpfApp1.View
     {
         public ProzorZaDogadjaj()
         {
+
             InitializeComponent();
+            int indikator = 0;
+            foreach(ToDo zadatak in DataBase.toDos)
+            {
+                if(zadatak.Dogovor.Proslava.Organizator.Id == DataBase.trenutniKorisnik.Id)
+                {
+                    Expander expander = new Expander();
+                    expander.Header = zadatak.OpisZadatka;
+                    zadaci.Children.Add(expander);
+                    var novRed = new RowDefinition();
+                    novRed.MinHeight = 50;
+                    zadaci.RowDefinitions.Add(novRed);
+                    Grid.SetColumn(expander, 1);
+                    Grid.SetRow(expander, indikator);
+                    expander.HorizontalAlignment = HorizontalAlignment.Left;
+                    indikator++;
+                }
+            }
         }
     }
 }

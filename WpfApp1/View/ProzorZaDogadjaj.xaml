@@ -98,136 +98,14 @@
              />
         </Button>
 
-        <Grid Grid.Column="1" Grid.Row="3">
+        <Grid Grid.Column="1" Grid.Row="3" x:Name="zadaci">
             <Grid.ColumnDefinitions>
                 <ColumnDefinition Width="20"></ColumnDefinition>
                 <ColumnDefinition Width="*"></ColumnDefinition>
                 <ColumnDefinition Width="20"></ColumnDefinition>
             </Grid.ColumnDefinitions>
-            <Grid.RowDefinitions>
-                <RowDefinition Height="5"></RowDefinition>
-                <RowDefinition Height="auto"></RowDefinition>
-                <RowDefinition Height="auto"></RowDefinition>
-                <RowDefinition Height="auto"></RowDefinition>
-                <RowDefinition Height="*"></RowDefinition>
-                <RowDefinition Height="20"></RowDefinition>
-            </Grid.RowDefinitions>
-
-            <materialDesign:Card Grid.Column="1" Grid.Row="3"  Margin="10" HorizontalAlignment="Left"
-              Background="MediumPurple"
-              Foreground="{DynamicResource PrimaryHueDarkForegroundBrush}"
-              Padding="0"
-              Width="200">
-                <Grid>
-                    <Grid.RowDefinitions>
-                            <RowDefinition
-            Height="Auto" />
-                            <RowDefinition
-            Height="Auto" />
-                            <RowDefinition
-            Height="Auto" />
-                        </Grid.RowDefinitions>
-                        <TextBlock
-          Grid.Row="0"
-          Margin="16 16 16 4"
-          Style="{StaticResource MaterialDesignHeadline5TextBlock}"
-          Text="Call Jennifer" />
-                        <Separator
-              Grid.Row="1"
-              Style="{StaticResource MaterialDesignLightSeparator}" />
-                            <TextBlock
-              Grid.Row="2"
-              Margin="16 0 16 8"
-              VerticalAlignment="Center"
-              HorizontalAlignment="Left"
-              Style="{StaticResource MaterialDesignBody2TextBlock}"
-              Text="March 19, 2016" />
-                        <StackPanel
-              Grid.Row="2"
-          Orientation="Horizontal"
-          Margin="16 0 16 8"
-          HorizontalAlignment="Right">
-                        <Button
-            HorizontalAlignment="Right"
-            Style="{StaticResource MaterialDesignToolForegroundButton}"
-            Width="30"
-            Padding="2 0 2 0"
-            materialDesign:RippleAssist.IsCentered="True">
-                            <materialDesign:PackIcon
-              Kind="Phone" />
-                        </Button>
-                        <materialDesign:PopupBox
-            HorizontalAlignment="Right"
-        
-            Padding="2 0 2 0">
-                            <StackPanel>
-                                <Button
-                Content="More" />
-                                <Button
-                Content="Options" />
-                            </StackPanel>
-                        </materialDesign:PopupBox>
-                    </StackPanel>
-                </Grid>
-            </materialDesign:Card>
-
-            <materialDesign:Card Grid.Column="1" Grid.Row="4" Margin="10" HorizontalAlignment="Left"
-  Background="MediumPurple"
-  Foreground="{DynamicResource PrimaryHueDarkForegroundBrush}"
-  Padding="0"
-  Width="200">
-                <Grid>
-                    <Grid.RowDefinitions>
-                        <RowDefinition
-        Height="Auto" />
-                        <RowDefinition
-        Height="Auto" />
-                        <RowDefinition
-        Height="Auto" />
-                    </Grid.RowDefinitions>
-                    <TextBlock
-      Grid.Row="0"
-      Margin="16 16 16 4"
-      Style="{StaticResource MaterialDesignHeadline5TextBlock}"
-      Text="Call Jennifer" />
-                    <Separator
-      Grid.Row="1"
-      Style="{StaticResource MaterialDesignLightSeparator}" />
-                    <TextBlock
-      Grid.Row="2"
-      Margin="16 0 16 8"
-      VerticalAlignment="Center"
-      HorizontalAlignment="Left"
-      Style="{StaticResource MaterialDesignBody2TextBlock}"
-      Text="March 19, 2016" />
-                    <StackPanel
-      Grid.Row="2"
-      Orientation="Horizontal"
-      Margin="16 0 16 8"
-      HorizontalAlignment="Right">
-                        <Button
-        HorizontalAlignment="Right"
-        Style="{StaticResource MaterialDesignToolForegroundButton}"
-        Width="30"
-        Padding="2 0 2 0"
-        materialDesign:RippleAssist.IsCentered="True">
-                            <materialDesign:PackIcon
-          Kind="Phone" />
-                        </Button>
-                        <materialDesign:PopupBox
-        HorizontalAlignment="Right"
-       
-        Padding="2 0 2 0">
-                            <StackPanel>
-                                <Button
-            Content="More" />
-                                <Button
-            Content="Options" />
-                            </StackPanel>
-                        </materialDesign:PopupBox>
-                    </StackPanel>
-                </Grid>
-            </materialDesign:Card>
+           
+            
         </Grid>
     </Grid>
 </Window>
