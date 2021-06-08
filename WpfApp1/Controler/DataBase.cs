@@ -36,7 +36,7 @@ namespace organizerEvents.Controler
             DataBase.ucitajSaradnike();
 
             DataBase.ucitajDogovore();
-            DataBase.ucitajMesta();
+            DataBase.ucitajMesta();  
             DataBase.ucitajNarucioce();
             DataBase.ucitajOrganizatore();
             DataBase.ucitajPonude();
