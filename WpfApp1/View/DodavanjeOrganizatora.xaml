@@ -196,20 +196,17 @@
           Width="150"
           materialDesign:ValidationAssist.UsePopup="True"
           HorizontalAlignment="Center"
-
+             LostFocus="proveriSifru"
+                TextChanged="proveriSifru"
           ToolTip="Unesite lozinku organizatora.">
             <TextBox.Text>
                 <Binding
                   Path="Lozinka"
                   UpdateSourceTrigger="PropertyChanged">
 
-                 LostFocus="proveriSifru"
-                TextChanged="proveriSifru"
-          
-            
-
-
-
+                   
+                </Binding>
+            </TextBox.Text>
         </TextBox>
 
         <Button Grid.Column="2" Grid.Row="9"  x:Name="sacuvaj_organizatora" Click="Sacuvaj_Organizatora_Click"

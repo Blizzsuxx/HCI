@@ -31,7 +31,7 @@ namespace WpfApp1.View
 
         public void doubleClicked(object sender, MouseButtonEventArgs e)
         {
-            PregledJedneProslave pregledJedneProslave = new PregledJedneProslave();
+            PregledJedneProslave pregledJedneProslave = new PregledJedneProslave(proslava.Id);
             pregledJedneProslave.Show();
         }
     }
