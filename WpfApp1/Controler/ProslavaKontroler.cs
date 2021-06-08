@@ -69,9 +69,9 @@ namespace WpfApp1.Controler
             p2.Cenovnik.Add("1 stolica", 1000);
             p2.Cenovnik.Add("samo prostor",40000);
             Dogovor d = new Dogovor();
-            d.Ponuda = p;
+            
             Dogovor d2 = new Dogovor();
-            d2.Ponuda = p2;
+            
             proslava.Dogovori = new List<Dogovor>();
             proslava.Dogovori.Add(d);
             proslava.Dogovori.Add(d2); return proslava;

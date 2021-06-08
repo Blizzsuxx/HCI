@@ -63,7 +63,7 @@ namespace WpfApp1
                     wrapPanel.Children.Add(zadatakExpander);
 
                     expanderPanel.Children.Add(wrapPanel);
-                    zadatakPanel.Children.Add(new ToDoUserControl(zadatak.Ponude, zadatak));
+                    //zadatakPanel.Children.Add(new ToDoUserControl(zadatak.Ponude, zadatak));
                 }
             }
 

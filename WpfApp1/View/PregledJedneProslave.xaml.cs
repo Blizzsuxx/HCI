@@ -65,19 +65,19 @@ namespace WpfApp1.View
                 //this.cenovnik.Text = selected.Naziv;
                 foreach(Dogovor d in p.Dogovori)
                 {
-                    if (d.Ponuda.Saradnik.Naziv.Equals(selected.Naziv))
-                    {
+                    //if (d.Ponuda.Saradnik.Naziv.Equals(selected.Naziv))
+                    //{
                        
-                        List<CenovnikProslave> cene = new List<CenovnikProslave>();
-                        foreach(String ime in d.Ponuda.Cenovnik.Keys)
-                        {
-                            CenovnikProslave cp = new CenovnikProslave(ime, d.Ponuda.Cenovnik[ime]);
-                            cene.Add(cp);
+                    //    List<CenovnikProslave> cene = new List<CenovnikProslave>();
+                    //    foreach(String ime in d.Ponuda.Cenovnik.Keys)
+                    //    {
+                    //        CenovnikProslave cp = new CenovnikProslave(ime, d.Ponuda.Cenovnik[ime]);
+                    //        cene.Add(cp);
                            
-                        }
-                        this.cenovnik.ItemsSource = cene;
-                        break;
-                    }
+                    //    }
+                    //    this.cenovnik.ItemsSource = cene;
+                    //    break;
+                    //}
                 }
             }
         }
@@ -101,7 +101,7 @@ namespace WpfApp1.View
                         foreach (Dogovor d in p.Dogovori)
                         {
                             Console.WriteLine("da");
-                            list.Add(d.Ponuda.Saradnik);
+                            //list.Add(d.Ponuda.Saradnik);
                         }
                     }
                 }

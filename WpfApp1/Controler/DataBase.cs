@@ -247,7 +247,7 @@ namespace organizerEvents.Controler
             };
 
             Proslava novaProslava =new Proslava { OrganizatorId=2, Id=11, ZadaciId = new List<long> { 11 }, Opis="opis proslave", Naslov="Naslov Proslave", PorukeId = new List<long> { 2, 3, 4, 5, 6}, DatumVreme=DateTime.Now};
-            ToDo novTodo = new  ToDo { PonudeId = new List<long> { 11 }, Id=11, OpisZadatka="Opis Zadatka", StanjeZadatka=Stanje.Uradjeno};
+            ToDo novTodo = new  ToDo { Id=11, OpisZadatka="Opis Zadatka", StanjeZadatka=Stanje.Uradjeno};
             Ponuda novaPonuda = new Ponuda { Id=11, Naziv = "naziv", Opis = "Opis" };
 
             DataBase.zahtevZaProslave.Add(zahtevZaProslavu);
