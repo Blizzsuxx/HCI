@@ -167,6 +167,9 @@
     <Compile Include="View\PregledProslava.xaml.cs">
       <DependentUpon>PregledProslava.xaml</DependentUpon>
     </Compile>
+    <Compile Include="View\PregledStolova.xaml.cs">
+      <DependentUpon>PregledStolova.xaml</DependentUpon>
+    </Compile>
     <Compile Include="View\PregledSvihSaradnika.xaml.cs">
       <DependentUpon>PregledSvihSaradnika.xaml</DependentUpon>
     </Compile>
@@ -298,6 +301,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="View\PregledProslava.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\PregledStolova.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
