@@ -23,12 +23,12 @@ namespace WpfApp1.View
     public partial class ToDoUserControl : UserControl
     {
         public List<Ponuda> lista { get; set; }
-
-        public ToDoUserControl(List<Ponuda> ponude)
+        public ToDo toDo { get; set; }
+        public ToDoUserControl(List<Ponuda> ponude, ToDo toDo)
         {
             InitializeComponent();
             lista = ponude;
-
+            this.toDo = toDo;
             
 
             zadaciGrid.ItemsSource = lista;
@@ -44,6 +44,8 @@ namespace WpfApp1.View
             UIElement element = (UIElement)zadaciGrid.InputHitTest(e.GetPosition(zadaciGrid));
             int row = Grid.GetRow(element);
             lista.RemoveAt(row);
+            toDo.PonudeId.RemoveAt(row);
+
             zadaciGrid.ItemsSource = null;
             zadaciGrid.ItemsSource = lista;
         }

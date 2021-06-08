@@ -73,7 +73,7 @@ namespace WpfApp1.View
                     throw new Exception("Molimo vas da ispravno popunite sva polja " + "sifra" + " je nevalidna");
             } catch(Exception ex)
             {
-                MessageBox.Show("Molimo vas da ispravno popunite sva polja " + ex.Message + " je nevalidan");
+                MessageBox.Show(ex.Message);
                 return;
             }
             MessageBox.Show("Uspesno ste se registrovali!");

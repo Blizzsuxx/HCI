@@ -33,11 +33,12 @@ namespace WpfApp1
         public ZadaciWindow()
         {
             InitializeComponent();
-            List<Proslava> proslave = new List<Proslava>();
-            proslave.Add(new Proslava { Zadaci = new List<ToDo>(), Opis="opis proslave", Naslov="Naslov Proslave" });
-            proslave[0].Zadaci.Add(new ToDo { Ponude= new List<Ponuda>(), OpisZadatka="Opis Zadatka", StanjeZadatka=Stanje.Uradjeno});
-            proslave[0].Zadaci[0].Ponude.Add(new Ponuda { Naziv = "naziv", Opis = "Opis" });
-            foreach(var proslava in proslave)
+            //List<Proslava> proslave = new List<Proslava>();
+            //proslave.Add(new Proslava { Zadaci = new List<ToDo>(), Opis="opis proslave", Naslov="Naslov Proslave" });
+            //proslave[0].Zadaci.Add(new ToDo { Ponude= new List<Ponuda>(), OpisZadatka="Opis Zadatka", StanjeZadatka=Stanje.Uradjeno});
+            //proslave[0].Zadaci[0].Ponude.Add(new Ponuda { Naziv = "naziv", Opis = "Opis" });
+
+            foreach(var proslava in (DataBase.trenutniKorisnik as Organizator).Proslave)
             {
                 Expander expander = new Expander();
                 expander.Header = proslava.Naslov;
@@ -62,7 +63,7 @@ namespace WpfApp1
                     wrapPanel.Children.Add(zadatakExpander);
 
                     expanderPanel.Children.Add(wrapPanel);
-                    zadatakPanel.Children.Add(new ToDoUserControl(zadatak.Ponude));
+                    zadatakPanel.Children.Add(new ToDoUserControl(zadatak.Ponude, zadatak));
                 }
             }
 
@@ -78,9 +79,10 @@ namespace WpfApp1
 
         private void Button_Click_3(object sender, RoutedEventArgs e)
         {
-            Recnik r = new Recnik();
-            r.Show();
-
+            //Recnik r = new Recnik();
+            //r.Show();
+            AzuriranjeProfila azuriranjeProfila = new AzuriranjeProfila();
+            azuriranjeProfila.Show();
         }
 
         private void poruke_on_click(object sender, RoutedEventArgs e)

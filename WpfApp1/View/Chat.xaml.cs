@@ -1,4 +1,6 @@
-﻿using System;
+﻿using organizerEvents.Controler;
+using organizerEvents.model;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -19,9 +21,60 @@ namespace WpfApp1.View
     /// </summary>
     public partial class Chat : Window
     {
-        public Chat()
+        public Proslava proslava;
+        public int brojPoruka;
+        public Chat(Proslava proslava)
         {
             InitializeComponent();
+            brojPoruka = 0;
+            this.proslava = proslava;
+            foreach (var poruka in proslava.Poruke)
+            {
+                this.addPoruka(poruka);
+            }
+        }
+
+        private void addPoruka(Poruke poruka)
+        {
+                TextBlock textBlock = new TextBlock();
+                textBlock.Text = poruka.Text;
+                textBlock.Background = Brushes.Purple;
+                textBlock.TextWrapping = TextWrapping.Wrap;
+                textBlock.Width = 200;
+                textBlock.Margin = new Thickness(0,5,0,5);
+                textBlock.Foreground = Brushes.White;
+                ChatBody.Children.Add(textBlock);
+                var novRed = new RowDefinition();
+                novRed.MinHeight = 50;
+                ChatBody.RowDefinitions.Add(novRed);
+                if (poruka.AutorId != DataBase.trenutniKorisnik.Id)
+                {
+
+                    Grid.SetColumn(textBlock, 0);
+                    textBlock.HorizontalAlignment = HorizontalAlignment.Left;
+                
+                }
+                else
+                {
+                    Grid.SetColumn(textBlock, 1);
+                    textBlock.HorizontalAlignment = HorizontalAlignment.Right;
+                }
+                Console.WriteLine(poruka.Text);
+                Console.WriteLine(poruka.AutorId == DataBase.trenutniKorisnik.Id);
+                Grid.SetRow(textBlock, brojPoruka);
+                
+                brojPoruka++;
+        }
+
+        private void Button_Click(object sender, RoutedEventArgs e)
+        {
+            Poruke novaPoruka = new Poruke {AutorId = DataBase.trenutniKorisnik.Id, Autor= DataBase.trenutniKorisnik, Text=SadrzajPoruke.Text };
+            this.proslava.Poruke.Add(novaPoruka);
+            this.proslava.PorukeId.Add(novaPoruka.Id);
+            Console.WriteLine(novaPoruka.Id);
+            DataBase.poruke.Add(novaPoruka);
+            addPoruka(novaPoruka);
+            SadrzajPoruke.Clear();
         }
     }
 }

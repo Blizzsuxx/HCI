@@ -28,8 +28,10 @@ namespace WpfApp1
         public MainWindow()
         {
             InitializeComponent();
+            //DataBase.ucitajPodatke();
+            DataBase.inicijalizujPodatke();
+            DataBase.sacuvajPodatke();
             DataBase.ucitajPodatke();
-            //DataBase.inicijalizujPodatke();
         }
 
         private void Otvori_ovaj_prozor(object sender, System.EventArgs e)
@@ -51,9 +53,7 @@ namespace WpfApp1
         {
             
             Korisnik korisnik = DataBase.nadjiKorisnika(KorisnickoImeV.Text, Lozinka.Password);
-            Console.WriteLine(korisnik);
-            Console.WriteLine("AAA");
-
+            DataBase.trenutniKorisnik = korisnik;
             if (korisnik is Administrator)
             {
                 PregledOrganizatora pregled = new PregledOrganizatora();
@@ -63,7 +63,7 @@ namespace WpfApp1
                 return;
             } else if(korisnik is Organizator)
             {
-                ZadaciWindow zadaci = new ZadaciWindow();
+                ProzorOrganizatora zadaci = new ProzorOrganizatora();
                 zadaci.Closed += new EventHandler(this.Otvori_ovaj_prozor);
                 zadaci.Show();
                 this.Hide();

@@ -36,7 +36,7 @@ namespace organizerEvents.Controler
             DataBase.ucitajSaradnike();
 
             DataBase.ucitajDogovore();
-            DataBase.ucitajMesta();
+            DataBase.ucitajMesta();  
             DataBase.ucitajNarucioce();
             DataBase.ucitajOrganizatore();
             DataBase.ucitajPonude();
@@ -176,7 +176,8 @@ namespace organizerEvents.Controler
                 Ime = "Suki",
                 Prezime = "Suljic",
                 KorisnickoIme = "sule",
-                Sifra = "123"
+                Sifra = "123",
+                ProslaveId = new List<long> { 11 }
             };
             Ponuda ponuda = new Ponuda
             {
@@ -210,14 +211,62 @@ namespace organizerEvents.Controler
                 Id = 1,
                 Opis = "Zahtjev"
             };
+
+
+
+
+            Poruke poruka11 = new Poruke
+            {
+                Id = 2,
+                Text = "E sta radis",
+                AutorId = 2
+            };
+            Poruke poruka12 = new Poruke
+            {
+                Id = 3,
+                Text = "Ma pusti me",
+                AutorId = 1
+            };
+            Poruke poruka13 = new Poruke
+            {
+                Id = 4,
+                Text = "Radim HCI",
+                AutorId = 1
+            };
+            Poruke poruka14 = new Poruke
+            {
+                Id = 5,
+                Text = "OOF, RIP, sto nisi ranije poceo da radis",
+                AutorId = 2
+            };
+            Poruke poruka15 = new Poruke
+            {
+                Id = 6,
+                Text = ";-;",
+                AutorId = 1
+            };
+
+            Proslava novaProslava =new Proslava { OrganizatorId=2, Id=11, ZadaciId = new List<long> { 11 }, Opis="opis proslave", Naslov="Naslov Proslave", PorukeId = new List<long> { 2, 3, 4, 5, 6}, DatumVreme=DateTime.Now};
+            ToDo novTodo = new  ToDo { PonudeId = new List<long> { 11 }, Id=11, OpisZadatka="Opis Zadatka", StanjeZadatka=Stanje.Uradjeno};
+            Ponuda novaPonuda = new Ponuda { Id=11, Naziv = "naziv", Opis = "Opis" };
+
             DataBase.zahtevZaProslave.Add(zahtevZaProslavu);
             DataBase.toDos.Add(zadatak);
+            DataBase.toDos.Add(novTodo);
             DataBase.recniciPojmova.Add(recnik);
             proslava.Mesto = mesto;
             proslava.MestoId = mesto.Id;
             DataBase.proslave.Add(proslava);
+            DataBase.proslave.Add(novaProslava);
+
             DataBase.poruke.Add(poruka);
-            DataBase.ponude.Add(ponuda);
+            DataBase.poruke.Add(poruka11);
+            DataBase.poruke.Add(poruka12);
+            DataBase.poruke.Add(poruka13);
+            DataBase.poruke.Add(poruka14);
+            DataBase.poruke.Add(poruka15);
+
+            DataBase.ponude.Add(novaPonuda);
             DataBase.organizatori.Add(ogranizator);
             DataBase.dogovori.Add(dogovor);
             DataBase.stolovi.Add(sto);
@@ -290,6 +339,8 @@ namespace organizerEvents.Controler
                 {
                     foreach (Poruke poruke in DataBase.poruke)
                     {
+                        Console.WriteLine(poruke.Text);
+
                         if (poruke.Id == porukaId)
                         {
                             proslava.Poruke.Add(poruke);
@@ -393,6 +444,7 @@ namespace organizerEvents.Controler
                 }
                 foreach (long proslavaId in organizator.ProslaveId)
                 {
+
                     foreach (Proslava proslava in DataBase.proslave)
                     {
                         if (proslava.Id == proslavaId)
@@ -585,6 +637,10 @@ namespace organizerEvents.Controler
             string poruke = File.ReadAllText("Poruke.json");
             DataBase.poruke =
                JsonSerializer.Deserialize<List<Poruke>>(poruke);
+            foreach(var poruka in DataBase.poruke)
+            {
+                Poruke.trenutniID = Math.Max(Poruke.trenutniID, poruka.Id);
+            }
         }
 
         public static void sacuvajPoruke()

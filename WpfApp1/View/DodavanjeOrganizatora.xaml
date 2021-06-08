@@ -7,7 +7,7 @@
         mc:Ignorable="d"
 
     Title="DodavanjeOrganizatora" Height="450" Width="800"
-         xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+         xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes" xmlns:local11="clr-namespace:WpfApp1.Controler"
         TextElement.Foreground="{DynamicResource MaterialDesignBody}"
         TextElement.FontWeight="Regular"
         TextElement.FontSize="13"
@@ -76,10 +76,14 @@
           
           ToolTip="Unesite ime organizatora.">
             <TextBox.Text>
-                <Binding
-                  Path="Ime"
-                  UpdateSourceTrigger="PropertyChanged">
 
+                <Binding
+                                      Path="Ime"
+                                      UpdateSourceTrigger="PropertyChanged">
+                    <Binding.ValidationRules>
+                        <local11:NoEmptyFieldValidator
+                                      ValidatesOnTargetUpdated="True"  />
+                    </Binding.ValidationRules>
                 </Binding>
             </TextBox.Text>
         </TextBox>
@@ -92,10 +96,14 @@
           HorizontalAlignment="Center"
           ToolTip="Unesite prezime organizatora.">
             <TextBox.Text>
-                <Binding
-                  Path="Prezime"
-                  UpdateSourceTrigger="PropertyChanged">
 
+                <Binding
+                                      Path="Prezime"
+                                      UpdateSourceTrigger="PropertyChanged">
+                    <Binding.ValidationRules>
+                        <local11:NoEmptyFieldValidator
+                                      ValidatesOnTargetUpdated="True"  />
+                    </Binding.ValidationRules>
                 </Binding>
             </TextBox.Text>
         </TextBox>
@@ -109,10 +117,14 @@
           ToolTip="Unesite mejl organizatora.">
 
             <TextBox.Text>
-                <Binding
-                  Path="Email"
-                  UpdateSourceTrigger="PropertyChanged">
 
+                <Binding
+                                      Path="Email"
+                                      UpdateSourceTrigger="PropertyChanged">
+                    <Binding.ValidationRules>
+                        <local11:EmailValidator
+                                      ValidatesOnTargetUpdated="True"  />
+                    </Binding.ValidationRules>
                 </Binding>
             </TextBox.Text>
 
@@ -126,10 +138,14 @@
           HorizontalAlignment="Center"
           ToolTip="Unesite broj telefona organizatora.">
             <TextBox.Text>
-                <Binding
-                  Path="BrTel"
-                  UpdateSourceTrigger="PropertyChanged">
 
+                <Binding
+                                      Path="BrTel"
+                                      UpdateSourceTrigger="PropertyChanged">
+                    <Binding.ValidationRules>
+                        <local11:NumbersValidator
+                                      ValidatesOnTargetUpdated="True"  />
+                    </Binding.ValidationRules>
                 </Binding>
             </TextBox.Text>
         </TextBox>
@@ -144,10 +160,14 @@
           HorizontalAlignment="Center"
           ToolTip="Unesite platu organizatora (broj).">
             <TextBox.Text>
-                <Binding
-                  Path="Plata"
-                  UpdateSourceTrigger="PropertyChanged">
 
+                <Binding
+                                      Path="Plata"
+                                      UpdateSourceTrigger="PropertyChanged">
+                    <Binding.ValidationRules>
+                        <local11:NumbersValidatorNumerals
+                                      ValidatesOnTargetUpdated="True"  />
+                    </Binding.ValidationRules>
                 </Binding>
             </TextBox.Text>
         </TextBox>
@@ -159,10 +179,14 @@
           HorizontalAlignment="Center"
           ToolTip="Unesite korisnicko ime organizatora.">
             <TextBox.Text>
-                <Binding
-                  Path="Kime"
-                  UpdateSourceTrigger="PropertyChanged">
 
+                <Binding
+                                      Path="Kime"
+                                      UpdateSourceTrigger="PropertyChanged">
+                    <Binding.ValidationRules>
+                        <local11:UsernameValidator
+                                      ValidatesOnTargetUpdated="True"  />
+                    </Binding.ValidationRules>
                 </Binding>
             </TextBox.Text>
         </TextBox>
@@ -172,14 +196,20 @@
           Width="150"
           materialDesign:ValidationAssist.UsePopup="True"
           HorizontalAlignment="Center"
+
           ToolTip="Unesite lozinku organizatora.">
             <TextBox.Text>
                 <Binding
                   Path="Lozinka"
                   UpdateSourceTrigger="PropertyChanged">
 
-                </Binding>
-            </TextBox.Text>
+                 LostFocus="proveriSifru"
+                TextChanged="proveriSifru"
+          
+            
+
+
+
         </TextBox>
 
         <Button Grid.Column="2" Grid.Row="9"  x:Name="sacuvaj_organizatora" Click="Sacuvaj_Organizatora_Click"
