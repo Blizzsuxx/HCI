@@ -56,6 +56,10 @@ namespace WpfApp1
 
             if (korisnik is Administrator)
             {
+                PregledOrganizatora pregled = new PregledOrganizatora();
+                pregled.Closed += new EventHandler(this.Otvori_ovaj_prozor);
+                pregled.Show();
+                this.Hide();
                 return;
             } else if(korisnik is Organizator)
             {

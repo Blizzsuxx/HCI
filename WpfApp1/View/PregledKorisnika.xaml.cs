@@ -21,6 +21,7 @@ namespace WpfApp1.View
     /// </summary>
     public partial class PregledKorisnika : Window
     {
+        Narucilac narucilac { get; set; }
        NarucilacKontroler narucilackontroler { get; set; }
 
         public PregledKorisnika()
@@ -32,8 +33,27 @@ namespace WpfApp1.View
 
         }
 
+        private void profil_Click(object sender, RoutedEventArgs e)
+        {
+            if (this.narucilac == null) { } else
+            {
+                ProfilKorisnika prozor = new ProfilKorisnika(this.narucilac.Id);
+                prozor.Closed += new EventHandler(this.Otvori_ovaj_prozor);
+                prozor.Show();
+                this.Hide();
+                return;
+            }
 
-        
-       
+        }
+        private void Otvori_ovaj_prozor(object sender, System.EventArgs e)
+        {
+            this.Show();
+        }
+
+        private void Korisnici_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+            this.narucilac =(Narucilac)this.Korisnici.SelectedItem;
+
+        }
     }
 }
