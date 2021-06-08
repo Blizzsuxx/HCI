@@ -403,6 +403,11 @@ namespace organizerEvents.Controler
                 }
                 foreach (long proslavaId in organizator.ProslaveId)
                 {
+                    Console.WriteLine("AAAAAAAAAAA");
+                    Console.WriteLine(proslavaId);
+
+                    Console.WriteLine("AAAAAAAAAAA");
+
                     foreach (Proslava proslava in DataBase.proslave)
                     {
                         if (proslava.Id == proslavaId)
