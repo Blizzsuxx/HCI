@@ -73,7 +73,7 @@
           Width="150"
           materialDesign:ValidationAssist.UsePopup="True"
           
-          ToolTip="Use a popup which can escape the bounds of the control where space is limited">
+          ToolTip="Ime organizatora">
             
         </TextBox>
 
@@ -85,7 +85,7 @@
           Width="150"
           materialDesign:ValidationAssist.UsePopup="True"
           
-          ToolTip="Use a popup which can escape the bounds of the control where space is limited">
+          ToolTip="Korisnicko ime">
             
         </TextBox>
 
@@ -96,7 +96,7 @@
           Width="150"
           materialDesign:ValidationAssist.UsePopup="True"
           
-          ToolTip="Use a popup which can escape the bounds of the control where space is limited">
+          ToolTip="Broj telefona organizatora">
             
         </TextBox>
         <TextBox Grid.Column="2" Grid.Row="5" x:Name="email"
@@ -106,7 +106,7 @@
           Width="150"
           materialDesign:ValidationAssist.UsePopup="True"
           
-          ToolTip="Use a popup which can escape the bounds of the control where space is limited">
+          ToolTip="Email organizatora">
             
         </TextBox>
         <ListView Grid.Row="3" Grid.Column="3" Grid.ColumnSpan="2" Grid.RowSpan="5" x:Name="Proslave">

@@ -74,7 +74,7 @@
           Width="150"
           materialDesign:ValidationAssist.UsePopup="True"
           
-          ToolTip="Use a popup which can escape the bounds of the control where space is limited">
+          ToolTip="Unesite ime organizatora.">
             <TextBox.Text>
 
                 <Binding
@@ -94,7 +94,7 @@
           Width="150"
           materialDesign:ValidationAssist.UsePopup="True"
           HorizontalAlignment="Center"
-          ToolTip="Use a popup which can escape the bounds of the control where space is limited">
+          ToolTip="Unesite prezime organizatora.">
             <TextBox.Text>
 
                 <Binding
@@ -114,7 +114,7 @@
           Width="150"
           materialDesign:ValidationAssist.UsePopup="True"
           HorizontalAlignment="Center"
-          ToolTip="Use a popup which can escape the bounds of the control where space is limited">
+          ToolTip="Unesite mejl organizatora.">
 
             <TextBox.Text>
 
@@ -136,7 +136,7 @@
           Width="150"
           materialDesign:ValidationAssist.UsePopup="True"
           HorizontalAlignment="Center"
-          ToolTip="Use a popup which can escape the bounds of the control where space is limited">
+          ToolTip="Unesite broj telefona organizatora.">
             <TextBox.Text>
 
                 <Binding
@@ -158,7 +158,7 @@
           Width="150"
           materialDesign:ValidationAssist.UsePopup="True"
           HorizontalAlignment="Center"
-          ToolTip="Use a popup which can escape the bounds of the control where space is limited">
+          ToolTip="Unesite platu organizatora (broj).">
             <TextBox.Text>
 
                 <Binding
@@ -177,7 +177,7 @@
           Width="150"
           materialDesign:ValidationAssist.UsePopup="True"
           HorizontalAlignment="Center"
-          ToolTip="Use a popup which can escape the bounds of the control where space is limited">
+          ToolTip="Unesite korisnicko ime organizatora.">
             <TextBox.Text>
 
                 <Binding
@@ -196,28 +196,36 @@
           Width="150"
           materialDesign:ValidationAssist.UsePopup="True"
           HorizontalAlignment="Center"
+
+          ToolTip="Unesite lozinku organizatora.">
+            <TextBox.Text>
+                <Binding
+                  Path="Lozinka"
+                  UpdateSourceTrigger="PropertyChanged">
+
                  LostFocus="proveriSifru"
                 TextChanged="proveriSifru"
-          ToolTip="Use a popup which can escape the bounds of the control where space is limited">
+          
             
+
 
 
         </TextBox>
 
         <Button Grid.Column="2" Grid.Row="9"  x:Name="sacuvaj_organizatora" Click="Sacuvaj_Organizatora_Click"
-                Margin="25,10,0,5"
+                Margin="25,10,0,5" 
                 HorizontalAlignment="Left"
                 Foreground="White" Background="MediumPurple"
           Style="{StaticResource MaterialDesignRaisedLightButton}"
-          ToolTip="Resource name: MaterialDesignRaisedLightButton"
+         ToolTip="Zavrsite unos organizatora i kreirajte ga."
           Content="_Kreiraj" />
 
-        <Button Grid.Column="1" Grid.Row="9" 
+        <Button Grid.Column="1" Grid.Row="9" x:Name="odustani" Click="odustani_Click"
                 Margin="30,10,5,5"
                 HorizontalAlignment="Right"
                 Foreground="White" Background="MediumPurple"
             Style="{StaticResource MaterialDesignOutlinedButton}"
-            ToolTip="MaterialDesignOutlinedButton"
+            ToolTip="Izbrisite trenutne promene."
             Content="Odustani" />
 
     </Grid>

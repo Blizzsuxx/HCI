@@ -44,10 +44,10 @@
                    Margin="0,10,0,10" HorizontalAlignment="Center" Grid.ColumnSpan="2"></TextBlock>
 
 
-        <ListView x:Name="Proslave" Grid.Column="1" Grid.Row="4" Grid.ColumnSpan="2" Grid.RowSpan="2">
+        <ListView x:Name="Proslave" Grid.Column="1" Grid.Row="4" Grid.ColumnSpan="2" Grid.RowSpan="2" SelectionChanged="Proslave_SelectionChanged">
             <ListView.View>
                 <GridView>
-                    
+
                     <GridViewColumn Header="Ime organizatora" Width="120" DisplayMemberBinding="{Binding Organizator.Ime}" />
                     <GridViewColumn Header="Prezime organizatora" Width="110" DisplayMemberBinding="{Binding Organizator.Prezime}" />
                     <GridViewColumn Header="Broj gostiju" Width="75" DisplayMemberBinding="{Binding BrojGostiju}" />
@@ -69,6 +69,15 @@
                 <Image Source="../resources/search.png" RenderTransformOrigin="0.287,0.281" Height="27" Width="152" />
                 <Image Source="/WpfApp1;component/resources/search.png" RenderTransformOrigin="-17.734,1.234" />
             </StackPanel>
+        </Button>
+        <Button Content="Detalji jedne proslave" ToolTip="Selektujte jednu proslavu i kliknite dugme da pogledate detalje." Grid.Row="3" Grid.Column="2" Margin="163.2,10.2,42.6,289" Grid.RowSpan="2" x:Name="Jedna" Click="Jedna_Click" >
+
+            <Button.Resources>
+                <Style TargetType="{x:Type Border}">
+                    <Setter Property="CornerRadius" Value="100"/>
+                </Style>
+            </Button.Resources>
+
         </Button>
 
     </Grid>

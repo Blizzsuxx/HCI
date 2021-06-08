@@ -4,6 +4,8 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using organizerEvents.Controler;
+
 
 namespace WpfApp1.Controler
 {
@@ -13,21 +15,32 @@ namespace WpfApp1.Controler
 
         internal List<Proslava> ucitaj()
         {
-            this.sveProslave = new List<Proslava>();
-            /* Proslava p1 = new Proslava(DateTime.Now, 10000, "rodjendan");
+            DataBase.ucitajPodatke();
+            this.sveProslave = DataBase.proslave;
+            /* this.sveProslave = new List<Proslava>();
+            Proslava p1 = new Proslava(DateTime.Now, 10000, "rodjendan");
              Proslava p2 = new Proslava(DateTime.Now, 10000, "svadba");
              Proslava p3 = new Proslava(DateTime.Now, 10000, "zurka");
              this.sveProslave.Add(p1);
              this.sveProslave.Add(p2);
-             this.sveProslave.Add(p3);*/
+             this.sveProslave.Add(p3);
             this.sveProslave.Add(dobaviProslavu(1));
             this.sveProslave.Add(dobaviProslavu(1));
-            this.sveProslave.Add(dobaviProslavu(1));
+            this.sveProslave.Add(dobaviProslavu(1));*/
             return this.sveProslave;
         }
 
-        internal Proslava dobaviProslavu(int v)
-        { 
+        internal Proslava dobaviProslavu(long id)
+        {
+            /*DataBase.inicijalizujPodatke();
+            sveProslave = DataBase.proslave;
+            foreach (Proslava p in sveProslave) {
+                Console.WriteLine(p.Id);
+                if (p.Id == id) {
+                    return p;
+                }
+            }
+            return null; */
             Proslava proslava = new Proslava();
             Narucilac narucilac = new Narucilac();
             narucilac.Ime = "Natasa";
@@ -61,8 +74,8 @@ namespace WpfApp1.Controler
             d2.Ponuda = p2;
             proslava.Dogovori = new List<Dogovor>();
             proslava.Dogovori.Add(d);
-            proslava.Dogovori.Add(d2);
-            return proslava;
+            proslava.Dogovori.Add(d2); return proslava;
+            
         }
     }
 }

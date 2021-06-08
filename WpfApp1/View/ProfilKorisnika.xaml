@@ -78,13 +78,7 @@
           materialDesign:ValidationAssist.UsePopup="True"
           
           ToolTip="Ime korisnika" Margin="19,0.2,9.8,35.8" Grid.RowSpan="2">
-            <TextBox.Text>
-                <Binding
-                  Path="Ime"
-                  UpdateSourceTrigger="PropertyChanged">
-
-                </Binding>
-            </TextBox.Text>
+            
         </TextBox>
         <TextBox Grid.Column="2" Grid.Row="8" x:Name="Prezime"
                  HorizontalAlignment="Center"
@@ -93,14 +87,8 @@
           Width="160"
           materialDesign:ValidationAssist.UsePopup="True"
           
-          ToolTip="Unesite naziv saradnika" Margin="19,0.2,9.8,35.8" Grid.RowSpan="2">
-            <TextBox.Text>
-                <Binding
-                  Path="Prezime"
-                  UpdateSourceTrigger="PropertyChanged">
-
-                </Binding>
-            </TextBox.Text>
+          ToolTip="Prezime korisnika" Margin="19,0.2,9.8,35.8" Grid.RowSpan="2">
+            
         </TextBox>
         <TextBox Grid.Column="2" Grid.Row="9" x:Name="Email"
                  HorizontalAlignment="Center"
@@ -109,14 +97,8 @@
           Width="160"
           materialDesign:ValidationAssist.UsePopup="True"
           
-          ToolTip="Unesite naziv saradnika" Margin="19,5.2,9.8,30.8" Grid.RowSpan="2">
-            <TextBox.Text>
-                <Binding
-                  Path="Email"
-                  UpdateSourceTrigger="PropertyChanged">
-
-                </Binding>
-            </TextBox.Text>
+          ToolTip="E-mail korisnika" Margin="19,5.2,9.8,30.8" Grid.RowSpan="2">
+           
         </TextBox>
         <TextBox Grid.Column="2" Grid.Row="10" x:Name="kIme"
                  HorizontalAlignment="Center"
@@ -125,14 +107,8 @@
           Width="160"
           materialDesign:ValidationAssist.UsePopup="True"
           
-          ToolTip="Unesite naziv saradnika" Margin="19,0.2,9.8,35.8" Grid.RowSpan="2">
-            <TextBox.Text>
-                <Binding
-                  Path="kIme"
-                  UpdateSourceTrigger="PropertyChanged">
-
-                </Binding>
-            </TextBox.Text>
+          ToolTip="Korisnicko ime " Margin="19,0.2,9.8,35.8" Grid.RowSpan="2">
+           
         </TextBox>
         <TextBox Grid.Column="2" Grid.Row="11" x:Name="BrTelefona"
                  HorizontalAlignment="Center"
@@ -141,14 +117,8 @@
           Width="160"
           materialDesign:ValidationAssist.UsePopup="True"
           
-          ToolTip="Unesite naziv saradnika" Margin="19,0.2,9.8,151" Grid.RowSpan="2">
-            <TextBox.Text>
-                <Binding
-                  Path="BrTelefona"
-                  UpdateSourceTrigger="PropertyChanged">
-
-                </Binding>
-            </TextBox.Text>
+          ToolTip="broj telefona" Margin="19,0.2,9.8,151" Grid.RowSpan="2">
+           
         </TextBox>
         <TextBox Grid.Column="2" Grid.Row="12" x:Name="BrProslava"
                  HorizontalAlignment="Center"
@@ -157,14 +127,8 @@
           Width="160"
           materialDesign:ValidationAssist.UsePopup="True"
           
-          ToolTip="Unesite naziv saradnika" Margin="19,0.2,9.8,110">
-            <TextBox.Text>
-                <Binding
-                  Path="BrProslava"
-                  UpdateSourceTrigger="PropertyChanged">
-
-                </Binding>
-            </TextBox.Text>
+          ToolTip="Broj svih proslava korisnika" Margin="19,0.2,9.8,110">
+           
         </TextBox>
         <Label Grid.Column="3" Grid.Row="7" Content="Proslave" FontSize="24"></Label>
         

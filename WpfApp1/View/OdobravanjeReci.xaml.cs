@@ -24,9 +24,10 @@ namespace WpfApp1.View
 
         public OdobravanjeReci()
         {
+            Kontroler = new RecnikKontroler();
             InitializeComponent();
-            this.naziv.Text = "prva rec"; //todo notice
-            this.opis.Text = "druga rec";// Kontroler.recnik.ZahteviZaRecnik["prvarec"];
+            this.naziv.Text = Kontroler.recnik.ZahteviZaRecnik.Keys.First(); //todo notice
+            this.opis.Text = Kontroler.recnik.ZahteviZaRecnik[this.naziv.Text];// Kontroler.recnik.ZahteviZaRecnik["prvarec"];
         }
 
         private void sacuvaj_Click(object sender, RoutedEventArgs e)
