@@ -21,5 +21,15 @@ namespace organizerEvents.model
             this.PosebanZahtev = pZahtev;
             this.BrTelefona = brTelefona;
         }
+
+        public Gost(long Id, String ime, String prezime, String pZahtev, String brTelefona)
+        {
+            this.Id = Id;
+            this.Ime = ime;
+            this.Prezime = prezime;
+            this.PosebanZahtev = pZahtev;
+            this.BrTelefona = brTelefona;
+        }
+
     }
 }
