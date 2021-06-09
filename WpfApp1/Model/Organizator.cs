@@ -12,6 +12,8 @@ namespace organizerEvents.model
 
         public double Plata { get; set; }
 
+        public long VodioProslava { get { return Proslave.Count; } }
+
 
         public List<long> ZahteviId { get; set; }
         [JsonIgnore]

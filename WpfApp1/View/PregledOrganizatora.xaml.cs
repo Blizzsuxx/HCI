@@ -44,7 +44,7 @@ namespace WpfApp1
             if (this.selektovan == null) { }
             else
             {
-                PregledJednogOrganizatora prozor = new PregledJednogOrganizatora(this.selektovan.Id);
+                PregledJednogOrganizatora prozor = new PregledJednogOrganizatora(this.selektovan);
                 prozor.Closed += new EventHandler(this.Otvori_ovaj_prozor);
                 prozor.Show();
                 this.Hide();

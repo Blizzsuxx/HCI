@@ -81,7 +81,7 @@
         <Button Grid.Column="1" Grid.Row="2" Margin="40,10,5,5" HorizontalAlignment="Left"
                 Width="25px" Height="25px" Foreground="White"
           Style="{StaticResource MaterialDesignFloatingActionMiniLightButton}"
-          ToolTip="Kalendar događaja.">
+          ToolTip="Kalendar događaja." Click="Button_Click_7">
             <materialDesign:PackIcon
             Kind="Calendar"
              />

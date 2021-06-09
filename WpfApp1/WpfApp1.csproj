@@ -190,14 +190,14 @@
     <Compile Include="View\PregledProslava.xaml.cs">
       <DependentUpon>PregledProslava.xaml</DependentUpon>
     </Compile>
-
     <Compile Include="View\PregledSvihMesta.xaml.cs">
       <DependentUpon>PregledSvihMesta.xaml</DependentUpon>
-     </Compile>
-
+    </Compile>
     <Compile Include="View\PregledStolova.xaml.cs">
       <DependentUpon>PregledStolova.xaml</DependentUpon>
-
+    </Compile>
+    <Compile Include="View\PretragaOrganizatora.xaml.cs">
+      <DependentUpon>PretragaOrganizatora.xaml</DependentUpon>
     </Compile>
     <Compile Include="View\PrikazDogadjaja.xaml.cs">
       <DependentUpon>PrikazDogadjaja.xaml</DependentUpon>
@@ -361,14 +361,15 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-
     <Page Include="View\PregledSvihMesta.xaml">
-     <SubType>Designer</SubType>
+      <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-
     <Page Include="View\PregledStolova.xaml">
-
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\PretragaOrganizatora.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

@@ -116,6 +116,12 @@ namespace WpfApp1
 
         }
 
+        private void Button_Click_7(object sender, RoutedEventArgs e)
+        {
+            PretragaOrganizatora pretragaOrganizatora = new PretragaOrganizatora();
+            pretragaOrganizatora.Show();
+        }
+
         private void Button_Click_3(object sender, RoutedEventArgs e)
         {
 

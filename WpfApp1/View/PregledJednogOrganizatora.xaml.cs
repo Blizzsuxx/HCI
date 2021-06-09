@@ -22,11 +22,10 @@ namespace WpfApp1.View
     public partial class PregledJednogOrganizatora : Window
     {
         OrganizatorKontroler kontroler { get; set; }
-        public PregledJednogOrganizatora(long id)
+        public PregledJednogOrganizatora(Organizator org)
         {
             kontroler = new OrganizatorKontroler();
             InitializeComponent();
-            Organizator org=kontroler.nabaviOrg(id); //ovde id?
             if (org != null)
             {
                 this.ime.Text = org.Ime + " " + org.Prezime;
