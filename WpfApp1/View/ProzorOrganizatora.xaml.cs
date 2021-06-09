@@ -124,5 +124,13 @@ namespace WpfApp1.View
                 }
             }
         }
+
+        private void Button_Click_5(object sender, RoutedEventArgs e)
+        {
+            TabelaDogadjaja tabelaDogadjaja = new TabelaDogadjaja((DataBase.trenutniKorisnik as Organizator).Proslave);
+            tabelaDogadjaja.Closed += this.showParentOnClose;
+            tabelaDogadjaja.Show();
+            this.Hide();
+        }
     }
 }
