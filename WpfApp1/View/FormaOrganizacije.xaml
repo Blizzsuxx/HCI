@@ -161,7 +161,7 @@
                   Path="Tip"
                   UpdateSourceTrigger="PropertyChanged">
                             <Binding.ValidationRules>
-                                <local11:EmailValidator
+                                <local11:NoEmptyFieldValidator
                                       ValidatesOnTargetUpdated="True"  />
                             </Binding.ValidationRules>
                         </Binding>
@@ -189,25 +189,15 @@
                 </TextBox>
 
 
-                <TextBox Grid.Column="2" Grid.Row="8"
+                <ComboBox Grid.Column="2" Grid.Row="8" x:Name="Combo"
                  HorizontalAlignment="Center"
-          Style="{StaticResource MaterialDesignFloatingHintTextBox}"
           materialDesign:HintAssist.Hint="     Mesto"
           Width="150"
           materialDesign:ValidationAssist.UsePopup="True"
           
-          ToolTip="Use a popup which can escape the bounds of the control where space is limited">
-                    <TextBox.Text>
-                        <Binding
-                  Path="Mesto"
-                  UpdateSourceTrigger="PropertyChanged">
-                            <Binding.ValidationRules>
-                                <local11:NoEmptyFieldValidator
-                                      ValidatesOnTargetUpdated="True"  />
-                            </Binding.ValidationRules>
-                        </Binding>
-                    </TextBox.Text>
-                </TextBox>
+          ToolTip="selektujte mesto dogadjaja">
+                    
+                </ComboBox>
 
 
                 <TextBox Grid.Column="2" Grid.Row="9"
@@ -237,12 +227,13 @@
                 Foreground="White" Background="MediumPurple"
           Style="{StaticResource MaterialDesignRaisedLightButton}"
           ToolTip="Resource name: MaterialDesignRaisedLightButton"
-          Content="_Kreiraj" />
+          Content="_Kreiraj" Click="Sacuvaj_Organizatora_Click" />
 
                 <Button Grid.Column="2" Grid.Row="10" 
                 Margin="30,10,5,5"
                 HorizontalAlignment="Right"
                 Foreground="MediumPurple"
+                        Click="odustani_Click"
             Style="{StaticResource MaterialDesignOutlinedButton}"
             ToolTip="MaterialDesignOutlinedButton"
             Content="Odustani" />

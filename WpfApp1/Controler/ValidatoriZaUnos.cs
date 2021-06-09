@@ -131,7 +131,7 @@ namespace WpfApp1.Controler
         public override ValidationResult Validate(object value, CultureInfo cultureInfo)
         {
             if(value == null) return new ValidationResult(false, $"");
-            DateTime date = DateTime.Parse((string)value);
+            DateTime date = DateTime.Parse(value.ToString());
             DateTime now = DateTime.Now;
 
             if (date == null || date <= now)
@@ -148,7 +148,7 @@ namespace WpfApp1.Controler
         public override ValidationResult Validate(object value, CultureInfo cultureInfo)
         {
             if(value == null) return new ValidationResult(false, $"");
-            DateTime time = DateTime.Parse((string)value);
+            DateTime time = DateTime.Parse(value.ToString());
 
             if (time == null || time.Hour < 7 || time.Hour > 20)
             {

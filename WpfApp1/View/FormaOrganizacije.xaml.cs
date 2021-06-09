@@ -1,4 +1,6 @@
-﻿using System;
+﻿using organizerEvents.Controler;
+using organizerEvents.model;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -28,10 +30,19 @@ namespace WpfApp1.View
         public String BrojGostiju { get; set; }
         public String Mesto { get; set; }
         public String Opis { get; set; }
-        public FormaOrganizacije()
+
+        public Organizator org;
+        public FormaOrganizacije(Organizator organizator)
         {
+
             InitializeComponent();
             this.DataContext = this;
+
+            Combo.ItemsSource = DataBase.mesta;
+            Combo.DisplayMemberPath = "NazivMesta";
+            Combo.SelectedValuePath = "Id";
+            org = organizator;
+            Combo.SelectedValue = DataBase.mesta[0].Id;
         }
 
 
@@ -55,7 +66,6 @@ namespace WpfApp1.View
                 NoEmptyFieldValidator noEmptyFieldValidator = new NoEmptyFieldValidator();
                 Validator.validate(Naziv, noEmptyFieldValidator);
                 Validator.validate(Tip, noEmptyFieldValidator);
-                Validator.validate(Mesto, noEmptyFieldValidator);
 
                 DateValidator dateValidator = new DateValidator();
                 Validator.validate(Datum, dateValidator);
@@ -74,16 +84,18 @@ namespace WpfApp1.View
                 return;
             }
             Double budzet = Double.Parse(Budzet); //TODO num
-            long brojGostiju = long.Parse(BrojGostiju);
+            int brojGostiju = int.Parse(BrojGostiju);
             DateTime datum = DateTime.Parse(Datum);
             DateTime vreme = DateTime.Parse(Vreme);
             DateTime dateTime = datum.AddTicks(vreme.Ticks);
 
             MessageBox.Show("Uspeh!");
-            //Console.WriteLine(KorisnickoIme); Console.WriteLine("-----------------------------------------------");
-            //kontroler.dodajOrganizatora(KorisnickoIme, Lozinka, BrTel, Email, Ime, Prezime, Plata);
-
-
+            Proslava proslava = new Proslava { Naslov = Naziv, Tip = Tip, Mesto = (Mesto)Combo.SelectedItem, DatumVreme = dateTime, Budzet = budzet, BrojGostiju = brojGostiju, MestoId = ((Mesto)Combo.SelectedItem).Id, Narucilac = (Narucilac)DataBase.trenutniKorisnik, NarucilacId = DataBase.trenutniKorisnik.Id, Opis = Opis, OrganizatorId = org.Id, Organizator = org };
+            DataBase.proslave.Add(proslava);
+            org.Proslave.Add(proslava);
+            org.ProslaveId.Add(proslava.Id);
+            (DataBase.trenutniKorisnik as Narucilac).Proslave.Add(proslava);
+            (DataBase.trenutniKorisnik as Narucilac).ProslaveId.Add(proslava.Id);
         }
 
         private void odustani_Click(object sender, RoutedEventArgs e)
@@ -96,5 +108,7 @@ namespace WpfApp1.View
             this.Mesto = "";
             this.Tip = "";
         }
+
+
     }
 }
