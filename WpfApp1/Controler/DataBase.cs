@@ -287,7 +287,8 @@ namespace organizerEvents.Controler
                 AutorId = 1
             };
 
-            Proslava novaProslava =new Proslava { OrganizatorId=2, Id=11, ZadaciId = new List<long> { 11 }, Opis="opis proslave", Naslov="Naslov Proslave", PorukeId = new List<long> { 2, 3, 4, 5, 6}, DatumVreme=DateTime.Now};
+            Proslava novaProslava =new Proslava { OrganizatorId=2, Id=11, ZadaciId = new List<long> { 11 }, Opis="opis proslave", Naslov="Naslov Proslave", PorukeId = new List<long> { 2, 3, 4, 5, 6}, DatumVreme=DateTime.Now,
+                DogovoriId = new List<long> { 1 } };
             ToDo novTodo = new  ToDo { Id=11, OpisZadatka="Opis Zadatka", StanjeZadatka=Stanje.Uradjeno, DogovorId=1};
             Ponuda novaPonuda = new Ponuda { Id=11, Naziv = "naziv", Opis = "Opis" };
 
@@ -399,6 +400,7 @@ namespace organizerEvents.Controler
                         }
                     }
                 }
+
 
                 foreach (long dogovorId in proslava.DogovoriId)
                 {
@@ -627,6 +629,10 @@ namespace organizerEvents.Controler
             string dogovor = File.ReadAllText("Dogovori.json");
             DataBase.dogovori =
                JsonSerializer.Deserialize<List<Dogovor>>(dogovor);
+            foreach(var token in dogovori)
+            {
+                Dogovor.trenutniId = Math.Max(token.Id, Dogovor.trenutniId);
+            }
         }
 
         public static void sacuvajDogovore()

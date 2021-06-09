@@ -16,6 +16,7 @@ namespace organizerEvents.model
     }
     public class Dogovor
     {
+        public static long trenutniId = 0;
         public long Id { get; set; }
         public Stanje Stanje { get; set; }
 
@@ -30,8 +31,11 @@ namespace organizerEvents.model
         public Proslava Proslava { get; set; }
 
         public Dogovor() {
+            Dogovor.trenutniId++;
             this.PonudeId = new List<long>();
             this.Ponude = new List<Ponuda>();
+
+            this.Id = Dogovor.trenutniId;
         
             }
         public Dogovor(Stanje stanje, ref List<Ponuda> ponude) {

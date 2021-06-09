@@ -62,7 +62,7 @@
         <Button Grid.Column="1" Grid.Row="2" Margin="5,10,75,5" HorizontalAlignment="Right"
                 Width="25px" Height="25px" Foreground="White"
           Style="{StaticResource MaterialDesignFloatingActionMiniLightButton}"
-          ToolTip="Brisanje.">
+          ToolTip="Brisanje." Click="Button_Click_3">
             <materialDesign:PackIcon
             Kind="Delete"
              />
@@ -70,7 +70,7 @@
         <Button Grid.Column="1" Grid.Row="2" Margin="5,10,110,5" HorizontalAlignment="Right"
                 Width="25px" Height="25px" Foreground="White"
           Style="{StaticResource MaterialDesignFloatingActionMiniLightButton}"
-          ToolTip="Undo.">
+          ToolTip="Undo." Click="Button_Click_4">
             <materialDesign:PackIcon
             Kind="Undo"
              />
@@ -79,7 +79,7 @@
         <Button Grid.Column="1" Grid.Row="2" Margin="5,10,5,5" HorizontalAlignment="Left"
                 Width="25px" Height="25px" Foreground="White"
           Style="{StaticResource MaterialDesignFloatingActionMiniLightButton}"
-          ToolTip="Tabela događaja.">
+          ToolTip="Tabela događaja." RenderTransformOrigin="0.5,0.504" Click="Button_Click_5">
             <materialDesign:PackIcon
             Kind="Table"
              />

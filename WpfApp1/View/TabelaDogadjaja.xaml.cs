@@ -1,4 +1,5 @@
-﻿using System;
+﻿using organizerEvents.model;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -19,9 +20,13 @@ namespace WpfApp1.View
     /// </summary>
     public partial class TabelaDogadjaja : Window
     {
-        public TabelaDogadjaja()
+        public List<Proslava> Lista { get; set; }
+        public TabelaDogadjaja(List<Proslava> proslave)
         {
+            this.Lista = proslave;
             InitializeComponent();
+
+            this.DataContext = this;
         }
     }
 }
