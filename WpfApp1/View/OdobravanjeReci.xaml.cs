@@ -37,6 +37,14 @@ namespace WpfApp1.View
                 Kontroler = new RecnikKontroler();
             }
             bool uspelo=Kontroler.OdobriRec(this.naziv.Text);
+            if (uspelo)
+            {
+                MessageBox.Show("Uspesno ste sacuvali  rec" + this.naziv.Text + " u recnik.");
+            }
+            else
+            {
+                MessageBox.Show("Dodavanje nije uspelo.");
+            }
             Console.WriteLine("+++++++++++++++++++++++");
 
         }
@@ -46,6 +54,14 @@ namespace WpfApp1.View
             if (Kontroler == null) { 
             Kontroler = new RecnikKontroler();}
             bool uspelo = Kontroler.izbrisiRec(this.naziv.Text);
+            if (uspelo)
+            {
+                MessageBox.Show("Uspesno ste izbrisali rec"+this.naziv.Text+" iz recnika.");
+            }
+            else
+            {
+                MessageBox.Show("brisanje nije uspelo.");
+            }
         }
     }
 }

@@ -14,9 +14,10 @@ namespace WpfApp1.Controler
 
         public bool OdobriRec(String naziv)
         {
-            DataBase.inicijalizujPodatke();
+            //DataBase.inicijalizujPodatke();
             recnik = DataBase.recniciPojmova;
-            if (recnik.Pojmovi.ContainsKey(naziv) || !recnik.ZahteviZaRecnik.ContainsKey(naziv)) { return false; }
+            if (recnik.Pojmovi.ContainsKey(naziv)) { Console.WriteLine("da"); return false; }
+            if( !recnik.ZahteviZaRecnik.ContainsKey(naziv)) { Console.WriteLine("ne"); return false; }
             recnik.Pojmovi[naziv] = recnik.ZahteviZaRecnik[naziv];
             recnik.ZahteviZaRecnik.Remove(naziv);
             return true;
