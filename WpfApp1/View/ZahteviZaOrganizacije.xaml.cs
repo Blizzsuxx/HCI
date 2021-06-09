@@ -1,4 +1,5 @@
-﻿using System;
+﻿using organizerEvents.model;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -19,9 +20,24 @@ namespace WpfApp1.View
     /// </summary>
     public partial class ZahteviZaOrganizacije : Window
     {
-        public ZahteviZaOrganizacije()
+        public List<ZahtevZaProslavu> ZahtevZaProslavu { get; set; }
+        public ZahteviZaOrganizacije(List<ZahtevZaProslavu> zahtevZaProslavu)
         {
             InitializeComponent();
+            this.ZahtevZaProslavu = zahtevZaProslavu;
+            this.DataContext = this;
+            int counter = 0;
+            foreach(var zahtev in zahtevZaProslavu)
+            {
+                ZahtevUserControl zahtevUserControl = new ZahtevUserControl(zahtev);
+                Telo.Children.Add(zahtevUserControl);
+                Grid.SetColumn(zahtevUserControl, 0);
+                Grid.SetRow(zahtevUserControl, counter);
+                counter++;
+                RowDefinition rowDefinition = new RowDefinition();
+                rowDefinition.MinHeight = 50;
+                Telo.RowDefinitions.Add(rowDefinition);
+            }
         }
     }
 }

@@ -95,7 +95,7 @@
         <Button Grid.Column="1" Grid.Row="2" Margin="75,10,5,5" HorizontalAlignment="Left"
                 Width="25px" Height="25px" Foreground="White"
           Style="{StaticResource MaterialDesignFloatingActionMiniLightButton}"
-          ToolTip="Obavještenja.">
+          ToolTip="Obavještenja." Click="Button_Click_1">
             <materialDesign:PackIcon
             Kind="Bell"
              />

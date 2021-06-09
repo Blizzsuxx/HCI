@@ -159,11 +159,13 @@ namespace organizerEvents.Controler
             Dogovor dogovor = new Dogovor
             {
                 Id = 1,
-                Stanje = Stanje.Dogovoreno
+                Stanje = Stanje.Dogovoreno,
+                ProslavaId = 11,
+                Ime="Ime dogovora"
             };
             Narucilac narucilac = new Narucilac
             {
-                Id = 2,
+                Id = 1,
                 Ime = "Nrucilac",
                 Prezime = "Naruciocic",
                 KorisnickoIme = "momcina",
@@ -177,7 +179,8 @@ namespace organizerEvents.Controler
                 Prezime = "Suljic",
                 KorisnickoIme = "sule",
                 Sifra = "123",
-                ProslaveId = new List<long> { 11 }
+                ProslaveId = new List<long> { 11 },
+                ZahteviId = new List<long> { 1, 2, 3}
             };
             Ponuda ponuda = new Ponuda
             {
@@ -204,12 +207,47 @@ namespace organizerEvents.Controler
             ToDo zadatak = new ToDo
             {
                 Id = 2,
-                OpisZadatka = "Ovo je inicijalni zadatak"
+                OpisZadatka = "Ovo je inicijalni zadatak",
+                DogovorId=1
             };
             ZahtevZaProslavu zahtevZaProslavu = new ZahtevZaProslavu
             {
                 Id = 1,
-                Opis = "Zahtjev"
+                Opis = "Zahtjev",
+                Naslov = "Ovo je naslov",
+                DatumVreme = DateTime.Now,
+                BrojGostiju = 15,
+                Budzet = 1222.2,
+                NarucilacId = 1,
+                OrganizatorId = 2,
+                Tip = "Sahrana",
+                Mesto = "FTN"
+            };
+            ZahtevZaProslavu zahtevZaProslavu2 = new ZahtevZaProslavu
+            {
+                Id = 2,
+                Opis = "Zahtjev",
+                Naslov = "Ovo je naslov1231231",
+                DatumVreme = DateTime.Now,
+                BrojGostiju = 11,
+                Budzet = 1222.2,
+                NarucilacId = 1,
+                OrganizatorId = 2,
+                Tip = "Svadba",
+                Mesto = "FTN"
+            };
+            ZahtevZaProslavu zahtevZaProslavu3 = new ZahtevZaProslavu
+            {
+                Id = 3,
+                Opis = "Zahtjev",
+                Naslov = "Ovo je asd",
+                DatumVreme = DateTime.Now,
+                BrojGostiju = 152,
+                Budzet = 12312.12,
+                NarucilacId = 1,
+                OrganizatorId = 2,
+                Tip = "Rodjendan",
+                Mesto = "FTN"
             };
 
 
@@ -247,10 +285,12 @@ namespace organizerEvents.Controler
             };
 
             Proslava novaProslava =new Proslava { OrganizatorId=2, Id=11, ZadaciId = new List<long> { 11 }, Opis="opis proslave", Naslov="Naslov Proslave", PorukeId = new List<long> { 2, 3, 4, 5, 6}, DatumVreme=DateTime.Now};
-            ToDo novTodo = new  ToDo { Id=11, OpisZadatka="Opis Zadatka", StanjeZadatka=Stanje.Uradjeno};
+            ToDo novTodo = new  ToDo { Id=11, OpisZadatka="Opis Zadatka", StanjeZadatka=Stanje.Uradjeno, DogovorId=1};
             Ponuda novaPonuda = new Ponuda { Id=11, Naziv = "naziv", Opis = "Opis" };
 
             DataBase.zahtevZaProslave.Add(zahtevZaProslavu);
+            DataBase.zahtevZaProslave.Add(zahtevZaProslavu2);
+            DataBase.zahtevZaProslave.Add(zahtevZaProslavu3);
             DataBase.toDos.Add(zadatak);
             DataBase.toDos.Add(novTodo);
             DataBase.recniciPojmova.Add(recnik);

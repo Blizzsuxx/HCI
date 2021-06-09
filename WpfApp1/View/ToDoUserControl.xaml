@@ -3,7 +3,7 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
-             xmlns:local="clr-namespace:WpfApp1.View" xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+             xmlns:local="clr-namespace:WpfApp1.View" xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes" DataContext="{Binding RelativeSource={RelativeSource Self}}"
              mc:Ignorable="d" 
              TextElement.Foreground="{DynamicResource MaterialDesignBody}"
         TextElement.FontWeight="Regular"
@@ -13,8 +13,13 @@
         Background="{DynamicResource MaterialDesignPaper}"
         FontFamily="{DynamicResource MaterialDesignFont}"
              d:DesignHeight="450" d:DesignWidth="800">
+    <UserControl.Resources>
+        <CollectionViewSource x:Key="DogovoriZaProslavu" Source="{Binding DogovoriZaProslavu}"/>
+    </UserControl.Resources>
+    
+    
     <Grid>
-        <DataGrid  CanUserAddRows="false" ColumnWidth="*" GridLinesVisibility="None" AutoGenerateColumns="False" x:Name="zadaciGrid" HorizontalAlignment="Stretch"   Background="White" SelectionChanged="zadaciGrid_SelectionChanged" BorderBrush="White" Margin="50,0,0,0">
+        <DataGrid   ColumnWidth="*" GridLinesVisibility="None" AutoGenerateColumns="False" x:Name="zadaciGrid" HorizontalAlignment="Stretch"   Background="White" SelectionChanged="zadaciGrid_SelectionChanged" BorderBrush="White" Margin="50,0,0,0">
 
             <DataGrid.Columns>
 
@@ -27,34 +32,29 @@
                         <DataTemplate >
                             <ToggleButton
             x:Name="dugme"
-            IsChecked = "{Binding Path=Odradjen, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"
+            IsChecked = "{Binding Path=Odradjen, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged, NotifyOnSourceUpdated=True}"
             Style = "{StaticResource MaterialDesignActionLightToggleButton}"
-            Content = "{Binding Path=StanjeZadatka}"/>
+                                Click="toggleClicked"
+            Content = "{Binding Path=StanjeZadatka, UpdateSourceTrigger=PropertyChanged, NotifyOnSourceUpdated=True}" />
 
                         </DataTemplate>
                     </DataGridTemplateColumn.CellTemplate>
                 </DataGridTemplateColumn>
 
-                <DataGridTemplateColumn Header="Naziv">
-                    <DataGridTemplateColumn.CellTemplate>
-                        <DataTemplate>
-                            <TextBlock FontSize="20" Text="{Binding Naziv}"  />
-                        </DataTemplate>
-                    </DataGridTemplateColumn.CellTemplate>
-                </DataGridTemplateColumn>
+                
 
                 <DataGridTemplateColumn Header="Opis">
                     <DataGridTemplateColumn.CellTemplate>
                         <DataTemplate>
-                            <TextBlock FontSize="20" Text="{Binding Opis}"  />
+                            <TextBlock FontSize="20" Text="{Binding OpisZadatka, Mode=TwoWay}"  />
                         </DataTemplate>
                     </DataGridTemplateColumn.CellTemplate>
                 </DataGridTemplateColumn>
-
+                
                 <DataGridTemplateColumn Header="Dogovor">
                     <DataGridTemplateColumn.CellTemplate>
                         <DataTemplate>
-                            <TextBlock FontSize="20" Text="{Binding DogovorIme}"  />
+                            <TextBlock FontSize="20" Text="{Binding ImeDogovora}"  />
                         </DataTemplate>
                     </DataGridTemplateColumn.CellTemplate>
                 </DataGridTemplateColumn>
@@ -76,4 +76,5 @@
 
         </DataGrid>
     </Grid>
+    
 </UserControl>

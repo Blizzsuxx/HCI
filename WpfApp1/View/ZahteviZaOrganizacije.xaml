@@ -41,7 +41,7 @@
                    Margin="0,10,0,10" HorizontalAlignment="Center"></TextBlock>
 
 
-        <Grid Grid.Row="2" Grid.Column="1">
+        <Grid Grid.Row="2" Grid.Column="1" x:Name="Telo">
             <Grid.ColumnDefinitions>
                 
                 <ColumnDefinition Width="*"></ColumnDefinition>
@@ -49,60 +49,9 @@
             <Grid.RowDefinitions>
                
                 <RowDefinition Height="*"></RowDefinition>
-                <RowDefinition Height="*"></RowDefinition>
-                <RowDefinition Height="*"></RowDefinition>
-                <RowDefinition Height="*"></RowDefinition>
-                <RowDefinition Height="*"></RowDefinition>
             </Grid.RowDefinitions>
-            <Border CornerRadius="6" Grid.Column="0" Grid.Row="0"
-                BorderBrush="MediumPurple"
-               
-                BorderThickness="2"
-               >
-                <WrapPanel >
-                    <ToggleButton
-                    Content="H"
-                    Style="{StaticResource MaterialDesignActionToggleButton}"
-                    ToolTip="MaterialDesignActionToggleButton"
-                       materialDesign:ShadowAssist.ShadowDepth="Depth3" />
-                    <StackPanel>
-                        <TextBlock Margin="0,10,0,0" Text="Andrija Vojnovic" FontWeight="UltraBlack" FontSize="10"></TextBlock>
-                        <TextBlock Margin="2,0,5,10" Text="Pozdrav, zelio bih organizaciju moje svadbe"  FontSize="10"></TextBlock>
-                    </StackPanel>
-                </WrapPanel>
-            </Border>
-            <Border CornerRadius="6" Grid.Column="0" Grid.Row="1"
-                 BorderBrush="MediumPurple"
-                BorderThickness="2"
-               >
-                <WrapPanel >
-                    <ToggleButton
-                    Content="H"
-                    Style="{StaticResource MaterialDesignActionToggleButton}"
-                    ToolTip="MaterialDesignActionToggleButton"
-                       materialDesign:ShadowAssist.ShadowDepth="Depth3" />
-                    <StackPanel>
-                        <TextBlock Margin="0,10,0,0" Text="Andrija Vojnovic" FontWeight="UltraBlack" FontSize="10"></TextBlock>
-                        <TextBlock Margin="2,0,5,10" Text="Pozdrav, zelio bih organizaciju moje svadbe"  FontSize="10"></TextBlock>
-                    </StackPanel>
-                </WrapPanel>
-            </Border>
-            <Border CornerRadius="6" Grid.Column="0" Grid.Row="2"
-                 BorderBrush="MediumPurple"
-                BorderThickness="2"
-               >
-                <WrapPanel >
-                <ToggleButton
-                    Content="H"
-                    Style="{StaticResource MaterialDesignActionToggleButton}"
-                    ToolTip="MaterialDesignActionToggleButton"
-                       materialDesign:ShadowAssist.ShadowDepth="Depth3" />
-                <StackPanel>
-                    <TextBlock Margin="0,10,0,0" Text="Andrija Vojnovic" FontWeight="UltraBlack" FontSize="10"></TextBlock>
-                    <TextBlock Margin="2,0,5,10" Text="Pozdrav, zelio bih organizaciju moje svadbe"  FontSize="10"></TextBlock>
-                </StackPanel>
-            </WrapPanel>
-            </Border>
+            
+            
         </Grid>
     </Grid>
 </Window>

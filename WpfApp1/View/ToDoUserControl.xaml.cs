@@ -14,6 +14,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using System.Windows.Controls.Primitives;
 
 namespace WpfApp1.View
 {
@@ -23,13 +24,24 @@ namespace WpfApp1.View
     public partial class ToDoUserControl : UserControl
     {
         public List<ToDo> lista { get; set; }
-        public ToDoUserControl(List<ToDo> toDos)
+        public List<Dogovor> DogovoriZaProslavu { get; set; }
+        public ToDoUserControl(List<ToDo> toDos, Proslava proslava)
         {
-            InitializeComponent();
             lista = toDos;
-            
+            if (proslava != null)
+                DogovoriZaProslavu = proslava.Dogovori;
+            InitializeComponent();
 
             zadaciGrid.ItemsSource = lista;
+
+            var temp = this.DataContext;
+            this.DataContext = null;
+            this.DataContext = temp;
+        }
+
+        public void toggleClicked(object sender, RoutedEventArgs e)
+        {
+            (e.Source as ToggleButton).GetBindingExpression(ContentProperty).UpdateTarget();
         }
 
         private void zadaciGrid_SelectionChanged(object sender, SelectionChangedEventArgs e)
