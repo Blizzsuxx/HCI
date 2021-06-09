@@ -33,7 +33,7 @@ namespace WpfApp1.Controler
             string username = (string)value;
             if (username == null || username.Length <= 0)
             {
-                return new ValidationResult(false, $"Obavezno polje");
+                return new ValidationResult(false, $"");
             }
 
             Korisnik korisnik = DataBase.nadjiKorisnika(username);
@@ -54,7 +54,7 @@ namespace WpfApp1.Controler
             string email = (string)value;
             if (email == null || email.Length <= 0)
             {
-                return new ValidationResult(false, $"Obavezno polje");
+                return new ValidationResult(false, $"");
             }
             Boolean elValidno = new System.ComponentModel.DataAnnotations.EmailAddressAttribute().IsValid(email);
             if(elValidno)
@@ -73,7 +73,7 @@ namespace WpfApp1.Controler
             string word = (string)value;
             if (word == null || word.Length <= 0)
             {
-                return new ValidationResult(false, $"Obavezno polje");
+                return new ValidationResult(false, $"");
             }
 
             return ValidationResult.ValidResult;
@@ -88,7 +88,7 @@ namespace WpfApp1.Controler
             string word = (string)value;
             if (word == null || word.Length <= 0 || !Regex.Match(word, @"^([0-9]{8}[0-9]*)$").Success)
             {
-                return new ValidationResult(false, $"Nije Validan Broj");
+                return new ValidationResult(false, $"");
             }
 
             return ValidationResult.ValidResult;
@@ -101,7 +101,7 @@ namespace WpfApp1.Controler
             string word = (string)value;
             if (word == null || word.Length <= 0 || !Regex.Match(word, @"^([0-9]+\.?[0-9]*)$").Success)
             {
-                return new ValidationResult(false, $"Nije Validan Broj");
+                return new ValidationResult(false, $"");
             }
 
             return ValidationResult.ValidResult;
@@ -113,7 +113,7 @@ namespace WpfApp1.Controler
     {
         public override ValidationResult Validate(object value, CultureInfo cultureInfo)
         {
-            if(value == null) return new ValidationResult(false, $"Datum mora biti u buducem terminu");
+            if(value == null) return new ValidationResult(false, $"");
             DateTime date = DateTime.Parse((string)value);
             DateTime now = DateTime.Now;
 
@@ -130,7 +130,7 @@ namespace WpfApp1.Controler
     {
         public override ValidationResult Validate(object value, CultureInfo cultureInfo)
         {
-            if(value == null) return new ValidationResult(false, $"Vreme mora biti izmedju 07:00-20:00");
+            if(value == null) return new ValidationResult(false, $"");
             DateTime time = DateTime.Parse((string)value);
 
             if (time == null || time.Hour < 7 || time.Hour > 20)
