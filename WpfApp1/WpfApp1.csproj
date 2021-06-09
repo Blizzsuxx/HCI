@@ -159,6 +159,9 @@
     <Compile Include="View\PlusButtonUserControl.xaml.cs">
       <DependentUpon>PlusButtonUserControl.xaml</DependentUpon>
     </Compile>
+    <Compile Include="View\PregledGostiju.xaml.cs">
+      <DependentUpon>PregledGostiju.xaml</DependentUpon>
+    </Compile>
     <Compile Include="View\PregledJedneProslave.xaml.cs">
       <DependentUpon>PregledJedneProslave.xaml</DependentUpon>
     </Compile>
@@ -287,6 +290,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="View\PlusButtonUserControl.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\PregledGostiju.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
