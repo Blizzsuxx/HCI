@@ -22,7 +22,7 @@ namespace organizerEvents.Controler
         public static List<Ponuda> ponude = new List<Ponuda>();
         public static List<Poruke> poruke = new List<Poruke>();
         public static List<Proslava> proslave = new List<Proslava>();
-        public static List<RecnikPojmova> recniciPojmova = new List<RecnikPojmova>();
+        public static RecnikPojmova recniciPojmova = new RecnikPojmova();
         public static List<Saradnik> saradnici = new List<Saradnik>();
         public static List<Sto> stolovi = new List<Sto>();
         public static List<ToDo> toDos = new List<ToDo>();
@@ -203,7 +203,9 @@ namespace organizerEvents.Controler
             };
             RecnikPojmova recnik = new RecnikPojmova
             {
-                Id = 2
+                Id = 2,
+                ZahteviZaRecnik = new Dictionary<string, string>(),
+                Pojmovi = new Dictionary<string, string>() { { "a", "b" }, {"REC", "definicija reci je" }, { "c", "b" }, { "d", "definicija reci je" }, { "e", "b" }, { "f", "definicija reci je" } }
             };
             ToDo zadatak = new ToDo
             {
@@ -294,7 +296,7 @@ namespace organizerEvents.Controler
             DataBase.zahtevZaProslave.Add(zahtevZaProslavu3);
             DataBase.toDos.Add(zadatak);
             DataBase.toDos.Add(novTodo);
-            DataBase.recniciPojmova.Add(recnik);
+            DataBase.recniciPojmova = (recnik);
             proslava.Mesto = mesto;
             proslava.MestoId = mesto.Id;
             DataBase.proslave.Add(proslava);
@@ -730,13 +732,13 @@ namespace organizerEvents.Controler
         {
             string recniciPojmova = File.ReadAllText("RecniciPojmova.json");
             DataBase.recniciPojmova =
-               JsonSerializer.Deserialize<List<RecnikPojmova>>(recniciPojmova);
+               JsonSerializer.Deserialize<RecnikPojmova>(recniciPojmova);
         }
 
         public static void sacuvajRecnikePojmova()
         {
             var options = new JsonSerializerOptions { WriteIndented = true };
-            string recniciPojmova = JsonSerializer.Serialize<List<RecnikPojmova>>(DataBase.recniciPojmova, options);
+            string recniciPojmova = JsonSerializer.Serialize<RecnikPojmova>(DataBase.recniciPojmova, options);
             File.WriteAllText("RecniciPojmova.json", recniciPojmova);
         }
 

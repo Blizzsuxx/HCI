@@ -30,28 +30,18 @@ namespace WpfApp1.View
             scrollViewer.Content = stackPanel;
             Grid.SetColumn(scrollViewer, 1);
             Grid.SetRow(scrollViewer, 6);
-            Dictionary<Proslava, List<ToDo>> podaci = new Dictionary<Proslava, List<ToDo>>();
 
-            foreach (ToDo zadatak in DataBase.toDos)
+            
+
+            foreach(var token in (DataBase.trenutniKorisnik as Organizator).Proslave)
             {
-                Console.WriteLine(zadatak.Dogovor.Proslava.Organizator.Id == DataBase.trenutniKorisnik.Id);
-                if (zadatak.Dogovor.Proslava.Organizator.Id == DataBase.trenutniKorisnik.Id)
-                {
-                    if (!podaci.ContainsKey(zadatak.Dogovor.Proslava))
-                        podaci.Add(zadatak.Dogovor.Proslava, new List<ToDo>());
-
-                    podaci[zadatak.Dogovor.Proslava].Add(zadatak);
-                }
-            }
-
-            foreach(var token in podaci)
-            {
-            Console.WriteLine("QQQQQQQQQQ");
                 Expander expander = new Expander();
-                expander.Header = token.Key.Naslov;
-                expander.Content = new ToDoUserControl(token.Value, token.Key);
+                expander.Header = token.Naslov;
+                expander.Content = new ToDoUserControl(token.Zadaci, token);
                 stackPanel.Children.Add(expander);
             }
+
+            
             this.DataContext = this;
 
         }
@@ -97,6 +87,12 @@ namespace WpfApp1.View
             zahteviZaOrganizacije.Closed += showParentOnClose;
             this.Hide();
             zahteviZaOrganizacije.Show();
+        }
+
+        private void Button_Click_2(object sender, RoutedEventArgs e)
+        {
+            Recnik recnik = new Recnik();
+            recnik.Show();
         }
     }
 }

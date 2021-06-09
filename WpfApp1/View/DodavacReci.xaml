@@ -5,20 +5,112 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:WpfApp1"
         mc:Ignorable="d"
-        Title="DodavacReci" Height="450" Width="800">
-    <Grid RenderTransformOrigin="0.487,0.493">
-        <TextBox x:Name="textBox" HorizontalAlignment="Left" Height="34" Margin="392,10,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="230" SpellCheck.IsEnabled="True" FontSize="20" TextAlignment="Center" TextChanged="textBox_TextChanged"/>
-        <TextBox x:Name="textBox_Copy" HorizontalAlignment="Left" Height="258" Margin="41,69,0,0" TextWrapping="Wrap" Text="Opis" VerticalAlignment="Top" Width="656" SpellCheck.IsEnabled="True" FontSize="20" TextAlignment="Center"/>
-        <TextBlock x:Name="textBlock" HorizontalAlignment="Left" Margin="208,10,0,0" TextWrapping="Wrap" Text="Nepoznata rec:" VerticalAlignment="Top" Height="34" Width="179" FontSize="20" TextAlignment="Center"/>
-        <Button Margin="697,327,9.6,10" RenderTransformOrigin="0.5,0.5" Background="White" BorderBrush="White">
-            <Button.Resources>
-                <Style TargetType="{x:Type Border}">
-                    <Setter Property="CornerRadius" Value="100"/>
-                </Style>
-            </Button.Resources>
-            <StackPanel>
-                <Image Source="../resources/plus.png" />
-            </StackPanel>
-        </Button>
+        Title="Pojmovnik" MaxHeight="430" MaxWidth="750" Height="430" Width="430"
+        xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes" xmlns:local11="clr-namespace:WpfApp1.Controler"
+        TextElement.Foreground="{DynamicResource MaterialDesignBody}"
+        TextElement.FontWeight="Regular"
+        TextElement.FontSize="13"
+        TextOptions.TextFormattingMode="Ideal"
+        TextOptions.TextRenderingMode="Auto"
+        Background="{DynamicResource MaterialDesignPaper}"
+        FontFamily="{DynamicResource MaterialDesignFont}">
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="20"></ColumnDefinition>
+            <ColumnDefinition Width="*"></ColumnDefinition>
+            <ColumnDefinition Width="20"></ColumnDefinition>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="5"></RowDefinition>
+            <RowDefinition Height="auto"></RowDefinition>
+            <RowDefinition Height="auto"></RowDefinition>
+            <RowDefinition Height="auto"></RowDefinition>
+            <RowDefinition Height="auto"></RowDefinition>
+            <RowDefinition Height="auto"></RowDefinition>
+            <RowDefinition Height="*"></RowDefinition>
+            <RowDefinition Height="20"></RowDefinition>
+        </Grid.RowDefinitions>
+
+        <Rectangle Grid.Row="1" Grid.Column="0" Fill="MediumPurple" />
+        <Rectangle Grid.Row="1" Grid.Column="1" Fill="MediumPurple" />
+        <Rectangle Grid.Row="1" Grid.Column="2" Fill="MediumPurple" />
+
+        <Rectangle Grid.Row="7" Grid.Column="0" Fill="MediumPurple" />
+        <Rectangle Grid.Row="7" Grid.Column="1" Fill="MediumPurple" />
+        <Rectangle Grid.Row="7" Grid.Column="2" Fill="MediumPurple" />
+
+        <TextBlock Grid.Column="1" Grid.Row="1" Foreground="White"
+                   FontWeight="UltraBlack" FontSize="18" Text="Pojmovnik"
+                   Margin="0,10,0,10" HorizontalAlignment="Center"></TextBlock>
+
+        <Label Content="Pojam" 
+                   HorizontalAlignment="Center"
+                   FontSize="14"
+                   Foreground="MediumPurple"
+                   FontWeight="DemiBold"
+                   Grid.Column="1"
+                   Grid.Row="2"
+                   Margin="0,20,0,0" />
+
+        <TextBox  HorizontalAlignment="Center" 
+                      Height="30" 
+                      Margin="0,0,0,0" 
+                      TextWrapping="Wrap" 
+                      VerticalAlignment="Top" 
+                      Width="250" 
+                      FontSize="14" 
+                      Grid.Column="1"
+                      Grid.Row="3">
+            <TextBox.Text>
+                <Binding
+                                      Path="Rec"
+                                      UpdateSourceTrigger="PropertyChanged">
+                    <Binding.ValidationRules>
+                        <local11:DuplicateValidator
+                                          ValidatesOnTargetUpdated="True"  />
+                    </Binding.ValidationRules>
+
+                </Binding>
+            </TextBox.Text>
+        </TextBox>
+
+        <Label Content="Opis" 
+                   HorizontalAlignment="Center"
+                   FontSize="14"
+                   Foreground="MediumPurple"
+                   FontWeight="DemiBold"
+                   Grid.Column="1"
+                   Grid.Row="4"
+                   Margin="0,10,0,0" />
+
+        <TextBox Grid.Column="1" Grid.Row="5"
+                Margin="0,10,0,0"
+                 HorizontalAlignment="Center"
+                Style="{StaticResource MaterialDesignOutlinedTextBox}"
+                VerticalAlignment="Top"
+                Height="100"
+                Width="250"
+                AcceptsReturn="True"
+                TextWrapping="Wrap"
+                VerticalScrollBarVisibility="Auto"
+                materialDesign:HintAssist.Hint="Dodatan Opis">
+            <TextBox.Text>
+                <Binding
+                                      Path="Opis"
+                                      UpdateSourceTrigger="PropertyChanged">
+                   
+
+                </Binding>
+            </TextBox.Text>
+        </TextBox>
+
+        <Button Grid.Column="1" Grid.Row="6" 
+                Margin="0,0,0,40"
+                HorizontalAlignment="Center"
+                Foreground="White" Background="MediumPurple"
+                Style="{StaticResource MaterialDesignRaisedLightButton}"
+                ToolTip="Resource name: MaterialDesignRaisedLightButton"
+                Content="_Sačuvaj Pojam"
+                Height="28" Width="150" Click="Button_Click"/>
     </Grid>
 </Window>

@@ -121,6 +121,10 @@
                 <Binding
                                       Path="Ime"
                                       UpdateSourceTrigger="PropertyChanged">
+                    <Binding.ValidationRules>
+                        <local11:NoEmptyFieldValidator
+                                      ValidatesOnTargetUpdated="True"  />
+                    </Binding.ValidationRules>
                     
                 </Binding>
             </TextBox>
@@ -153,6 +157,10 @@
                 <Binding
                                       Path="Prezime"
                                       UpdateSourceTrigger="PropertyChanged">
+                    <Binding.ValidationRules>
+                        <local11:NoEmptyFieldValidator
+                                      ValidatesOnTargetUpdated="True"  />
+                    </Binding.ValidationRules>
                     
                 </Binding>
             </TextBox>
@@ -185,6 +193,10 @@
                 <Binding
                                       Path="KorisnickoIme"
                                       UpdateSourceTrigger="PropertyChanged">
+                    <Binding.ValidationRules>
+                        <local11:UsernameValidator
+                                      ValidatesOnTargetUpdated="True"  />
+                    </Binding.ValidationRules>
                   
                 </Binding>
             </TextBox>
@@ -243,8 +255,12 @@
                 Grid.Column="1"
                 Grid.Row="10"     >
                 <Binding
-                                      Path="Ime"
+                                      Path="Email"
                                       UpdateSourceTrigger="PropertyChanged">
+                    <Binding.ValidationRules>
+                        <local11:EmailValidator
+                                      ValidatesOnTargetUpdated="True"  />
+                    </Binding.ValidationRules>
                    
                 </Binding>
             </TextBox>
@@ -275,8 +291,12 @@
                      Grid.Column="1"
                     Grid.Row="12">
                 <Binding
-                                      Path="Ime"
+                                      Path="BrTel"
                                       UpdateSourceTrigger="PropertyChanged">
+                    <Binding.ValidationRules>
+                        <local11:NumbersValidator
+                                      ValidatesOnTargetUpdated="True"  />
+                    </Binding.ValidationRules>
                  
                 </Binding>
             </TextBox>

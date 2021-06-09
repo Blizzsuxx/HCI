@@ -6,7 +6,7 @@
         xmlns:local="clr-namespace:WpfApp1.View"
         mc:Ignorable="d"
         Title="Kreiranje događaja" MaxHeight="430" MaxWidth="750" Height="430" Width="750"
-        xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+        xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes" xmlns:local11="clr-namespace:WpfApp1.Controler" d:DataContext="{RelativeSource self}"
         TextElement.Foreground="{DynamicResource MaterialDesignBody}"
         TextElement.FontWeight="Regular"
         TextElement.FontSize="13"
@@ -85,9 +85,12 @@
           ToolTip="Use a popup which can escape the bounds of the control where space is limited">
                     <TextBox.Text>
                         <Binding
-                  Path="Name"
+                  Path="Naziv"
                   UpdateSourceTrigger="PropertyChanged">
-
+                            <Binding.ValidationRules>
+                                <local11:NoEmptyFieldValidator
+                                      ValidatesOnTargetUpdated="True"  />
+                            </Binding.ValidationRules>
                         </Binding>
                     </TextBox.Text>
                 </TextBox>
@@ -96,16 +99,32 @@
                 Width="150"
                 materialDesign:HintAssist.Hint="Izaberi datum"
                 HorizontalAlignment="Center"       
-                Style="{StaticResource MaterialDesignFloatingHintDatePicker}" />
+                Style="{StaticResource MaterialDesignFloatingHintDatePicker}" >
+                    <DatePicker.SelectedDate>
+                        <Binding Path="Datum" UpdateSourceTrigger="PropertyChanged">
+                            <Binding.ValidationRules>
+                                <local11:DateValidator
+                                      ValidatesOnTargetUpdated="True"  />
+                            </Binding.ValidationRules>
+                        </Binding>
+                    </DatePicker.SelectedDate>
+                </DatePicker>
 
 
                 <materialDesign:TimePicker Grid.Column="2" Grid.Row="4"
                 Width="150"
                 materialDesign:HintAssist.Hint="Izaberi vreme"
                 Style="{StaticResource MaterialDesignFloatingHintTimePicker}"
-                />
-
-
+                >
+                    <materialDesign:TimePicker.SelectedTime>
+                        <Binding Path="Vreme" UpdateSourceTrigger="PropertyChanged">
+                            <Binding.ValidationRules>
+                                <local11:TimeValidator
+                                      ValidatesOnTargetUpdated="True"  />
+                            </Binding.ValidationRules>
+                        </Binding>
+                    </materialDesign:TimePicker.SelectedTime>
+                </materialDesign:TimePicker>
 
 
                 <TextBox Grid.Column="2" Grid.Row="5"
@@ -118,9 +137,12 @@
           ToolTip="Use a popup which can escape the bounds of the control where space is limited">
                     <TextBox.Text>
                         <Binding
-                  Path="Name"
+                  Path="Budzet"
                   UpdateSourceTrigger="PropertyChanged">
-
+                            <Binding.ValidationRules>
+                                <local11:NumbersValidatorNumerals
+                                      ValidatesOnTargetUpdated="True"  />
+                            </Binding.ValidationRules>
                         </Binding>
                     </TextBox.Text>
                 </TextBox>
@@ -136,9 +158,12 @@
           ToolTip="Use a popup which can escape the bounds of the control where space is limited">
                     <TextBox.Text>
                         <Binding
-                  Path="Name"
+                  Path="Tip"
                   UpdateSourceTrigger="PropertyChanged">
-
+                            <Binding.ValidationRules>
+                                <local11:EmailValidator
+                                      ValidatesOnTargetUpdated="True"  />
+                            </Binding.ValidationRules>
                         </Binding>
                     </TextBox.Text>
                 </TextBox>
@@ -153,9 +178,12 @@
           ToolTip="Use a popup which can escape the bounds of the control where space is limited">
                     <TextBox.Text>
                         <Binding
-                  Path="Name"
+                  Path="BrojGostiju"
                   UpdateSourceTrigger="PropertyChanged">
-
+                            <Binding.ValidationRules>
+                                <local11:NumbersValidatorNumerals
+                                      ValidatesOnTargetUpdated="True"  />
+                            </Binding.ValidationRules>
                         </Binding>
                     </TextBox.Text>
                 </TextBox>
@@ -171,9 +199,12 @@
           ToolTip="Use a popup which can escape the bounds of the control where space is limited">
                     <TextBox.Text>
                         <Binding
-                  Path="Name"
+                  Path="Mesto"
                   UpdateSourceTrigger="PropertyChanged">
-
+                            <Binding.ValidationRules>
+                                <local11:NoEmptyFieldValidator
+                                      ValidatesOnTargetUpdated="True"  />
+                            </Binding.ValidationRules>
                         </Binding>
                     </TextBox.Text>
                 </TextBox>
@@ -189,7 +220,14 @@
                 AcceptsReturn="True"
                 TextWrapping="Wrap"
                 VerticalScrollBarVisibility="Auto"
-                materialDesign:HintAssist.Hint="Opis"/>
+                materialDesign:HintAssist.Hint="Opis">
+                    <TextBox.Text>
+                        <Binding
+                  Path="Opis"
+                  UpdateSourceTrigger="PropertyChanged">
+                        </Binding>
+                    </TextBox.Text>
+                </TextBox>
 
 
 

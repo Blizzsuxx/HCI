@@ -98,6 +98,25 @@
              />
         </Button>
 
+        <Button Grid.Column="1" Grid.Row="2" Margin="145,10,5,5" HorizontalAlignment="Left"
+                Width="25px" Height="25px" Foreground="White"
+          Style="{StaticResource MaterialDesignFloatingActionMiniLightButton}"
+          ToolTip="Saradnici." Click="Button_Click_1">
+            <materialDesign:PackIcon
+            Kind="Account"
+             />
+        </Button>
+
+        <Button Grid.Column="1" Grid.Row="2" Margin="180,10,5,5" HorizontalAlignment="Left"
+                Width="25px" Height="25px" Foreground="White"
+          Style="{StaticResource MaterialDesignFloatingActionMiniLightButton}"
+          ToolTip="Pregled Stolova." Click="Button_Click_2" >
+            <materialDesign:PackIcon
+            Kind="TableAccount"
+             />
+        </Button>
+
+
         <Grid Grid.Column="1" Grid.Row="3" x:Name="zadaci">
             <Grid.ColumnDefinitions>
                 <ColumnDefinition Width="20"></ColumnDefinition>
