@@ -36,6 +36,7 @@ namespace WpfApp1.View
             int budzet = Int32.Parse(this.Budzet.Text);
             string opis = this.Opis.Text;
             string informacije = this.Informacije.Text;
+            this.sacuvajPonudu(naziv, tip, budzet, opis, informacije);
 
         }
 

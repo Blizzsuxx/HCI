@@ -36,6 +36,7 @@
                     <RowDefinition Height="auto"></RowDefinition>
                     <RowDefinition Height="auto"></RowDefinition>
                     <RowDefinition Height="auto"></RowDefinition>
+                    <RowDefinition Height="auto"></RowDefinition>
                     <RowDefinition Height="*"></RowDefinition>
                     <RowDefinition Height="20"></RowDefinition>
                 </Grid.RowDefinitions>
@@ -45,10 +46,10 @@
                 <Rectangle Grid.Row="1" Grid.Column="2" Fill="MediumPurple" />
                 <Rectangle Grid.Row="1" Grid.Column="3" Fill="MediumPurple" />
 
-                <Rectangle Grid.Row="11" Grid.Column="0" Fill="MediumPurple" />
-                <Rectangle Grid.Row="11" Grid.Column="1" Fill="MediumPurple" />
-                <Rectangle Grid.Row="11" Grid.Column="2" Fill="MediumPurple" />
-                <Rectangle Grid.Row="11" Grid.Column="3" Fill="MediumPurple" />
+                <Rectangle Grid.Row="12" Grid.Column="0" Fill="MediumPurple" />
+                <Rectangle Grid.Row="12" Grid.Column="1" Fill="MediumPurple" />
+                <Rectangle Grid.Row="12" Grid.Column="2" Fill="MediumPurple" />
+                <Rectangle Grid.Row="12" Grid.Column="3" Fill="MediumPurple" />
 
                 <TextBlock Grid.Column="1" Grid.Row="1" Foreground="White"
                    FontWeight="UltraBlack" FontSize="18" Text="Prikaz događaja"
@@ -80,27 +81,21 @@
           Style="{StaticResource MaterialDesignFloatingHintTextBox}"
           materialDesign:HintAssist.Hint="     Naziv"
           Width="150"
-          materialDesign:ValidationAssist.UsePopup="True"
+          materialDesign:ValidationAssist.UsePopup="True" x:Name="Name"
           
           ToolTip="Use a popup which can escape the bounds of the control where space is limited">
-                    <TextBox.Text>
-                        <Binding
-                  Path="Name"
-                  UpdateSourceTrigger="PropertyChanged">
-
-                        </Binding>
-                    </TextBox.Text>
+                   
                 </TextBox>
 
                 <DatePicker Grid.Column="2" Grid.Row="3" IsEnabled="false"
-                Width="150"
+                Width="150" x:Name="datum"
                 materialDesign:HintAssist.Hint="Izaberi datum"
                 HorizontalAlignment="Center"       
                 Style="{StaticResource MaterialDesignFloatingHintDatePicker}" />
 
 
                 <materialDesign:TimePicker Grid.Column="2" Grid.Row="4" IsEnabled="false"
-                Width="150"
+                Width="150" x:Name="Vrijeme"
                 materialDesign:HintAssist.Hint="Izaberi vreme"
                 Style="{StaticResource MaterialDesignFloatingHintTimePicker}"
                 />
@@ -109,78 +104,48 @@
 
 
                 <TextBox Grid.Column="2" Grid.Row="5" IsReadOnly="true"
-                 HorizontalAlignment="Center"
+                 HorizontalAlignment="Center"  x:Name="Budzet"
           Style="{StaticResource MaterialDesignFloatingHintTextBox}"
           materialDesign:HintAssist.Hint="     Budžet"
           Width="150"
           materialDesign:ValidationAssist.UsePopup="True"
           
           ToolTip="Use a popup which can escape the bounds of the control where space is limited">
-                    <TextBox.Text>
-                        <Binding
-                  Path="Name"
-                  UpdateSourceTrigger="PropertyChanged">
-
-                        </Binding>
-                    </TextBox.Text>
+                    
                 </TextBox>
 
 
-                <TextBox Grid.Column="2" Grid.Row="6" IsReadOnly="true"
-                 HorizontalAlignment="Center"
+                <TextBox Grid.Column="2" Grid.Row="5" IsReadOnly="true"
+                 HorizontalAlignment="Center" x:Name="Tip"
           Style="{StaticResource MaterialDesignFloatingHintTextBox}"
           materialDesign:HintAssist.Hint="     Tip proslave"
           Width="150"
           materialDesign:ValidationAssist.UsePopup="True"
           
-          ToolTip="Use a popup which can escape the bounds of the control where space is limited">
-                    <TextBox.Text>
-                        <Binding
-                  Path="Name"
-                  UpdateSourceTrigger="PropertyChanged">
-
-                        </Binding>
-                    </TextBox.Text>
-                </TextBox>
+          ToolTip="Use a popup which can escape the bounds of the control where space is limited" Height="36" Margin="101,35.6,101,0" Grid.RowSpan="2" VerticalAlignment="Top"/>
 
                 <TextBox Grid.Column="2" Grid.Row="7" IsReadOnly="true"
-                 HorizontalAlignment="Center"
+                 HorizontalAlignment="Center" x:Name="Gosti"
           Style="{StaticResource MaterialDesignFloatingHintTextBox}"
           materialDesign:HintAssist.Hint="     Broj gostiju"
           Width="150"
           materialDesign:ValidationAssist.UsePopup="True"
           
-          ToolTip="Use a popup which can escape the bounds of the control where space is limited">
-                    <TextBox.Text>
-                        <Binding
-                  Path="Name"
-                  UpdateSourceTrigger="PropertyChanged">
-
-                        </Binding>
-                    </TextBox.Text>
-                </TextBox>
+          ToolTip="Use a popup which can escape the bounds of the control where space is limited"/>
 
 
                 <TextBox Grid.Column="2" Grid.Row="8" IsReadOnly="true"
-                 HorizontalAlignment="Center"
+                 HorizontalAlignment="Center" x:Name="Mesto"
           Style="{StaticResource MaterialDesignFloatingHintTextBox}"
           materialDesign:HintAssist.Hint="     Mesto"
           Width="150"
           materialDesign:ValidationAssist.UsePopup="True"
           
-          ToolTip="Use a popup which can escape the bounds of the control where space is limited">
-                    <TextBox.Text>
-                        <Binding
-                  Path="Name"
-                  UpdateSourceTrigger="PropertyChanged">
-
-                        </Binding>
-                    </TextBox.Text>
-                </TextBox>
+          ToolTip="Use a popup which can escape the bounds of the control where space is limited"/>
 
 
                 <TextBox Grid.Column="2" Grid.Row="9" IsReadOnly="true"
-                 Margin="0,15,0,5"
+                 Margin="0,15,0,5" x:Name="Opis"
                  HorizontalAlignment="Center"
                 Style="{StaticResource MaterialDesignOutlinedTextBox}"
                 VerticalAlignment="Top"
@@ -191,7 +156,27 @@
                 VerticalScrollBarVisibility="Auto"
                 materialDesign:HintAssist.Hint="Opis"/>
 
+                <WrapPanel Grid.Column="2" Grid.Row="10" HorizontalAlignment="Right">
+                    <Button 
+                Click="Prihvaceno"
+                Margin="20,10,0,5"
+                HorizontalAlignment="Right"
+                Foreground="White" Background="MediumPurple"
+                Style="{StaticResource MaterialDesignRaisedLightButton}"
+            ToolTip="Resource name: MaterialDesignRaisedLightButton"
+            Content="Prihvati" />
 
+                    <Button
+                        Click="Odbij"
+                Margin="30,10,5,5"
+                HorizontalAlignment="Right"
+                Foreground="MediumPurple"
+            Style="{StaticResource MaterialDesignOutlinedButton}"
+            ToolTip="MaterialDesignOutlinedButton"
+            Content="Odbij"  />
+                </WrapPanel>
+
+                
 
                 
 

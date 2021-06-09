@@ -53,6 +53,26 @@ namespace organizerEvents.model
             this.Gosti = new List<Gost>();
 
         }
+        public Proslava(ZahtevZaProslavu zahtev) {
+            this.Poruke = new List<Poruke>();
+            this.PorukeId = new List<long>();
+            this.Zadaci = new List<ToDo>();
+            this.ZadaciId = new List<long>();
+            this.Dogovori = new List<Dogovor>();
+            this.DogovoriId = new List<long>();
+            this.GodstiId = new List<long>();
+            this.Gosti = new List<Gost>();
+            this.Naslov = zahtev.Naslov;
+            this.DatumVreme = zahtev.DatumVreme;
+            this.Budzet = zahtev.Budzet;
+            this.BrojGostiju = zahtev.BrojGostiju;
+            //this.Mesto = zahtev.Mesto;
+            this.Opis = zahtev.Opis;
+            this.Tip = zahtev.Tip;
+
+
+
+        }
         public Proslava(String naslov, DateTime datum, int brGostiju, double budzet, String tip, Mesto mesto, String opis, Narucilac narucilac, Organizator organizator,
             ref List<Poruke> poruke, ref List<ToDo> zadaci,ref  List<Dogovor> dogovori, ref List<Gost> gosti )
         {

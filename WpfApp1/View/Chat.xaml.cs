@@ -38,7 +38,7 @@ namespace WpfApp1.View
         {
                 TextBlock textBlock = new TextBlock();
                 textBlock.Text = poruka.Text;
-                textBlock.Background = Brushes.Purple;
+                textBlock.Background = Brushes.MediumPurple;
                 textBlock.TextWrapping = TextWrapping.Wrap;
                 textBlock.Width = 200;
                 textBlock.Margin = new Thickness(0,5,0,5);

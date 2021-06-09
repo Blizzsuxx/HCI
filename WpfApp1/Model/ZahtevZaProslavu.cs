@@ -24,12 +24,15 @@ namespace organizerEvents.model
         [JsonIgnore]
         public Narucilac Narucilac { get; set; }
 
+        public int Odobren { get; set; }
+
         public ZahtevZaProslavu()
         {
 
         }
         public ZahtevZaProslavu(String naslov, DateTime datum, int brGostiju, double budzet, String tip, String mesto, String opis, Narucilac narucilac, Organizator organizator)
         {
+            this.Odobren = 0;
             this.Naslov = naslov;
             this.DatumVreme = datum;
             this.BrojGostiju = brGostiju;
