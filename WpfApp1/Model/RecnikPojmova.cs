@@ -14,7 +14,7 @@ namespace organizerEvents.model
 
         public RecnikPojmova()
         {
-
+            
         }
         public RecnikPojmova(ref Dictionary<String, String> pojmovi, ref Dictionary<String,String> zahtevi)
         {

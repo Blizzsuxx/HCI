@@ -46,7 +46,7 @@
         <Button Grid.Column="1" Grid.Row="2" Margin="5,10,5,5" HorizontalAlignment="Right"
                 Width="25px" Height="25px" Foreground="White"
           Style="{StaticResource MaterialDesignFloatingActionMiniLightButton}"
-          ToolTip="Pomoć.">
+          ToolTip="Pomoć." Click="Button_Click_2">
             <materialDesign:PackIcon
             Kind="QuestionMark"
              />
