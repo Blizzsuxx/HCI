@@ -92,5 +92,33 @@ namespace WpfApp1.View
             this.Hide();
             return;
         }
+
+        private void trazi_Click(object sender, RoutedEventArgs e)
+        {
+            String input = this.search.Text;
+            if (input.Equals(""))
+            {
+                this.Korisnici.ItemsSource = null;
+                this.Korisnici.ItemsSource= narucilackontroler.ucitaj();
+            }
+            else
+            {
+                List<Narucilac> n = new List<Narucilac>();
+                foreach(Narucilac nar in narucilackontroler.ucitaj())
+                {
+                    if(nar.Email.StartsWith(input) || nar.BrojTelefona.StartsWith(input) ||
+                        nar.Ime.StartsWith(input) || nar.KorisnickoIme.StartsWith(input) || nar.Prezime.StartsWith(input) 
+                        )
+                    {
+                        n.Add(nar);
+                    }
+                }
+                this.Korisnici.ItemsSource = null;
+                this.Korisnici.ItemsSource = n;
+
+
+            }
+
+        }
     }
 }

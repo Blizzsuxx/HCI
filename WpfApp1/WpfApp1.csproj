@@ -118,6 +118,9 @@
     <Compile Include="Model\Sto.cs" />
     <Compile Include="Model\ToDo.cs" />
     <Compile Include="Model\ZahtevZaProslavu.cs" />
+    <Compile Include="View\AzuriranjeMesta.xaml.cs">
+      <DependentUpon>AzuriranjeMesta.xaml</DependentUpon>
+    </Compile>
     <Compile Include="View\AzuriranjeProfila.xaml.cs">
       <DependentUpon>AzuriranjeProfila.xaml</DependentUpon>
     </Compile>
@@ -160,6 +163,12 @@
     <Compile Include="View\MenuBar.xaml.cs">
       <DependentUpon>MenuBar.xaml</DependentUpon>
     </Compile>
+    <Compile Include="View\Obavestenja.xaml.cs">
+      <DependentUpon>Obavestenja.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\ObavestenjaPopups.xaml.cs">
+      <DependentUpon>ObavestenjaPopups.xaml</DependentUpon>
+    </Compile>
     <Compile Include="View\OdobravanjeReci.xaml.cs">
       <DependentUpon>OdobravanjeReci.xaml</DependentUpon>
     </Compile>
@@ -187,14 +196,11 @@
     <Compile Include="View\PregledProslava.xaml.cs">
       <DependentUpon>PregledProslava.xaml</DependentUpon>
     </Compile>
-
     <Compile Include="View\PregledSvihMesta.xaml.cs">
       <DependentUpon>PregledSvihMesta.xaml</DependentUpon>
-     </Compile>
-
+    </Compile>
     <Compile Include="View\PregledStolova.xaml.cs">
       <DependentUpon>PregledStolova.xaml</DependentUpon>
-
     </Compile>
     <Compile Include="View\PrikazDogadjaja.xaml.cs">
       <DependentUpon>PrikazDogadjaja.xaml</DependentUpon>
@@ -250,6 +256,10 @@
     <Compile Include="View\ZahtevUserControl.xaml.cs">
       <DependentUpon>ZahtevUserControl.xaml</DependentUpon>
     </Compile>
+    <Page Include="View\AzuriranjeMesta.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="View\AzuriranjeProfila.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -306,6 +316,14 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="View\Obavestenja.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\ObavestenjaPopups.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="View\OdobravanjeReci.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -354,14 +372,11 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-
     <Page Include="View\PregledSvihMesta.xaml">
-     <SubType>Designer</SubType>
+      <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-
     <Page Include="View\PregledStolova.xaml">
-
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

@@ -124,7 +124,7 @@
                 HorizontalAlignment="Left"
                 Foreground="White" Background="MediumPurple"
           Style="{StaticResource MaterialDesignRaisedLightButton}"
-          ToolTip="Resource name: MaterialDesignRaisedLightButton"
+          ToolTip="Sacuvaj saradnika klikom na dugme."
           Content="_Kreiraj" Width="217" x:Name="Kreiraj" Click="Kreiraj_Click"/>
 
     </Grid>

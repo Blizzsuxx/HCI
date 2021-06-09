@@ -39,9 +39,9 @@
         <Rectangle Grid.Row="5" Grid.Column="0" Fill="MediumPurple" />
         <Rectangle Grid.Row="5" Grid.Column="4" Fill="MediumPurple" />
         <TextBlock Grid.Column="1" Grid.Row="1" Foreground="White"
-                   FontWeight="UltraBlack" FontSize="24" Text="Pregled organizatora"
+                   FontWeight="UltraBlack" FontSize="24" Text="Pregled organizatora" 
                    Margin="0,10,0,10" HorizontalAlignment="Center" Grid.ColumnSpan="2"></TextBlock>
-        <Button Grid.Column="2" Grid.Row="2" Margin="5,10,75,5" HorizontalAlignment="Right"
+        <Button Grid.Column="2" Grid.Row="2" Margin="5,10,75,5" HorizontalAlignment="Right" Click="Button_Click_4"
                 Width="25px" Height="25px" Foreground="White"
           Style="{StaticResource MaterialDesignFloatingActionMiniLightButton}"
           ToolTip="Undo.">
@@ -53,12 +53,12 @@
         <Button Grid.Column="1" Grid.Row="2" Margin="10,10.2,0,4.8" HorizontalAlignment="Left"
                 Width="25px" Height="25px" Foreground="White"
           Style="{StaticResource MaterialDesignFloatingActionMiniLightButton}"
-          ToolTip="Kalendar događaja.">
+          ToolTip="Editovanje organizatora.">
             <materialDesign:PackIcon
             Kind="Edit"
              />
         </Button>
-        <Button Grid.Column="1" Grid.Row="2" Margin="49,10.2,0,4.8" HorizontalAlignment="Left"
+        <Button Grid.Column="1" Grid.Row="2" Margin="49,10.2,0,4.8" HorizontalAlignment="Left" x:Name="bell" Click="bell_Click"
                 Width="25px" Height="25px" Foreground="White"
           Style="{StaticResource MaterialDesignFloatingActionMiniLightButton}"
           ToolTip="Obavještenja.">
@@ -69,7 +69,7 @@
         <Button Grid.Column="1" Grid.Row="2" Margin="88,10.2,0,4.8" HorizontalAlignment="Left"
                 Width="25px" Height="25px" Foreground="White"
           Style="{StaticResource MaterialDesignFloatingActionMiniLightButton}"
-          ToolTip="Poruka." Click="Button_Click">
+          ToolTip="Dodaj korisnika." Click="Button_Click">
             <materialDesign:PackIcon
             Kind="Add"
              />
@@ -91,9 +91,9 @@
              />
         </Button>
 
-        <TextBox  Text="Trazi" Grid.Column="1" Grid.Row="3" ToolTip="Unesite naziv organizatora."/>
-        <Button Grid.Column="2" Grid.Row="3" Margin="5,10,330,5" HorizontalAlignment="Right"
-                Width="25px" Height="25px" Foreground="White"
+        <TextBox  Text="Trazi" Grid.Column="1" Grid.Row="3" ToolTip="Unesite naziv organizatora." x:Name="search"/>
+        <Button Grid.Column="2" Grid.Row="3" Margin="5,10,330,5" HorizontalAlignment="Right" 
+                Width="25px" Height="25px" Foreground="White" x:Name="trazi" Click="trazi_Click"
           Style="{StaticResource MaterialDesignFloatingActionMiniLightButton}"
           ToolTip="Undo.">
             <materialDesign:PackIcon
@@ -114,7 +114,7 @@
         <ListView x:Name="organizatori" Grid.Column="1" Grid.Row="4" Grid.ColumnSpan="2" SelectionChanged="organizatori_SelectionChanged">
             <ListView.View>
                 <GridView>
-                    <GridViewColumn Header="Slika" Width="110" DisplayMemberBinding="{Binding Name}" />
+                  
                     <GridViewColumn Header="Ime" Width="120" DisplayMemberBinding="{Binding Ime}" />
                     <GridViewColumn Header="Prezime" Width="110" DisplayMemberBinding="{Binding Prezime}" />
                     <GridViewColumn Header="Mejl" Width="75" DisplayMemberBinding="{Binding Email}" />

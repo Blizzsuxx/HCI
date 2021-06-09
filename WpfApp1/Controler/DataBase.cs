@@ -77,6 +77,32 @@ namespace organizerEvents.Controler
             sacuvajZahteveZaProslavu();
         }
 
+        internal static List<Saradnik> dobaviPostojeceSaradnike()
+        {
+            List<Saradnik> novi = new List<Saradnik>();
+            foreach (Saradnik org in saradnici)
+            {
+                if (org.izbrisan == false)
+                {
+                    novi.Add(org);
+                }
+            }
+            return novi;
+        }
+
+        internal static List<Mesto> dobaviPostojecaMesta()
+        {
+            List<Mesto> novi = new List<Mesto>();
+            foreach (Mesto org in mesta)
+            {
+                if (org.izbrisan == false)
+                {
+                    novi.Add(org);
+                }
+            }
+            return novi;
+        }
+
         public static long dobaviKorisnikId()
         {
             long id = 0;
@@ -322,6 +348,18 @@ namespace organizerEvents.Controler
             
             
 
+        }
+
+        internal static List<Organizator> dobaviPostojeceOrganizatore()
+        {
+            List<Organizator> novi = new List<Organizator>();
+            foreach(Organizator org in organizatori)
+            {
+                if (org.izbrisan == false)
+                {
+                    novi.Add(org);
+                }
+            }return novi ;
         }
 
         private static void uveziToDos()

@@ -37,5 +37,21 @@ namespace WpfApp1.Controler
                 }
             }
         }
+
+        internal void AzurirajMesto(long id, string naziv, string ulica, string broj, int ljudi, int stolovi, int posvrdina)
+        {
+           foreach(Mesto m in DataBase.mesta)
+            {
+                if (m.Id == id)
+                {
+                    m.NazivMesta = naziv;
+                    m.Ulica = ulica;
+                    m.Broj = broj;
+                    m.MaxBrLjudi = ljudi;
+                    m.MaxBrStolova = stolovi;
+                    m.PovrsinaSale = posvrdina;
+                }
+            }
+        }
     }
 }
