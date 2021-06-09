@@ -1,0 +1,11 @@
+<Baza>
+  <stanje id="11">
+    <objekat x="216" y="98.399999999999991" tip="Osoba">0</objekat>
+    <objekat x="245.59999999999997" y="100.80000000000001" tip="Osoba">0</objekat>
+    <objekat x="271.2" y="37.600000000000009" tip="Osoba">0</objekat>
+    <objekat x="235.20000000000005" y="37.600000000000009" tip="Osoba">0</objekat>
+    <objekat x="200" y="32.8" tip="Osoba">0</objekat>
+    <objekat x="256.8" y="66.4" tip="Sto">0</objekat>
+    <objekat x="210.40000000000003" y="62.400000000000006" tip="Sto">0</objekat>
+  </stanje>
+</Baza>
