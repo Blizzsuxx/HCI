@@ -14,6 +14,8 @@
         TextOptions.TextRenderingMode="Auto"
         Background="{DynamicResource MaterialDesignPaper}"
         FontFamily="{DynamicResource MaterialDesignFont}">
+
+    
     <Grid>
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="20"></ColumnDefinition>
@@ -68,10 +70,18 @@
             CanUserAddRows="False"
             AutoGenerateColumns="False"
             HeadersVisibility="All"
+                  
             >
+            
+            <DataGrid.Resources>
+                <Style TargetType="DataGridRow">
+                    <EventSetter Event="MouseDoubleClick" Handler="Dogovori_MouseDoubleClick"/>
+                </Style>
+            </DataGrid.Resources>
             <DataGrid.Columns>
                 <materialDesign:DataGridTextColumn
                     Width="Auto"
+                    IsReadOnly="True"
                     Binding="{Binding Id}"
                     Header="ID"
                     ElementStyle="{StaticResource MaterialDesignDataGridTextColumnStyle}"
@@ -82,6 +92,7 @@
                 <materialDesign:DataGridTextColumn
                     Header="Naziv"
                      Width="Auto"
+                    IsReadOnly="True"
                     ElementStyle="{StaticResource MaterialDesignDataGridTextColumnStyle}"
                     EditingElementStyle="{StaticResource MaterialDesignDataGridTextColumnPopupEditingStyle}">
                     <materialDesign:DataGridTextColumn.Binding>
@@ -95,6 +106,7 @@
                 <DataGridTextColumn
                     Header="Stanje"
                      Width="Auto"
+                    IsReadOnly="True"
                     ElementStyle="{StaticResource MaterialDesignDataGridTextColumnStyle}"
                     EditingElementStyle="{StaticResource MaterialDesignDataGridTextColumnEditingStyle}">
                     <DataGridTextColumn.Binding>
@@ -103,6 +115,9 @@
                         </Binding>
                     </DataGridTextColumn.Binding>
                 </DataGridTextColumn>
+
+                
+               
 
             </DataGrid.Columns>
         </DataGrid>

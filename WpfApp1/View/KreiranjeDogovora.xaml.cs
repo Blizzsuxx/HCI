@@ -21,15 +21,47 @@ namespace WpfApp1.View
     /// </summary>
     public partial class KreiranjeDogovora : Window
     {
-        public KreiranjeDogovora()
+        public TabelaDogovora roditelj { get; set; }
+        public int Indikator { get; set; }
+        public Dogovor dogovor { get; set; }
+        public KreiranjeDogovora(int idikator)
         {
+            this.Indikator = idikator;
             InitializeComponent();
+            if(this.Indikator == 1)
+            {
+                
+                KreirajeDog.Visibility = Visibility.Hidden;
+                OdustaniDog.Visibility = Visibility.Hidden;
+                Ime.IsReadOnly = true;
+                Opis.IsReadOnly = true;
+                Komentar.IsReadOnly = true;
+
+            }
+        }
+
+        public void inicijalizujPostojeciDogovor()
+        {
+            Ime.Text = this.dogovor.Ime;
+            Opis.Text = this.dogovor.Opis;
+            Komentar.Text = this.dogovor.Komentar;
+            Stanje1.Text = this.dogovor.Stanje.ToString();
+
         }
 
         private void Button_Click(object sender, RoutedEventArgs e)
         {
-            PregledPonudaDogovora pregledPonudaDogovora = new PregledPonudaDogovora(0);
-            pregledPonudaDogovora.Show();
+            if (this.Indikator == 1)
+            {
+                PregledPonudaDogovora pregledPonudaDogovora = new PregledPonudaDogovora(2);
+                pregledPonudaDogovora.Show();
+            }
+            else
+            {
+                PregledPonudaDogovora pregledPonudaDogovora = new PregledPonudaDogovora(0);
+                pregledPonudaDogovora.Show();
+            }
+            
         }
 
         private void TextBox_TextChanged(object sender, TextChangedEventArgs e)
@@ -60,6 +92,7 @@ namespace WpfApp1.View
             DataBase.trenutnaProslava.DogovoriId.Add(dogovor.Id);
             DataBase.sacuvajProslave();
             DataBase.kreiranjeDogadjajaPonude = new List<Ponuda>();
+            this.roditelj.inicijalizujDogovore();
             this.Close();
         }
     }
