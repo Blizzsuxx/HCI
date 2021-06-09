@@ -126,6 +126,12 @@
     <Compile Include="View\Chat.xaml.cs">
       <DependentUpon>Chat.xaml</DependentUpon>
     </Compile>
+    <Compile Include="View\ChatMeni.xaml.cs">
+      <DependentUpon>ChatMeni.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\ChatPopupsUserControl.xaml.cs">
+      <DependentUpon>ChatPopupsUserControl.xaml</DependentUpon>
+    </Compile>
     <Compile Include="View\CRUDBar.xaml.cs">
       <DependentUpon>CRUDBar.xaml</DependentUpon>
     </Compile>
@@ -234,6 +240,14 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="View\Chat.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\ChatMeni.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\ChatPopupsUserControl.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

@@ -100,7 +100,7 @@
             Kind="Bell"
              />
         </Button>
-        <Button Grid.Column="1" Grid.Row="2" Margin="110,10,5,5" HorizontalAlignment="Left"
+        <Button Click="poruke_on_click" Grid.Column="1" Grid.Row="2" Margin="110,10,5,5" HorizontalAlignment="Left"
                 Width="25px" Height="25px" Foreground="White"
           Style="{StaticResource MaterialDesignFloatingActionMiniLightButton}"
           ToolTip="Poruka.">

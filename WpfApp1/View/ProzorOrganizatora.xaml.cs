@@ -79,6 +79,10 @@ namespace WpfApp1.View
 
         private void poruke_on_click(object sender, RoutedEventArgs e)
         {
+            ChatMeni chat = new ChatMeni((DataBase.trenutniKorisnik as Organizator).Proslave);
+            chat.Closed += showParentOnClose;
+            this.Hide();
+            chat.Show();
 
         }
 
