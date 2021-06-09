@@ -108,4 +108,38 @@ namespace WpfApp1.Controler
         }
     }
 
+
+    class DateValidator : ValidationRule
+    {
+        public override ValidationResult Validate(object value, CultureInfo cultureInfo)
+        {
+            if(value == null) return new ValidationResult(false, $"Datum mora biti u buducem terminu");
+            DateTime date = DateTime.Parse((string)value);
+            DateTime now = DateTime.Now;
+
+            if (date == null || date <= now)
+            {
+                return new ValidationResult(false, $"Datum mora biti u buducem terminu");
+            }
+
+            return ValidationResult.ValidResult;
+        }
+    }
+
+    class TimeValidator : ValidationRule
+    {
+        public override ValidationResult Validate(object value, CultureInfo cultureInfo)
+        {
+            if(value == null) return new ValidationResult(false, $"Vreme mora biti izmedju 07:00-20:00");
+            DateTime time = DateTime.Parse((string)value);
+
+            if (time == null || time.Hour < 7 || time.Hour > 20)
+            {
+                return new ValidationResult(false, $"Vreme mora biti izmedju 07:00-20:00");
+            }
+
+            return ValidationResult.ValidResult;
+        }
+    }
+
 }
