@@ -25,6 +25,11 @@ namespace WpfApp1.View
         public PrikazDogadjaja(ZahtevZaProslavu zahtev)
         {
             InitializeComponent();
+            if(DataBase.trenutniKorisnik is Narucilac)
+            {
+                Potvrdi.Visibility = Visibility.Hidden;
+                Odustani.Visibility = Visibility.Hidden;
+            }
             this.zahtev = zahtev;
             Console.WriteLine(zahtev.Naslov);
             Naziv.Text = zahtev.Naslov;

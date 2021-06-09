@@ -160,6 +160,7 @@
                     <Button 
                 Click="Prihvaceno"
                 Margin="20,10,0,5"
+                x:Name="Potvrdi"
                 HorizontalAlignment="Right"
                 Foreground="White" Background="MediumPurple"
                 Style="{StaticResource MaterialDesignRaisedLightButton}"
@@ -169,6 +170,7 @@
                     <Button
                         Click="Odbij"
                 Margin="30,10,5,5"
+                        x:Name="Odustani"
                 HorizontalAlignment="Right"
                 Foreground="MediumPurple"
             Style="{StaticResource MaterialDesignOutlinedButton}"
