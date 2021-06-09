@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:WpfApp1.View"
         mc:Ignorable="d"
-        Title="Tabela Događaja" MaxHeight="430" MaxWidth="750" Height="430" Width="430"
+        Title="Tabela Događaja" MaxHeight="430" MaxWidth="750" Height="430" Width="570"
         xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
         TextElement.Foreground="{DynamicResource MaterialDesignBody}"
         TextElement.FontWeight="Regular"
@@ -109,19 +109,20 @@
         </Button>
 
         <DataGrid Grid.Column="1" Grid.Row="3" Margin="0,10,0,0"
-            ItemsSource="{Binding Items1}"
+            ItemsSource="{Binding Lista}"
             CanUserAddRows="False"
             AutoGenerateColumns="False"
             HeadersVisibility="All"
+                  IsReadOnly="True"
             >
             
             
-            <DataGrid.Columns>
+            <DataGrid.Columns >
                 
                 <materialDesign:DataGridTextColumn
                     Width="Auto"
-                    Binding="{Binding Code}"
-                    Header="Vrijeme"
+                    Binding="{Binding Path=Vreme}"
+                    Header="Vreme"
                     ElementStyle="{StaticResource MaterialDesignDataGridTextColumnStyle}"
                     EditingElementStyle="{StaticResource MaterialDesignDataGridTextColumnEditingStyle}">
 
@@ -131,27 +132,28 @@
                     
                 <!-- if you want to use the pop up style (MaterialDesignDataGridTextColumnPopupEditingStyle), you must use MaterialDataGridTextColumn -->
                 <materialDesign:DataGridTextColumn
+                    
                     Header="Datum"
                      Width="Auto"
                     ElementStyle="{StaticResource MaterialDesignDataGridTextColumnStyle}"
                     EditingElementStyle="{StaticResource MaterialDesignDataGridTextColumnPopupEditingStyle}">
                     <materialDesign:DataGridTextColumn.Binding>
                         <Binding
-                            Path="Name">
+                            Path="Datum">
                         </Binding>
                     </materialDesign:DataGridTextColumn.Binding>
                     
                 </materialDesign:DataGridTextColumn>
             <!-- set a max length to get an indicator in the editor -->
                 <DataGridTextColumn
-                    Header="Naziv"
+                    Header="Naslov"
                      Width="Auto"
                     ElementStyle="{StaticResource MaterialDesignDataGridTextColumnStyle}"
                     EditingElementStyle="{StaticResource MaterialDesignDataGridTextColumnEditingStyle}">
                     
                     <DataGridTextColumn.Binding>
                         <Binding
-                            Path="Description">
+                            Path="Naslov">
                         </Binding>
                     </DataGridTextColumn.Binding>
                     
@@ -165,7 +167,7 @@
 
                     <DataGridTextColumn.Binding>
                         <Binding
-                            Path="Description">
+                            Path="Budzet">
                         </Binding>
                     </DataGridTextColumn.Binding>
 
@@ -179,7 +181,7 @@
 
                     <DataGridTextColumn.Binding>
                         <Binding
-                            Path="Description">
+                            Path="Tip">
                         </Binding>
                     </DataGridTextColumn.Binding>
 

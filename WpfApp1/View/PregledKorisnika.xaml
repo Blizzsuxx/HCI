@@ -25,6 +25,7 @@
             <RowDefinition Height="20"></RowDefinition>
             <RowDefinition Height="auto"></RowDefinition>
             <RowDefinition Height="auto"></RowDefinition>
+            <RowDefinition Height="auto"></RowDefinition>
             <RowDefinition Height="*"></RowDefinition>
             <RowDefinition Height="20"></RowDefinition>
         </Grid.RowDefinitions>
@@ -33,37 +34,60 @@
         <Rectangle Grid.Row="1" Grid.Column="0" Fill="MediumPurple" />
         <Rectangle Grid.Row="1" Grid.Column="4" Fill="MediumPurple" />
 
-        <Rectangle Grid.Row="5" Grid.Column="1" Fill="MediumPurple" />
-        <Rectangle Grid.Row="5" Grid.Column="2" Fill="MediumPurple" />
-        <Rectangle Grid.Row="5" Grid.Column="0" Fill="MediumPurple" />
-        <Rectangle Grid.Row="5" Grid.Column="4" Fill="MediumPurple" />
+        <Rectangle Grid.Row="6" Grid.Column="1" Fill="MediumPurple" />
+        <Rectangle Grid.Row="6" Grid.Column="2" Fill="MediumPurple" />
+        <Rectangle Grid.Row="6" Grid.Column="0" Fill="MediumPurple" />
+        <Rectangle Grid.Row="6" Grid.Column="4" Fill="MediumPurple" />
 
         <TextBlock Grid.Column="1" Grid.Row="1" Foreground="White"
-                   FontWeight="UltraBlack" FontSize="24" Text="Pregled proslava"
+                   FontWeight="UltraBlack" FontSize="24" Text="Pregled korisnika"
                    Margin="0,10,0,10" HorizontalAlignment="Center" Grid.ColumnSpan="2"></TextBlock>
-        <TextBox  Text="Trazi" VerticalAlignment="Top" FontSize="20" Grid.Column="1" Grid.Row="2"/>
-        <Button  Grid.Column="2" Grid.Row="2" Height="Auto" Margin="0.2,0.2,314.6,298" Grid.RowSpan="2">
-
-            <Button.Resources>
-                <Style TargetType="{x:Type Border}">
-                    <Setter Property="CornerRadius" Value="100"/>
-                </Style>
-            </Button.Resources>
-            <StackPanel>
-                <Image Source="../resources/search.png" RenderTransformOrigin="0.287,0.281" />
-                <Image Source="/WpfApp1;component/resources/search.png" RenderTransformOrigin="-17.734,1.234" />
-            </StackPanel>
+        <TextBox  Text="Trazi" VerticalAlignment="Top" FontSize="20" Grid.Column="1" Grid.Row="3"/>
+        <Button Grid.Column="2" Grid.Row="3" Margin="5,10,330,5" HorizontalAlignment="Right"
+                Width="25px" Height="25px" Foreground="White"
+          Style="{StaticResource MaterialDesignFloatingActionMiniLightButton}"
+          ToolTip="Unesite sta \elite da pretrazujete i kliknite ovde da pretrazite.">
+            <materialDesign:PackIcon
+            Kind="Search"
+             />
         </Button>
-        <Button  Grid.Column="2" ToolTip="Selektujte korisnika i pritisnite dugme da pogledate profil." Grid.Row="2" Height="Auto" Margin="99.2,0.2,215.6,298" Grid.RowSpan="2" x:Name="profil" Click="profil_Click">
-
-            <Button.Resources>
-                <Style TargetType="{x:Type Border}">
-                    <Setter Property="CornerRadius" Value="100"/>
-                </Style>
-            </Button.Resources>
-            
+        <Button Grid.Column="2" Grid.Row="3" Margin="5,10,290,5" HorizontalAlignment="Right"
+                Width="25px" Height="25px" Foreground="White"
+          Style="{StaticResource MaterialDesignFloatingActionMiniLightButton}"
+          ToolTip="Selektujte korisnika, kliknite na dugme i prikazace se njegov profil">
+            <materialDesign:PackIcon
+            Kind="Man" RenderTransformOrigin="3.088,0.75"
+             />
         </Button>
-        <ListView x:Name="Korisnici" Grid.Row="3" Grid.Column="1" Grid.ColumnSpan="2" Grid.RowSpan="2" SelectionChanged="Korisnici_SelectionChanged">
+        <Button Grid.Column="2" Grid.Row="2" x:Name="Organizatori"  Click="Organizatori_Click"
+                Margin="25,10,0,5"
+                HorizontalAlignment="Left"
+                Foreground="White" Background="MediumPurple"
+          Style="{StaticResource MaterialDesignRaisedLightButton}"
+          ToolTip="Pregled organizatora."
+          Content="Organizatori" />
+        <Button Grid.Column="1" Grid.Row="2" x:Name="Mesta" Click="Mesta_Click"
+                Margin="173,10.2,0,5"
+                HorizontalAlignment="Left"
+                Foreground="White" Background="MediumPurple"
+          Style="{StaticResource MaterialDesignRaisedLightButton}"
+          ToolTip="Pregled mesta proslava"
+          Content="Mesta" />
+        <Button Grid.Column="1" Grid.Row="2" x:Name="Saradnici"  Click="Saradnici_Click"
+                Margin="262,10.2,0,5"
+                HorizontalAlignment="Left"
+                Foreground="White" Background="MediumPurple"
+          Style="{StaticResource MaterialDesignRaisedLightButton}"
+          ToolTip="pregled saradnika"
+          Content="Saradnici" />
+        <Button Grid.Column="2" Grid.Row="2" x:Name="Proslave" Click="Proslave_Click"
+                Margin="152.2,10.2,0,5"
+                HorizontalAlignment="Left"
+                Foreground="White" Background="MediumPurple"
+          Style="{StaticResource MaterialDesignRaisedLightButton}"
+          ToolTip="pregled proslava"
+          Content="Proslave" />
+        <ListView x:Name="Korisnici" Grid.Row="4" Grid.Column="1" Grid.ColumnSpan="2" Grid.RowSpan="2" SelectionChanged="Korisnici_SelectionChanged">
             <ListView.View>
                 <GridView>
                     <GridViewColumn Header="Slika" Width="100" DisplayMemberBinding="{Binding Name}" />

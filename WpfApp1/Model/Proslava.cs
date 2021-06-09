@@ -10,6 +10,11 @@ namespace organizerEvents.model
     public class Proslava
     {
         public long Id { get; set; }
+
+        public string Vreme { get { return DatumVreme.ToString("HH:mm:ss"); } }
+        public string Datum { get { return DatumVreme.Date.ToString("dd/MM/yyyy"); } }
+
+
         public String Naslov { get; set; }
         public DateTime DatumVreme { get; set; }
         public int BrojGostiju { get; set; }

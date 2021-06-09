@@ -1,5 +1,4 @@
-﻿using organizerEvents.model;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -16,17 +15,13 @@ using System.Windows.Shapes;
 namespace WpfApp1.View
 {
     /// <summary>
-    /// Interaction logic for TabelaDogadjaja.xaml
+    /// Interaction logic for DodavanjeStola.xaml
     /// </summary>
-    public partial class TabelaDogadjaja : Window
+    public partial class DodavanjeStola : Window
     {
-        public List<Proslava> Lista { get; set; }
-        public TabelaDogadjaja(List<Proslava> proslave)
+        public DodavanjeStola()
         {
-            this.Lista = proslave;
             InitializeComponent();
-
-            this.DataContext = this;
         }
     }
 }

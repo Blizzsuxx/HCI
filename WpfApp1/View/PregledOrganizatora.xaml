@@ -124,6 +124,34 @@
                 </GridView>
             </ListView.View>
         </ListView>
+        <Button Grid.Column="2" Grid.Row="2" x:Name="Korisnici" Click="Korisnici_Click"
+                Margin="25,10,0,5"
+                HorizontalAlignment="Left"
+                Foreground="White" Background="MediumPurple"
+          Style="{StaticResource MaterialDesignRaisedLightButton}"
+          ToolTip="pregled korisnika"
+          Content="Korisnici" />
+        <Button Grid.Column="2" Grid.Row="2" x:Name="Saradnici" Click="Saradnici_Click"
+                Margin="128.2,10.2,0,5"
+                HorizontalAlignment="Left"
+                Foreground="White" Background="MediumPurple"
+          Style="{StaticResource MaterialDesignRaisedLightButton}"
+          ToolTip="Pregled saradnika"
+          Content="_Saradnici" />
+        <Button Grid.Column="1" Grid.Row="2" x:Name="Proslave" Click="Proslave_Click"
+                Margin="266,10.2,0,5"
+                HorizontalAlignment="Left"
+                Foreground="White" Background="MediumPurple"
+          Style="{StaticResource MaterialDesignRaisedLightButton}"
+          ToolTip="Pregled proslava"
+          Content="_Proslave" />
+        <Button Grid.Column="1" Grid.Row="2" x:Name="Mesta" Click="Mesta_Click"
+                Margin="179,10.2,0,5"
+                HorizontalAlignment="Left"
+                Foreground="White" Background="MediumPurple"
+          Style="{StaticResource MaterialDesignRaisedLightButton}"
+          ToolTip="Pregled mesta za proslave"
+          Content="_Mesta" />
 
     </Grid>
 </Window>
