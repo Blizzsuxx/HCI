@@ -23,7 +23,7 @@ namespace WpfApp1
     /// </summary>
     public partial class PregledOrganizatora : Window
     {
-        public static Stack<KeyValuePair<Organizator, ListView>> deleteUndo = new Stack<KeyValuePair<Organizator, ListView>>();
+        public static Stack<KeyValuePair<Organizator, DataGrid>> deleteUndo = new Stack<KeyValuePair<Organizator, DataGrid>>();
         Organizator selektovan { get; set; }
         OrganizatorKontroler kontroler { get; set; }
 
@@ -117,7 +117,7 @@ namespace WpfApp1
             }
             else {
                 //todo obavesti
-                deleteUndo.Push(new KeyValuePair<Organizator, ListView>(this.selektovan, this.organizatori));
+                deleteUndo.Push(new KeyValuePair<Organizator, DataGrid>(this.selektovan, this.organizatori));
                 this.selektovan.izbrisan = true;
                 List<Organizator> novi = DataBase.organizatori;
                 foreach(Organizator o in novi)

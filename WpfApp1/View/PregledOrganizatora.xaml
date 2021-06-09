@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:WpfApp1"
         mc:Ignorable="d"
-        Title="PregledOrganizatora" Height="450" Width="800"
+        Title="PregledOrganizatora" MaxHeight="430" MaxWidth="750" Height="430" Width="750"
          xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
         TextElement.Foreground="{DynamicResource MaterialDesignBody}"
         TextElement.FontWeight="Regular"
@@ -91,8 +91,8 @@
              />
         </Button>
 
-        <TextBox  Text="Trazi" Grid.Column="1" Grid.Row="3" ToolTip="Unesite naziv organizatora." x:Name="search"/>
-        <Button Grid.Column="2" Grid.Row="3" Margin="5,10,330,5" HorizontalAlignment="Right" 
+        <TextBox  Text="Trazi" Grid.Column="1" Grid.Row="3" ToolTip="Unesite naziv organizatora." x:Name="search" Margin="0,15,0,0"/>
+        <Button Grid.Column="2" Grid.Row="3" Margin="0,10,310,5" HorizontalAlignment="Right" 
                 Width="25px" Height="25px" Foreground="White" x:Name="trazi" Click="trazi_Click"
           Style="{StaticResource MaterialDesignFloatingActionMiniLightButton}"
           ToolTip="Undo.">
@@ -100,7 +100,7 @@
             Kind="Search"
              />
         </Button>
-        <Button Grid.Column="2"  Click="PogledajDetaljnije_Click" Grid.Row="3" Margin="0,10.2,282.6,4.8" HorizontalAlignment="Right" ToolTip="Selektujte jednog organizatora i kliknite na dugme da vidite profil." x:Name="PogledajDetaljnije"
+        <Button Grid.Column="2"  Click="PogledajDetaljnije_Click" Grid.Row="3" Margin="0,10.2,250.6,4.8" HorizontalAlignment="Right" ToolTip="Selektujte jednog organizatora i kliknite na dugme da vidite profil." x:Name="PogledajDetaljnije"
                 Width="25px" Height="25px" Foreground="White"
           Style="{StaticResource MaterialDesignFloatingActionMiniLightButton}"
           >
@@ -109,8 +109,50 @@
             />
         </Button>
 
-
-
+        <DataGrid  Grid.Column="1" Grid.Row="4" Margin="0,10,0,0"
+            ItemsSource="{Binding Lista}"
+            CanUserAddRows="False"
+            x:Name="organizatori"
+            AutoGenerateColumns="False"
+            HeadersVisibility="All"     
+            IsReadOnly="True" 
+            Grid.ColumnSpan="2"
+            SelectionChanged="organizatori_SelectionChanged"
+                  >
+            <DataGrid.Columns>
+                <materialDesign:DataGridTextColumn
+                    Width="Auto"
+                    Binding="{Binding Path=Ime}"
+                    Header="Ime"
+                    ElementStyle="{StaticResource MaterialDesignDataGridTextColumnStyle}"
+                    EditingElementStyle="{StaticResource MaterialDesignDataGridTextColumnEditingStyle}">
+                </materialDesign:DataGridTextColumn>
+                <materialDesign:DataGridTextColumn
+                    Width="Auto"
+                    Binding="{Binding Path=Prezime}"
+                    Header="Prezime"
+                    ElementStyle="{StaticResource MaterialDesignDataGridTextColumnStyle}"
+                    EditingElementStyle="{StaticResource MaterialDesignDataGridTextColumnEditingStyle}">
+                </materialDesign:DataGridTextColumn>
+                <materialDesign:DataGridTextColumn
+                    Width="Auto"
+                    Binding="{Binding Path=Email}"
+                    Header="Mejl"
+                    ElementStyle="{StaticResource MaterialDesignDataGridTextColumnStyle}"
+                    EditingElementStyle="{StaticResource MaterialDesignDataGridTextColumnEditingStyle}">
+                </materialDesign:DataGridTextColumn>
+                <materialDesign:DataGridTextColumn
+                    Width="Auto"
+                    Binding="{Binding Path=BrojTelefona}"
+                    Header="Broj telefona"
+                    ElementStyle="{StaticResource MaterialDesignDataGridTextColumnStyle}"
+                    EditingElementStyle="{StaticResource MaterialDesignDataGridTextColumnEditingStyle}">
+                </materialDesign:DataGridTextColumn>
+                
+            </DataGrid.Columns>
+            
+        </DataGrid>
+        <!--
         <ListView x:Name="organizatori" Grid.Column="1" Grid.Row="4" Grid.ColumnSpan="2" SelectionChanged="organizatori_SelectionChanged">
             <ListView.View>
                 <GridView>
@@ -123,7 +165,8 @@
                     <GridViewColumn Header="Pozovi" Width="40" DisplayMemberBinding="{Binding Mail}" />
                 </GridView>
             </ListView.View>
-        </ListView>
+        </ListView> -->
+        
         <Button Grid.Column="2" Grid.Row="2" x:Name="Korisnici" Click="Korisnici_Click"
                 Margin="25,10,0,5"
                 HorizontalAlignment="Left"
@@ -139,14 +182,14 @@
           ToolTip="Pregled saradnika"
           Content="_Saradnici" />
         <Button Grid.Column="1" Grid.Row="2" x:Name="Proslave" Click="Proslave_Click"
-                Margin="266,10.2,0,5"
+                Margin="250,10.2,0,5"
                 HorizontalAlignment="Left"
                 Foreground="White" Background="MediumPurple"
           Style="{StaticResource MaterialDesignRaisedLightButton}"
           ToolTip="Pregled proslava"
           Content="_Proslave" />
         <Button Grid.Column="1" Grid.Row="2" x:Name="Mesta" Click="Mesta_Click"
-                Margin="179,10.2,0,5"
+                Margin="160,10.2,0,5"
                 HorizontalAlignment="Left"
                 Foreground="White" Background="MediumPurple"
           Style="{StaticResource MaterialDesignRaisedLightButton}"

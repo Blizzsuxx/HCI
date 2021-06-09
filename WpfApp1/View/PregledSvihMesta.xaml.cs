@@ -23,7 +23,7 @@ namespace WpfApp1.View
     public partial class PregledSvihMesta : Window
     {
 
-        public static Stack<KeyValuePair<Mesto, ListView>> deleteUndo = new Stack<KeyValuePair<Mesto, ListView>>();
+        public static Stack<KeyValuePair<Mesto, DataGrid>> deleteUndo = new Stack<KeyValuePair<Mesto, DataGrid>>();
 
         public Mesto selektovan { get; set; }
         public MestoKontroler kontroler { get; set; }
@@ -63,7 +63,7 @@ namespace WpfApp1.View
             else
             {
                 //todo obavesti
-                deleteUndo.Push(new KeyValuePair<Mesto, ListView>(this.selektovan, this.Mesta));
+                deleteUndo.Push(new KeyValuePair<Mesto, DataGrid>(this.selektovan, this.Mesta));
                 this.selektovan.izbrisan = true;
                 List<Mesto> novi = DataBase.mesta;
                 foreach (Mesto o in novi)
@@ -105,7 +105,7 @@ namespace WpfApp1.View
 
                     var itemsSource = org.Value.ItemsSource;
                     org.Value.ItemsSource = null; // force refresh
-                    org.Value.ItemsSource = itemsSource; // force refresh
+                    org.Value.ItemsSource= itemsSource; // force refresh
                     List<Mesto> novi = DataBase.dobaviPostojecaMesta();
 
                     this.Mesta.ItemsSource = novi;

@@ -130,7 +130,7 @@
 
                    
                     
-                    </materialDesign:DataGridTextColumn>
+                </materialDesign:DataGridTextColumn>
                     
                 <!-- if you want to use the pop up style (MaterialDesignDataGridTextColumnPopupEditingStyle), you must use MaterialDataGridTextColumn -->
                 <materialDesign:DataGridTextColumn

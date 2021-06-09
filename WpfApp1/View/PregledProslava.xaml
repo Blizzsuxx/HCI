@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:WpfApp1.View"
         mc:Ignorable="d"
-        Title="PregledProslava" Height="450" Width="800"
+        Title="PregledProslava" MaxHeight="430" MaxWidth="750" Height="430" Width="750"
          xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
         TextElement.Foreground="{DynamicResource MaterialDesignBody}"
         TextElement.FontWeight="Regular"
@@ -40,10 +40,67 @@
         <Rectangle Grid.Row="6" Grid.Column="0" Fill="MediumPurple" />
         <Rectangle Grid.Row="6" Grid.Column="4" Fill="MediumPurple" />
         <TextBlock Grid.Column="1" Grid.Row="1" Foreground="White"
-                   FontWeight="UltraBlack" FontSize="24" Text="Pregled proslava"
+                   FontWeight="UltraBlack" FontSize="18" Text="Pregled proslava"
                    Margin="0,10,0,10" HorizontalAlignment="Center" Grid.ColumnSpan="2"></TextBlock>
 
 
+        <DataGrid  Grid.Column="1" Grid.Row="4" Margin="0,10,0,0"
+            ItemsSource="{Binding Lista}"
+            CanUserAddRows="False"
+             x:Name="Proslave"
+            AutoGenerateColumns="False"
+            HeadersVisibility="All"     
+            IsReadOnly="True" 
+            Grid.ColumnSpan="2"
+            SelectionChanged="Proslave_SelectionChanged"  
+            Grid.RowSpan="1">
+            <DataGrid.Columns>
+                <materialDesign:DataGridTextColumn
+                    Width="Auto"
+                    Binding="{Binding Organizator.Ime}"
+                    Header="Ime organizatora"
+                    ElementStyle="{StaticResource MaterialDesignDataGridTextColumnStyle}"
+                    EditingElementStyle="{StaticResource MaterialDesignDataGridTextColumnEditingStyle}">
+                </materialDesign:DataGridTextColumn>
+                <materialDesign:DataGridTextColumn
+                    Width="Auto"
+                    Binding="{Binding Organizator.Prezime}"
+                    Header="Prezime organizatora"
+                    ElementStyle="{StaticResource MaterialDesignDataGridTextColumnStyle}"
+                    EditingElementStyle="{StaticResource MaterialDesignDataGridTextColumnEditingStyle}">
+                </materialDesign:DataGridTextColumn>
+                <materialDesign:DataGridTextColumn
+                    Width="Auto"
+                    Binding="{Binding BrojGostiju}"
+                    Header="Broj gostiju"
+                    ElementStyle="{StaticResource MaterialDesignDataGridTextColumnStyle}"
+                    EditingElementStyle="{StaticResource MaterialDesignDataGridTextColumnEditingStyle}">
+                </materialDesign:DataGridTextColumn>
+                <materialDesign:DataGridTextColumn
+                    Width="Auto"
+                    Binding="{Binding Mesto.NazivMesta}"
+                    Header="Mesto"
+                    ElementStyle="{StaticResource MaterialDesignDataGridTextColumnStyle}"
+                    EditingElementStyle="{StaticResource MaterialDesignDataGridTextColumnEditingStyle}">
+                </materialDesign:DataGridTextColumn>
+                <materialDesign:DataGridTextColumn
+                    Width="Auto"
+                    Binding="{Binding Narucilac.Ime}"
+                    Header="Ime naručioca"
+                    ElementStyle="{StaticResource MaterialDesignDataGridTextColumnStyle}"
+                    EditingElementStyle="{StaticResource MaterialDesignDataGridTextColumnEditingStyle}">
+                </materialDesign:DataGridTextColumn>
+                <materialDesign:DataGridTextColumn
+                    Width="Auto"
+                    Binding="{Binding Narucilac.Ime}"
+                    Header="Prezime naručioca"
+                    ElementStyle="{StaticResource MaterialDesignDataGridTextColumnStyle}"
+                    EditingElementStyle="{StaticResource MaterialDesignDataGridTextColumnEditingStyle}">
+                </materialDesign:DataGridTextColumn>
+            </DataGrid.Columns>
+
+        </DataGrid>
+        <!--
         <ListView x:Name="Proslave" Grid.Column="1" Grid.Row="4" Grid.ColumnSpan="2" Grid.RowSpan="2" SelectionChanged="Proslave_SelectionChanged">
             <ListView.View>
                 <GridView>
@@ -56,9 +113,10 @@
                     <GridViewColumn Header="Prezime narucioca" Width="40" DisplayMemberBinding="{Binding Narucilac.Prezime}" />
                 </GridView>
             </ListView.View>
-        </ListView>
-        <TextBox Grid.Row="3" Grid.Column="1" Text="Trazi" x:Name="search"/>
-        <Button Grid.Column="2" Grid.Row="3" Margin="5,10,330,5" HorizontalAlignment="Right" x:Name="Trazi" Click="Trazi_Click"
+        </ListView> -->
+        
+        <TextBox Grid.Row="3" Grid.Column="1" Text="Trazi" x:Name="search" Margin="0,15,0,0"/>
+        <Button Grid.Column="2" Grid.Row="3" Margin="5,10,310,5" HorizontalAlignment="Right" x:Name="Trazi" Click="Trazi_Click"
                 Width="25px" Height="25px" Foreground="White"
           Style="{StaticResource MaterialDesignFloatingActionMiniLightButton}"
           ToolTip="Pretrazi.">
@@ -66,7 +124,13 @@
             Kind="Search"
              />
         </Button>
-        <Button Content="Detalji jedne proslave" Background="MediumPurple" ToolTip="Selektujte jednu proslavu i kliknite dugme da pogledate detalje." Grid.Row="3" Grid.Column="2" Margin="77.2,5.2,128.6,2.8" x:Name="Jedna" Click="Jedna_Click" >
+        <Button Content="Detalji jedne proslave" 
+                Background="MediumPurple"
+                ToolTip="Selektujte jednu proslavu i kliknite dugme da pogledate detalje." Grid.Row="3" Grid.Column="2" 
+                Margin="77.2,5.2,100.6,2.8" 
+                x:Name="Jedna" 
+                Click="Jedna_Click"
+                Width="170">
 
             <Button.Resources>
                 <Style TargetType="{x:Type Border}">
@@ -76,15 +140,16 @@
 
         </Button>
         <Button Grid.Column="1" Grid.Row="2" x:Name="Mesta" Click="Mesta_Click"
-                Margin="167,10.2,0,5"
+                Margin="120,10.2,0,5"
                 HorizontalAlignment="Left"
                 Foreground="White" Background="MediumPurple"
           Style="{StaticResource MaterialDesignRaisedLightButton}"
           ToolTip="Pregled mesta za proslave"
           Content="_Mesta" />
         <Button Grid.Column="1" Grid.Row="2" x:Name="Organizatori" Click="Organizatori_Click"
-                Margin="254,10.2,0,5"
+                Margin="220,10.2,0,5"
                 HorizontalAlignment="Left"
+                Width="120"
                 Foreground="White" Background="MediumPurple"
           Style="{StaticResource MaterialDesignRaisedLightButton}"
           ToolTip="Pregled organizatora"

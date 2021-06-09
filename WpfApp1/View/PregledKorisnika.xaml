@@ -87,6 +87,52 @@
           Style="{StaticResource MaterialDesignRaisedLightButton}"
           ToolTip="pregled proslava"
           Content="Proslave" />
+
+        <DataGrid  Grid.Column="1" Grid.Row="4" Margin="0,10,0,0"
+            ItemsSource="{Binding Lista}"
+            CanUserAddRows="False"
+            x:Name="Korisnici"
+            AutoGenerateColumns="False"
+            HeadersVisibility="All"     
+            IsReadOnly="True" 
+            Grid.ColumnSpan="2"
+            SelectionChanged="Korisnici_SelectionChanged"
+                  >
+            <DataGrid.Columns>
+                <materialDesign:DataGridTextColumn
+                    Width="Auto"
+                    Binding="{Binding Path=Ime}"
+                    Header="Ime"
+                    ElementStyle="{StaticResource MaterialDesignDataGridTextColumnStyle}"
+                    EditingElementStyle="{StaticResource MaterialDesignDataGridTextColumnEditingStyle}">
+                </materialDesign:DataGridTextColumn>
+                <materialDesign:DataGridTextColumn
+                    Width="Auto"
+                    Binding="{Binding Path=Prezime}"
+                    Header="Prezime"
+                    ElementStyle="{StaticResource MaterialDesignDataGridTextColumnStyle}"
+                    EditingElementStyle="{StaticResource MaterialDesignDataGridTextColumnEditingStyle}">
+                </materialDesign:DataGridTextColumn>
+                <materialDesign:DataGridTextColumn
+                    Width="Auto"
+                    Binding="{Binding BrojTelefona}"
+                    Header="Broj telefona"
+                    ElementStyle="{StaticResource MaterialDesignDataGridTextColumnStyle}"
+                    EditingElementStyle="{StaticResource MaterialDesignDataGridTextColumnEditingStyle}">
+                </materialDesign:DataGridTextColumn>
+                <materialDesign:DataGridTextColumn
+                    Width="Auto"
+                    Binding="{Binding KorisnickoIme}"
+                    Header="Korisničko ime"
+                    ElementStyle="{StaticResource MaterialDesignDataGridTextColumnStyle}"
+                    EditingElementStyle="{StaticResource MaterialDesignDataGridTextColumnEditingStyle}">
+                </materialDesign:DataGridTextColumn>
+
+            </DataGrid.Columns>
+
+        </DataGrid>
+        
+        <!--
         <ListView x:Name="Korisnici" Grid.Row="4" Grid.Column="1" Grid.ColumnSpan="2" Grid.RowSpan="2" SelectionChanged="Korisnici_SelectionChanged">
             <ListView.View>
                 <GridView>
@@ -98,6 +144,6 @@
                 </GridView>
             </ListView.View>
         </ListView>
-
+        -->
     </Grid>
 </Window>
