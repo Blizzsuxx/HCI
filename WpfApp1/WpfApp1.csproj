@@ -154,6 +154,9 @@
     <Compile Include="View\FormaOrganizacije.xaml.cs">
       <DependentUpon>FormaOrganizacije.xaml</DependentUpon>
     </Compile>
+    <Compile Include="View\InfoDogadjaja.xaml.cs">
+      <DependentUpon>InfoDogadjaja.xaml</DependentUpon>
+    </Compile>
     <Compile Include="View\KreiranjeDogovora.xaml.cs">
       <DependentUpon>KreiranjeDogovora.xaml</DependentUpon>
     </Compile>
@@ -204,12 +207,9 @@
     </Compile>
     <Compile Include="View\PregledStolova.xaml.cs">
       <DependentUpon>PregledStolova.xaml</DependentUpon>
-
-
     </Compile>
     <Compile Include="View\PretragaOrganizatora.xaml.cs">
       <DependentUpon>PretragaOrganizatora.xaml</DependentUpon>
-
     </Compile>
     <Compile Include="View\PrikazDogadjaja.xaml.cs">
       <DependentUpon>PrikazDogadjaja.xaml</DependentUpon>
@@ -222,6 +222,9 @@
     </Compile>
     <Compile Include="View\ProzorZaDogadjaj.xaml.cs">
       <DependentUpon>ProzorZaDogadjaj.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\ProzorZaDogadjajKorisnika.xaml.cs">
+      <DependentUpon>ProzorZaDogadjajKorisnika.xaml</DependentUpon>
     </Compile>
     <Compile Include="View\RegistracijaWindow.xaml.cs">
       <DependentUpon>RegistracijaWindow.xaml</DependentUpon>
@@ -313,6 +316,10 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="View\InfoDogadjaja.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
     <Page Include="View\KreiranjeDogovora.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -390,12 +397,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="View\PregledStolova.xaml">
-
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="View\PretragaOrganizatora.xaml">
-
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -412,6 +417,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="View\ProzorZaDogadjaj.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\ProzorZaDogadjajKorisnika.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

@@ -44,6 +44,8 @@ namespace WpfApp1.View
         }
         private void Otvori_ovaj_prozor(object sender, System.EventArgs e)
         {
+            this.Mesta.ItemsSource = null;
+            this.Mesta.ItemsSource = DataBase.dobaviPostojecaMesta();
             this.Show();
         }
 

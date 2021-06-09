@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:WpfApp1.View"
         mc:Ignorable="d"
-        Title="Detaljan prikaz događaja" Height="431" Width="752" MaxHeight="430" MaxWidth="750"
+        Title="Detaljan prikaz događaja" Height="430" Width="750" MaxHeight="430" MaxWidth="750"
         xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
         TextElement.Foreground="{DynamicResource MaterialDesignBody}"
         TextElement.FontWeight="Regular"
