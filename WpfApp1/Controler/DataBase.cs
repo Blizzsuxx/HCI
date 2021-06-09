@@ -170,7 +170,8 @@ namespace organizerEvents.Controler
                 Ime = "Nrucilac",
                 Prezime = "Naruciocic",
                 KorisnickoIme = "momcina",
-                Sifra = "123"
+                Sifra = "123",
+                ProslaveId= new List<long>() { 11}
             };
 
             Organizator ogranizator = new Organizator
@@ -288,13 +289,14 @@ namespace organizerEvents.Controler
             };
 
             Proslava novaProslava =new Proslava { OrganizatorId=2, Id=11, ZadaciId = new List<long> { 11 }, Opis="opis proslave", Naslov="Naslov Proslave", PorukeId = new List<long> { 2, 3, 4, 5, 6}, DatumVreme=DateTime.Now,
-                DogovoriId = new List<long> { 1 } };
+                DogovoriId = new List<long> { 1 }, NarucilacId=1 };
             ToDo novTodo = new  ToDo { Id=11, OpisZadatka="Opis Zadatka", StanjeZadatka=Stanje.Uradjeno, DogovorId=1};
             Ponuda novaPonuda = new Ponuda { Id=11, Naziv = "naziv", Opis = "Opis" };
 
             DataBase.zahtevZaProslave.Add(zahtevZaProslavu);
             DataBase.zahtevZaProslave.Add(zahtevZaProslavu2);
             DataBase.zahtevZaProslave.Add(zahtevZaProslavu3);
+            DataBase.narucioci.Add(narucilac);
             DataBase.toDos.Add(zadatak);
             DataBase.toDos.Add(novTodo);
             DataBase.recniciPojmova = (recnik);
@@ -858,6 +860,7 @@ namespace organizerEvents.Controler
             }
             foreach (var narucioci in organizerEvents.Controler.DataBase.narucioci)
             {
+                Console.WriteLine(narucioci.KorisnickoIme + " - " + username);
                 if (narucioci.KorisnickoIme.Equals(username) && password.Equals(narucioci.Sifra))
                 {
                     return narucioci;

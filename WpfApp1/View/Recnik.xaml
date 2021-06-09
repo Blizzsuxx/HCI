@@ -38,11 +38,12 @@
         <TextBox
             KeyUp="pretrazi"
   x:Name="SearchTextBox"
-            Margin="20,0,40,0"
+            Margin="20,0,40,10"
   materialDesign:HintAssist.Hint="Pretraga"
             VerticalAlignment="Center"
   materialDesign:HintAssist.HelperTextFontSize="16" Grid.Column="1" Grid.Row="3"/>
         <Button Grid.Column="1" Grid.Row="3" Margin="5,10,5,5" HorizontalAlignment="Right"
+                x:Name="dugmeZaDodavanje"
                 Width="25px" Height="25px" Foreground="MediumPurple" Click="Button_Click"
           Style="{StaticResource MaterialDesignFloatingActionMiniLightButton}" 
           ToolTip="Dodaj novu riječ.">
