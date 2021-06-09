@@ -17,6 +17,7 @@ namespace WpfApp1.View
     /// <summary>
     /// Interaction logic for PregledStolova.xaml
     /// </summary>
+
     public partial class PregledStolova : Window
     {
         const int BROJ_GOSTIJU_MAX = 10;
@@ -28,6 +29,7 @@ namespace WpfApp1.View
         public PregledStolova()
         {
             InitializeComponent();
+            
             for(int i = 0; i < BROJ_GOSTIJU_MAX; ++i)
             {
                 Ellipse userCTRL = new Ellipse();
@@ -51,8 +53,9 @@ namespace WpfApp1.View
                 userCTRL.PreviewMouseDown += UserCTRL_PreviewMouseDown;
                 CanvasMain.Children.Add(userCTRL);
             }
-
-
+            
+            
+            
         }
 
         UIElement dragObject = null;
