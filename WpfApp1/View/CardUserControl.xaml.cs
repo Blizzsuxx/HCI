@@ -27,15 +27,20 @@ namespace WpfApp1.View
         {
             InitializeComponent();
             this.proslava = proslava;
-            DataBase.trenutnaProslava = proslava;
             text.Text = proslava.Naslov;
         }
 
         public void doubleClicked(object sender, MouseButtonEventArgs e)
         {
-            ProzorZaDogadjaj pregledJedneProslave = new ProzorZaDogadjaj(proslava.Id);
-            Console.WriteLine(DataBase.trenutnaProslava.Mesto.Id);
-            pregledJedneProslave.Show();
+            if (DataBase.trenutniKorisnik is Organizator)
+            {
+                ProzorZaDogadjaj pregledJedneProslave = new ProzorZaDogadjaj(proslava.Id);
+                DataBase.trenutnaProslava = proslava;
+                pregledJedneProslave.Show();
+            } else
+            {
+
+            }
         }
     }
 }

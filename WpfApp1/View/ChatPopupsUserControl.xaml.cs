@@ -1,4 +1,5 @@
-﻿using organizerEvents.model;
+﻿using organizerEvents.Controler;
+using organizerEvents.model;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -39,7 +40,7 @@ namespace WpfApp1.View
 
         private void Button_Click_1(object sender, RoutedEventArgs e)
         {
-
+            DataBase.trenutnaProslava = Proslava;
             Chat chat = new Chat(Proslava);
             chat.Show();
             

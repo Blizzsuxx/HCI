@@ -76,5 +76,20 @@ namespace WpfApp1.View
             addPoruka(novaPoruka);
             SadrzajPoruke.Clear();
         }
+
+        private void Button_Click_1(object sender, RoutedEventArgs e)
+        {
+            if (DataBase.trenutniKorisnik is Organizator)
+            {
+                TabelaDogovora dogovori = new TabelaDogovora();
+                dogovori.Show();
+            }
+            else
+            {
+                TabelaDogovora dogovori = new TabelaDogovora();
+                dogovori.Kreiranje.Visibility = Visibility.Hidden;
+                dogovori.Show(); 
+            }
+        }
     }
 }

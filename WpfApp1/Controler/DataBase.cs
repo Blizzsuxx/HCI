@@ -30,6 +30,8 @@ namespace organizerEvents.Controler
         public static Korisnik trenutniKorisnik;
         public static Proslava trenutnaProslava;
 
+        public static List<Ponuda> kreiranjeDogadjajaPonude = new List<Ponuda>();
+
         public static void ucitajPodatke()
         {
             DataBase.ucitajAdministratore();
@@ -181,7 +183,8 @@ namespace organizerEvents.Controler
                 Ime = "Nrucilac",
                 Prezime = "Naruciocic",
                 KorisnickoIme = "momcina",
-                Sifra = "123"
+                Sifra = "123",
+                ProslaveId= new List<long>() { 11}
             };
 
             Organizator ogranizator = new Organizator
@@ -235,7 +238,11 @@ namespace organizerEvents.Controler
                 NarucilacId = 1,
                 OrganizatorId = 2,
                 Tip = "Sahrana",
-                Mesto = "FTN"
+                Mesto =new Mesto
+                {
+                    Id=10,
+                    NazivMesta="Prvo mjesto"
+                }
             };
             ZahtevZaProslavu zahtevZaProslavu2 = new ZahtevZaProslavu
             {
@@ -248,7 +255,11 @@ namespace organizerEvents.Controler
                 NarucilacId = 1,
                 OrganizatorId = 2,
                 Tip = "Svadba",
-                Mesto = "FTN"
+                Mesto = new Mesto
+                {
+                    Id = 10,
+                    NazivMesta = "Prvo mjesto"
+                }
             };
             ZahtevZaProslavu zahtevZaProslavu3 = new ZahtevZaProslavu
             {
@@ -261,7 +272,11 @@ namespace organizerEvents.Controler
                 NarucilacId = 1,
                 OrganizatorId = 2,
                 Tip = "Rodjendan",
-                Mesto = "FTN"
+                Mesto = new Mesto
+                {
+                    Id = 10,
+                    NazivMesta = "Prvo mjesto"
+                }
             };
 
 
@@ -307,13 +322,15 @@ namespace organizerEvents.Controler
             DataBase.gosti.Add(g3);
 
             Proslava novaProslava =new Proslava { OrganizatorId=2, Id=11, ZadaciId = new List<long> { 11 }, Opis="opis proslave", Naslov="Naslov Proslave", PorukeId = new List<long> { 2, 3, 4, 5, 6}, DatumVreme=DateTime.Now,
-                DogovoriId = new List<long> { 1 }, GodstiId = new List<long> { 1, 2, 3}, BrojGostiju = 3 };
+             DogovoriId = new List<long> { 1 }, NarucilacId=1 , GodstiId = new List<long> { 1, 2, 3}, BrojGostiju = 3};
+
             ToDo novTodo = new  ToDo { Id=11, OpisZadatka="Opis Zadatka", StanjeZadatka=Stanje.Uradjeno, DogovorId=1};
             Ponuda novaPonuda = new Ponuda { Id=11, Naziv = "naziv", Opis = "Opis" };
 
             DataBase.zahtevZaProslave.Add(zahtevZaProslavu);
             DataBase.zahtevZaProslave.Add(zahtevZaProslavu2);
             DataBase.zahtevZaProslave.Add(zahtevZaProslavu3);
+            DataBase.narucioci.Add(narucilac);
             DataBase.toDos.Add(zadatak);
             DataBase.toDos.Add(novTodo);
             DataBase.recniciPojmova = (recnik);
@@ -877,6 +894,7 @@ namespace organizerEvents.Controler
             }
             foreach (var narucioci in organizerEvents.Controler.DataBase.narucioci)
             {
+                Console.WriteLine(narucioci.KorisnickoIme + " - " + username);
                 if (narucioci.KorisnickoIme.Equals(username) && password.Equals(narucioci.Sifra))
                 {
                     return narucioci;

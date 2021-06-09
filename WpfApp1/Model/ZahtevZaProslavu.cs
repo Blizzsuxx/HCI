@@ -15,7 +15,10 @@ namespace organizerEvents.model
         public int BrojGostiju { get; set; }
         public double Budzet { get; set; }
         public String Tip { get; set; }
-        public String Mesto { get; set; }
+
+        public long MestoId { get; set; }
+        [JsonIgnore]
+        public Mesto Mesto { get; set; }
         public String Opis { get; set; }
         public long OrganizatorId { get; set; }
         [JsonIgnore]
@@ -30,7 +33,7 @@ namespace organizerEvents.model
         {
 
         }
-        public ZahtevZaProslavu(String naslov, DateTime datum, int brGostiju, double budzet, String tip, String mesto, String opis, Narucilac narucilac, Organizator organizator)
+        public ZahtevZaProslavu(String naslov, DateTime datum, int brGostiju, double budzet, String tip, Mesto mesto, String opis, Narucilac narucilac, Organizator organizator)
         {
             this.Odobren = 0;
             this.Naslov = naslov;

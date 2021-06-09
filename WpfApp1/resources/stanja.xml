@@ -1,10 +1,10 @@
 <Baza>
   <stanje id="11">
-    <objekat x="113.59999999999997" y="105.60000000000001" tip="Osoba" gost="1">0</objekat>
-    <objekat x="267.19999999999993" y="25.59999999999998" tip="Osoba" gost="1">0</objekat>
-    <objekat x="247.2000000000001" y="159.99999999999997" tip="Osoba" gost="2">0</objekat>
-    <objekat x="241.6" y="44" tip="Sto" gost="nema">1</objekat>
-    <objekat x="269.6" y="151.19999999999993" tip="Sto" gost="nema">2</objekat>
-    <objekat x="136" y="122.4" tip="Sto" gost="nema">3</objekat>
+    <objekat x="136" y="92.8" tip="Osoba" gost="1">0</objekat>
+    <objekat x="172.8" y="29.599999999999994" tip="Osoba" gost="1">0</objekat>
+    <objekat x="98.4" y="164" tip="Osoba" gost="2">0</objekat>
+    <objekat x="192.00000000000003" y="38.400000000000006" tip="Sto" gost="nema">1</objekat>
+    <objekat x="95.199999999999989" y="187.20000000000002" tip="Sto" gost="nema">2</objekat>
+    <objekat x="156.8" y="89.6" tip="Sto" gost="nema">3</objekat>
   </stanje>
 </Baza>

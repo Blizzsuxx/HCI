@@ -70,6 +70,10 @@ namespace WpfApp1
                 return;
             } else if(korisnik is Narucilac)
             {
+                KalendarWindow kalendarWindow = new KalendarWindow();
+                kalendarWindow.Closed += new EventHandler(this.Otvori_ovaj_prozor);
+                kalendarWindow.Show();
+                this.Hide();
                 return;
             }
             HintAssist.SetHelperText(Lozinka, "Pogresna Sifra i/ili Korisnicko Ime");

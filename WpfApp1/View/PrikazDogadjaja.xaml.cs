@@ -27,14 +27,14 @@ namespace WpfApp1.View
             InitializeComponent();
             this.zahtev = zahtev;
             Console.WriteLine(zahtev.Naslov);
-            Name.Text = zahtev.Naslov;
+            Naziv.Text = zahtev.Naslov;
             datum.SelectedDate = zahtev.DatumVreme.Date;
             Vrijeme.SelectedTime = zahtev.DatumVreme;
             Console.WriteLine(zahtev.Budzet.ToString());
             Budzet.Text = zahtev.Budzet.ToString();
             Tip.Text = zahtev.Tip;
             Opis.Text = zahtev.Opis;
-            Mesto.Text = zahtev.Mesto;
+            Mesto.Text = zahtev.Mesto.NazivMesta;
             Gosti.Text = zahtev.BrojGostiju.ToString();
         }
 

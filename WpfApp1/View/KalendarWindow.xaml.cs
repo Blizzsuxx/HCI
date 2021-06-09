@@ -22,6 +22,7 @@ namespace WpfApp1
     /// </summary>
     public partial class KalendarWindow : Window
     {
+        public static Stack<Proslava> deleteUndo = new Stack<Proslava>();
         public List<Proslava> proslave { get; set; }
         public int minCol, maxCol, minRow, maxRow;
         public KalendarWindow()
@@ -48,5 +49,107 @@ namespace WpfApp1
             }
             
         }
+
+
+
+
+
+
+
+
+
+
+
+        private void showParentOnClose(object sender, EventArgs e)
+        {
+            this.Show();
+        }
+
+        private void Button_Click(object sender, RoutedEventArgs e)
+        {
+            AzuriranjeProfila azuriranjeProfila = new AzuriranjeProfila();
+            azuriranjeProfila.Closed += showParentOnClose;
+            this.Hide();
+            azuriranjeProfila.Show();
+        }
+
+        private void Button_calendar(object sender, RoutedEventArgs e)
+        {
+            
+        }
+
+        private void poruke_on_click(object sender, RoutedEventArgs e)
+        {
+            ChatMeni chat = new ChatMeni((DataBase.trenutniKorisnik as Narucilac).Proslave);
+            chat.Closed += showParentOnClose;
+            this.Hide();
+            chat.Show();
+
+        }
+
+
+
+        private void Button_Click_1(object sender, RoutedEventArgs e)
+        {
+            List<ZahtevZaProslavu> zaht = null;
+            if(DataBase.trenutniKorisnik is Organizator)
+            {
+                zaht = (DataBase.trenutniKorisnik as Organizator).Zahtevi;
+            } else
+            {
+                zaht = (DataBase.trenutniKorisnik as Narucilac).Zahtevi;
+            }
+            ZahteviZaOrganizacije zahteviZaOrganizacije = new ZahteviZaOrganizacije(zaht);
+            zahteviZaOrganizacije.Closed += showParentOnClose;
+            this.Hide();
+            zahteviZaOrganizacije.Show();
+        }
+
+        private void Button_Click_2(object sender, RoutedEventArgs e)
+        {
+            Recnik recnik = new Recnik();
+            recnik.Show();
+        }
+
+        private void Button_Click_6(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void Button_Click_3(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        //undo
+        private void Button_Click_4(object sender, RoutedEventArgs e)
+        {
+            if (deleteUndo.Count == 0)
+            {
+                return;
+            }
+            var toDo = deleteUndo.Pop();
+
+            //TODO UNDO ZA DELETE
+        }
+
+        private void Button_Click_5(object sender, RoutedEventArgs e)
+        {
+            TabelaDogadjaja tabelaDogadjaja = new TabelaDogadjaja((DataBase.trenutniKorisnik as Organizator).Proslave);
+            tabelaDogadjaja.Closed += this.showParentOnClose;
+            tabelaDogadjaja.Show();
+            this.Hide();
+        }
+
+
+
+
+
+
+
+
+
+
+
     }
 }

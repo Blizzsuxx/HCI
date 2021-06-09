@@ -81,7 +81,7 @@
           Style="{StaticResource MaterialDesignFloatingHintTextBox}"
           materialDesign:HintAssist.Hint="     Naziv"
           Width="150"
-          materialDesign:ValidationAssist.UsePopup="True" x:Name="Name"
+          materialDesign:ValidationAssist.UsePopup="True" x:Name="Naziv"
           
           ToolTip="Use a popup which can escape the bounds of the control where space is limited">
                    
