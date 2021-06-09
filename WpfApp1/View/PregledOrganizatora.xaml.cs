@@ -58,6 +58,50 @@ namespace WpfApp1
 
         private void Button_Click(object sender, RoutedEventArgs e)
         {
+            DodavanjeOrganizatora prozor = new DodavanjeOrganizatora();
+            prozor.Closed += new EventHandler(this.Otvori_ovaj_prozor);
+            prozor.Show();
+            this.Hide();
+            return;
+        }
+
+        private void Korisnici_Click(object sender, RoutedEventArgs e)
+        {
+            PregledKorisnika prozor = new PregledKorisnika();
+            prozor.Closed += new EventHandler(this.Otvori_ovaj_prozor);
+            prozor.Show();
+            this.Hide();
+            return;
+
+        }
+
+        private void Saradnici_Click(object sender, RoutedEventArgs e)
+        {
+            TabelaSaradnika prozor = new TabelaSaradnika();
+            prozor.Closed += new EventHandler(this.Otvori_ovaj_prozor);
+            prozor.Show();
+            this.Hide();
+            return;
+
+        }
+
+        private void Proslave_Click(object sender, RoutedEventArgs e)
+        {
+
+            PregledProslava prozor = new PregledProslava();
+            prozor.Closed += new EventHandler(this.Otvori_ovaj_prozor);
+            prozor.Show();
+            this.Hide();
+            return;
+        }
+
+        private void Mesta_Click(object sender, RoutedEventArgs e)
+        {
+           /* PregledJednogOrganizatora prozor = new PregledJednogOrganizatora(this.selektovan.Id);
+            prozor.Closed += new EventHandler(this.Otvori_ovaj_prozor);
+            prozor.Show();
+            this.Hide();
+            return;*/
 
         }
     }

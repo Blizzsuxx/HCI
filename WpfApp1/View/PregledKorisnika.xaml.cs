@@ -55,5 +55,38 @@ namespace WpfApp1.View
             this.narucilac =(Narucilac)this.Korisnici.SelectedItem;
 
         }
+
+        private void Organizatori_Click(object sender, RoutedEventArgs e)
+        {
+            PregledOrganizatora prozor = new PregledOrganizatora();
+            prozor.Closed += new EventHandler(this.Otvori_ovaj_prozor);
+            prozor.Show();
+            this.Hide();
+            return;
+        }
+
+        private void Mesta_Click(object sender, RoutedEventArgs e)
+        {
+            /*todo pregled mesta koji postoje*/
+
+        }
+
+        private void Saradnici_Click(object sender, RoutedEventArgs e)
+        {
+            TabelaSaradnika prozor = new TabelaSaradnika();
+            prozor.Closed += new EventHandler(this.Otvori_ovaj_prozor);
+            prozor.Show();
+            this.Hide();
+            return;
+        }
+
+        private void Proslave_Click(object sender, RoutedEventArgs e)
+        {
+            PregledProslava prozor = new PregledProslava();
+            prozor.Closed += new EventHandler(this.Otvori_ovaj_prozor);
+            prozor.Show();
+            this.Hide();
+            return;
+        }
     }
 }

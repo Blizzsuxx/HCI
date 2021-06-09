@@ -95,6 +95,7 @@
       <SubType>Designer</SubType>
     </ApplicationDefinition>
     <Compile Include="Controler\DataBase.cs" />
+    <Compile Include="Controler\MestoKontroler.cs" />
     <Compile Include="Controler\NarucilacKontroler.cs" />
     <Compile Include="Controler\OrganizatorKontroler.cs" />
     <Compile Include="Controler\ProslavaKontroler.cs" />
@@ -138,8 +139,14 @@
     <Compile Include="View\DetaljanPregledSaradnika.xaml.cs">
       <DependentUpon>DetaljanPregledSaradnika.xaml</DependentUpon>
     </Compile>
+    <Compile Include="View\DodavanjeMesta.xaml.cs">
+      <DependentUpon>DodavanjeMesta.xaml</DependentUpon>
+    </Compile>
     <Compile Include="View\DodavanjeOrganizatora.xaml.cs">
       <DependentUpon>DodavanjeOrganizatora.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\DodavanjeStola.xaml.cs">
+      <DependentUpon>DodavanjeStola.xaml</DependentUpon>
     </Compile>
     <Compile Include="View\FormaOrganizacije.xaml.cs">
       <DependentUpon>FormaOrganizacije.xaml</DependentUpon>
@@ -176,6 +183,9 @@
     </Compile>
     <Compile Include="View\PregledProslava.xaml.cs">
       <DependentUpon>PregledProslava.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\PregledSvihMesta.xaml.cs">
+      <DependentUpon>PregledSvihMesta.xaml</DependentUpon>
     </Compile>
     <Compile Include="View\PrikazDogadjaja.xaml.cs">
       <DependentUpon>PrikazDogadjaja.xaml</DependentUpon>
@@ -259,7 +269,15 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="View\DodavanjeMesta.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="View\DodavanjeOrganizatora.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\DodavanjeStola.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -320,6 +338,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="View\PregledProslava.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\PregledSvihMesta.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
