@@ -18,6 +18,7 @@ namespace organizerEvents.model
         public String Naslov { get; set; }
         public DateTime DatumVreme { get; set; }
         public int BrojGostiju { get; set; }
+        public int BrojStolova { get; set; }
         public double Budzet { get; set; }
         public String Tip { get; set; }
 
