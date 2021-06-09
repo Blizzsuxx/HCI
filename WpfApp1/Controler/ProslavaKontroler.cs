@@ -32,7 +32,8 @@ namespace WpfApp1.Controler
 
         internal Proslava dobaviProslavu(long id)
         {
-            /*DataBase.inicijalizujPodatke();
+            // DataBase.inicijalizujPodatke();
+            DataBase.ucitajPodatke();
             sveProslave = DataBase.proslave;
             foreach (Proslava p in sveProslave) {
                 Console.WriteLine(p.Id);
@@ -40,8 +41,8 @@ namespace WpfApp1.Controler
                     return p;
                 }
             }
-            return null; */
-            Proslava proslava = new Proslava();
+            return null; 
+            /*Proslava proslava = new Proslava();
             Narucilac narucilac = new Narucilac();
             narucilac.Ime = "Natasa";
             narucilac.Prezime = "Rajtarov";
@@ -74,7 +75,7 @@ namespace WpfApp1.Controler
             
             proslava.Dogovori = new List<Dogovor>();
             proslava.Dogovori.Add(d);
-            proslava.Dogovori.Add(d2); return proslava;
+            proslava.Dogovori.Add(d2); return proslava;*/
             
         }
     }

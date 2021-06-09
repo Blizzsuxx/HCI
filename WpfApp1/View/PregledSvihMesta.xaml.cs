@@ -12,6 +12,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
 using WpfApp1.Controler;
+using organizerEvents.model;
 
 namespace WpfApp1.View
 {
@@ -20,6 +21,7 @@ namespace WpfApp1.View
     /// </summary>
     public partial class PregledSvihMesta : Window
     {
+        public Mesto selektovan { get; set; }
         public MestoKontroler kontroler { get; set; }
         public PregledSvihMesta()
         {
@@ -41,5 +43,23 @@ namespace WpfApp1.View
             this.Show();
         }
 
+        private void Delete_Click(object sender, RoutedEventArgs e)
+        {
+            //todo obavestenje
+            if (this.selektovan == null)
+            {
+
+            }
+            else
+            {
+                kontroler.obrisi(this.selektovan.Id);
+            }
+            //todo obavestenje
+        }
+
+        private void Mesta_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+            this.selektovan = (Mesto)this.Mesta.SelectedItem;
+        }
     }
 }

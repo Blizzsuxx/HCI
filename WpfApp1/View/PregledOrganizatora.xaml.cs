@@ -97,12 +97,26 @@ namespace WpfApp1
 
         private void Mesta_Click(object sender, RoutedEventArgs e)
         {
-           /* PregledJednogOrganizatora prozor = new PregledJednogOrganizatora(this.selektovan.Id);
+            PregledSvihMesta prozor = new PregledSvihMesta();
             prozor.Closed += new EventHandler(this.Otvori_ovaj_prozor);
             prozor.Show();
             this.Hide();
-            return;*/
+            return;
 
+        }
+
+        private void Delete_Click(object sender, RoutedEventArgs e)
+        {
+            if (this.selektovan == null)
+            {
+
+                //todo
+            }
+            else {
+                //todo obavesti
+                kontroler.obrisi(this.selektovan.Id);
+            //todo ponovo obavesti
+            }
         }
     }
 }

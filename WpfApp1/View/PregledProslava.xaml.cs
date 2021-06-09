@@ -86,7 +86,11 @@ namespace WpfApp1.View
 
         private void Mesta_Click(object sender, RoutedEventArgs e)
         {
-
+            PregledSvihMesta prozor = new PregledSvihMesta();
+            prozor.Closed += new EventHandler(this.Otvori_ovaj_prozor);
+            prozor.Show();
+            this.Hide();
+            return;
         }
     }
 }

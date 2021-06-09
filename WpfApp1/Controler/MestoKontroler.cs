@@ -20,12 +20,22 @@ namespace WpfApp1.Controler
         }
         public List<Mesto> dobaviMesta()
         {
-             DataBase.ucitajMesta();
             this.SvaMesta = DataBase.mesta;
             return this.SvaMesta;
-
-
         }
 
+        internal void obrisi(long id)
+        {
+           
+            foreach (Mesto o in DataBase.mesta)
+            {
+                if (o.Id == id)
+                {
+                    o.izbrisan = true;
+                   
+                    return;
+                }
+            }
+        }
     }
 }

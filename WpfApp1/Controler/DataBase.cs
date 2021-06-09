@@ -476,6 +476,7 @@ namespace organizerEvents.Controler
                     {
                         if (zahtev.Id == zahtevId)
                         {
+                            if (organizator.Zahtevi == null) { organizator.Zahtevi = new List<ZahtevZaProslavu>(); }
                             organizator.Zahtevi.Add(zahtev);
                             zahtev.Organizator = organizator;
                         }
