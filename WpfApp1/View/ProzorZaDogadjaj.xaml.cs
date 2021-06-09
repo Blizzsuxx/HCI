@@ -54,5 +54,10 @@ namespace WpfApp1.View
             TabelaSaradnika tabelaSaradnika = new TabelaSaradnika();
             tabelaSaradnika.Show();
         }
+
+        private void Button_Click_2(object sender, RoutedEventArgs e)
+        {
+
+        }
     }
 }

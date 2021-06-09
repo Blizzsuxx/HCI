@@ -1,9 +1,10 @@
 ﻿<UserControl x:Class="WpfApp1.View.ToDoUserControl"
+             
              xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
-             xmlns:local="clr-namespace:WpfApp1.View" xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes" DataContext="{Binding RelativeSource={RelativeSource Self}}"
+             xmlns:local="clr-namespace:WpfApp1.View" xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes" xmlns:system="clr-namespace:System;assembly=mscorlib" xmlns:local11="clr-namespace:WpfApp1.Controler" DataContext="{Binding RelativeSource={RelativeSource Self}}"
              mc:Ignorable="d" 
              TextElement.Foreground="{DynamicResource MaterialDesignBody}"
         TextElement.FontWeight="Regular"
@@ -16,65 +17,128 @@
     <UserControl.Resources>
         <CollectionViewSource x:Key="DogovoriZaProslavu" Source="{Binding DogovoriZaProslavu}"/>
     </UserControl.Resources>
-    
-    
+
+
+
+
+
+
     <Grid>
-        <DataGrid CanUserAddRows="False"  ColumnWidth="*" GridLinesVisibility="None" AutoGenerateColumns="False" x:Name="zadaciGrid" HorizontalAlignment="Stretch"   Background="White" SelectionChanged="zadaciGrid_SelectionChanged" BorderBrush="White" Margin="50,0,0,0">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="*"></RowDefinition>
+            <RowDefinition Height="60"></RowDefinition>
+        </Grid.RowDefinitions>
+        <Grid>
+            
+            <DataGrid Grid.Row="0" CanUserAddRows="False"  ColumnWidth="*" GridLinesVisibility="None" AutoGenerateColumns="False" x:Name="zadaciGrid" HorizontalAlignment="Stretch"   Background="White" SelectionChanged="zadaciGrid_SelectionChanged" BorderBrush="White" Margin="50,0,0,0">
 
-            <DataGrid.Columns>
+                <DataGrid.Columns>
 
 
 
-                <DataGridTemplateColumn Header="Odradjen">
+                    <DataGridTemplateColumn Header="Odradjen">
 
 
-                    <DataGridTemplateColumn.CellTemplate>
-                        <DataTemplate >
-                            <ToggleButton
+                        <DataGridTemplateColumn.CellTemplate>
+                            <DataTemplate >
+                                <ToggleButton
             x:Name="dugme"
             IsChecked = "{Binding Path=Odradjen, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged, NotifyOnSourceUpdated=True}"
             Style = "{StaticResource MaterialDesignActionLightToggleButton}"
                                 Click="toggleClicked"
             Content = "{Binding Path=StanjeZadatka, UpdateSourceTrigger=PropertyChanged, NotifyOnSourceUpdated=True}" />
 
-                        </DataTemplate>
-                    </DataGridTemplateColumn.CellTemplate>
-                </DataGridTemplateColumn>
+                            </DataTemplate>
+                        </DataGridTemplateColumn.CellTemplate>
+                    </DataGridTemplateColumn>
 
-                
 
-                <DataGridTemplateColumn Header="Opis">
-                    <DataGridTemplateColumn.CellTemplate>
-                        <DataTemplate>
-                            <TextBlock FontSize="20" Text="{Binding OpisZadatka, Mode=TwoWay}"  />
-                        </DataTemplate>
-                    </DataGridTemplateColumn.CellTemplate>
-                </DataGridTemplateColumn>
-                
-                <DataGridTemplateColumn Header="Dogovor">
-                    <DataGridTemplateColumn.CellTemplate>
-                        <DataTemplate>
-                            <TextBlock FontSize="20" Text="{Binding ImeDogovora}"  />
-                        </DataTemplate>
-                    </DataGridTemplateColumn.CellTemplate>
-                </DataGridTemplateColumn>
 
-                <DataGridTemplateColumn Header="Izbaci">
-                    <DataGridTemplateColumn.CellTemplate>
-                        <DataTemplate>
-                            <Button
+                    <DataGridTemplateColumn Header="Opis">
+                        <DataGridTemplateColumn.CellTemplate>
+                            <DataTemplate>
+                                <TextBlock FontSize="20" Text="{Binding OpisZadatka, Mode=TwoWay}"  />
+                            </DataTemplate>
+                        </DataGridTemplateColumn.CellTemplate>
+                    </DataGridTemplateColumn>
+
+                    <DataGridTemplateColumn Header="Dogovor">
+                        <DataGridTemplateColumn.CellTemplate>
+                            <DataTemplate>
+                                <TextBlock FontSize="20" Text="{Binding ImeDogovora}"  />
+                            </DataTemplate>
+                        </DataGridTemplateColumn.CellTemplate>
+                    </DataGridTemplateColumn>
+
+                    <DataGridTemplateColumn Header="Izbaci">
+                        <DataGridTemplateColumn.CellTemplate>
+                            <DataTemplate>
+                                <Button
       ToolTip="Obrisi"
       PreviewMouseDown="delete_task_on_click"
       Content="{materialDesign:PackIcon Kind=Delete}" />
 
 
-                        </DataTemplate>
-                    </DataGridTemplateColumn.CellTemplate>
-                </DataGridTemplateColumn>
+                            </DataTemplate>
+                        </DataGridTemplateColumn.CellTemplate>
+                    </DataGridTemplateColumn>
 
-            </DataGrid.Columns>
+                </DataGrid.Columns>
 
-        </DataGrid>
+            </DataGrid>
+
+        </Grid>
+
+
+        <Grid Grid.Row="1">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition></ColumnDefinition>
+                <ColumnDefinition></ColumnDefinition>
+                <ColumnDefinition Width="100"></ColumnDefinition>
+            </Grid.ColumnDefinitions>
+            <TextBox  Grid.Column="0"
+            Margin="50,0,50,0"
+            VerticalAlignment="Center"
+            x:Name="OpisNovogv"
+            materialDesign:HintAssist.Hint="Opis"
+            materialDesign:HintAssist.HelperText="Unesite Opis">
+                <TextBox.Text>
+                    <Binding
+                                      Path="OpisNovog"
+                                      UpdateSourceTrigger="PropertyChanged">
+                        <Binding.ValidationRules>
+                            <local11:NoEmptyFieldValidator
+                                      ValidatesOnTargetUpdated="True"  />
+                        </Binding.ValidationRules>
+                    </Binding>
+                </TextBox.Text>
+            </TextBox>
+            <ComboBox Grid.Column="1"
+  materialDesign:HintAssist.Hint="Prefix"
+                x:Name="Combo"
+                      Margin="50,0,50,0"
+  materialDesign:TextFieldAssist.PrefixText="$"
+  IsEditable="False" >
+                
+            </ComboBox>
+            <Button Grid.Column="2" Margin="5,10,5,5" HorizontalAlignment="Center"
+                Width="25px" Height="25px" Foreground="MediumPurple" 
+          Style="{StaticResource MaterialDesignFloatingActionMiniLightButton}" 
+          ToolTip="Dodaj Zadatak" Click="Button_Click">
+                <materialDesign:PackIcon
+            Kind="Plus" 
+             />
+            </Button>
+        </Grid>
+
+
+        
+
+
+
+
+
+
+
     </Grid>
-    
 </UserControl>

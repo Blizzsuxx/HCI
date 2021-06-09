@@ -25,9 +25,14 @@ namespace WpfApp1.View
     {
         public List<ToDo> lista { get; set; }
         public List<Dogovor> DogovoriZaProslavu { get; set; }
+        public Proslava proslava;
+      
+
+        public string OpisNovog { get; set; }
         public ToDoUserControl(List<ToDo> toDos, Proslava proslava)
         {
             lista = toDos;
+            this.proslava = proslava;
             if (proslava != null)
                 DogovoriZaProslavu = proslava.Dogovori;
             InitializeComponent();
@@ -37,7 +42,18 @@ namespace WpfApp1.View
             var temp = this.DataContext;
             this.DataContext = null;
             this.DataContext = temp;
+
+
+            Combo.ItemsSource = DogovoriZaProslavu;
+            Combo.DisplayMemberPath = "Ime";
+            Combo.SelectedValuePath = "Id";
+
+            Combo.SelectedValue = DogovoriZaProslavu[0].Id;
+
+
+
         }
+
 
         public void toggleClicked(object sender, RoutedEventArgs e)
         {
@@ -54,10 +70,27 @@ namespace WpfApp1.View
             UIElement element = (UIElement)zadaciGrid.InputHitTest(e.GetPosition(zadaciGrid));
             int row = Grid.GetRow(element);
             ToDo toDo = lista[row];
+            proslava.ZadaciId.RemoveAt(row);
             lista.Remove(toDo);
             DataBase.toDos.Remove(toDo);
+            
+            ProzorOrganizatora.deleteUndo.Push(new KeyValuePair<ToDo, DataGrid>(toDo, zadaciGrid));
 
 
+            zadaciGrid.ItemsSource = null;
+            zadaciGrid.ItemsSource = lista;
+        }
+
+        private void Button_Click(object sender, RoutedEventArgs e)
+        {
+            ToDo toDo = new ToDo();
+            toDo.DogovorId = (Combo.SelectedItem as Dogovor).Id;
+            toDo.Dogovor = (Combo.SelectedItem as Dogovor);
+            toDo.OpisZadatka = OpisNovog;
+            toDo.StanjeZadatka = toDo.StanjeZadatka;
+            proslava.Zadaci.Add(toDo);
+            proslava.ZadaciId.Add(toDo.Id);
+            DataBase.toDos.Add(toDo);
             zadaciGrid.ItemsSource = null;
             zadaciGrid.ItemsSource = lista;
         }

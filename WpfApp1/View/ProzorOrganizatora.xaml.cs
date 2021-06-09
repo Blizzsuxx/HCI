@@ -21,6 +21,7 @@ namespace WpfApp1.View
     /// </summary>
     public partial class ProzorOrganizatora : Window
     {
+        public static Stack<KeyValuePair<ToDo, DataGrid>> deleteUndo = new Stack<KeyValuePair<ToDo, DataGrid>>();
         public ProzorOrganizatora()
         {
             InitializeComponent();
@@ -93,6 +94,35 @@ namespace WpfApp1.View
         {
             Recnik recnik = new Recnik();
             recnik.Show();
+        }
+
+        private void Button_Click_3(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        //undo
+        private void Button_Click_4(object sender, RoutedEventArgs e)
+        {
+            if (deleteUndo.Count == 0)
+            {
+                return;
+            }
+            var toDo = deleteUndo.Pop();
+            
+            foreach (var token in (DataBase.trenutniKorisnik as Organizator).Proslave)
+            {
+                if(token.Id == toDo.Key.Dogovor.ProslavaId)
+                {
+                    token.Zadaci.Add(toDo.Key);
+                    token.ZadaciId.Add(toDo.Key.Id);
+
+                    DataBase.toDos.Add(toDo.Key);
+                    var itemsSource = toDo.Value.ItemsSource;
+                    toDo.Value.ItemsSource = null; // force refresh
+                    toDo.Value.ItemsSource = itemsSource; // force refresh
+                }
+            }
         }
     }
 }

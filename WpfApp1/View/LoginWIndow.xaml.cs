@@ -28,8 +28,8 @@ namespace WpfApp1
         public MainWindow()
         {
             InitializeComponent();
-            DataBase.ucitajPodatke();
-            //DataBase.inicijalizujPodatke();
+            //DataBase.ucitajPodatke();
+            DataBase.inicijalizujPodatke();
             DataBase.sacuvajPodatke();
             DataBase.ucitajPodatke();
         }
