@@ -82,14 +82,23 @@ namespace WpfApp1.View
             if (DataBase.trenutniKorisnik is Organizator)
             {
                 TabelaDogovora dogovori = new TabelaDogovora();
+                dogovori.ChatRoditelj = this;
+                this.Hide();
                 dogovori.Show();
             }
             else
             {
                 TabelaDogovora dogovori = new TabelaDogovora();
+                dogovori.ChatRoditelj = this;
+                this.Hide();
                 dogovori.Kreiranje.Visibility = Visibility.Hidden;
                 dogovori.Show(); 
             }
+        }
+
+        private void Window_Closing(object sender, System.ComponentModel.CancelEventArgs e)
+        {
+            
         }
     }
 }
