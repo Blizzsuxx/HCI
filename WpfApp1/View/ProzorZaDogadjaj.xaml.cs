@@ -43,5 +43,16 @@ namespace WpfApp1.View
                 }
             }
         }
+
+        private void Button_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void Button_Click_1(object sender, RoutedEventArgs e)
+        {
+            TabelaSaradnika tabelaSaradnika = new TabelaSaradnika();
+            tabelaSaradnika.Show();
+        }
     }
 }
