@@ -22,11 +22,12 @@ namespace WpfApp1.View
         public string Ime { get; set; }
         public string Opis { get; set; }
         public ObavestenjaPopups(string ime, string opis)
-        {
+        {InitializeComponent();
             this.Ime = ime;
             this.Opis = opis;
+            Naslov.Text = ime;
+            Sadrzaj.Text = opis;
             
-            InitializeComponent();
         }
         private void ToggleButton_Checked(object sender, RoutedEventArgs e)
         {

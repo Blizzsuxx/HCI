@@ -216,12 +216,28 @@ namespace organizerEvents.Controler
             Dogovor dogovor = new Dogovor
             {
                 Id = 1,
-                Stanje = Stanje.Dogovoreno,
+                Stanje = Stanje.Dogovaranje,
                 ProslavaId = 11,
                 Ime = "Ime dogovora",
                 PonudeId = new List<long> {1 },
                 SelektovanaPonudaId = 1
             };
+            Ponuda ponuda = new Ponuda
+            {
+                Id = 20,
+                Naziv = "Prva ponuda"
+            };
+            Ponuda ponuda1 = new Ponuda
+            {
+                Id = 21,
+                Naziv = "Druga ponuda"
+            };
+            dogovor.StanjaPonuda.Add(20, "Neobradjeno");
+            dogovor.StanjaPonuda.Add(21, "Neobradjeno");
+            dogovor.Ponude.Add(ponuda);
+            dogovor.Ponude.Add(ponuda1);
+            dogovor.PonudeId.Add(ponuda.Id);
+            dogovor.PonudeId.Add(ponuda1.Id);
             Narucilac narucilac = new Narucilac
             {
                 Id = 3,
@@ -253,6 +269,7 @@ namespace organizerEvents.Controler
                 SaradniciID = new List<long> { 1}
                 
             };
+
             Ponuda ponuda = new Ponuda
             {
                 Id = 1,
@@ -264,6 +281,7 @@ namespace organizerEvents.Controler
                 SaradnikId = 1,
                 Tip = "Tesa"
             };
+
             Poruke poruka = new Poruke
             {
                 Id = 1,

@@ -46,13 +46,14 @@ namespace WpfApp1.Controler
             //return (DataBase.trenutniKorisnik as Organizator).Saradnici;
 
             
-            saradnici = new List<Saradnik>();
+           /* saradnici = new List<Saradnik>();
             Saradnik s1 = new Saradnik("cvecara pcelica", "novi sad", "neki","cvecara");
             Saradnik s2 = new Saradnik("cvecara pcelica", "novi sad", "neki", "cvecara");
             Saradnik s3 = new Saradnik("cvecara pcelica", "novi sad", "neki", "cvecara");
-            saradnici.Add(s1);saradnici.Add(s2);saradnici.Add(s3);
+            saradnici.Add(s1);saradnici.Add(s2);saradnici.Add(s3);*/
 
-            return saradnici;
+
+            return DataBase.dobaviPostojeceSaradnike();
 
         }
     }

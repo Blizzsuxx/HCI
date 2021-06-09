@@ -21,7 +21,8 @@ namespace WpfApp1.View
     /// </summary>
     public partial class TabelaDogovora : Window
     {
-        public List<Dogovor> dogovori;
+        public List<Dogovor> dogovori { get; set; }
+        public Chat ChatRoditelj { get; set; }
         public TabelaDogovora()
         {
             InitializeComponent();
@@ -46,6 +47,7 @@ namespace WpfApp1.View
         {
             KreiranjeDogovora kreiranjeDogovora = new KreiranjeDogovora(0);
             kreiranjeDogovora.roditelj = this;
+            this.Hide();
             kreiranjeDogovora.Show();
 
         }
@@ -57,13 +59,20 @@ namespace WpfApp1.View
 
             if (temp != null)
             {
+                this.Hide();
                 KreiranjeDogovora kreiranjeDogovora = new KreiranjeDogovora(1);
                 kreiranjeDogovora.dogovor = temp;
+                kreiranjeDogovora.roditelj = this;
                 kreiranjeDogovora.inicijalizujPostojeciDogovor();
                 kreiranjeDogovora.Show();
 
 
             }
+        }
+
+        private void Window_Closing(object sender, System.ComponentModel.CancelEventArgs e)
+        {
+            this.ChatRoditelj.Show();
         }
     }
 }
