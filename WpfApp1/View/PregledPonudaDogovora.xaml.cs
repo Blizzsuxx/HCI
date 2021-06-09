@@ -31,11 +31,13 @@ namespace WpfApp1.View
             if (indicator == 0)
             {
                 this.inicijalizujPonude();
+                
             }
             if (indicator == 1)
             {
                 this.inicijalizujNovePonude();
             }
+            
         }
 
         private void inicijalizujNovePonude()
@@ -51,22 +53,34 @@ namespace WpfApp1.View
                     }
                 }
             }
+            ponude.Add(new Ponuda
+            {
+                Id = 1,
+                Naziv = "tarzna"
+            });
             Ponude.ItemsSource = ponude;
             this.trenutnePonude = ponude;
         }
 
-        private void inicijalizujPonude()
+        public void inicijalizujPonude()
         {
-
+            Console.WriteLine(DataBase.kreiranjeDogadjajaPonude.Count);
             Ponude.ItemsSource = DataBase.kreiranjeDogadjajaPonude;
         }
 
         private void Button_Click(object sender, RoutedEventArgs e)
         {
-            PregledPonudaDogovora pregledPonudaDogovor = new PregledPonudaDogovora(1);
-            pregledPonudaDogovor.roditelj = this;
-            pregledPonudaDogovor.Dodavanje.Visibility = Visibility.Hidden;
-            pregledPonudaDogovor.Show();
+            if (this.Indikator != 2)
+            {
+                PregledPonudaDogovora pregledPonudaDogovor = new PregledPonudaDogovora(1);
+                pregledPonudaDogovor.roditelj = this;
+                pregledPonudaDogovor.Dodavanje.Visibility = Visibility.Hidden;
+                pregledPonudaDogovor.Show();
+            }
+            else
+            {
+                Ponuda temp = (Ponuda)Ponude.SelectedItem;
+            }
         }
 
         private void inbox_OnMouseDoubleClick(object sender, MouseButtonEventArgs e)
@@ -75,6 +89,7 @@ namespace WpfApp1.View
             if(temp!= null)
             {
                 DataBase.kreiranjeDogadjajaPonude.Add(temp);
+                this.roditelj.inicijalizujPonude();
                 this.Close();
             }
            
