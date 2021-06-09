@@ -11,9 +11,10 @@ namespace organizerEvents.model
     {
         public long Id { get; set; }
 
-        public List<long> PonudeId { get; set; }
+        public long DogovorId { get; set; }
+
         [JsonIgnore]
-        public List<Ponuda> Ponude { get; set; }
+        public Dogovor Dogovor { get; set; }        
         public String OpisZadatka { get; set; }
         public Stanje StanjeZadatka { get; set; }
 
@@ -29,12 +30,10 @@ namespace organizerEvents.model
             }
         }
         public ToDo() {
-            this.Ponude = new List<Ponuda>();
-            this.PonudeId = new List<long>();
+            
         }
-        public ToDo(List<Ponuda> ponude, String opis, Stanje stanje)
+        public ToDo(String opis, Stanje stanje)
         {
-            this.Ponude = ponude;
             this.OpisZadatka = opis;
             this.StanjeZadatka = stanje;
         }

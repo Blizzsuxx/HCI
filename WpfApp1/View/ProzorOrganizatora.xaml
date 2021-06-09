@@ -26,6 +26,7 @@
             <RowDefinition Height="auto"></RowDefinition>
             <RowDefinition Height="auto"></RowDefinition>
             <RowDefinition Height="auto"></RowDefinition>
+            <RowDefinition Height="auto"></RowDefinition>
             <RowDefinition Height="*"></RowDefinition>
             <RowDefinition Height="20"></RowDefinition>
         </Grid.RowDefinitions>
@@ -34,9 +35,9 @@
         <Rectangle Grid.Row="1" Grid.Column="1" Fill="MediumPurple" />
         <Rectangle Grid.Row="1" Grid.Column="2" Fill="MediumPurple" />
 
-        <Rectangle Grid.Row="6" Grid.Column="0" Fill="MediumPurple" />
-        <Rectangle Grid.Row="6" Grid.Column="1" Fill="MediumPurple" />
-        <Rectangle Grid.Row="6" Grid.Column="2" Fill="MediumPurple" />
+        <Rectangle Grid.Row="7" Grid.Column="0" Fill="MediumPurple" />
+        <Rectangle Grid.Row="7" Grid.Column="1" Fill="MediumPurple" />
+        <Rectangle Grid.Row="7" Grid.Column="2" Fill="MediumPurple" />
 
         <TextBlock Grid.Column="1" Grid.Row="1" Foreground="White"
                    FontWeight="UltraBlack" FontSize="18" Text="Glavni Prozor"
@@ -51,7 +52,7 @@
              />
         </Button>
         <Button Grid.Column="1" Grid.Row="2" Margin="5,10,40,5" HorizontalAlignment="Right"
-                Width="25px" Height="25px" Foreground="White"
+                Width="25px" Height="25px" Foreground="White"  Click="Button_Click"
           Style="{StaticResource MaterialDesignFloatingActionMiniLightButton}"
           ToolTip="Profil.">
             <materialDesign:PackIcon
@@ -83,7 +84,7 @@
             Kind="Table"
              />
         </Button>
-        <Button Grid.Column="1" Grid.Row="2" Margin="40,10,5,5" HorizontalAlignment="Left"
+        <Button Grid.Column="1" Grid.Row="2" Margin="40,10,5,5" HorizontalAlignment="Left" Click="Button_calendar"
                 Width="25px" Height="25px" Foreground="White"
           Style="{StaticResource MaterialDesignFloatingActionMiniLightButton}"
           ToolTip="Kalendar događaja.">

@@ -22,17 +22,19 @@ namespace WpfApp1.View
     public partial class PregledJednogOrganizatora : Window
     {
         OrganizatorKontroler kontroler { get; set; }
-        public PregledJednogOrganizatora()
+        public PregledJednogOrganizatora(long id)
         {
             kontroler = new OrganizatorKontroler();
             InitializeComponent();
-            Organizator org=kontroler.nabaviOrg("mejl");
-            this.ime.Text = org.Ime + " " + org.Prezime;
-            this.email.Text = org.Email;
-            this.brTel.Text = org.BrojTelefona;
-            this.kIme.Text = org.KorisnickoIme; 
-            this.Proslave.ItemsSource = org.Proslave;
-
+            Organizator org=kontroler.nabaviOrg(id); //ovde id?
+            if (org != null)
+            {
+                this.ime.Text = org.Ime + " " + org.Prezime;
+                this.email.Text = org.Email;
+                this.brTel.Text = org.BrojTelefona;
+                this.kIme.Text = org.KorisnickoIme;
+                this.Proslave.ItemsSource = org.Proslave;
+            }
         }
     }
 }

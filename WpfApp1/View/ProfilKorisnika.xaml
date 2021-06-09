@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:WpfApp1.View"
         mc:Ignorable="d"
-        Title="ProfilKorisnika" Height="450" Width="800"
+        Title="Profil Korisnika" MaxHeight="430" MaxWidth="750" Height="430" Width="750"
          xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
         TextElement.Foreground="{DynamicResource MaterialDesignBody}"
         TextElement.FontWeight="Regular"
@@ -20,44 +20,332 @@
             <ColumnDefinition Width="20"></ColumnDefinition>
             <ColumnDefinition Width="*"></ColumnDefinition>
             <ColumnDefinition Width="*"></ColumnDefinition>
-            <ColumnDefinition Width="*"></ColumnDefinition>
-            <ColumnDefinition Width="*"></ColumnDefinition>
             <ColumnDefinition Width="20"></ColumnDefinition>
         </Grid.ColumnDefinitions>
         <Grid.RowDefinitions>
             <RowDefinition Height="20"></RowDefinition>
-            <RowDefinition Height="auto"></RowDefinition>
-            <RowDefinition Height="auto"></RowDefinition>
-            <RowDefinition Height="auto"></RowDefinition>
-            <RowDefinition Height="auto"></RowDefinition>
-            <RowDefinition Height="auto"></RowDefinition>
-            <RowDefinition Height="auto"></RowDefinition>
-            <RowDefinition Height="auto"></RowDefinition>
-            <RowDefinition Height="auto"></RowDefinition>
-            <RowDefinition Height="auto"></RowDefinition>
-            <RowDefinition Height="auto"></RowDefinition>
-            <RowDefinition Height="auto"></RowDefinition>
+            <RowDefinition Height="auto"/>
             <RowDefinition Height="*"></RowDefinition>
             <RowDefinition Height="20"></RowDefinition>
         </Grid.RowDefinitions>
+        <Rectangle Grid.Row="1" Grid.Column="0" Fill="MediumPurple" />
         <Rectangle Grid.Row="1" Grid.Column="1" Fill="MediumPurple" />
         <Rectangle Grid.Row="1" Grid.Column="2" Fill="MediumPurple" />
-        <Rectangle Grid.Row="1" Grid.Column="0" Fill="MediumPurple" />
-        <Rectangle Grid.Row="1" Grid.Column="4" Fill="MediumPurple" />
         <Rectangle Grid.Row="1" Grid.Column="3" Fill="MediumPurple" />
-        <Rectangle Grid.Row="1" Grid.Column="5" Fill="MediumPurple" />
 
+        <Rectangle Grid.Row="4" Grid.Column="0" Fill="MediumPurple" />
+        <Rectangle Grid.Row="4" Grid.Column="1" Fill="MediumPurple" />
+        <Rectangle Grid.Row="4" Grid.Column="2" Fill="MediumPurple" />
+        <Rectangle Grid.Row="4" Grid.Column="3" Fill="MediumPurple" />
 
-        <Rectangle Grid.Row="14" Grid.Column="1" Fill="MediumPurple" />
-        <Rectangle Grid.Row="14" Grid.Column="3" Fill="MediumPurple" />
-        <Rectangle Grid.Row="14" Grid.Column="5" Fill="MediumPurple" />
-        <Rectangle Grid.Row="14" Grid.Column="2" Fill="MediumPurple" />
-        <Rectangle Grid.Row="14" Grid.Column="0" Fill="MediumPurple" />
-        <Rectangle Grid.Row="14" Grid.Column="4" Fill="MediumPurple" />
         <TextBlock Grid.Column="1" Grid.Row="1" Foreground="White"
                    FontWeight="UltraBlack" FontSize="24" Text="Pregled korisnika"
                    Margin="0,10,0,10" HorizontalAlignment="Center" Grid.ColumnSpan="2"></TextBlock>
 
+        <Grid Grid.Column="1" Grid.Row="2">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="5"></ColumnDefinition>
+                <ColumnDefinition Width="*"></ColumnDefinition>
+                <ColumnDefinition Width="5"></ColumnDefinition>
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="5"></RowDefinition>
+                <RowDefinition Height="auto"></RowDefinition>
+                <RowDefinition Height="auto"></RowDefinition>
+                <RowDefinition Height="auto"></RowDefinition>
+                <RowDefinition Height="auto"></RowDefinition>
+                <RowDefinition Height="auto"></RowDefinition>
+                <RowDefinition Height="auto"></RowDefinition>
+                <RowDefinition Height="auto"></RowDefinition>
+                <RowDefinition Height="auto"></RowDefinition>
+                <RowDefinition Height="auto"></RowDefinition>
+                <RowDefinition Height="auto"></RowDefinition>
+                <RowDefinition Height="auto"></RowDefinition>
+                <RowDefinition Height="auto"></RowDefinition>
+                <RowDefinition Height="5"></RowDefinition>
+            </Grid.RowDefinitions>
+
+            <Label Content="Ime" 
+                   HorizontalAlignment="Center"
+                   FontSize="8"
+                   Foreground="MediumPurple"
+                   FontWeight="DemiBold"
+                   Grid.Column="1"
+                   Grid.Row="1"
+                   Margin="0,0,0,0" />
+
+            <TextBox  HorizontalAlignment="Center" 
+                      Height="22" 
+                      Margin="0,0,0,12" 
+                      TextWrapping="Wrap" 
+                      VerticalAlignment="Top" 
+                      Width="250" 
+                      FontSize="12" 
+                      x:Name="Ime"
+                      Grid.Column="1"
+                      Grid.Row="2">
+                <Binding
+                                      Path="Ime"
+                                      UpdateSourceTrigger="PropertyChanged">
+
+                </Binding>
+            </TextBox>
+
+            <materialDesign:PackIcon Kind="AccountTie" 
+                                 Grid.Column="1" Grid.Row="2"
+                                 HorizontalAlignment="Center"
+                                 Foreground="MediumPurple"
+                                 Margin="0,5,290,0"/>
+
+            <Label Content="Prezime" 
+                   HorizontalAlignment="Center"
+                   FontSize="8"
+                   Foreground="MediumPurple"
+                   FontWeight="DemiBold"
+                   Grid.Column="1"
+                   Grid.Row="3"
+                   Margin="0,0,0,0" />
+
+            <TextBox HorizontalAlignment="Center" 
+                     Height="22" 
+                     Margin="0,0,0,12" 
+                     TextWrapping="Wrap"  
+                     VerticalAlignment="Top" 
+                     Width="250" 
+                     FontSize="12" 
+                     x:Name="Prezime"
+                     Grid.Column="1"
+                     Grid.Row="4">
+                <Binding
+                                      Path="Prezime"
+                                      UpdateSourceTrigger="PropertyChanged">
+
+                </Binding>
+            </TextBox>
+
+            <materialDesign:PackIcon Kind="AccountTie" 
+                                 Grid.Column="1" Grid.Row="4"
+                                 HorizontalAlignment="Center"
+                                 Foreground="MediumPurple"
+                                 Margin="0,5,290,0"/>
+
+            <Label Content="Korisničko Ime" 
+                   HorizontalAlignment="Center"
+                   FontSize="8"
+                   Foreground="MediumPurple"
+                   FontWeight="DemiBold"
+                   Grid.Column="1"
+                   Grid.Row="5"/>
+
+            <TextBox 
+                HorizontalAlignment="Center" 
+                Height="22" 
+                Margin="0,0,0,12" 
+                TextWrapping="Wrap"  
+                VerticalAlignment="Top" 
+                Width="250" 
+                FontSize="12" 
+                x:Name="kIme"
+                Grid.Column="1"
+                Grid.Row="6">
+                <Binding
+                                      Path="KorisnickoIme"
+                                      UpdateSourceTrigger="PropertyChanged">
+
+                </Binding>
+            </TextBox>
+
+            <materialDesign:PackIcon Kind="AccountTie" 
+                                 Grid.Column="1" Grid.Row="6"
+                                 HorizontalAlignment="Center"
+                                 Foreground="MediumPurple"
+                                 Margin="0,5,290,0"/>
+
+
+            <Label Content="E-mail" 
+                   HorizontalAlignment="Center"
+                   FontSize="8"
+                   Foreground="MediumPurple"
+                   FontWeight="DemiBold"
+                   Grid.Column="1"
+                   Grid.Row="7"
+                   Margin="0,0,0,0" />
+
+            <TextBox HorizontalAlignment="Center" 
+                Height="22" 
+                Margin="0,0,0,12" 
+                TextWrapping="Wrap"  
+                VerticalAlignment="Top" 
+                Width="250" 
+                FontSize="12" 
+                x:Name="Email"
+                Grid.Column="1"
+                Grid.Row="8"     >
+                <Binding
+                                      Path="Ime"
+                                      UpdateSourceTrigger="PropertyChanged">
+
+                </Binding>
+            </TextBox>
+
+            <materialDesign:PackIcon Kind="Email" 
+                                 Grid.Column="1" Grid.Row="8"
+                                 HorizontalAlignment="Center"
+                                 Foreground="MediumPurple"
+                                 Margin="0,5,290,0"/>
+
+
+            <Label Content="Broj telefona" 
+                   HorizontalAlignment="Center"
+                   FontSize="8"
+                   Foreground="MediumPurple"
+                   FontWeight="DemiBold"
+                   Grid.Column="1"
+                   Grid.Row="9"/>
+
+            <TextBox HorizontalAlignment="Center"
+                     Height="22" 
+                     Margin="0,0,0,0" 
+                     TextWrapping="Wrap" 
+                     VerticalAlignment="Top" 
+                     Width="250" 
+                     FontSize="12" 
+                     x:Name="BrTelefona"
+                     Grid.Column="1"
+                    Grid.Row="10">
+                <Binding
+                                      Path="Ime"
+                                      UpdateSourceTrigger="PropertyChanged">
+
+                </Binding>
+            </TextBox>
+
+            <materialDesign:PackIcon Kind="CellphoneSound" 
+                                 Grid.Column="1" Grid.Row="10"
+                                 HorizontalAlignment="Center"
+                                 Foreground="MediumPurple"
+                                 Margin="0,5,290,0"/>
+
+        </Grid>
+
+        <Grid Grid.Column="2" Grid.Row="2">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="5"></ColumnDefinition>
+                <ColumnDefinition Width="*"></ColumnDefinition>
+                <ColumnDefinition Width="5"></ColumnDefinition>
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="10"></RowDefinition>
+                <RowDefinition Height="auto"/>
+                <RowDefinition Height="auto"/>
+                <RowDefinition Height="*"></RowDefinition>
+                <RowDefinition Height="20"></RowDefinition>
+            </Grid.RowDefinitions>
+
+            <Label Content="Proslave" 
+                   HorizontalAlignment="Center"
+                   FontSize="14"
+                   Foreground="MediumPurple"
+                   FontWeight="DemiBold"
+                   Grid.Column="1"
+                   Grid.Row="1"/>
+
+           
+
+            <TextBox HorizontalAlignment="Center"
+                     Height="22" 
+                     Margin="80,0,0,0" 
+                     TextWrapping="Wrap" 
+                     VerticalAlignment="Top" 
+                     Width="3" 
+                     FontSize="12" 
+                     x:Name="BrProslava"
+                     Grid.Column="1"
+                    Grid.Row="1">
+                <Binding
+                                      Path="Ime"
+                                      UpdateSourceTrigger="PropertyChanged">
+
+                </Binding>
+            </TextBox>
+            
+            <Separator  Name="MySeparator" 
+               Height="2"
+               Width="Auto"
+               HorizontalAlignment="Stretch"
+               VerticalAlignment="Bottom"                   
+               Background="MediumPurple" 
+               Grid.Column="1" Grid.Row="2"  Margin="0,10,0,0 "  />
+
+            <DataGrid Grid.Column="1" Grid.Row="3" Margin="0,10,0,0"
+            ItemsSource="{Binding Items1}"
+            CanUserAddRows="False"
+            AutoGenerateColumns="False"
+            HeadersVisibility="All"
+            >
+
+
+                <DataGrid.Columns>
+
+                    <materialDesign:DataGridTextColumn
+                    Width="Auto"
+                    Binding="{Binding Code}"
+                    Header="Naziv"
+                    ElementStyle="{StaticResource MaterialDesignDataGridTextColumnStyle}"
+                    EditingElementStyle="{StaticResource MaterialDesignDataGridTextColumnEditingStyle}">
+
+
+
+                    </materialDesign:DataGridTextColumn>
+
+                    <!-- if you want to use the pop up style (MaterialDesignDataGridTextColumnPopupEditingStyle), you must use MaterialDataGridTextColumn -->
+                    <materialDesign:DataGridTextColumn
+                    Header="Mesto"
+                     Width="Auto"
+                    ElementStyle="{StaticResource MaterialDesignDataGridTextColumnStyle}"
+                    EditingElementStyle="{StaticResource MaterialDesignDataGridTextColumnPopupEditingStyle}">
+                        <materialDesign:DataGridTextColumn.Binding>
+                            <Binding
+                            Path="Name">
+                            </Binding>
+                        </materialDesign:DataGridTextColumn.Binding>
+
+                    </materialDesign:DataGridTextColumn>
+                    <!-- set a max length to get an indicator in the editor -->
+                    <DataGridTextColumn
+                    Header="Opis"
+                     Width="Auto"
+                    ElementStyle="{StaticResource MaterialDesignDataGridTextColumnStyle}"
+                    EditingElementStyle="{StaticResource MaterialDesignDataGridTextColumnEditingStyle}">
+
+                        <DataGridTextColumn.Binding>
+                            <Binding
+                            Path="Description">
+                            </Binding>
+                        </DataGridTextColumn.Binding>
+
+                    </DataGridTextColumn>
+
+                    <DataGridTextColumn
+                    Header="Tip"
+                     Width="Auto"
+                    ElementStyle="{StaticResource MaterialDesignDataGridTextColumnStyle}"
+                    EditingElementStyle="{StaticResource MaterialDesignDataGridTextColumnEditingStyle}">
+
+                        <DataGridTextColumn.Binding>
+                            <Binding
+                            Path="Description">
+                            </Binding>
+                        </DataGridTextColumn.Binding>
+
+                    </DataGridTextColumn>
+
+
+                </DataGrid.Columns>
+            </DataGrid>
+        </Grid>
+
+        <!--
         <TextBlock Grid.Column="1" Grid.Row="7"
                    HorizontalAlignment="Center" Margin="0,12,0,0" FontWeight="SemiBold" Foreground="MediumPurple" FontSize="20" Text="Ime"></TextBlock>
         <TextBlock Grid.Column="1" Grid.Row="8"
@@ -78,13 +366,7 @@
           materialDesign:ValidationAssist.UsePopup="True"
           
           ToolTip="Ime korisnika" Margin="19,0.2,9.8,35.8" Grid.RowSpan="2">
-            <TextBox.Text>
-                <Binding
-                  Path="Ime"
-                  UpdateSourceTrigger="PropertyChanged">
-
-                </Binding>
-            </TextBox.Text>
+            
         </TextBox>
         <TextBox Grid.Column="2" Grid.Row="8" x:Name="Prezime"
                  HorizontalAlignment="Center"
@@ -93,14 +375,8 @@
           Width="160"
           materialDesign:ValidationAssist.UsePopup="True"
           
-          ToolTip="Unesite naziv saradnika" Margin="19,0.2,9.8,35.8" Grid.RowSpan="2">
-            <TextBox.Text>
-                <Binding
-                  Path="Prezime"
-                  UpdateSourceTrigger="PropertyChanged">
-
-                </Binding>
-            </TextBox.Text>
+          ToolTip="Prezime korisnika" Margin="19,0.2,9.8,35.8" Grid.RowSpan="2">
+            
         </TextBox>
         <TextBox Grid.Column="2" Grid.Row="9" x:Name="Email"
                  HorizontalAlignment="Center"
@@ -109,14 +385,8 @@
           Width="160"
           materialDesign:ValidationAssist.UsePopup="True"
           
-          ToolTip="Unesite naziv saradnika" Margin="19,5.2,9.8,30.8" Grid.RowSpan="2">
-            <TextBox.Text>
-                <Binding
-                  Path="Email"
-                  UpdateSourceTrigger="PropertyChanged">
-
-                </Binding>
-            </TextBox.Text>
+          ToolTip="E-mail korisnika" Margin="19,5.2,9.8,30.8" Grid.RowSpan="2">
+           
         </TextBox>
         <TextBox Grid.Column="2" Grid.Row="10" x:Name="kIme"
                  HorizontalAlignment="Center"
@@ -125,14 +395,8 @@
           Width="160"
           materialDesign:ValidationAssist.UsePopup="True"
           
-          ToolTip="Unesite naziv saradnika" Margin="19,0.2,9.8,35.8" Grid.RowSpan="2">
-            <TextBox.Text>
-                <Binding
-                  Path="kIme"
-                  UpdateSourceTrigger="PropertyChanged">
-
-                </Binding>
-            </TextBox.Text>
+          ToolTip="Korisnicko ime " Margin="19,0.2,9.8,35.8" Grid.RowSpan="2">
+           
         </TextBox>
         <TextBox Grid.Column="2" Grid.Row="11" x:Name="BrTelefona"
                  HorizontalAlignment="Center"
@@ -141,14 +405,8 @@
           Width="160"
           materialDesign:ValidationAssist.UsePopup="True"
           
-          ToolTip="Unesite naziv saradnika" Margin="19,0.2,9.8,151" Grid.RowSpan="2">
-            <TextBox.Text>
-                <Binding
-                  Path="BrTelefona"
-                  UpdateSourceTrigger="PropertyChanged">
-
-                </Binding>
-            </TextBox.Text>
+          ToolTip="broj telefona" Margin="19,0.2,9.8,151" Grid.RowSpan="2">
+           
         </TextBox>
         <TextBox Grid.Column="2" Grid.Row="12" x:Name="BrProslava"
                  HorizontalAlignment="Center"
@@ -157,18 +415,12 @@
           Width="160"
           materialDesign:ValidationAssist.UsePopup="True"
           
-          ToolTip="Unesite naziv saradnika" Margin="19,0.2,9.8,110">
-            <TextBox.Text>
-                <Binding
-                  Path="BrProslava"
-                  UpdateSourceTrigger="PropertyChanged">
-
-                </Binding>
-            </TextBox.Text>
+          ToolTip="Broj svih proslava korisnika" Margin="19,0.2,9.8,110">
+           
         </TextBox>
         <Label Grid.Column="3" Grid.Row="7" Content="Proslave" FontSize="24"></Label>
-        
-    
-    
+        -->
+
+
     </Grid>
 </Window>

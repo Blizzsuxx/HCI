@@ -21,6 +21,7 @@ namespace WpfApp1.View
     /// </summary>
     public partial class PregledProslava : Window
     {
+        Proslava proslava { get; set; }
        ProslavaKontroler proslaveKontroler { get; set; }
         public PregledProslava()
         {
@@ -29,6 +30,31 @@ namespace WpfApp1.View
             this.Proslave.ItemsSource = this.proslaveKontroler.ucitaj();
         }
 
-        
+        private void Jedna_Click(object sender, RoutedEventArgs e)
+        {
+            if (this.proslava == null)
+            {
+
+            }
+            else
+            {
+                PregledJedneProslave prozor = new PregledJedneProslave(this.proslava.Id);
+                prozor.Closed += new EventHandler(this.Otvori_ovaj_prozor);
+                prozor.Show();
+                this.Hide();
+                return;
+            }
+
+        }
+        private void Otvori_ovaj_prozor(object sender, System.EventArgs e)
+        {
+            this.Show();
+        }
+
+        private void Proslave_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+            this.proslava = (Proslava)this.Proslave.SelectedItem;
+
+        }
     }
 }

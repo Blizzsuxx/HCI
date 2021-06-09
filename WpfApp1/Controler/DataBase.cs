@@ -247,7 +247,7 @@ namespace organizerEvents.Controler
             };
 
             Proslava novaProslava =new Proslava { OrganizatorId=2, Id=11, ZadaciId = new List<long> { 11 }, Opis="opis proslave", Naslov="Naslov Proslave", PorukeId = new List<long> { 2, 3, 4, 5, 6}, DatumVreme=DateTime.Now};
-            ToDo novTodo = new  ToDo { PonudeId = new List<long> { 11 }, Id=11, OpisZadatka="Opis Zadatka", StanjeZadatka=Stanje.Uradjeno};
+            ToDo novTodo = new  ToDo { Id=11, OpisZadatka="Opis Zadatka", StanjeZadatka=Stanje.Uradjeno};
             Ponuda novaPonuda = new Ponuda { Id=11, Naziv = "naziv", Opis = "Opis" };
 
             DataBase.zahtevZaProslave.Add(zahtevZaProslavu);
@@ -284,14 +284,11 @@ namespace organizerEvents.Controler
         {
             foreach(ToDo todo in DataBase.toDos)
             {
-                foreach(long ponudaId in todo.PonudeId)
+                foreach(Dogovor dogovor in DataBase.dogovori)
                 {
-                    foreach (Ponuda ponuda in DataBase.ponude)
+                    if(dogovor.Id == todo.DogovorId)
                     {
-                        if (ponuda.Id == ponudaId)
-                        {
-                            todo.Ponude.Add(ponuda);
-                        }
+                        todo.Dogovor = dogovor;
                     }
                 }
             }
@@ -315,6 +312,7 @@ namespace organizerEvents.Controler
                 
                     foreach (Dogovor dogovor in DataBase.dogovori)
                     {
+                        
                         if (dogovor.Id == sto.DogovorId)
                         {
                         sto.Dogovor = dogovor;
@@ -517,13 +515,24 @@ namespace organizerEvents.Controler
         {
             //setovane ponude u podogovrima
            foreach(Dogovor dogovor in DataBase.dogovori){
-                foreach(Ponuda ponuda in DataBase.ponude)
-                {
-                    if (dogovor.PonudaId == ponuda.Id)
+               
+                    foreach (long ponudaId in dogovor.PonudeId)
                     {
-                        dogovor.Ponuda = ponuda;
+                        foreach (Ponuda ponuda in DataBase.ponude)
+                        {
+                            if (ponuda.Id == ponudaId)
+                            {
+                            dogovor.Ponude.Add(ponuda);
+                            }
+                        }
                     }
-                }
+                    foreach(Proslava prosla in DataBase.proslave)
+                    {
+                        if(prosla.Id == dogovor.ProslavaId)
+                    {
+                        dogovor.Proslava = prosla;
+                    }
+                    }
             }
 
         }

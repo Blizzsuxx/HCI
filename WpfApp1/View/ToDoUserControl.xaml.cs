@@ -44,7 +44,7 @@ namespace WpfApp1.View
             UIElement element = (UIElement)zadaciGrid.InputHitTest(e.GetPosition(zadaciGrid));
             int row = Grid.GetRow(element);
             lista.RemoveAt(row);
-            toDo.PonudeId.RemoveAt(row);
+            //toDo.PonudeId.RemoveAt(row);
 
             zadaciGrid.ItemsSource = null;
             zadaciGrid.ItemsSource = lista;

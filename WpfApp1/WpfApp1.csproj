@@ -102,6 +102,7 @@
     <Compile Include="Controler\SaradnikKontroler.cs" />
     <Compile Include="Controler\ValidatoriZaUnos.cs" />
     <Compile Include="Model\Administrator.cs" />
+    <Compile Include="Model\CenovnikProslave.cs" />
     <Compile Include="Model\Dogovor.cs" />
     <Compile Include="Model\Gost.cs" />
     <Compile Include="Model\Korisnik.cs" />

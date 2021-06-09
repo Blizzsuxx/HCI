@@ -56,10 +56,14 @@ namespace WpfApp1
             DataBase.trenutniKorisnik = korisnik;
             if (korisnik is Administrator)
             {
+                PregledOrganizatora pregled = new PregledOrganizatora();
+                pregled.Closed += new EventHandler(this.Otvori_ovaj_prozor);
+                pregled.Show();
+                this.Hide();
                 return;
             } else if(korisnik is Organizator)
             {
-                ZadaciWindow zadaci = new ZadaciWindow();
+                ProzorOrganizatora zadaci = new ProzorOrganizatora();
                 zadaci.Closed += new EventHandler(this.Otvori_ovaj_prozor);
                 zadaci.Show();
                 this.Hide();

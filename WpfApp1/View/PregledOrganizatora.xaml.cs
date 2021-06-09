@@ -13,6 +13,7 @@ using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
 using organizerEvents.model;
 using WpfApp1.Controler;
+using WpfApp1.View;
 
 namespace WpfApp1
 {
@@ -21,6 +22,7 @@ namespace WpfApp1
     /// </summary>
     public partial class PregledOrganizatora : Window
     {
+        Organizator selektovan { get; set; }
         OrganizatorKontroler kontroler { get; set; }
         public PregledOrganizatora()
         {
@@ -31,6 +33,32 @@ namespace WpfApp1
 
         }
 
-         
+        private void organizatori_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+            Console.WriteLine(this.organizatori.SelectedItem);
+            this.selektovan = (Organizator)this.organizatori.SelectedItem;
+        }
+
+        private void PogledajDetaljnije_Click(object sender, RoutedEventArgs e)
+        {
+            if (this.selektovan == null) { }
+            else
+            {
+                PregledJednogOrganizatora prozor = new PregledJednogOrganizatora(this.selektovan.Id);
+                prozor.Closed += new EventHandler(this.Otvori_ovaj_prozor);
+                prozor.Show();
+                this.Hide();
+                return;
+            }
+        }
+        private void Otvori_ovaj_prozor(object sender, System.EventArgs e)
+        {
+            this.Show();
+        }
+
+        private void Button_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
     }
 }

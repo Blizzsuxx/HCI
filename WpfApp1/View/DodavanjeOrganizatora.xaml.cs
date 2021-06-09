@@ -95,5 +95,16 @@ namespace WpfApp1.View
 
 
         }
+
+        private void odustani_Click(object sender, RoutedEventArgs e)
+        {
+            this.Kime.Text = "";
+            this.Lozinka.Text="";
+            this.BrTel.Text="";
+            this.Email.Text="";
+            this.Ime.Text="";
+            this.Prezime.Text="";
+            this.Plata.Text = "";
+        }
     }
 }

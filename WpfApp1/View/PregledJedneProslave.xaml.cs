@@ -12,6 +12,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
 using WpfApp1.Controler;
+using WpfApp1.Model;
 using organizerEvents.model;
 using System.ComponentModel;
 
@@ -23,26 +24,38 @@ namespace WpfApp1.View
     public partial class PregledJedneProslave : Window
     {
         ProslavaKontroler kontroler { get; set; }
-        public PregledJedneProslave()
+        public PregledJedneProslave(long id)
         {
+            
             InitializeComponent();
-            dobaviInfoProslave();
+            dobaviInfoProslave(id);
             ConnectionViewModel vm = new ConnectionViewModel();
             DataContext = vm;
         }
 
-        private void dobaviInfoProslave()
+        private void dobaviInfoProslave(long id)
         {
+            
             kontroler = new ProslavaKontroler(); //Todo ili proslediti ili da se dobije neki id
-            Proslava p = kontroler.dobaviProslavu(1);
-            this.kIme.Text = p.Narucilac.Ime + " " + p.Narucilac.Prezime;
-            this.org.Text = p.Organizator.Ime + " " + p.Organizator.Prezime;
-            this.Datum.Text = p.DatumVreme + "";
-            this.brGostiju.Text = p.BrojGostiju + "";
-            this.mesto.Text = p.Mesto.NazivMesta;
-            this.budzet.Text = p.Budzet + "";
+            Proslava p = kontroler.dobaviProslavu(id);
+            
+            if (p != null)
+            {
+                if (p.Narucilac != null && p.Organizator!=null)
+                {
+                    this.org.Text = p.Organizator.Ime + " " + p.Organizator.Prezime;
+                    this.kIme.Text = p.Narucilac.Ime + " " + p.Narucilac.Prezime;
+                }
+               
+                
+                this.Datum.Text = p.DatumVreme + "";
+                this.brGostiju.Text = p.BrojGostiju + "";
+                this.mesto.Text = p.Mesto.NazivMesta;
+                this.budzet.Text = p.Budzet + "";
+            }
+           
         }
-        private void cmbColors_SelectionChanged(object sender, System.Windows.Controls.SelectionChangedEventArgs e)
+        public void cmbColors_SelectionChanged(object sender, System.Windows.Controls.SelectionChangedEventArgs e)
         {
             Saradnik selected = (Saradnik)this.odabir.SelectedItem ;
             Console.WriteLine(selected);
@@ -52,22 +65,26 @@ namespace WpfApp1.View
                 //this.cenovnik.Text = selected.Naziv;
                 foreach(Dogovor d in p.Dogovori)
                 {
-                    if (d.Ponuda.Saradnik.Naziv.Equals(selected.Naziv))
-                    {
-                        String textCenovnik = "Cenovnik: \n"; //TODO uradi i mnozenje i ako je odbijena plus slike!!! i budzet na kraju za tu ponudu
-                        
-                        foreach(String ime in d.Ponuda.Cenovnik.Keys)
-                        {
-                            textCenovnik += ime + " : " + d.Ponuda.Cenovnik[ime] + "\n";
-                        }
-                        this.cenovnik.Text = textCenovnik;
-                        break;
-                    }
+                    //if (d.Ponuda.Saradnik.Naziv.Equals(selected.Naziv))
+                    //{
+                       
+                    //    List<CenovnikProslave> cene = new List<CenovnikProslave>();
+                    //    foreach(String ime in d.Ponuda.Cenovnik.Keys)
+                    //    {
+                    //        CenovnikProslave cp = new CenovnikProslave(ime, d.Ponuda.Cenovnik[ime]);
+                    //        cene.Add(cp);
+                           
+                    //    }
+                    //    this.cenovnik.ItemsSource = cene;
+                    //    break;
+                    //}
                 }
             }
         }
     }
     }
+
+
 
     public class ConnectionViewModel : INotifyPropertyChanged
         {
@@ -75,12 +92,18 @@ namespace WpfApp1.View
             public ConnectionViewModel()
             {
                 kontroler = new ProslavaKontroler();
-                Proslava p = kontroler.dobaviProslavu(1);
+                Proslava p = kontroler.dobaviProslavu(1L);
                 IList<Saradnik> list = new List<Saradnik>();
-                foreach (Dogovor d in p.Dogovori)
+                if (p != null)
                 {
-                    Console.WriteLine("da");
-                    list.Add(d.Ponuda.Saradnik);
+                    if (p.Dogovori != null)
+                    {
+                        foreach (Dogovor d in p.Dogovori)
+                        {
+                            Console.WriteLine("da");
+                            //list.Add(d.Ponuda.Saradnik);
+                        }
+                    }
                 }
                 _saradnici = new CollectionView(list);
             }

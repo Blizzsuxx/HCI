@@ -54,14 +54,23 @@
                 <Image Source="/WpfApp1;component/resources/search.png" RenderTransformOrigin="-17.734,1.234" />
             </StackPanel>
         </Button>
-        <ListView x:Name="Korisnici" Grid.Row="3" Grid.Column="1" Grid.ColumnSpan="2" Grid.RowSpan="2">
+        <Button  Grid.Column="2" ToolTip="Selektujte korisnika i pritisnite dugme da pogledate profil." Grid.Row="2" Height="Auto" Margin="99.2,0.2,215.6,298" Grid.RowSpan="2" x:Name="profil" Click="profil_Click">
+
+            <Button.Resources>
+                <Style TargetType="{x:Type Border}">
+                    <Setter Property="CornerRadius" Value="100"/>
+                </Style>
+            </Button.Resources>
+            
+        </Button>
+        <ListView x:Name="Korisnici" Grid.Row="3" Grid.Column="1" Grid.ColumnSpan="2" Grid.RowSpan="2" SelectionChanged="Korisnici_SelectionChanged">
             <ListView.View>
                 <GridView>
-                    <GridViewColumn Header="Slika" Width="110" DisplayMemberBinding="{Binding Name}" />
-                    <GridViewColumn Header="Ime" Width="120" DisplayMemberBinding="{Binding Ime}" />
-                    <GridViewColumn Header="Prezime" Width="110" DisplayMemberBinding="{Binding Prezime}" />
-                    <GridViewColumn Header="Broj telefona" Width="75" DisplayMemberBinding="{Binding BrojTelefona}" />
-                    <GridViewColumn Header="Korisnicko ime" Width="150" DisplayMemberBinding="{Binding KorisnickoIme}" />
+                    <GridViewColumn Header="Slika" Width="100" DisplayMemberBinding="{Binding Name}" />
+                    <GridViewColumn Header="Ime" Width="100" DisplayMemberBinding="{Binding Ime}" />
+                    <GridViewColumn Header="Prezime" Width="100" DisplayMemberBinding="{Binding Prezime}" />
+                    <GridViewColumn Header="Broj telefona" Width="100" DisplayMemberBinding="{Binding BrojTelefona}" />
+                    <GridViewColumn Header="Korisnicko ime" Width="100" DisplayMemberBinding="{Binding KorisnickoIme}" />
                 </GridView>
             </ListView.View>
         </ListView>
