@@ -43,11 +43,11 @@
                    Margin="0,10,0,10" HorizontalAlignment="Center"></TextBlock>
 
         <Button Grid.Column="1" Grid.Row="2" Margin="5,10,5,5" HorizontalAlignment="Left"
-                Width="25px" Height="25px" Foreground="White"
+                Width="25px" Height="25px" Foreground="White" x:Name="Kreiranje"
           Style="{StaticResource MaterialDesignFloatingActionMiniLightButton}"
-          ToolTip="Ćaskanje.">
+          ToolTip="Dodaj novi dogovor" RenderTransformOrigin="0.5,0.504" Click="Button_Click">
             <materialDesign:PackIcon
-            Kind="Chat"
+            Kind="Plus"
              />
         </Button>
      
@@ -64,7 +64,7 @@
         </ComboBox>
 
         <DataGrid Grid.Column="1" Grid.Row="3" Margin="0,10,0,0"
-            ItemsSource="{Binding Items1}"
+            x:Name="Dogovori"
             CanUserAddRows="False"
             AutoGenerateColumns="False"
             HeadersVisibility="All"
@@ -72,7 +72,7 @@
             <DataGrid.Columns>
                 <materialDesign:DataGridTextColumn
                     Width="Auto"
-                    Binding="{Binding Code}"
+                    Binding="{Binding Id}"
                     Header="ID"
                     ElementStyle="{StaticResource MaterialDesignDataGridTextColumnStyle}"
                     EditingElementStyle="{StaticResource MaterialDesignDataGridTextColumnEditingStyle}">
@@ -86,7 +86,7 @@
                     EditingElementStyle="{StaticResource MaterialDesignDataGridTextColumnPopupEditingStyle}">
                     <materialDesign:DataGridTextColumn.Binding>
                         <Binding
-                            Path="Name">
+                            Path="Ime">
                         </Binding>
                     </materialDesign:DataGridTextColumn.Binding>
                 </materialDesign:DataGridTextColumn>
@@ -99,7 +99,7 @@
                     EditingElementStyle="{StaticResource MaterialDesignDataGridTextColumnEditingStyle}">
                     <DataGridTextColumn.Binding>
                         <Binding
-                            Path="Description">
+                            Path="Stanje">
                         </Binding>
                     </DataGridTextColumn.Binding>
                 </DataGridTextColumn>

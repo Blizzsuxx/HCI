@@ -171,6 +171,9 @@
     <Compile Include="View\PregledOrganizatora.xaml.cs">
       <DependentUpon>PregledOrganizatora.xaml</DependentUpon>
     </Compile>
+    <Compile Include="View\PregledPonudaDogovora.xaml.cs">
+      <DependentUpon>PregledPonudaDogovora.xaml</DependentUpon>
+    </Compile>
     <Compile Include="View\PregledPonude.xaml.cs">
       <DependentUpon>PregledPonude.xaml</DependentUpon>
     </Compile>
@@ -318,6 +321,10 @@
       <DependentUpon>LoginWIndow.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
+    <Page Include="View\PregledPonudaDogovora.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="View\PregledPonude.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>

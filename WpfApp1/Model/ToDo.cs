@@ -32,13 +32,13 @@ namespace organizerEvents.model
                 if(StanjeZadatka == Stanje.Dogovoreno)
                 {
                     StanjeZadatka = Stanje.Uradjeno;
-                } else if (StanjeZadatka == Stanje.UProcesuDogovora)
+                } else if (StanjeZadatka == Stanje.Dogovaranje)
                 {
                     StanjeZadatka = Stanje.Dogovoreno;
                 }
                 else if (StanjeZadatka == Stanje.Odbijeno)
                 {
-                    StanjeZadatka = Stanje.UProcesuDogovora;
+                    StanjeZadatka = Stanje.Dogovaranje;
                 }
                 else if (StanjeZadatka == Stanje.Uradjeno)
                 {

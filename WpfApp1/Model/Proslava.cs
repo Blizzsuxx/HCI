@@ -66,7 +66,7 @@ namespace organizerEvents.model
             this.DatumVreme = zahtev.DatumVreme;
             this.Budzet = zahtev.Budzet;
             this.BrojGostiju = zahtev.BrojGostiju;
-            //this.Mesto = zahtev.Mesto;
+            this.Mesto = zahtev.Mesto;
             this.Opis = zahtev.Opis;
             this.Tip = zahtev.Tip;
 
