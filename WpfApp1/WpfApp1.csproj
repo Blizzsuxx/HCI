@@ -129,6 +129,9 @@
     <Compile Include="View\CRUDBar.xaml.cs">
       <DependentUpon>CRUDBar.xaml</DependentUpon>
     </Compile>
+    <Compile Include="View\DetaljanPregledSaradnika.xaml.cs">
+      <DependentUpon>DetaljanPregledSaradnika.xaml</DependentUpon>
+    </Compile>
     <Compile Include="View\DodavanjeOrganizatora.xaml.cs">
       <DependentUpon>DodavanjeOrganizatora.xaml</DependentUpon>
     </Compile>
@@ -167,9 +170,6 @@
     </Compile>
     <Compile Include="View\PregledProslava.xaml.cs">
       <DependentUpon>PregledProslava.xaml</DependentUpon>
-    </Compile>
-    <Compile Include="View\PregledSvihSaradnika.xaml.cs">
-      <DependentUpon>PregledSvihSaradnika.xaml</DependentUpon>
     </Compile>
     <Compile Include="View\PrikazDogadjaja.xaml.cs">
       <DependentUpon>PrikazDogadjaja.xaml</DependentUpon>
@@ -238,6 +238,10 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="View\DetaljanPregledSaradnika.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="View\DodavanjeOrganizatora.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -299,10 +303,6 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="View\PregledProslava.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
-    <Page Include="View\PregledSvihSaradnika.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

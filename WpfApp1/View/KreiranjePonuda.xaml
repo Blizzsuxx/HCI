@@ -56,7 +56,7 @@
         <TextBlock Grid.Column="1" Grid.Row="6"
                    HorizontalAlignment="Center" Margin="0,12,0,0" FontWeight="SemiBold" Foreground="MediumPurple" FontSize="16" Text="Informacije"></TextBlock>
 
-        <TextBox Grid.Column="2" Grid.Row="2"
+        <TextBox Grid.Column="2" Grid.Row="2" x:Name="Naziv"
                  HorizontalAlignment="Center"
           Style="{StaticResource MaterialDesignFloatingHintTextBox}"
           materialDesign:HintAssist.Hint="     Naziv"
@@ -66,14 +66,14 @@
           ToolTip="Use a popup which can escape the bounds of the control where space is limited">
             <TextBox.Text>
                 <Binding
-                  Path="Name"
+                  Path="Naziv"
                   UpdateSourceTrigger="PropertyChanged">
                     
                 </Binding>
             </TextBox.Text>
         </TextBox>
 
-        <TextBox Grid.Column="2" Grid.Row="3"
+        <TextBox Grid.Column="2" Grid.Row="3" x:Name="Tip"
           Style="{StaticResource MaterialDesignFloatingHintTextBox}"
           materialDesign:HintAssist.Hint="     Tip"
           Width="150"
@@ -82,14 +82,14 @@
           ToolTip="Use a popup which can escape the bounds of the control where space is limited">
             <TextBox.Text>
                 <Binding
-                  Path="Name"
+                  Path="Tip"
                   UpdateSourceTrigger="PropertyChanged">
 
                 </Binding>
             </TextBox.Text>
         </TextBox>
 
-        <TextBox Grid.Column="2" Grid.Row="4"
+        <TextBox Grid.Column="2" Grid.Row="4" x:Name="Budzet"
           Style="{StaticResource MaterialDesignFloatingHintTextBox}"
           materialDesign:HintAssist.Hint="     Budžet"
           Width="150"
@@ -99,15 +99,15 @@
             
             <TextBox.Text>
                 <Binding
-                  Path="Name"
+                  Path="Budzet"
                   UpdateSourceTrigger="PropertyChanged">
 
                 </Binding>
             </TextBox.Text>
            
         </TextBox>
-        
-        <TextBox Grid.Column="2" Grid.Row="5"
+
+        <TextBox Grid.Column="2" Grid.Row="5" x:Name="Opis"
                 Margin="0,15,0,5"
                  HorizontalAlignment="Center"
                 Style="{StaticResource MaterialDesignOutlinedTextBox}"
@@ -116,10 +116,18 @@
                 Width="150"
                 AcceptsReturn="True"
                 TextWrapping="Wrap"
+                 
                 VerticalScrollBarVisibility="Auto"
-                materialDesign:HintAssist.Hint="Dodatan Opis"/>
+                materialDesign:HintAssist.Hint="Dodatan Opis">
+            <TextBox.Text>
+                <Binding
+                  Path="Opis"
+                  UpdateSourceTrigger="PropertyChanged">
 
-        <TextBox Grid.Column="2" Grid.Row="6"
+                </Binding>
+            </TextBox.Text>
+        </TextBox>
+        <TextBox Grid.Column="2" Grid.Row="6" x:Name="Informacije"
                  Margin="0,15,0,5"
                  HorizontalAlignment="Center"
                 Style="{StaticResource MaterialDesignOutlinedTextBox}"
@@ -129,7 +137,15 @@
                 AcceptsReturn="True"
                 TextWrapping="Wrap"
                 VerticalScrollBarVisibility="Auto"
-                materialDesign:HintAssist.Hint="Dodatne Informacije"/>
+                materialDesign:HintAssist.Hint="Dodatne Informacije">
+            <TextBox.Text>
+                <Binding
+                  Path="Informacije"
+                  UpdateSourceTrigger="PropertyChanged">
+
+                </Binding>
+            </TextBox.Text>
+        </TextBox>
 
         <Button Grid.Column="2" Grid.Row="7" 
                 Margin="20,10,0,5"
@@ -137,7 +153,7 @@
                 Foreground="White" Background="MediumPurple"
           Style="{StaticResource MaterialDesignRaisedLightButton}"
           ToolTip="Resource name: MaterialDesignRaisedLightButton"
-          Content="_Kreiraj" />
+          Content="_Kreiraj" Click="Kreiraj_Ponudu"/>
 
         <Button Grid.Column="2" Grid.Row="7" 
                 Margin="30,10,5,5"
@@ -145,6 +161,6 @@
                 Foreground="MediumPurple"
             Style="{StaticResource MaterialDesignOutlinedButton}"
             ToolTip="MaterialDesignOutlinedButton"
-            Content="Odustani" />
+            Content="Odustani" Click="Odustani" />
     </Grid>
 </Window>

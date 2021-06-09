@@ -1,4 +1,5 @@
-﻿using organizerEvents.model;
+﻿using organizerEvents.Controler;
+using organizerEvents.model;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -31,7 +32,8 @@ namespace WpfApp1.View
 
         public void doubleClicked(object sender, MouseButtonEventArgs e)
         {
-            PregledJedneProslave pregledJedneProslave = new PregledJedneProslave(proslava.Id);
+            ProzorZaDogadjaj pregledJedneProslave = new ProzorZaDogadjaj(proslava.Id);
+            DataBase.trenutnaProslava = proslava;
             pregledJedneProslave.Show();
         }
     }
