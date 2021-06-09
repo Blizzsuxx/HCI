@@ -42,14 +42,14 @@
         <Rectangle Grid.Row="9" Grid.Column="1" Fill="MediumPurple" />
         <Rectangle Grid.Row="9" Grid.Column="2" Fill="MediumPurple" />
         <Rectangle Grid.Row="9" Grid.Column="3" Fill="MediumPurple" />
-        
+
         <TextBlock Grid.Column="1" Grid.Row="1" Foreground="White"
                    FontWeight="UltraBlack" FontSize="18" Text="Kreiranje Dogovora"
                    Margin="0,10,0,10" HorizontalAlignment="Center" Grid.ColumnSpan="2"></TextBlock>
 
         <TextBlock Grid.Column="1" Grid.Row="2"
                    HorizontalAlignment="Center" Margin="0,12,0,0" FontWeight="SemiBold" Foreground="MediumPurple" FontSize="16" Text="Naziv"></TextBlock>
-       
+
         <TextBlock Grid.Column="1" Grid.Row="3"
                    HorizontalAlignment="Center" Margin="0,12,0,0" FontWeight="SemiBold" Foreground="MediumPurple" FontSize="16" Text="Status"></TextBlock>
         <TextBlock Grid.Column="1" Grid.Row="4"
@@ -58,43 +58,36 @@
                    HorizontalAlignment="Center" Margin="0,12,0,0" FontWeight="SemiBold" Foreground="MediumPurple" FontSize="16" Text="Komentar"></TextBlock>
         <TextBlock Grid.Column="1" Grid.Row="6"
                    HorizontalAlignment="Center" Margin="0,12,0,0" FontWeight="SemiBold" Foreground="MediumPurple" FontSize="16" Text="Ponude"></TextBlock>
-        
+
         <TextBox Grid.Column="2" Grid.Row="2"
                  HorizontalAlignment="Center"
           Style="{StaticResource MaterialDesignFloatingHintTextBox}"
           materialDesign:HintAssist.Hint="     Naziv"
           Width="150"
           materialDesign:ValidationAssist.UsePopup="True"
-          
+          x:Name="Ime"
           ToolTip="Use a popup which can escape the bounds of the control where space is limited">
-            <TextBox.Text>
-                <Binding
-                  Path="Name"
-                  UpdateSourceTrigger="PropertyChanged">
-
-                </Binding>
-            </TextBox.Text>
+            
         </TextBox>
 
         <TextBox Grid.Column="2" Grid.Row="3"
           Style="{StaticResource MaterialDesignFloatingHintTextBox}"
           materialDesign:HintAssist.Hint="     Status"
           Width="150"
+          x:Name="Stanje1"
           materialDesign:ValidationAssist.UsePopup="True"
           HorizontalAlignment="Center"
-          ToolTip="Use a popup which can escape the bounds of the control where space is limited">
-            <TextBox.Text>
-                <Binding
-                  Path="Name"
-                  UpdateSourceTrigger="PropertyChanged">
-
-                </Binding>
-            </TextBox.Text>
+          Text="Dogovaranje"
+          IsReadOnly="True"
+          IsEnabled="False"
+          ToolTip="Use a popup which can escape the bounds of the control where space is limited" >
+            
         </TextBox>
 
-       
+
 
         <TextBox Grid.Column="2" Grid.Row="4"
+                 x:Name="Opis"
                 Margin="0,15,0,5"
                  HorizontalAlignment="Center"
                 Style="{StaticResource MaterialDesignOutlinedTextBox}"
@@ -108,6 +101,7 @@
 
         <TextBox Grid.Column="2" Grid.Row="5"
                  Margin="0,15,0,5"
+                 x:Name="Komentar"
                  HorizontalAlignment="Center"
                 Style="{StaticResource MaterialDesignOutlinedTextBox}"
                 VerticalAlignment="Top"
@@ -118,34 +112,31 @@
                 VerticalScrollBarVisibility="Auto"
                 materialDesign:HintAssist.Hint="Dodatne Komentar"/>
 
-        <Button Grid.Column="2" Grid.Row="6"  Margin="0,5,50,0" Width="25px" Height="25px" Foreground="White"
+        <Button Grid.Column="2" Grid.Row="6"  Margin="58,5.6,108,0" Width="25px" Height="25px" Foreground="White"
           Style="{StaticResource MaterialDesignFloatingActionMiniLightButton}"
-          ToolTip="Ponude">
-                    <materialDesign:PackIcon
+          ToolTip="Ponude" Click="Button_Click" HorizontalAlignment="Center" VerticalAlignment="Center" RenderTransformOrigin="0.504,0.5">
+            <materialDesign:PackIcon
             Kind="Offer"
+            
           />
+           
         </Button>
 
-        <Button Grid.Column="2" Grid.Row="6" Margin="50,5,0,0" Width="25px" Height="25px" Foreground="White"
-          Style="{StaticResource MaterialDesignFloatingActionMiniLightButton}"
-          ToolTip="Pregled Ponuda">
-            <materialDesign:PackIcon
-            Kind="PlaylistPlay"
-          />
-        </Button>
+        
 
         <Button Grid.Column="2" Grid.Row="7" 
                 Margin="20,10,0,5"
-                HorizontalAlignment="Left"
+                HorizontalAlignment="Left" x:Name="KreirajeDog"
                 Foreground="White" Background="MediumPurple"
           Style="{StaticResource MaterialDesignRaisedLightButton}"
           ToolTip="Resource name: MaterialDesignRaisedLightButton"
-          Content="_Kreiraj" />
+          Content="_Kreiraj" Click="Button_Click_1" />
 
         <Button Grid.Column="2" Grid.Row="7" 
                 Margin="30,10,5,5"
+                x:Name="OdustaniDog"
                 HorizontalAlignment="Right"
-                Foreground="MediumPurple"
+                Foreground="MediumPurple" 
             Style="{StaticResource MaterialDesignOutlinedButton}"
             ToolTip="MaterialDesignOutlinedButton"
             Content="Odustani" />

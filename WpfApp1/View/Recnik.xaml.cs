@@ -1,4 +1,5 @@
 ﻿using organizerEvents.Controler;
+using organizerEvents.model;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -24,6 +25,10 @@ namespace WpfApp1
         public Recnik()
         {
             InitializeComponent();
+            if(DataBase.trenutniKorisnik is Narucilac)
+            {
+                dugmeZaDodavanje.Visibility = Visibility.Collapsed;
+            }
             reci = DataBase.recniciPojmova.Pojmovi;
             initReci();
         }

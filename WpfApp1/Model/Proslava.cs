@@ -18,6 +18,7 @@ namespace organizerEvents.model
         public String Naslov { get; set; }
         public DateTime DatumVreme { get; set; }
         public int BrojGostiju { get; set; }
+        public int BrojStolova { get; set; }
         public double Budzet { get; set; }
         public String Tip { get; set; }
 
@@ -46,6 +47,7 @@ namespace organizerEvents.model
         [JsonIgnore]
         public List<Gost> Gosti { get; set; }
 
+        public bool Raspored { get; set; }
         public Proslava()
         {
             this.Poruke = new List<Poruke>();
@@ -71,7 +73,7 @@ namespace organizerEvents.model
             this.DatumVreme = zahtev.DatumVreme;
             this.Budzet = zahtev.Budzet;
             this.BrojGostiju = zahtev.BrojGostiju;
-            //this.Mesto = zahtev.Mesto;
+            this.Mesto = zahtev.Mesto;
             this.Opis = zahtev.Opis;
             this.Tip = zahtev.Tip;
 

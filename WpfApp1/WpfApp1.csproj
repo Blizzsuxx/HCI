@@ -190,6 +190,9 @@
     <Compile Include="View\PregledOrganizatora.xaml.cs">
       <DependentUpon>PregledOrganizatora.xaml</DependentUpon>
     </Compile>
+    <Compile Include="View\PregledPonudaDogovora.xaml.cs">
+      <DependentUpon>PregledPonudaDogovora.xaml</DependentUpon>
+    </Compile>
     <Compile Include="View\PregledPonude.xaml.cs">
       <DependentUpon>PregledPonude.xaml</DependentUpon>
     </Compile>
@@ -201,6 +204,12 @@
     </Compile>
     <Compile Include="View\PregledStolova.xaml.cs">
       <DependentUpon>PregledStolova.xaml</DependentUpon>
+
+
+    </Compile>
+    <Compile Include="View\PretragaOrganizatora.xaml.cs">
+      <DependentUpon>PretragaOrganizatora.xaml</DependentUpon>
+
     </Compile>
     <Compile Include="View\PrikazDogadjaja.xaml.cs">
       <DependentUpon>PrikazDogadjaja.xaml</DependentUpon>
@@ -364,6 +373,10 @@
       <DependentUpon>LoginWIndow.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
+    <Page Include="View\PregledPonudaDogovora.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="View\PregledPonude.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -377,6 +390,12 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="View\PregledStolova.xaml">
+
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\PretragaOrganizatora.xaml">
+
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -507,7 +526,9 @@
   <ItemGroup>
     <Resource Include="resources\plus.png" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <Resource Include="resources\stanja.xml" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Import Project="..\packages\MaterialDesignThemes.4.1.0\build\MaterialDesignThemes.targets" Condition="Exists('..\packages\MaterialDesignThemes.4.1.0\build\MaterialDesignThemes.targets')" />
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">

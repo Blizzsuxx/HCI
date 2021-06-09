@@ -12,7 +12,13 @@ namespace organizerEvents.model
 
         public double Plata { get; set; }
 
+
         public bool izbrisan { get; set; }
+
+        public long VodioProslava { get { return Proslave.Count; } }
+
+
+
         public List<long> ZahteviId { get; set; }
         [JsonIgnore]
         public List<ZahtevZaProslavu> Zahtevi { get; set; }

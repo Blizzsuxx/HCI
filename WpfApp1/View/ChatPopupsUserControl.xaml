@@ -39,7 +39,7 @@
           Style="{StaticResource MaterialDesignFloatingActionMiniLightButton}"
           ToolTip="view" Click="Button_Click_1">
                     <materialDesign:PackIcon
-            Kind="Edit"
+            Kind="Chat"
              />
                 </Button>
 
