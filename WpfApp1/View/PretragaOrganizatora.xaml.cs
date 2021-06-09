@@ -35,6 +35,9 @@ namespace WpfApp1.View
         {
             UIElement element = (UIElement)Tabela.InputHitTest(args.GetPosition(Tabela));
             int row = Grid.GetRow(element);
+            var el = Lista[row];
+            FormaOrganizacije formaOrganizacije = new FormaOrganizacije(el);
+            formaOrganizacije.Show();
         }
 
         private void pogledaj_profil(object sender, MouseButtonEventArgs args)

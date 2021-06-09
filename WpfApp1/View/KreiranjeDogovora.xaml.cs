@@ -48,17 +48,27 @@ namespace WpfApp1.View
             Stanje1.Text = this.dogovor.Stanje.ToString();
 
         }
-
+        public void PromjeniStatus()
+        {
+            Stanje1.Text = this.dogovor.Stanje.ToString();
+            this.roditelj.inicijalizujDogovore();
+        }
         private void Button_Click(object sender, RoutedEventArgs e)
         {
             if (this.Indikator == 1)
             {
                 PregledPonudaDogovora pregledPonudaDogovora = new PregledPonudaDogovora(2);
+                pregledPonudaDogovora.dogovor = this.dogovor;
+                this.Hide();
+                pregledPonudaDogovora.roditeljKreiranje = this;
+                pregledPonudaDogovora.inicijalizujKreiranDogovor();
                 pregledPonudaDogovora.Show();
             }
             else
             {
                 PregledPonudaDogovora pregledPonudaDogovora = new PregledPonudaDogovora(0);
+                pregledPonudaDogovora.roditeljKreiranje = this;
+                this.Hide();
                 pregledPonudaDogovora.Show();
             }
             
@@ -83,6 +93,7 @@ namespace WpfApp1.View
             {
                 dogovor.Ponude.Add(ponuda);
                 dogovor.PonudeId.Add(ponuda.Id);
+                dogovor.StanjaPonuda.Add(ponuda.Id, "Neobradjeno");
             }
             dogovor.Proslava = DataBase.trenutnaProslava;
             dogovor.ProslavaId = DataBase.trenutnaProslava.Id;
@@ -94,6 +105,18 @@ namespace WpfApp1.View
             DataBase.kreiranjeDogadjajaPonude = new List<Ponuda>();
             this.roditelj.inicijalizujDogovore();
             this.Close();
+        }
+
+        private void Window_Closing(object sender, System.ComponentModel.CancelEventArgs e)
+        {
+            this.roditelj.Show();
+        }
+
+        private void OdustaniDog_Click(object sender, RoutedEventArgs e)
+        {
+            this.roditelj.Show();
+            this.Close();
+            
         }
     }
 }

@@ -56,6 +56,8 @@ namespace WpfApp1
         }
         private void Otvori_ovaj_prozor(object sender, System.EventArgs e)
         {
+            this.organizatori.ItemsSource = null;
+            this.organizatori.ItemsSource = DataBase.dobaviPostojeceOrganizatore();
             this.Show();
         }
 
@@ -171,7 +173,7 @@ namespace WpfApp1
 
         private void bell_Click(object sender, RoutedEventArgs e)
         {
-            DataBase.recniciPojmova.ZahteviZaRecnik["ketering"] = "mala skupa hrana";
+           
             Obavestenja chat = new Obavestenja();
             chat.Closed += Otvori_ovaj_prozor;
             this.Hide();

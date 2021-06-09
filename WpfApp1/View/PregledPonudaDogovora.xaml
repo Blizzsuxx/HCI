@@ -12,6 +12,7 @@
         TextElement.FontSize="13"
         TextOptions.TextFormattingMode="Ideal"
         TextOptions.TextRenderingMode="Auto"
+        Closing="Window_Closing"
         Background="{DynamicResource MaterialDesignPaper}"
         FontFamily="{DynamicResource MaterialDesignFont}">
     <Grid Background="White">
@@ -19,7 +20,7 @@
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="20"></ColumnDefinition>
             <ColumnDefinition Width="*"></ColumnDefinition>
-            <ColumnDefinition Width="auto"></ColumnDefinition>
+            <ColumnDefinition Width="150"></ColumnDefinition>
             <ColumnDefinition Width="20"></ColumnDefinition>
         </Grid.ColumnDefinitions>
         <Grid.RowDefinitions>
@@ -48,21 +49,31 @@
                 <ListView.View>
                     <GridView>
                         
-                        <GridViewColumn Header="Naziv" Width="120" DisplayMemberBinding="{Binding Naziv}" />
-                        <GridViewColumn Header="Opis" Width="120" DisplayMemberBinding="{Binding Opis}" />
-                        <GridViewColumn Header="Budžet" Width="120" DisplayMemberBinding="{Binding Budzet}" />
-                        <GridViewColumn Header="Informacije" Width="120" DisplayMemberBinding="{Binding Budzet}" />
-                        <GridViewColumn Header="Tip" Width="120" DisplayMemberBinding="{Binding Budzet}" />
-
+                        <GridViewColumn Header="Naziv"  DisplayMemberBinding="{Binding Ponuda.Naziv}" />
+                        <GridViewColumn Header="Opis"  DisplayMemberBinding="{Binding Ponuda.Opis}" />
+                        <GridViewColumn Header="Budžet"  DisplayMemberBinding="{Binding Ponuda.Budzet}" />
+                        <GridViewColumn Header="Informacije"  DisplayMemberBinding="{Binding Ponuda.Informacije}" />
+                        <GridViewColumn Header="Tip"  DisplayMemberBinding="{Binding Ponuda.Tip}" />
+                        <GridViewColumn Header="Stanje"  DisplayMemberBinding="{Binding Stanje}" />
                     </GridView>
                 </ListView.View>
             </ListView>
         </ScrollViewer>
-        <Button Grid.Column="2" Grid.Row="4" x:Name="Dodavanje"   Margin="58,5.6,108,0" Width="25px" Height="25px" Foreground="White"
+        <Button Grid.Column="2" Grid.Row="4" x:Name="Dodavanje"    Width="25px" Height="25px" Foreground="White"
           Style="{StaticResource MaterialDesignFloatingActionMiniLightButton}"
           ToolTip="Dodaj ponudu u dogovor" Click="Button_Click" VerticalAlignment="Bottom" RenderTransformOrigin="0.504,0.5">
             <materialDesign:PackIcon
             Kind="Plus"
+            
+          />
+
+        </Button>
+
+        <Button Grid.Column="2" Grid.Row="4" x:Name="Odbijanje"    Width="25px" Height="25px" Foreground="White"
+          Style="{StaticResource MaterialDesignFloatingActionMiniLightButton}"
+          ToolTip="Odbij ponudu" Click="Odbijanje_Click" VerticalAlignment="Bottom" HorizontalAlignment="Right" RenderTransformOrigin="0.508,0.508">
+            <materialDesign:PackIcon
+            Kind="Minus"
             
           />
 

@@ -13,6 +13,7 @@ using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
 using WpfApp1.Controler;
 using organizerEvents.model;
+using organizerEvents.Controler;
 
 namespace WpfApp1.View
 {
@@ -48,6 +49,8 @@ namespace WpfApp1.View
         }
         private void Otvori_ovaj_prozor(object sender, System.EventArgs e)
         {
+            this.Proslave.ItemsSource = null;
+            this.Proslave.ItemsSource = DataBase.proslave;
             this.Show();
         }
 
