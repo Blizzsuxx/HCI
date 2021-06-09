@@ -165,7 +165,6 @@ namespace organizerEvents.Controler
                 PosebanZahtev="Alergican na vodu"
             };
             DataBase.gosti.Add(gost);
-            ////////////////////TODO STAVITI UVEZIVANJE ZA SARADNIKA I MESTO
             Saradnik saradnik = new Saradnik
             {
                 Id = 1,
