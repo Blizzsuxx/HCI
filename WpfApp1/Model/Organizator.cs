@@ -23,14 +23,21 @@ namespace organizerEvents.model
         [JsonIgnore]
         public List<Dogovor> Dogovori { get; set; }
 
+        public List<long> SaradniciID { get; set; }
+        [JsonIgnore]
+
+        public List<Saradnik> Saradnici { get; set; }
+
         public Organizator()
         {
             this.Proslave = new List<Proslava>();
             this.Zahtevi = new List<ZahtevZaProslavu>();
             this.Dogovori = new List<Dogovor>();
+            this.Saradnici = new List<Saradnik>();
             this.ProslaveId = new List<long>();
             this.DogovoriId = new List<long>();
             this.ZahteviId = new List<long>();
+            this.SaradniciID = new List<long>();
         }
         public Organizator(String ime, String prezime, String brojTelefona, String email, String korisnickoIme, String sifra, double plata, ref List<ZahtevZaProslavu> zahtevi,ref List<Proslava> proslave) : base(ime, prezime, brojTelefona, email, korisnickoIme, sifra)
         {

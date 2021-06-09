@@ -21,14 +21,14 @@ namespace WpfApp1.View
     /// </summary>
     public partial class ProzorZaDogadjaj : Window
     {
-        public ProzorZaDogadjaj()
+        public ProzorZaDogadjaj(long proslava)
         {
 
             InitializeComponent();
             int indikator = 0;
             foreach(ToDo zadatak in DataBase.toDos)
             {
-                if(zadatak.Dogovor.Proslava.Organizator.Id == DataBase.trenutniKorisnik.Id)
+                if(zadatak.Dogovor.Proslava.Organizator.Id == DataBase.trenutniKorisnik.Id && zadatak.Dogovor.Proslava.Id==proslava)
                 {
                     Expander expander = new Expander();
                     expander.Header = zadatak.OpisZadatka;

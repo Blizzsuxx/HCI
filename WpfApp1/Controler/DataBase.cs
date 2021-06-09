@@ -28,6 +28,7 @@ namespace organizerEvents.Controler
         public static List<ToDo> toDos = new List<ToDo>();
         public static List<ZahtevZaProslavu> zahtevZaProslave =  new List<ZahtevZaProslavu>();
         public static Korisnik trenutniKorisnik;
+        public static Proslava trenutnaProslava;
 
         public static void ucitajPodatke()
         {
@@ -479,6 +480,16 @@ namespace organizerEvents.Controler
                     }
 
 
+                }
+                foreach(long saradnikId  in organizator.SaradniciID)
+                {
+                    foreach(Saradnik saradnik in DataBase.saradnici)
+                    {
+                        if(saradnik.Id== saradnikId)
+                        {
+                            organizator.Saradnici.Add(saradnik);
+                        }
+                    }
                 }
                 foreach (long proslavaId in organizator.ProslaveId)
                 {
