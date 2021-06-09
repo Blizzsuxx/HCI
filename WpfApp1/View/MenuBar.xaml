@@ -45,12 +45,12 @@
       Content="{materialDesign:PackIcon Kind=Account}" Click="Button_Click" />
 
                 <Button
-      ToolTip="Dogadjaji Kalendar"
+      ToolTip="Događaji Kalendar"
       Content="{materialDesign:PackIcon Kind=Event}" Click="Button_Click_2" />
 
 
                 <Button
-      ToolTip="Dogadjaji"
+      ToolTip="Događaji"
       Content="{materialDesign:PackIcon Kind=Events}" />
 
 
