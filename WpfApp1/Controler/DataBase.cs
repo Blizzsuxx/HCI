@@ -139,7 +139,7 @@ namespace organizerEvents.Controler
                 }
             }
 
-            return id;
+            return id+1;
         }
         public static void inicijalizujPodatke()
         {
