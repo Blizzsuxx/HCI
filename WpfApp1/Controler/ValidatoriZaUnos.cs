@@ -25,6 +25,23 @@ namespace WpfApp1.Controler
         }
     }
 
+    class DuplicateValidator : ValidationRule
+    {
+        public override ValidationResult Validate(object value, CultureInfo cultureInfo)
+        {
+            string rec = (string)value;
+            if (rec == null || rec.Length <= 0)
+            {
+                return new ValidationResult(false, $"");
+            }
+
+            if ((DataBase.recniciPojmova.Pojmovi.ContainsKey(rec) || DataBase.recniciPojmova.ZahteviZaRecnik.ContainsKey(rec)))
+            {
+                return new ValidationResult(false, $"Taj Pojam Vec Postoji");
+            }
+            return ValidationResult.ValidResult;
+        }
+    }
 
     class UsernameValidator : ValidationRule
     {

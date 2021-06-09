@@ -15,7 +15,7 @@ namespace WpfApp1.Controler
         public bool OdobriRec(String naziv)
         {
             DataBase.inicijalizujPodatke();
-            recnik = DataBase.recniciPojmova.First();
+            recnik = DataBase.recniciPojmova;
             if (recnik.Pojmovi.ContainsKey(naziv) || !recnik.ZahteviZaRecnik.ContainsKey(naziv)) { return false; }
             recnik.Pojmovi[naziv] = recnik.ZahteviZaRecnik[naziv];
             recnik.ZahteviZaRecnik.Remove(naziv);
@@ -24,7 +24,7 @@ namespace WpfApp1.Controler
 
         internal bool izbrisiRec(string text)
         {
-            recnik = DataBase.recniciPojmova.First();
+            recnik = DataBase.recniciPojmova;
             if (recnik.ZahteviZaRecnik.ContainsKey(text))
             {
                 recnik.ZahteviZaRecnik.Remove(text);

@@ -88,5 +88,11 @@ namespace WpfApp1.View
             this.Hide();
             zahteviZaOrganizacije.Show();
         }
+
+        private void Button_Click_2(object sender, RoutedEventArgs e)
+        {
+            Recnik recnik = new Recnik();
+            recnik.Show();
+        }
     }
 }
