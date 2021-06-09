@@ -39,7 +39,9 @@ namespace WpfApp1.View
                 pregledJedneProslave.Show();
             } else
             {
-
+                ProzorZaDogadjajKorisnika prozorZaDogadjajKorisnika = new ProzorZaDogadjajKorisnika();
+                DataBase.trenutnaProslava = proslava;
+                prozorZaDogadjajKorisnika.Show();
             }
         }
     }
