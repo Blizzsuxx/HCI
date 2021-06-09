@@ -41,6 +41,7 @@ namespace organizerEvents.model
         [JsonIgnore]
         public List<Gost> Gosti { get; set; }
 
+        public bool Raspored { get; set; }
         public Proslava()
         {
             this.Poruke = new List<Poruke>();
