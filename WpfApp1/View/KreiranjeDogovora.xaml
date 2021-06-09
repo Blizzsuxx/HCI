@@ -67,20 +67,14 @@
           materialDesign:ValidationAssist.UsePopup="True"
           x:Name="Ime"
           ToolTip="Use a popup which can escape the bounds of the control where space is limited">
-            <TextBox.Text>
-                <Binding
-                  Path="Name"
-                  UpdateSourceTrigger="PropertyChanged">
-
-                </Binding>
-            </TextBox.Text>
+            
         </TextBox>
 
         <TextBox Grid.Column="2" Grid.Row="3"
           Style="{StaticResource MaterialDesignFloatingHintTextBox}"
           materialDesign:HintAssist.Hint="     Status"
           Width="150"
-         
+          x:Name="Stanje1"
           materialDesign:ValidationAssist.UsePopup="True"
           HorizontalAlignment="Center"
           Text="Dogovaranje"
@@ -132,7 +126,7 @@
 
         <Button Grid.Column="2" Grid.Row="7" 
                 Margin="20,10,0,5"
-                HorizontalAlignment="Left"
+                HorizontalAlignment="Left" x:Name="KreirajeDog"
                 Foreground="White" Background="MediumPurple"
           Style="{StaticResource MaterialDesignRaisedLightButton}"
           ToolTip="Resource name: MaterialDesignRaisedLightButton"
@@ -140,8 +134,9 @@
 
         <Button Grid.Column="2" Grid.Row="7" 
                 Margin="30,10,5,5"
+                x:Name="OdustaniDog"
                 HorizontalAlignment="Right"
-                Foreground="MediumPurple"
+                Foreground="MediumPurple" 
             Style="{StaticResource MaterialDesignOutlinedButton}"
             ToolTip="MaterialDesignOutlinedButton"
             Content="Odustani" />

@@ -57,11 +57,11 @@
                 </GridView>
             </ListView.View>
         </ListView>
-        <TextBox Grid.Row="3" Grid.Column="1" Text="Trazi" />
-        <Button Grid.Column="2" Grid.Row="3" Margin="5,10,330,5" HorizontalAlignment="Right"
+        <TextBox Grid.Row="3" Grid.Column="1" Text="Trazi" x:Name="search"/>
+        <Button Grid.Column="2" Grid.Row="3" Margin="5,10,330,5" HorizontalAlignment="Right" x:Name="Trazi" Click="Trazi_Click"
                 Width="25px" Height="25px" Foreground="White"
           Style="{StaticResource MaterialDesignFloatingActionMiniLightButton}"
-          ToolTip="Undo.">
+          ToolTip="Pretrazi.">
             <materialDesign:PackIcon
             Kind="Search"
              />

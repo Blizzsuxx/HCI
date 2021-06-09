@@ -13,6 +13,7 @@ namespace organizerEvents.model
         public String Mesto { get; set; }
         public String Opis { get; set; }
         public String Tip { get; set; }
+        public bool izbrisan { get; set; }
 
         public Saradnik() { }
         public Saradnik(String naziv, String mesto, String opis, String tip)
@@ -21,6 +22,7 @@ namespace organizerEvents.model
             this.Tip = tip;
             this.Naziv = naziv;
             this.Mesto = mesto;
+            this.izbrisan = false;
         }
     }
 }

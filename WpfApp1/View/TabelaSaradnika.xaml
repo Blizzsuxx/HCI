@@ -66,6 +66,22 @@
             Kind="Plus"
              />
         </Button>
+        <Button Grid.Column="1" Grid.Row="5" Margin="0,0,40,4.8" HorizontalAlignment="Right" VerticalAlignment="Bottom"
+                Width="25px" Height="25px" Foreground="MediumPurple"
+          Style="{StaticResource MaterialDesignFloatingActionMiniLightButton}" 
+          ToolTip="Kreiraj novog saradnika." Click="Button_Click_1">
+            <materialDesign:PackIcon
+            Kind="Delete"
+             />
+        </Button>
+        <Button Grid.Column="1" Grid.Row="5" Margin="0,0,77,4.8" HorizontalAlignment="Right" VerticalAlignment="Bottom"
+                Width="25px" Height="25px" Foreground="MediumPurple"
+          Style="{StaticResource MaterialDesignFloatingActionMiniLightButton}" 
+          ToolTip="Undo." Click="Button_Click">
+            <materialDesign:PackIcon
+            Kind="Undo"
+             />
+        </Button>
 
         <Separator  Name="MySeparator" 
                Height="2"

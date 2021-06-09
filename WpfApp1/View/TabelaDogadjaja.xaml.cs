@@ -1,4 +1,5 @@
-﻿using organizerEvents.model;
+﻿using organizerEvents.Controler;
+using organizerEvents.model;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -20,6 +21,7 @@ namespace WpfApp1.View
     /// </summary>
     public partial class TabelaDogadjaja : Window
     {
+
         public List<Proslava> Lista { get; set; }
         public TabelaDogadjaja(List<Proslava> proslave)
         {
@@ -28,5 +30,19 @@ namespace WpfApp1.View
 
             this.DataContext = this;
         }
+
+        private void DataGrid_MouseDoubleClick(object sender, MouseButtonEventArgs e)
+        {
+
+
+            UIElement element = (UIElement)Tabela.InputHitTest(e.GetPosition(Tabela));
+            int row = Grid.GetRow(element);
+            Proslava proslava = Lista[row];
+            DataBase.trenutnaProslava = proslava;
+            ProzorZaDogadjaj prozorZaDogadjaj = new ProzorZaDogadjaj(proslava.Id);
+            prozorZaDogadjaj.Show();
+        }
+
+
     }
 }

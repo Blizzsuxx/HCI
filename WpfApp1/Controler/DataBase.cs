@@ -87,6 +87,32 @@ namespace organizerEvents.Controler
             sacuvajZahteveZaProslavu();
         }
 
+        internal static List<Saradnik> dobaviPostojeceSaradnike()
+        {
+            List<Saradnik> novi = new List<Saradnik>();
+            foreach (Saradnik org in saradnici)
+            {
+                if (org.izbrisan == false)
+                {
+                    novi.Add(org);
+                }
+            }
+            return novi;
+        }
+
+        internal static List<Mesto> dobaviPostojecaMesta()
+        {
+            List<Mesto> novi = new List<Mesto>();
+            foreach (Mesto org in mesta)
+            {
+                if (org.izbrisan == false)
+                {
+                    novi.Add(org);
+                }
+            }
+            return novi;
+        }
+
         public static long dobaviKorisnikId()
         {
             long id = 0;
@@ -360,6 +386,18 @@ namespace organizerEvents.Controler
 
         }
 
+        internal static List<Organizator> dobaviPostojeceOrganizatore()
+        {
+            List<Organizator> novi = new List<Organizator>();
+            foreach(Organizator org in organizatori)
+            {
+                if (org.izbrisan == false)
+                {
+                    novi.Add(org);
+                }
+            }return novi ;
+        }
+
         private static void uveziToDos()
         {
             foreach(ToDo todo in DataBase.toDos)
@@ -514,6 +552,7 @@ namespace organizerEvents.Controler
                     {
                         if (zahtev.Id == zahtevId)
                         {
+                            if (organizator.Zahtevi == null) { organizator.Zahtevi = new List<ZahtevZaProslavu>(); }
                             organizator.Zahtevi.Add(zahtev);
                             zahtev.Organizator = organizator;
                         }
@@ -615,14 +654,19 @@ namespace organizerEvents.Controler
                             {
                             dogovor.Ponude.Add(ponuda);
                             }
+                        if (ponuda.Id == dogovor.SelektovanaPonudaId)
+                        {
+                            dogovor.SelektovanaPonuda = ponuda;
                         }
+                    }
                     }
                     foreach(Proslava prosla in DataBase.proslave)
                     {
                         if(prosla.Id == dogovor.ProslavaId)
-                    {
+                            {
                         dogovor.Proslava = prosla;
-                    }
+                            }
+                        
                     }
             }
 

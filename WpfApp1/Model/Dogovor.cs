@@ -32,6 +32,9 @@ namespace organizerEvents.model
         [JsonIgnore]
         public Proslava Proslava { get; set; }
 
+
+        public long SelektovanaPonudaId { get; set; }
+        public Ponuda SelektovanaPonuda { get; set; }
         public String Opis;
         public String Komentar;
 

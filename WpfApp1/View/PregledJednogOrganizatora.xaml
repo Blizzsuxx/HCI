@@ -91,6 +91,7 @@
             <Label Content="Korisničko Ime" 
                    HorizontalAlignment="Center"
                    FontSize="8"
+                   
                    Foreground="MediumPurple"
                    FontWeight="DemiBold"
                    Grid.Column="1"
@@ -100,11 +101,11 @@
             <TextBox Grid.Column="1" Grid.Row="4" x:Name="kIme"
                  HorizontalAlignment="Center"
                   Style="{StaticResource MaterialDesignFloatingHintTextBox}"
-          
+            
                   Width="200"
                   materialDesign:ValidationAssist.UsePopup="True"
-                     Height="22" 
-                   FontSize="12" 
+                     Height="30" 
+                   FontSize="16" 
                   ToolTip="Korisnicko ime"
                   Margin="0,0,0,5">
             </TextBox>
@@ -123,8 +124,8 @@
                 Style="{StaticResource MaterialDesignFloatingHintTextBox}"
                 Width="200"
                 materialDesign:ValidationAssist.UsePopup="True"
-                Height="22" 
-                FontSize="12" 
+                Height="30" 
+                   FontSize="16" 
                 ToolTip="Email organizatora"
                 Margin="0,0,0,5">
             </TextBox>

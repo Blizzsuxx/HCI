@@ -53,5 +53,14 @@ namespace WpfApp1.View
             KreiranjePonuda kreiranjePonude = new KreiranjePonuda(this.saradnik);
             kreiranjePonude.Show();
         }
+
+        private void Button_Click(object sender, RoutedEventArgs e)
+        {
+            this.saradnik.Naziv=  naziv.Text;
+             this.saradnik.Mesto= mesto.Text ;
+             this.saradnik.Opis = opis.Text;
+             this.saradnik.Tip = tip.Text ;
+            
+        }
     }
 }

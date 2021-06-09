@@ -86,7 +86,38 @@ namespace WpfApp1.View
 
         private void Mesta_Click(object sender, RoutedEventArgs e)
         {
+            PregledSvihMesta prozor = new PregledSvihMesta();
+            prozor.Closed += new EventHandler(this.Otvori_ovaj_prozor);
+            prozor.Show();
+            this.Hide();
+            return;
+        }
 
+        private void Trazi_Click(object sender, RoutedEventArgs e)
+        {
+            String innput = this.search.Text;
+            if (innput.Equals(""))
+            {
+                this.Proslave.ItemsSource = null;
+                this.Proslave.ItemsSource = proslaveKontroler.ucitaj();
+            }
+            else {//ime org prezime broj mesto
+                List<Proslava> proslave = new List<Proslava>();
+                foreach(Proslava p in proslaveKontroler.ucitaj())
+                {
+                    if (p.Mesto == null) { p.Mesto = new Mesto(); p.Mesto.NazivMesta = ""; }
+                    if (p.Organizator == null) { p.Organizator = new Organizator(); p.Organizator.Ime = "";p.Organizator.Prezime = ""; }
+                    if(p.Organizator.Ime.StartsWith(innput) || p.Organizator.Prezime.StartsWith(innput) || p.Mesto.NazivMesta.StartsWith(innput) 
+                        || (p.BrojGostiju+"").StartsWith(innput)) {
+
+                        proslave.Add(p);
+                    }
+                }
+                this.Proslave.ItemsSource = null;
+                this.Proslave.ItemsSource = proslave;
+            
+            
+            }
         }
     }
 }
