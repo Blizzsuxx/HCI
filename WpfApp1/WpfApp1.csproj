@@ -154,6 +154,9 @@
     <Compile Include="View\FormaOrganizacije.xaml.cs">
       <DependentUpon>FormaOrganizacije.xaml</DependentUpon>
     </Compile>
+    <Compile Include="View\InfoDogadjaja.xaml.cs">
+      <DependentUpon>InfoDogadjaja.xaml</DependentUpon>
+    </Compile>
     <Compile Include="View\KreiranjeDogovora.xaml.cs">
       <DependentUpon>KreiranjeDogovora.xaml</DependentUpon>
     </Compile>
@@ -313,6 +316,10 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="View\InfoDogadjaja.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
     <Page Include="View\KreiranjeDogovora.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -394,7 +401,6 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="View\PretragaOrganizatora.xaml">
-
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
