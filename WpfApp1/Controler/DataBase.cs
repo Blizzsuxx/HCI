@@ -654,14 +654,19 @@ namespace organizerEvents.Controler
                             {
                             dogovor.Ponude.Add(ponuda);
                             }
+                        if (ponuda.Id == dogovor.SelektovanaPonudaId)
+                        {
+                            dogovor.SelektovanaPonuda = ponuda;
                         }
+                    }
                     }
                     foreach(Proslava prosla in DataBase.proslave)
                     {
                         if(prosla.Id == dogovor.ProslavaId)
-                    {
+                            {
                         dogovor.Proslava = prosla;
-                    }
+                            }
+                        
                     }
             }
 
