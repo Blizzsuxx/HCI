@@ -57,7 +57,8 @@ namespace WpfApp1.View
 
         private void Button_Click_2(object sender, RoutedEventArgs e)
         {
-
+            PregledStolova pregledStolova = new PregledStolova();
+            pregledStolova.Show();
         }
     }
 }
