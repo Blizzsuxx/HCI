@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel;
 using System.Linq;
 using System.Text;
 using System.Text.Json.Serialization;
@@ -12,7 +13,8 @@ namespace organizerEvents.model
         Dogovoreno,
         Uradjeno,
         Odbijeno,
-        UProcesuDogovora
+        
+        Dogovaranje
     }
     public class Dogovor
     {
@@ -29,6 +31,9 @@ namespace organizerEvents.model
         public long ProslavaId { get; set; }
         [JsonIgnore]
         public Proslava Proslava { get; set; }
+
+        public String Opis;
+        public String Komentar;
 
         public Dogovor() {
             Dogovor.trenutniId++;

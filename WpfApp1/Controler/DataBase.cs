@@ -30,6 +30,8 @@ namespace organizerEvents.Controler
         public static Korisnik trenutniKorisnik;
         public static Proslava trenutnaProslava;
 
+        public static List<Ponuda> kreiranjeDogadjajaPonude = new List<Ponuda>();
+
         public static void ucitajPodatke()
         {
             DataBase.ucitajAdministratore();
@@ -225,7 +227,11 @@ namespace organizerEvents.Controler
                 NarucilacId = 1,
                 OrganizatorId = 2,
                 Tip = "Sahrana",
-                Mesto = "FTN"
+                Mesto =new Mesto
+                {
+                    Id=10,
+                    NazivMesta="Prvo mjesto"
+                }
             };
             ZahtevZaProslavu zahtevZaProslavu2 = new ZahtevZaProslavu
             {
@@ -238,7 +244,11 @@ namespace organizerEvents.Controler
                 NarucilacId = 1,
                 OrganizatorId = 2,
                 Tip = "Svadba",
-                Mesto = "FTN"
+                Mesto = new Mesto
+                {
+                    Id = 10,
+                    NazivMesta = "Prvo mjesto"
+                }
             };
             ZahtevZaProslavu zahtevZaProslavu3 = new ZahtevZaProslavu
             {
@@ -251,7 +261,11 @@ namespace organizerEvents.Controler
                 NarucilacId = 1,
                 OrganizatorId = 2,
                 Tip = "Rodjendan",
-                Mesto = "FTN"
+                Mesto = new Mesto
+                {
+                    Id = 10,
+                    NazivMesta = "Prvo mjesto"
+                }
             };
 
 

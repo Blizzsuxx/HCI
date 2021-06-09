@@ -1,4 +1,6 @@
-﻿using System;
+﻿using organizerEvents.Controler;
+using organizerEvents.model;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -22,6 +24,27 @@ namespace WpfApp1.View
         public TabelaDogovora()
         {
             InitializeComponent();
+            this.inicijalizujDogovore();
+        }
+
+        private void inicijalizujDogovore()
+        {
+            List<Dogovor> dogovori = new List<Dogovor>();
+            foreach(Dogovor dogovor in DataBase.dogovori)
+            {
+                if (dogovor.Proslava.Id == DataBase.trenutnaProslava.Id)
+                {
+                    dogovori.Add(dogovor);
+                }
+            }
+            Dogovori.ItemsSource = dogovori;
+        }
+
+        private void Button_Click(object sender, RoutedEventArgs e)
+        {
+            KreiranjeDogovora kreiranjeDogovora = new KreiranjeDogovora();
+            kreiranjeDogovora.Show();
+
         }
     }
 }
