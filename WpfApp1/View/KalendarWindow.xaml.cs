@@ -24,7 +24,6 @@ namespace WpfApp1
     {
         public List<Proslava> proslave { get; set; }
         public int minCol, maxCol, minRow, maxRow;
-        public bool[,] zauzetaMesta = new bool[10,16];
         public KalendarWindow()
         {
             InitializeComponent();
@@ -40,25 +39,14 @@ namespace WpfApp1
                 int dan = (int)proslava.DatumVreme.DayOfWeek + 1;
                 if (dan == 1) dan = 8;
                 int sati = proslava.DatumVreme.Hour - 6;
-
+                sati = Math.Max(sati, 1);
                 CardUserControl karta = new CardUserControl(proslava);
                 
                 Kalendar.Children.Add(karta);
                 Grid.SetColumn(karta, dan);
                 Grid.SetRow(karta, sati);
-                zauzetaMesta[dan,sati] = true;
             }
-            for(int i = minCol; i < maxCol; i++)
-            {
-                for(int j = minRow; j < maxRow; j++)
-                {
-                    if (zauzetaMesta[i, j]) continue;
-                    PlusButtonUserControl plusButtonUserControl = new PlusButtonUserControl();
-                    Kalendar.Children.Add(plusButtonUserControl);
-                    Grid.SetColumn(plusButtonUserControl, i);
-                    Grid.SetRow(plusButtonUserControl, j);
-                }
-            }
+            
         }
     }
 }

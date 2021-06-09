@@ -28,15 +28,6 @@ namespace WpfApp1.View
             InitializeComponent();
         }
 
-        private void Button_Click(object sender, RoutedEventArgs e)
-        {
-            String ime = this.Naziv.Text;
-            String opis = this.Opis.Text;
-            String mesto = this.Mesto.Text;
-            String tip = this.Tip.Text;
-            kontroler.dodajSaradnika(ime, mesto, opis, tip);
-
-        }
 
         private void Kreiraj_Click(object sender, RoutedEventArgs e)
         {
@@ -45,6 +36,7 @@ namespace WpfApp1.View
             String mesto = this.Mesto.Text;
             String tip = this.Tip.Text;
             kontroler.dodajSaradnika(ime, mesto, opis, tip);
+            this.Close();
 
         }
     }

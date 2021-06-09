@@ -126,8 +126,17 @@
     <Compile Include="View\Chat.xaml.cs">
       <DependentUpon>Chat.xaml</DependentUpon>
     </Compile>
+    <Compile Include="View\ChatMeni.xaml.cs">
+      <DependentUpon>ChatMeni.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\ChatPopupsUserControl.xaml.cs">
+      <DependentUpon>ChatPopupsUserControl.xaml</DependentUpon>
+    </Compile>
     <Compile Include="View\CRUDBar.xaml.cs">
       <DependentUpon>CRUDBar.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\DetaljanPregledSaradnika.xaml.cs">
+      <DependentUpon>DetaljanPregledSaradnika.xaml</DependentUpon>
     </Compile>
     <Compile Include="View\DodavanjeOrganizatora.xaml.cs">
       <DependentUpon>DodavanjeOrganizatora.xaml</DependentUpon>
@@ -170,9 +179,6 @@
     </Compile>
     <Compile Include="View\PregledStolova.xaml.cs">
       <DependentUpon>PregledStolova.xaml</DependentUpon>
-    </Compile>
-    <Compile Include="View\PregledSvihSaradnika.xaml.cs">
-      <DependentUpon>PregledSvihSaradnika.xaml</DependentUpon>
     </Compile>
     <Compile Include="View\PrikazDogadjaja.xaml.cs">
       <DependentUpon>PrikazDogadjaja.xaml</DependentUpon>
@@ -225,6 +231,9 @@
     <Compile Include="View\ZahteviZaOrganizacije.xaml.cs">
       <DependentUpon>ZahteviZaOrganizacije.xaml</DependentUpon>
     </Compile>
+    <Compile Include="View\ZahtevUserControl.xaml.cs">
+      <DependentUpon>ZahtevUserControl.xaml</DependentUpon>
+    </Compile>
     <Page Include="View\AzuriranjeProfila.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -237,7 +246,19 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="View\ChatMeni.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\ChatPopupsUserControl.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="View\CRUDBar.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\DetaljanPregledSaradnika.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -309,10 +330,6 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="View\PregledSvihSaradnika.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
     <Page Include="View\PrikazDogadjaja.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -378,6 +395,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="View\ZahteviZaOrganizacije.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\ZahtevUserControl.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

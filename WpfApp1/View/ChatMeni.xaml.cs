@@ -16,20 +16,20 @@ using System.Windows.Shapes;
 namespace WpfApp1.View
 {
     /// <summary>
-    /// Interaction logic for ZahteviZaOrganizacije.xaml
+    /// Interaction logic for ChatMeni.xaml
     /// </summary>
-    public partial class ZahteviZaOrganizacije : Window
+    public partial class ChatMeni : Window
     {
-        public List<ZahtevZaProslavu> ZahtevZaProslavu { get; set; }
-        public ZahteviZaOrganizacije(List<ZahtevZaProslavu> zahtevZaProslavu)
+        public List<Proslava> Proslave { get; set; }
+        public ChatMeni(List<Proslava> proslave)
         {
             InitializeComponent();
-            this.ZahtevZaProslavu = zahtevZaProslavu;
+            this.Proslave = proslave;
             this.DataContext = this;
             int counter = 0;
-            foreach(var zahtev in zahtevZaProslavu)
+            foreach (var proslava in Proslave)
             {
-                ZahtevUserControl zahtevUserControl = new ZahtevUserControl(zahtev);
+                ChatPopupsUserControl zahtevUserControl = new ChatPopupsUserControl(proslava);
                 Telo.Children.Add(zahtevUserControl);
                 Grid.SetColumn(zahtevUserControl, 0);
                 Grid.SetRow(zahtevUserControl, counter);

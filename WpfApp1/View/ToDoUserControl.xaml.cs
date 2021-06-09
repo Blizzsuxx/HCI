@@ -14,6 +14,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using System.Windows.Controls.Primitives;
 
 namespace WpfApp1.View
 {
@@ -22,16 +23,25 @@ namespace WpfApp1.View
     /// </summary>
     public partial class ToDoUserControl : UserControl
     {
-        public List<Ponuda> lista { get; set; }
-        public ToDo toDo { get; set; }
-        public ToDoUserControl(List<Ponuda> ponude, ToDo toDo)
+        public List<ToDo> lista { get; set; }
+        public List<Dogovor> DogovoriZaProslavu { get; set; }
+        public ToDoUserControl(List<ToDo> toDos, Proslava proslava)
         {
+            lista = toDos;
+            if (proslava != null)
+                DogovoriZaProslavu = proslava.Dogovori;
             InitializeComponent();
-            lista = ponude;
-            this.toDo = toDo;
-            
 
             zadaciGrid.ItemsSource = lista;
+
+            var temp = this.DataContext;
+            this.DataContext = null;
+            this.DataContext = temp;
+        }
+
+        public void toggleClicked(object sender, RoutedEventArgs e)
+        {
+            (e.Source as ToggleButton).GetBindingExpression(ContentProperty).UpdateTarget();
         }
 
         private void zadaciGrid_SelectionChanged(object sender, SelectionChangedEventArgs e)
@@ -43,8 +53,10 @@ namespace WpfApp1.View
             
             UIElement element = (UIElement)zadaciGrid.InputHitTest(e.GetPosition(zadaciGrid));
             int row = Grid.GetRow(element);
-            lista.RemoveAt(row);
-            //toDo.PonudeId.RemoveAt(row);
+            ToDo toDo = lista[row];
+            lista.Remove(toDo);
+            DataBase.toDos.Remove(toDo);
+
 
             zadaciGrid.ItemsSource = null;
             zadaciGrid.ItemsSource = lista;

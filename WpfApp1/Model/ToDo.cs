@@ -18,15 +18,32 @@ namespace organizerEvents.model
         public String OpisZadatka { get; set; }
         public Stanje StanjeZadatka { get; set; }
 
+        [JsonIgnore]
+        public String ImeDogovora { get { return Dogovor?.Ime; } }
+
         public Boolean Odradjen
         {
             get
             {
-                return StanjeZadatka.Equals(Stanje.Dogovoreno);
+                return StanjeZadatka.Equals(Stanje.Uradjeno);
             }
             set
             {
-                StanjeZadatka = Stanje.Dogovoreno;
+                if(StanjeZadatka == Stanje.Dogovoreno)
+                {
+                    StanjeZadatka = Stanje.Uradjeno;
+                } else if (StanjeZadatka == Stanje.UProcesuDogovora)
+                {
+                    StanjeZadatka = Stanje.Dogovoreno;
+                }
+                else if (StanjeZadatka == Stanje.Odbijeno)
+                {
+                    StanjeZadatka = Stanje.UProcesuDogovora;
+                }
+                else if (StanjeZadatka == Stanje.Uradjeno)
+                {
+                    StanjeZadatka = Stanje.Odbijeno;
+                }
             }
         }
         public ToDo() {
