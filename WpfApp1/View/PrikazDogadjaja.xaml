@@ -83,7 +83,7 @@
           Width="150"
           materialDesign:ValidationAssist.UsePopup="True" x:Name="Naziv"
           
-          ToolTip="Use a popup which can escape the bounds of the control where space is limited">
+          ToolTip="Naziv događaja.">
                    
                 </TextBox>
 
@@ -110,7 +110,7 @@
           Width="150"
           materialDesign:ValidationAssist.UsePopup="True"
           
-          ToolTip="Use a popup which can escape the bounds of the control where space is limited">
+          ToolTip="Budžet">
                     
                 </TextBox>
 
@@ -122,7 +122,7 @@
           Width="150"
           materialDesign:ValidationAssist.UsePopup="True"
           
-          ToolTip="Use a popup which can escape the bounds of the control where space is limited" Height="36" Margin="101,35.6,101,0" Grid.RowSpan="2" VerticalAlignment="Top"/>
+          ToolTip="Tip proslave." Height="36" Margin="101,35.6,101,0" Grid.RowSpan="2" VerticalAlignment="Top"/>
 
                 <TextBox Grid.Column="2" Grid.Row="7" IsReadOnly="true"
                  HorizontalAlignment="Center" x:Name="Gosti"
@@ -131,7 +131,7 @@
           Width="150"
           materialDesign:ValidationAssist.UsePopup="True"
           
-          ToolTip="Use a popup which can escape the bounds of the control where space is limited"/>
+          ToolTip="Broj gostiju."/>
 
 
                 <TextBox Grid.Column="2" Grid.Row="8" IsReadOnly="true"
@@ -141,7 +141,7 @@
           Width="150"
           materialDesign:ValidationAssist.UsePopup="True"
           
-          ToolTip="Use a popup which can escape the bounds of the control where space is limited"/>
+          ToolTip="Mesto."/>
 
 
                 <TextBox Grid.Column="2" Grid.Row="9" IsReadOnly="true"
@@ -160,19 +160,21 @@
                     <Button 
                 Click="Prihvaceno"
                 Margin="20,10,0,5"
+                x:Name="Potvrdi"
                 HorizontalAlignment="Right"
                 Foreground="White" Background="MediumPurple"
                 Style="{StaticResource MaterialDesignRaisedLightButton}"
-            ToolTip="Resource name: MaterialDesignRaisedLightButton"
+            ToolTip="Prihvati događaj."
             Content="Prihvati" />
 
                     <Button
                         Click="Odbij"
                 Margin="30,10,5,5"
+                        x:Name="Odustani"
                 HorizontalAlignment="Right"
                 Foreground="MediumPurple"
             Style="{StaticResource MaterialDesignOutlinedButton}"
-            ToolTip="MaterialDesignOutlinedButton"
+            ToolTip="Odbij poziv za organizaciju događaj."
             Content="Odbij"  />
                 </WrapPanel>
 
