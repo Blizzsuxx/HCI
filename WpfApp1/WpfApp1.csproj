@@ -204,12 +204,9 @@
     </Compile>
     <Compile Include="View\PregledStolova.xaml.cs">
       <DependentUpon>PregledStolova.xaml</DependentUpon>
-
-
     </Compile>
     <Compile Include="View\PretragaOrganizatora.xaml.cs">
       <DependentUpon>PretragaOrganizatora.xaml</DependentUpon>
-
     </Compile>
     <Compile Include="View\PrikazDogadjaja.xaml.cs">
       <DependentUpon>PrikazDogadjaja.xaml</DependentUpon>
@@ -222,6 +219,9 @@
     </Compile>
     <Compile Include="View\ProzorZaDogadjaj.xaml.cs">
       <DependentUpon>ProzorZaDogadjaj.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\ProzorZaDogadjajKorisnika.xaml.cs">
+      <DependentUpon>ProzorZaDogadjajKorisnika.xaml</DependentUpon>
     </Compile>
     <Compile Include="View\RegistracijaWindow.xaml.cs">
       <DependentUpon>RegistracijaWindow.xaml</DependentUpon>
@@ -390,7 +390,6 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="View\PregledStolova.xaml">
-
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -412,6 +411,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="View\ProzorZaDogadjaj.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\ProzorZaDogadjajKorisnika.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
