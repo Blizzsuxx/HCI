@@ -150,7 +150,9 @@ namespace organizerEvents.Controler
                 Ime = "Andrija",
                 Prezime = "Vojvnovic",
                 KorisnickoIme = "Andrija",
-                Sifra="password"
+                Sifra="password",
+                Email="asdasd@gmail.com",
+                
 
             };
             DataBase.administratori.Add(admin);
@@ -158,14 +160,21 @@ namespace organizerEvents.Controler
             {
                 Ime = "Marko",
                 Prezime = "Markovic",
-                Id = 1
+                Id = 4,
+                BrTelefona="1231231231",
+                PosebanZahtev="Alergican na vodu"
             };
             DataBase.gosti.Add(gost);
-
+            ////////////////////TODO STAVITI UVEZIVANJE ZA SARADNIKA I MESTO
             Saradnik saradnik = new Saradnik
             {
                 Id = 1,
-                Naziv = "Firma"
+                Naziv = "Firma",
+                izbrisan=false,
+                Opis="Opis",
+                Tip = "Tip",
+                Mesto = "Preko Brda Preko Brega"
+                
             };
             DataBase.saradnici.Add(saradnik);
             Mesto mesto = new Mesto
@@ -175,7 +184,10 @@ namespace organizerEvents.Controler
                 Broj = "1",
                 Ulica = "Prva",
                 MaxBrLjudi = 3,
-                MaxBrStolova = 3
+                MaxBrStolova = 3,
+                izbrisan = false,
+                PovrsinaSale=500,
+                StoloviId = new List<long> {1,2 }
 
             };
             DataBase.mesta.Add(mesto);
@@ -186,14 +198,20 @@ namespace organizerEvents.Controler
                 Id = 1,
                 BrojLjudi = 100,
                 BrojStola = 10,
-                Opis = "prvi sto"
+                Opis = "prvi sto",
+                DogovorId = 1,
+                GostiId = new List<long> { 1},
+                TipStola = "carski"
             };
             Sto sto2 = new Sto
             {
                 Id = 2,
                 BrojLjudi = 100,
                 BrojStola = 10,
-                Opis = "drugi sto"
+                Opis = "drugi sto",
+                DogovorId = 1,
+                GostiId = new List<long> { },
+                TipStola = "trpezarijski"
             };
 
             Dogovor dogovor = new Dogovor
@@ -201,16 +219,22 @@ namespace organizerEvents.Controler
                 Id = 1,
                 Stanje = Stanje.Dogovoreno,
                 ProslavaId = 11,
-                Ime="Ime dogovora"
+                Ime = "Ime dogovora",
+                PonudeId = new List<long> {1 },
+                SelektovanaPonudaId = 1
             };
             Narucilac narucilac = new Narucilac
             {
-                Id = 1,
+                Id = 3,
                 Ime = "Nrucilac",
                 Prezime = "Naruciocic",
                 KorisnickoIme = "momcina",
                 Sifra = "123",
-                ProslaveId= new List<long>() { 11}
+                ProslaveId= new List<long>() { 11},
+                BrojTelefona = "123124124112",
+                Email = "lole@gmail.com",
+                ZahteviId = new List<long> { 1, 2, 3 }
+                
             };
 
             Organizator ogranizator = new Organizator
@@ -221,25 +245,52 @@ namespace organizerEvents.Controler
                 KorisnickoIme = "sule",
                 Sifra = "123",
                 ProslaveId = new List<long> { 11 },
-                ZahteviId = new List<long> { 1, 2, 3}
+                ZahteviId = new List<long> { 1, 2, 3},
+                BrojTelefona="12315124312",
+                Email="a@gmail.com",
+                DogovoriId = new List<long> { },
+                izbrisan=false,
+                Plata=12342.12,
+                SaradniciID = new List<long> { 1}
+                
             };
             Ponuda ponuda = new Ponuda
             {
                 Id = 1,
                 Naziv = "Prejaka pnuda",
-                Opis = "Ne moze bolje"
+                Opis = "Ne moze bolje",
+                Budzet = 12312,
+                Cenovnik = new Dictionary<string, double> { { "jaje", 100}, { "pljeskavica", 50} },
+                Informacije = "Balkan Info",
+                SaradnikId = 1,
+                Tip = "Tesa"
             };
             Poruke poruka = new Poruke
             {
                 Id = 1,
-                Text = "Ovo je tako dobar sadrzaj"
+                Text = "Ovo je tako dobar sadrzaj",
+                AutorId=1
             };
 
             Proslava proslava = new Proslava
             {
                 BrojGostiju = 10,
                 Id = 1,
-                Budzet = 100000
+                Budzet = 100000,
+                BrojStolova=21,
+                DatumVreme = DateTime.Now,
+                DogovoriId = new List<long> { },
+                Tip = "sahrana",
+                GodstiId = new List<long> { },
+                MestoId = 1,
+                NarucilacId = 3,
+                Naslov = "Ide gas",
+                Opis = "I'm on a highway to hell",
+                OrganizatorId = 2,
+                PorukeId = new List<long> { 1},
+                ZadaciId = new List<long> { },
+                
+                
             };
             RecnikPojmova recnik = new RecnikPojmova
             {
@@ -251,7 +302,9 @@ namespace organizerEvents.Controler
             {
                 Id = 2,
                 OpisZadatka = "Ovo je inicijalni zadatak",
-                DogovorId=1
+                DogovorId=1,
+                Odradjen = false,
+                StanjeZadatka = Stanje.Dogovaranje
             };
             ZahtevZaProslavu zahtevZaProslavu = new ZahtevZaProslavu
             {
@@ -261,14 +314,11 @@ namespace organizerEvents.Controler
                 DatumVreme = DateTime.Now,
                 BrojGostiju = 15,
                 Budzet = 1222.2,
-                NarucilacId = 1,
+                NarucilacId = 3,
                 OrganizatorId = 2,
                 Tip = "Sahrana",
-                Mesto =new Mesto
-                {
-                    Id=10,
-                    NazivMesta="Prvo mjesto"
-                }
+                MestoId = 1,
+                
             };
             ZahtevZaProslavu zahtevZaProslavu2 = new ZahtevZaProslavu
             {
@@ -278,14 +328,11 @@ namespace organizerEvents.Controler
                 DatumVreme = DateTime.Now,
                 BrojGostiju = 11,
                 Budzet = 1222.2,
-                NarucilacId = 1,
+                NarucilacId = 3,
                 OrganizatorId = 2,
                 Tip = "Svadba",
-                Mesto = new Mesto
-                {
-                    Id = 10,
-                    NazivMesta = "Prvo mjesto"
-                }
+                MestoId = 1,
+                
             };
             ZahtevZaProslavu zahtevZaProslavu3 = new ZahtevZaProslavu
             {
@@ -295,14 +342,11 @@ namespace organizerEvents.Controler
                 DatumVreme = DateTime.Now,
                 BrojGostiju = 152,
                 Budzet = 12312.12,
-                NarucilacId = 1,
+                NarucilacId = 3,
                 OrganizatorId = 2,
                 Tip = "Rodjendan",
-                Mesto = new Mesto
-                {
-                    Id = 10,
-                    NazivMesta = "Prvo mjesto"
-                }
+                MestoId = 1,
+                
             };
 
 
@@ -318,13 +362,13 @@ namespace organizerEvents.Controler
             {
                 Id = 3,
                 Text = "Ma pusti me",
-                AutorId = 1
+                AutorId = 3
             };
             Poruke poruka13 = new Poruke
             {
                 Id = 4,
                 Text = "Radim HCI",
-                AutorId = 1
+                AutorId = 3
             };
             Poruke poruka14 = new Poruke
             {
@@ -336,7 +380,7 @@ namespace organizerEvents.Controler
             {
                 Id = 6,
                 Text = ";-;",
-                AutorId = 1
+                AutorId = 3
             };
 
             Gost g1 = new Gost(1, "Marko", "Bjelica", "Zelim sto 1", "123");
@@ -347,11 +391,11 @@ namespace organizerEvents.Controler
             DataBase.gosti.Add(g2);
             DataBase.gosti.Add(g3);
 
-            Proslava novaProslava =new Proslava { OrganizatorId=2, Id=11, ZadaciId = new List<long> { 11 }, Opis="opis proslave", Naslov="Naslov Proslave", PorukeId = new List<long> { 2, 3, 4, 5, 6}, DatumVreme=DateTime.Now,
-             DogovoriId = new List<long> { 1 }, NarucilacId=1 , GodstiId = new List<long> { 1, 2, 3}, BrojGostiju = 3};
+            Proslava novaProslava =new Proslava {MestoId=1,BrojStolova=21,Budzet=123123123,Tip="UwU",  OrganizatorId=2, Id=11, ZadaciId = new List<long> { 11 }, Opis="opis proslave", Naslov="Naslov Proslave", PorukeId = new List<long> { 2, 3, 4, 5, 6}, DatumVreme=DateTime.Now,
+             DogovoriId = new List<long> { 1 }, NarucilacId=3 , GodstiId = new List<long> { 1, 2, 3}, BrojGostiju = 3, };
 
             ToDo novTodo = new  ToDo { Id=11, OpisZadatka="Opis Zadatka", StanjeZadatka=Stanje.Uradjeno, DogovorId=1};
-            Ponuda novaPonuda = new Ponuda { Id=11, Naziv = "naziv", Opis = "Opis" };
+            Ponuda novaPonuda = new Ponuda { Id=11, Naziv = "naziv", Opis = "Opis", Budzet=50, Informacije="ma ide gas", SaradnikId= 1, Tip="Prodavnica benzina", Cenovnik= new Dictionary<string, double> { { "dizel", 23}, {"obican gas", 12 } } };
 
             DataBase.zahtevZaProslave.Add(zahtevZaProslavu);
             DataBase.zahtevZaProslave.Add(zahtevZaProslavu2);
@@ -407,6 +451,7 @@ namespace organizerEvents.Controler
                     if(dogovor.Id == todo.DogovorId)
                     {
                         todo.Dogovor = dogovor;
+
                     }
                 }
             }
@@ -416,6 +461,7 @@ namespace organizerEvents.Controler
         {
             foreach(Sto sto in DataBase.stolovi)
             {
+
                 foreach (long gostId in sto.GostiId)
                 {
                     foreach (Gost gost in DataBase.gosti)
@@ -436,6 +482,7 @@ namespace organizerEvents.Controler
                         sto.Dogovor = dogovor;
                         }
                     }
+                    
                 
             }
         }
@@ -449,6 +496,7 @@ namespace organizerEvents.Controler
                     if(mesto.Id == proslava.MestoId)
                     {
                         proslava.Mesto = mesto;
+                       
                     }
                 }
                 foreach(long porukaId in proslava.PorukeId)
@@ -538,6 +586,7 @@ namespace organizerEvents.Controler
                     {
                         ponuda.Saradnik = saradnik;
                     }
+                    
                 }
             }
         }
@@ -555,6 +604,7 @@ namespace organizerEvents.Controler
                             if (organizator.Zahtevi == null) { organizator.Zahtevi = new List<ZahtevZaProslavu>(); }
                             organizator.Zahtevi.Add(zahtev);
                             zahtev.Organizator = organizator;
+
                         }
                     }
 
@@ -635,8 +685,19 @@ namespace organizerEvents.Controler
                         if (stoId == sto.Id)
                         {
                             mesto.Stolovi.Add(sto);
+                            
                         }
                     }
+                }
+
+            }
+
+            foreach(var token in DataBase.zahtevZaProslave)
+            {
+                foreach(var mesto in DataBase.mesta)
+                {
+                    if (token.MestoId == mesto.Id)
+                        token.Mesto = mesto;
                 }
             }
         }
