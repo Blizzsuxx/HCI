@@ -56,5 +56,37 @@ namespace WpfApp1.View
             this.proslava = (Proslava)this.Proslave.SelectedItem;
 
         }
+
+        private void Organizatori_Click(object sender, RoutedEventArgs e)
+        {
+            PregledOrganizatora prozor = new PregledOrganizatora();
+            prozor.Closed += new EventHandler(this.Otvori_ovaj_prozor);
+            prozor.Show();
+            this.Hide();
+            return;
+        }
+
+        private void Saradnici_Click(object sender, RoutedEventArgs e)
+        {
+            TabelaSaradnika prozor = new TabelaSaradnika();
+            prozor.Closed += new EventHandler(this.Otvori_ovaj_prozor);
+            prozor.Show();
+            this.Hide();
+            return;
+        }
+
+        private void Korisnici_Click(object sender, RoutedEventArgs e)
+        {
+            PregledKorisnika prozor = new PregledKorisnika();
+            prozor.Closed += new EventHandler(this.Otvori_ovaj_prozor);
+            prozor.Show();
+            this.Hide();
+            return;
+        }
+
+        private void Mesta_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
     }
 }

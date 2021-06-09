@@ -1,12 +1,12 @@
-﻿<Window x:Class="WpfApp1.View.UnosNovogSaradnika"
+﻿<Window x:Class="WpfApp1.View.DodavanjeStola"
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:WpfApp1.View"
         mc:Ignorable="d"
-        Title="UnosNovogSaradnika" Height="450" Width="800"
-        xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+        Title="DodavanjeStola" Height="450" Width="800"
+         xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
         TextElement.Foreground="{DynamicResource MaterialDesignBody}"
         TextElement.FontWeight="Regular"
         TextElement.FontSize="13"
@@ -14,7 +14,7 @@
         TextOptions.TextRenderingMode="Auto"
         Background="{DynamicResource MaterialDesignPaper}"
         FontFamily="{DynamicResource MaterialDesignFont}">
-    <Grid Background="White">
+    <Grid>
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="20"></ColumnDefinition>
             <ColumnDefinition Width="*"></ColumnDefinition>
@@ -27,8 +27,7 @@
             <RowDefinition Height="auto"></RowDefinition>
             <RowDefinition Height="auto"></RowDefinition>
             <RowDefinition Height="auto"></RowDefinition>
-            <RowDefinition Height= "auto"></RowDefinition>
-            <RowDefinition Height="auto"></RowDefinition>
+
             <RowDefinition Height="*"></RowDefinition>
             <RowDefinition Height="20"></RowDefinition>
         </Grid.RowDefinitions>
@@ -42,43 +41,73 @@
         <Rectangle Grid.Row="9" Grid.Column="0" Fill="MediumPurple" />
         <Rectangle Grid.Row="9" Grid.Column="4" Fill="MediumPurple" />
         <TextBlock Grid.Column="1" Grid.Row="1" Foreground="White"
-                   FontWeight="UltraBlack" FontSize="24" Text="Unos saradnika"
+                   FontWeight="UltraBlack" FontSize="24" Text="Dodavanje stolova"
                    Margin="0,10,0,10" HorizontalAlignment="Center" Grid.ColumnSpan="2"></TextBlock>
         <TextBlock Grid.Column="1" Grid.Row="2"
-                   HorizontalAlignment="Center" Margin="0,12,0,0" FontWeight="SemiBold" Foreground="MediumPurple" FontSize="20" Text="Naziv"></TextBlock>
+                   HorizontalAlignment="Center" Margin="0,12,0,0" FontWeight="SemiBold" Foreground="MediumPurple" FontSize="20" Text="Kolicina stolova"></TextBlock>
         <TextBlock Grid.Column="1" Grid.Row="3"
-                   HorizontalAlignment="Center"  Margin="0,12,0,0" FontWeight="SemiBold" Foreground="MediumPurple" FontSize="20" Text="Tip"></TextBlock>
+                   HorizontalAlignment="Center"  Margin="0,12,0,0" FontWeight="SemiBold" Foreground="MediumPurple" FontSize="20" Text="Tip stola"></TextBlock>
         <TextBlock Grid.Column="1" Grid.Row="4"
-                   HorizontalAlignment="Center" Margin="0,12,0,0" FontWeight="SemiBold" Foreground="MediumPurple" FontSize="20" Text="Mesto"></TextBlock>
+                   HorizontalAlignment="Center" Margin="0,12,0,0" FontWeight="SemiBold" Foreground="MediumPurple" FontSize="20" Text="Maximalan broj ljudi za stolom"></TextBlock>
         <TextBlock Grid.Column="1" Grid.Row="5"
                   HorizontalAlignment="Center"  Margin="0,12,0,0" FontWeight="SemiBold" Foreground="MediumPurple" FontSize="20" Text="Opis"></TextBlock>
 
-        <TextBox Grid.Column="2" Grid.Row="2" x:Name="Naziv"
-                 HorizontalAlignment="Center"
+        <TextBox Grid.Column="2" Grid.Row="2" x:Name="KolicinaStolova"
           Style="{StaticResource MaterialDesignFloatingHintTextBox}"
-          materialDesign:HintAssist.Hint="     Naziv"
-          Width="217"
+          materialDesign:HintAssist.Hint="     Kolicina stolova"
+          Width="357"
           materialDesign:ValidationAssist.UsePopup="True"
-          
-          ToolTip="Unesite naziv saradnika" Margin="113.2,0.2,46.6,35.8" Grid.RowSpan="2">
+          HorizontalAlignment="Center"
+          ToolTip="Unesite kolicinu stolova koju zelite da imate ovog tipa" Margin="10.2,0.2,9.6,35.8" Grid.RowSpan="2">
+
             <TextBox.Text>
                 <Binding
-                  Path="Naziv"
+                  Path="Kolicina"
                   UpdateSourceTrigger="PropertyChanged">
 
                 </Binding>
             </TextBox.Text>
         </TextBox>
+        <TextBox Grid.Column="2" Grid.Row="3" x:Name="Tip"
+          Style="{StaticResource MaterialDesignFloatingHintTextBox}"
+          materialDesign:HintAssist.Hint="    Tip stolova"
+          Width="357"
+          materialDesign:ValidationAssist.UsePopup="True"
+          HorizontalAlignment="Center"
+          ToolTip="Unesite tip stolova koju zelite da imate." Margin="10.2,0.2,9.6,35.8" Grid.RowSpan="2">
 
+            <TextBox.Text>
+                <Binding
+                  Path="Kolicina"
+                  UpdateSourceTrigger="PropertyChanged">
 
+                </Binding>
+            </TextBox.Text>
+        </TextBox>
+        <TextBox Grid.Column="2" Grid.Row="4" x:Name="BrojLjudi"
+          Style="{StaticResource MaterialDesignFloatingHintTextBox}"
+          materialDesign:HintAssist.Hint="     Broj ljudi"
+          Width="357"
+          materialDesign:ValidationAssist.UsePopup="True"
+          HorizontalAlignment="Center"
+          ToolTip="Unesite kolicinu stolova koju zelite da imate ovog tipa" Margin="10.2,0.2,9.6,9.4">
+
+            <TextBox.Text>
+                <Binding
+                  Path="Kolicina"
+                  UpdateSourceTrigger="PropertyChanged">
+
+                </Binding>
+            </TextBox.Text>
+        </TextBox>
         <TextBox Grid.Column="2" Grid.Row="5" x:Name="Opis"
-                 HorizontalAlignment="Center"
           Style="{StaticResource MaterialDesignFloatingHintTextBox}"
           materialDesign:HintAssist.Hint="     Opis"
-          Width="217"
+          Width="357"
           materialDesign:ValidationAssist.UsePopup="True"
-          
-          ToolTip="Unesite opis saradnika" Margin="113.2,0.2,46.6,187" Grid.RowSpan="3">
+          HorizontalAlignment="Center"
+          ToolTip="Unesite opis stolova" Margin="10.2,0.2,9.6,35.8" Grid.RowSpan="2">
+
             <TextBox.Text>
                 <Binding
                   Path="Opis"
@@ -87,45 +116,12 @@
                 </Binding>
             </TextBox.Text>
         </TextBox>
-        <TextBox Grid.Column="2" Grid.Row="3" x:Name="Tip"
-                 HorizontalAlignment="Center"
-          Style="{StaticResource MaterialDesignFloatingHintTextBox}"
-          materialDesign:HintAssist.Hint="     Tip"
-          Width="217"
-          materialDesign:ValidationAssist.UsePopup="True"
-          
-          ToolTip="Unesite tip saradnika" Margin="113.2,0.2,46.6,35.8" Grid.RowSpan="2">
-            <TextBox.Text>
-                <Binding
-                  Path="Tip"
-                  UpdateSourceTrigger="PropertyChanged">
-
-                </Binding>
-            </TextBox.Text>
-        </TextBox>
-        <TextBox Grid.Column="2" Grid.Row="4" x:Name="Mesto"
-                 HorizontalAlignment="Center"
-          Style="{StaticResource MaterialDesignFloatingHintTextBox}"
-          materialDesign:HintAssist.Hint="     Mesto"
-          Width="217"
-          materialDesign:ValidationAssist.UsePopup="True"
-          
-          ToolTip="Unesite mesto u kom se nalazi saradnik" Margin="113.2,0.2,46.6,35.8" Grid.RowSpan="2">
-            <TextBox.Text>
-                <Binding
-                  Path="Naziv"
-                  UpdateSourceTrigger="PropertyChanged">
-
-                </Binding>
-            </TextBox.Text>
-        </TextBox>
-        <Button Grid.Column="2" Grid.Row="7" 
-                Margin="113.2,80.2,0,75"
-                HorizontalAlignment="Left"
+        <Button Grid.Column="1" Grid.Row="5" 
+                Margin="25,10,0,5"
+                HorizontalAlignment="Center"
                 Foreground="White" Background="MediumPurple"
           Style="{StaticResource MaterialDesignRaisedLightButton}"
-          ToolTip="Resource name: MaterialDesignRaisedLightButton"
-          Content="_Kreiraj" Width="217" x:Name="Kreiraj" Click="Kreiraj_Click"/>
-
+          ToolTip="Yavr[ite unos stolova i sacuvajte ga"
+          Content="Zavrsi unos" />
     </Grid>
 </Window>
