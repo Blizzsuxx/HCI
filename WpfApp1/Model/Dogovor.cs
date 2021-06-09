@@ -28,6 +28,8 @@ namespace organizerEvents.model
         [JsonIgnore]
         public List<Ponuda> Ponude { get; set; }
 
+
+        public Dictionary<long,String> StanjaPonuda { get; set; }
         public long ProslavaId { get; set; }
         [JsonIgnore]
         public Proslava Proslava { get; set; }
@@ -35,11 +37,14 @@ namespace organizerEvents.model
 
         public long SelektovanaPonudaId { get; set; }
         public Ponuda SelektovanaPonuda { get; set; }
+
+
         public String Opis;
         public String Komentar;
 
         public Dogovor() {
             Dogovor.trenutniId++;
+            this.StanjaPonuda = new Dictionary<long, string>();
             this.PonudeId = new List<long>();
             this.Ponude = new List<Ponuda>();
 

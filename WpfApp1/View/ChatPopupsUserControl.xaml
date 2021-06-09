@@ -23,10 +23,11 @@
             <Grid >
                 <ToggleButton
                     HorizontalAlignment="Left"
-                    Content="H"
+                    
+                    Content="N"
                     Style="{StaticResource MaterialDesignActionToggleButton}"
-                    ToolTip="MaterialDesignActionToggleButton"
-                       materialDesign:ShadowAssist.ShadowDepth="Depth3" Checked="ToggleButton_Checked" />
+                    ToolTip="Narucilac"
+                       materialDesign:ShadowAssist.ShadowDepth="Depth3"  />
                 <StackPanel HorizontalAlignment="Stretch" Margin="40,0,0,0">
                     <TextBlock Margin="0,10,0,0"  FontWeight="UltraBlack" FontSize="10" x:Name="Naslov"></TextBlock>
                     <TextBlock Margin="2,0,5,10"  FontSize="10" x:Name="Sadrzaj"></TextBlock>
@@ -37,7 +38,7 @@
                 <Button  HorizontalAlignment="Right"
                  Foreground="White"
           Style="{StaticResource MaterialDesignFloatingActionMiniLightButton}"
-          ToolTip="view" Click="Button_Click_1">
+          ToolTip="Udji u ćaskanje" Click="Button_Click_1">
                     <materialDesign:PackIcon
             Kind="Chat"
              />
