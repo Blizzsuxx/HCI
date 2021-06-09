@@ -14,10 +14,10 @@ namespace WpfApp1.Controler
 
         public List<Narucilac> ucitaj()
         {
-            DataBase.inicijalizujPodatke();
-            DataBase.sacuvajNarucioce();
+           // DataBase.inicijalizujPodatke();
+            //DataBase.sacuvajNarucioce();
             //DataBase.sacuvajPodatke();
-            DataBase.ucitajPodatke();
+            //DataBase.ucitajPodatke();
             return DataBase.narucioci;
            /* SviNarucioci = DataBase.narucioci;
 

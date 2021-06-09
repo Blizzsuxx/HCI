@@ -18,7 +18,8 @@ namespace WpfApp1.Controler
         
         public bool dodajOrganizatora(String KorisnickoIme, String Lozinka, String BrTel, String Email, String Ime, String Prezime, double plata )
         {
-            DataBase.inicijalizujPodatke();
+            DataBase.ucitajOrganizatore();
+            //DataBase.inicijalizujPodatke();
             SviOrganizatori = DataBase.organizatori;
             if (SviOrganizatori == null) { SviOrganizatori = new List<Organizator>(); }
             long id = 0;
@@ -39,8 +40,8 @@ namespace WpfApp1.Controler
 
         internal IEnumerable dobaviSveOrganizatore()
         {
-            DataBase.inicijalizujPodatke();
-            DataBase.sacuvajPodatke();
+            //DataBase.inicijalizujPodatke();
+            //DataBase.sacuvajPodatke();
             DataBase.ucitajOrganizatore();
             return DataBase.organizatori;
             /*
@@ -87,6 +88,20 @@ namespace WpfApp1.Controler
             nov.Proslave.Add(p);
             nov.Proslave.Add(p2);
             return nov;*/
+        }
+
+        internal void obrisi(long id)
+        {
+            DataBase.ucitajOrganizatore();
+            foreach(Organizator o in DataBase.organizatori)
+            {
+                if (o.Id == id)
+                {
+                    o.izbrisan = true;
+                    DataBase.sacuvajOrganizatore();
+                    return;
+                }
+            }
         }
     }
 }

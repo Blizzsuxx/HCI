@@ -67,7 +67,11 @@ namespace WpfApp1.View
 
         private void Mesta_Click(object sender, RoutedEventArgs e)
         {
-            /*todo pregled mesta koji postoje*/
+            PregledSvihMesta prozor = new PregledSvihMesta();
+            prozor.Closed += new EventHandler(this.Otvori_ovaj_prozor);
+            prozor.Show();
+            this.Hide();
+            return;
 
         }
 
@@ -87,6 +91,34 @@ namespace WpfApp1.View
             prozor.Show();
             this.Hide();
             return;
+        }
+
+        private void trazi_Click(object sender, RoutedEventArgs e)
+        {
+            String input = this.search.Text;
+            if (input.Equals(""))
+            {
+                this.Korisnici.ItemsSource = null;
+                this.Korisnici.ItemsSource= narucilackontroler.ucitaj();
+            }
+            else
+            {
+                List<Narucilac> n = new List<Narucilac>();
+                foreach(Narucilac nar in narucilackontroler.ucitaj())
+                {
+                    if(nar.Email.StartsWith(input) || nar.BrojTelefona.StartsWith(input) ||
+                        nar.Ime.StartsWith(input) || nar.KorisnickoIme.StartsWith(input) || nar.Prezime.StartsWith(input) 
+                        )
+                    {
+                        n.Add(nar);
+                    }
+                }
+                this.Korisnici.ItemsSource = null;
+                this.Korisnici.ItemsSource = n;
+
+
+            }
+
         }
     }
 }

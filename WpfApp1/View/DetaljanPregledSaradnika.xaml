@@ -44,7 +44,7 @@
         <Rectangle Grid.Row="1" Grid.Column="3" Fill="MediumPurple"  />
         <Rectangle Grid.Row="1" Grid.Column="5" Fill="MediumPurple"  />
         <Rectangle Grid.Row="1" Grid.Column="6" Fill="MediumPurple"  />
-        
+
         <Rectangle Grid.Row="11" Grid.Column="1" Fill="MediumPurple"/>
         <Rectangle Grid.Row="11" Grid.Column="2" Fill="MediumPurple"  />
         <Rectangle Grid.Row="11" Grid.Column="0" Fill="MediumPurple" />
@@ -87,6 +87,14 @@
             Kind="Plus"
              />
         </Button>
+        <Button Grid.Column="4" Grid.Row="9" Margin="0,0,10.2,5" HorizontalAlignment="Right" VerticalAlignment="Bottom"
+                Width="25px" Height="25px" Foreground="MediumPurple"
+          Style="{StaticResource MaterialDesignFloatingActionMiniLightButton}" 
+          ToolTip="Dodaj novu ponudu." Click="Button_Click">
+            <materialDesign:PackIcon
+            Kind="Edit"
+             />
+        </Button>
 
         <TextBox Grid.Column="2" Grid.Row="6" x:Name="mesto"
                  HorizontalAlignment="Center"  IsReadOnly="True"
@@ -120,17 +128,17 @@
 
         </TextBox>
         <ScrollViewer HorizontalScrollBarVisibility="Hidden" VerticalScrollBarVisibility="Auto" Grid.Row="3" Grid.Column="3" Grid.ColumnSpan="2" Grid.RowSpan="5">
-        <ListView  x:Name="Ponude">
-            <ListView.View>
-                <GridView>
+            <ListView  x:Name="Ponude">
+                <ListView.View>
+                    <GridView>
 
-                    <GridViewColumn Header="Naziv" Width="120" DisplayMemberBinding="{Binding Naziv}" />
-                    <GridViewColumn Header="Opis" Width="120" DisplayMemberBinding="{Binding Opis}" />
-                    <GridViewColumn Header="Budžet" Width="120" DisplayMemberBinding="{Binding Budzet}" />
+                        <GridViewColumn Header="Naziv" Width="120" DisplayMemberBinding="{Binding Naziv}" />
+                        <GridViewColumn Header="Opis" Width="120" DisplayMemberBinding="{Binding Opis}" />
+                        <GridViewColumn Header="Budžet" Width="120" DisplayMemberBinding="{Binding Budzet}" />
 
-                </GridView>
-            </ListView.View>
-        </ListView>
+                    </GridView>
+                </ListView.View>
+            </ListView>
         </ScrollViewer>
 
     </Grid>

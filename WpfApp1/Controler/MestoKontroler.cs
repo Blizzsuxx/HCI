@@ -20,12 +20,38 @@ namespace WpfApp1.Controler
         }
         public List<Mesto> dobaviMesta()
         {
-             DataBase.ucitajMesta();
             this.SvaMesta = DataBase.mesta;
             return this.SvaMesta;
-
-
         }
 
+        internal void obrisi(long id)
+        {
+           
+            foreach (Mesto o in DataBase.mesta)
+            {
+                if (o.Id == id)
+                {
+                    o.izbrisan = true;
+                   
+                    return;
+                }
+            }
+        }
+
+        internal void AzurirajMesto(long id, string naziv, string ulica, string broj, int ljudi, int stolovi, int posvrdina)
+        {
+           foreach(Mesto m in DataBase.mesta)
+            {
+                if (m.Id == id)
+                {
+                    m.NazivMesta = naziv;
+                    m.Ulica = ulica;
+                    m.Broj = broj;
+                    m.MaxBrLjudi = ljudi;
+                    m.MaxBrStolova = stolovi;
+                    m.PovrsinaSale = posvrdina;
+                }
+            }
+        }
     }
 }

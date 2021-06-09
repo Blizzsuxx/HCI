@@ -12,7 +12,11 @@ namespace organizerEvents.model
 
         public double Plata { get; set; }
 
+
+        public bool izbrisan { get; set; }
+
         public long VodioProslava { get { return Proslave.Count; } }
+
 
 
         public List<long> ZahteviId { get; set; }
@@ -52,6 +56,7 @@ namespace organizerEvents.model
             this.Plata = plata;
             this.Zahtevi = zahtevi;
             this.Proslave = proslave;
+            this.izbrisan = false;
         }
     }
 }
