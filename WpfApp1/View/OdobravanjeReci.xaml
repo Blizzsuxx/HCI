@@ -8,7 +8,7 @@
         mc:Ignorable="d"
           d:DesignHeight="450" d:DesignWidth="800"
         Title="OdobravanjeReci" Height="450" Width="800"
-        
+          WindowStartupLocation="CenterScreen"      
         TextElement.Foreground="{DynamicResource MaterialDesignBody}"
         TextElement.FontWeight="Regular"
         TextElement.FontSize="13"
