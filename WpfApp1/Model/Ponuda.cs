@@ -24,7 +24,9 @@ namespace organizerEvents.model
 
         public Dictionary<String, double> Cenovnik { get; set; }
 
-        public Ponuda() { }
+        public static long SledeciId = 1;
+
+        public Ponuda() { this.Id = SledeciId++; }
         public Ponuda(String naziv, String opis, String tip,  Saradnik saradnik, ref Dictionary<String, double> cenovnik) {
 
             this.Naziv = naziv;

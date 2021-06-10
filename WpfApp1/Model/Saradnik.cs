@@ -14,8 +14,8 @@ namespace organizerEvents.model
         public String Opis { get; set; }
         public String Tip { get; set; }
         public bool izbrisan { get; set; }
-
-        public Saradnik() { }
+        public static long SledeciId = 1;
+        public Saradnik() { this.Id = SledeciId++; }
         public Saradnik(String naziv, String mesto, String opis, String tip)
         {
             this.Opis = opis;

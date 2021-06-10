@@ -119,7 +119,7 @@
                 </materialDesign:DataGridTextColumn>
                 <materialDesign:DataGridTextColumn
                     Width="100"
-                    Binding="{Binding Povrsina}"
+                    Binding="{Binding PovrsinaSale}"
                     Header="Povrsina"
                     ElementStyle="{StaticResource MaterialDesignDataGridTextColumnStyle}"
                     EditingElementStyle="{StaticResource MaterialDesignDataGridTextColumnEditingStyle}">

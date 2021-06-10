@@ -69,15 +69,7 @@
             Kind="Portrait"
              />
         </Button>
-        <Button Grid.Column="1" Grid.Row="2" Margin="5,10,75,5" HorizontalAlignment="Right"
-                Width="25px" Height="25px" Foreground="White"
-          Style="{StaticResource MaterialDesignFloatingActionMiniLightButton}"
-          ToolTip="Brisanje." Click="Button_Click_3">
-            <materialDesign:PackIcon
-            Kind="Delete"
-             />
-        </Button>
-        <Button Grid.Column="1" Grid.Row="2" Margin="5,10,110,5" HorizontalAlignment="Right"
+        <Button Grid.Column="1" Grid.Row="2" Margin="0,9.6,80.6,5.4" HorizontalAlignment="Right"
                 Width="25px" Height="25px" Foreground="White"
           Style="{StaticResource MaterialDesignFloatingActionMiniLightButton}"
           ToolTip="Undo." Click="Button_Click_4">

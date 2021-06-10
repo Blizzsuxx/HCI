@@ -23,9 +23,10 @@ namespace organizerEvents.model
 
         [JsonIgnore]
         public Dogovor Dogovor { get; set; }
-
+        public static long SledeciId = 1;
 
         public Sto(){
+            this.Id = SledeciId++;
             this.Gosti = new List<Gost>();
             this.GostiId = new List<long>();
            

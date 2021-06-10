@@ -751,6 +751,11 @@ namespace organizerEvents.Controler
             string organizatori = File.ReadAllText("Organizatori.json");
              DataBase.organizatori =
                 JsonSerializer.Deserialize<List<Organizator>>(organizatori);
+
+            foreach(var token in DataBase.organizatori)
+            {
+                Korisnik.SledeciId = Math.Max(Korisnik.SledeciId, token.Id);
+            }
         }
 
         public static void ucitajAdministratore()
@@ -758,6 +763,10 @@ namespace organizerEvents.Controler
             string administratori = File.ReadAllText("Administratori.json");
             DataBase.administratori =
                JsonSerializer.Deserialize<List<Administrator>>(administratori);
+            foreach (var token in DataBase.administratori)
+            {
+                Korisnik.SledeciId = Math.Max(Korisnik.SledeciId, token.Id);
+            }
         }
 
         public static void sacuvajAdministratore()
@@ -791,6 +800,10 @@ namespace organizerEvents.Controler
             string gosti = File.ReadAllText("Gosti.json");
             DataBase.gosti =
                JsonSerializer.Deserialize<List<Gost>>(gosti);
+            foreach (var token in DataBase.gosti)
+            {
+                Gost.SledeciId = Math.Max(Gost.SledeciId, token.Id);
+            }
         }
 
         public static void sacuvajGoste()
@@ -805,6 +818,10 @@ namespace organizerEvents.Controler
             string mesta = File.ReadAllText("Mesta.json");
             DataBase.mesta =
                JsonSerializer.Deserialize<List<Mesto>>(mesta);
+            foreach (var token in DataBase.mesta)
+            {
+                Mesto.SledeciId = Math.Max(Mesto.SledeciId, token.Id);
+            }
         }
 
         public static void sacuvajMesta()
@@ -820,6 +837,10 @@ namespace organizerEvents.Controler
             string narucioci = File.ReadAllText("Narucioci.json");
             DataBase.narucioci =
                JsonSerializer.Deserialize<List<Narucilac>>(narucioci);
+            foreach (var token in DataBase.narucioci)
+            {
+                Narucilac.SledeciId = Math.Max(Narucilac.SledeciId, token.Id);
+            }
         }
 
         public static void sacuvajNarucioce()
@@ -834,6 +855,10 @@ namespace organizerEvents.Controler
             string ponude = File.ReadAllText("Ponude.json");
             DataBase.ponude =
                JsonSerializer.Deserialize<List<Ponuda>>(ponude);
+            foreach (var token in DataBase.ponude)
+            {
+                Ponuda.SledeciId = Math.Max(Ponuda.SledeciId, token.Id);
+            }
         }
 
         public static void sacuvajPonude()
@@ -869,6 +894,10 @@ namespace organizerEvents.Controler
             string proslave = File.ReadAllText("Proslave.json");
             DataBase.proslave =
                JsonSerializer.Deserialize<List<Proslava>>(proslave);
+            foreach (var token in DataBase.proslave)
+            {
+                Proslava.SledeciId = Math.Max(Proslava.SledeciId, token.Id);
+            }
         }
 
         public static void sacuvajProslave()
@@ -884,6 +913,7 @@ namespace organizerEvents.Controler
             string recniciPojmova = File.ReadAllText("RecniciPojmova.json");
             DataBase.recniciPojmova =
                JsonSerializer.Deserialize<RecnikPojmova>(recniciPojmova);
+
         }
 
         public static void sacuvajRecnikePojmova()
@@ -899,6 +929,10 @@ namespace organizerEvents.Controler
             string saradnici = File.ReadAllText("Saradnici.json");
             DataBase.saradnici =
                JsonSerializer.Deserialize<List<Saradnik>>(saradnici);
+            foreach (var token in DataBase.saradnici)
+            {
+                Saradnik.SledeciId = Math.Max(Saradnik.SledeciId, token.Id);
+            }
         }
 
         public static void sacuvajSaradnike()
@@ -913,6 +947,10 @@ namespace organizerEvents.Controler
             string stolovi = File.ReadAllText("Stolovi.json");
             DataBase.stolovi =
                JsonSerializer.Deserialize<List<Sto>>(stolovi);
+            foreach (var token in DataBase.stolovi)
+            {
+                Sto.SledeciId = Math.Max(Sto.SledeciId, token.Id);
+            }
         }
 
         public static void sacuvajStolove()
@@ -927,6 +965,10 @@ namespace organizerEvents.Controler
             string toDos = File.ReadAllText("ToDos.json");
             DataBase.toDos =
                JsonSerializer.Deserialize<List<ToDo>>(toDos);
+            foreach (var token in DataBase.toDos)
+            {
+                ToDo.SledeciId = Math.Max(ToDo.SledeciId, token.Id);
+            }
         }
 
         public static void sacuvajToDos()
@@ -942,6 +984,10 @@ namespace organizerEvents.Controler
             string zahtevZaProslave = File.ReadAllText("ZahteviZaProslave.json");
             DataBase.zahtevZaProslave =
                JsonSerializer.Deserialize<List<ZahtevZaProslavu>>(zahtevZaProslave);
+            foreach (var token in DataBase.zahtevZaProslave)
+            {
+                ZahtevZaProslavu.SledeciId = Math.Max(ZahtevZaProslavu.SledeciId, token.Id);
+            }
         }
 
         public static void sacuvajZahteveZaProslavu()
