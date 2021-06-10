@@ -219,11 +219,13 @@
 
         <Button Grid.Column="2" Grid.Row="9"  x:Name="sacuvaj_organizatora" Click="Sacuvaj_Organizatora_Click"
                 Margin="25,10,0,5" 
-                HorizontalAlignment="Left"
+                HorizontalAlignment="Left" 
                 Foreground="White" Background="MediumPurple"
           Style="{StaticResource MaterialDesignRaisedLightButton}"
          ToolTip="Zavrsite unos organizatora i kreirajte ga."
-          Content="_Kreiraj" />
+          Content="_Kreiraj"  >
+          
+        </Button>
 
         <Button Grid.Column="1" Grid.Row="9" x:Name="odustani" Click="odustani_Click"
                 Margin="30,10,5,5"
@@ -232,6 +234,15 @@
             Style="{StaticResource MaterialDesignOutlinedButton}"
             ToolTip="Izbrisite trenutne promene."
             Content="Odustani" />
-
+        
     </Grid>
+    <Window.Resources>
+        <RoutedUICommand x:Key="MyCmd" Text="text"/>
+    </Window.Resources>
+    <Window.CommandBindings>
+        <CommandBinding Command="{StaticResource ResourceKey=MyCmd}" Executed="CommandBinding_Executed" />
+    </Window.CommandBindings>
+    <Window.InputBindings>
+        <KeyBinding Key="S" Modifiers="Ctrl" Command="{StaticResource MyCmd}"/>
+    </Window.InputBindings>
 </Window>

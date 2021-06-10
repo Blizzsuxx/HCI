@@ -35,16 +35,16 @@ namespace WpfApp1.View
         {
             if (DataBase.trenutniKorisnik is Organizator)
             {
-                ProzorZaDogadjaj pregledJedneProslave = new ProzorZaDogadjaj(proslava.Id);
                 DataBase.trenutnaProslava = proslava;
                 this.roditelj.Hide();
+                ProzorZaDogadjaj pregledJedneProslave = new ProzorZaDogadjaj(proslava.Id);
                 pregledJedneProslave.Closed += this.roditelj.showParentOnClose;
                 pregledJedneProslave.Show();
             } else
             {
-                ProzorZaDogadjajKorisnika prozorZaDogadjajKorisnika = new ProzorZaDogadjajKorisnika();
                 DataBase.trenutnaProslava = proslava;
                 this.roditelj.Hide();
+                ProzorZaDogadjajKorisnika prozorZaDogadjajKorisnika = new ProzorZaDogadjajKorisnika();
                 prozorZaDogadjajKorisnika.Closed += this.roditelj.showParentOnClose;
                 prozorZaDogadjajKorisnika.Show();
             }

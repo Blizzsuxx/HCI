@@ -18,21 +18,23 @@ namespace WpfApp1.Controler
         
         public bool dodajOrganizatora(String KorisnickoIme, String Lozinka, String BrTel, String Email, String Ime, String Prezime, double plata )
         {
-            DataBase.ucitajOrganizatore();
+            DataBase.dobaviKorisnikId();
+            //DataBase.ucitajOrganizatore();
             //DataBase.inicijalizujPodatke();
             SviOrganizatori = DataBase.organizatori;
             if (SviOrganizatori == null) { SviOrganizatori = new List<Organizator>(); }
-            long id = 0;
+          /*  long id = 0;
             foreach(Organizator org in SviOrganizatori) {
                 
                 if (org.Id>id)
                 { id = org.Id; }   
             }
-            ++id;
+            ++id;*/
             List<ZahtevZaProslavu> zahtevi = new List<ZahtevZaProslavu>();
             List<Proslava> proslave = new List<Proslava>();
             Organizator novOrganizator = new Organizator(Ime, Prezime, BrTel, Email, KorisnickoIme, Lozinka, plata, ref zahtevi, ref proslave);
-            novOrganizator.Id = id;
+            novOrganizator.Id = DataBase.dobaviKorisnikId();
+            novOrganizator.Id++;
             DataBase.organizatori.Add(novOrganizator);
             DataBase.sacuvajOrganizatore();
             return true;
@@ -42,7 +44,7 @@ namespace WpfApp1.Controler
         {
             //DataBase.inicijalizujPodatke();
             //DataBase.sacuvajPodatke();
-            DataBase.ucitajOrganizatore();
+            //DataBase.ucitajOrganizatore();
             return DataBase.organizatori;
             /*
             this.SviOrganizatori = new List<Organizator>();
@@ -53,7 +55,7 @@ namespace WpfApp1.Controler
 
         internal Organizator nabaviOrg(long id)
         {
-            DataBase.ucitajOrganizatore();
+            //DataBase.ucitajOrganizatore();
             SviOrganizatori = DataBase.organizatori;
             foreach(Organizator org in SviOrganizatori)
             {
@@ -92,7 +94,7 @@ namespace WpfApp1.Controler
 
         internal void obrisi(long id)
         {
-            DataBase.ucitajOrganizatore();
+            //DataBase.ucitajOrganizatore();
             foreach(Organizator o in DataBase.organizatori)
             {
                 if (o.Id == id)

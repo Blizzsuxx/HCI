@@ -1,4 +1,5 @@
 ﻿using organizerEvents.Controler;
+using organizerEvents.model;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -23,6 +24,14 @@ namespace WpfApp1.View
         public InfoDogadjaja()
         {
             InitializeComponent();
+            Proslava proslava = DataBase.trenutnaProslava;
+            Naziv.Text = proslava.Naslov;
+            Datum.Text = proslava.DatumVreme.ToString();
+            Gosti.Text = proslava.BrojGostiju.ToString();
+            Budzet.Text = proslava.Budzet.ToString();
+            Tip.Text = proslava.Tip;
+            Mesto.Text = proslava.Mesto.NazivMesta;
+            Organizator.Text = proslava.Organizator.KorisnickoIme;
         }
 
         private void Logout(object sender, RoutedEventArgs e)

@@ -124,4 +124,13 @@
           ToolTip="Yavr[ite unos stolova i sacuvajte ga"
           Content="Zavrsi unos" />
     </Grid>
+    <Window.Resources>
+        <RoutedUICommand x:Key="MyCmd" Text="text"/>
+    </Window.Resources>
+    <Window.CommandBindings>
+        <CommandBinding Command="{StaticResource ResourceKey=MyCmd}" Executed="CommandBinding_Executed" />
+    </Window.CommandBindings>
+    <Window.InputBindings>
+        <KeyBinding Key="S" Modifiers="Ctrl" Command="{StaticResource MyCmd}"/>
+    </Window.InputBindings>
 </Window>
