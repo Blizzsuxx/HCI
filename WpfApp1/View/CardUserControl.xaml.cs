@@ -34,13 +34,13 @@ namespace WpfApp1.View
         {
             if (DataBase.trenutniKorisnik is Organizator)
             {
-                ProzorZaDogadjaj pregledJedneProslave = new ProzorZaDogadjaj(proslava.Id);
                 DataBase.trenutnaProslava = proslava;
+                ProzorZaDogadjaj pregledJedneProslave = new ProzorZaDogadjaj(proslava.Id);
                 pregledJedneProslave.Show();
             } else
             {
-                ProzorZaDogadjajKorisnika prozorZaDogadjajKorisnika = new ProzorZaDogadjajKorisnika();
                 DataBase.trenutnaProslava = proslava;
+                ProzorZaDogadjajKorisnika prozorZaDogadjajKorisnika = new ProzorZaDogadjajKorisnika();
                 prozorZaDogadjajKorisnika.Show();
             }
         }

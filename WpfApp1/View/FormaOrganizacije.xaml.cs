@@ -2,6 +2,7 @@
 using organizerEvents.model;
 using System;
 using System.Collections.Generic;
+using System.Globalization;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -85,8 +86,8 @@ namespace WpfApp1.View
             }
             Double budzet = Double.Parse(Budzet); //TODO num
             int brojGostiju = int.Parse(BrojGostiju);
-            DateTime datum = DateTime.Parse(Datum);
-            DateTime vreme = DateTime.Parse(Vreme);
+            DateTime datum = DateTime.Parse(Datum, CultureInfo.CurrentUICulture, DateTimeStyles.None);
+            DateTime vreme = DateTime.Parse(Vreme, CultureInfo.CurrentUICulture, DateTimeStyles.None);
             DateTime dateTime = datum.AddTicks(vreme.Ticks);
 
             MessageBox.Show("Uspeh!");
