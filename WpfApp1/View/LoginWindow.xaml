@@ -24,7 +24,7 @@
             <ColumnDefinition Width="20"></ColumnDefinition>
         </Grid.ColumnDefinitions>
         <Grid.RowDefinitions>
-            <RowDefinition Height="10"></RowDefinition>
+            <RowDefinition Height="auto"></RowDefinition>
             <RowDefinition Height="auto"></RowDefinition>
             <RowDefinition Height="auto"></RowDefinition>
             <RowDefinition Height="auto"></RowDefinition>
@@ -61,7 +61,15 @@
             </TextBox.Text>
         </TextBox>
 
+        <Button Grid.Column="1" Grid.Row="0"  Width="25px" Height="25px" Background="White" Foreground="MediumPurple"
+          Style="{StaticResource MaterialDesignFloatingActionMiniLightButton}"
+          ToolTip="Ponude" Click="Button_Click" HorizontalAlignment="Right" VerticalAlignment="Center" RenderTransformOrigin="0.504,0.5">
+            <materialDesign:PackIcon
+            Kind="Help"
+            
+          />
 
+        </Button>
 
         <PasswordBox
                 Grid.Row="3" Grid.Column="1"

@@ -114,5 +114,13 @@ namespace WpfApp1
         {
             DataBase.sacuvajPodatke();
         }
+
+        private void Button_Click(object sender, RoutedEventArgs e)
+        {
+            Demo demo = new Demo();
+            demo.Closed += new EventHandler(this.Otvori_ovaj_prozor);
+            demo.Show();
+            this.Hide();
+        }
     }
 }
