@@ -1,7 +1,9 @@
-﻿using organizerEvents.Controler;
+﻿using Microsoft.Win32;
+using organizerEvents.Controler;
 using organizerEvents.model;
 using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -139,6 +141,59 @@ namespace WpfApp1.View
             this.CanvasMain.ReleaseStylusCapture();
         }
 
+
+
+
+
+
+
+
+
+
+
+
+        private void Button_Click(object sender, RoutedEventArgs e)
+        {
+            //Create file dialog and configure to open csv files only
+            OpenFileDialog csvFielDialog = new OpenFileDialog();
+            csvFielDialog.Filter = "CSF files(*.csv)|*.csv";
+
+            //Show the dialog to the user
+            bool? result = csvFielDialog.ShowDialog();
+
+            //If the user selected something perform the actions with the file
+            List<Gost> gosti = new List<Gost>();
+            List<long> gostiIds = new List<long>();
+            if (result.HasValue && result.Value)
+            {
+                var fajl = csvFielDialog.FileName;
+                foreach (string line in File.ReadLines(@fajl))
+                {
+                    string[] vs = line.Split(',');
+                    Gost g = new Gost { Ime = vs[0], Prezime = vs[1], PosebanZahtev = vs[2], BrTelefona = vs[3] };
+                    gosti.Add(g);
+                    gostiIds.Add(g.Id);
+
+                    DataBase.gosti.Add(g);
+
+                }
+            }
+            DataBase.trenutnaProslava.Gosti = gosti;
+            DataBase.trenutnaProslava.GodstiId = gostiIds;
+            DataBase.trenutnaProslava.BrojGostiju = gosti.Count;
+
+
+        }
+
+
+
+
+
+
+
+
+
+
         private long udaljenost(UIElement el)
         {
             long id = 0; // id stola najblizeg
@@ -186,6 +241,11 @@ namespace WpfApp1.View
                     window.Close();
                 }
             }
+        }
+
+        private void Button_Click_1(object sender, RoutedEventArgs e)
+        {
+
         }
     }
 }

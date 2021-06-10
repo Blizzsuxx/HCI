@@ -71,6 +71,13 @@
                 <RowDefinition Height="5"></RowDefinition>
             </Grid.RowDefinitions>
 
+            <!-- floating action button with progress -->
+            <TextBlock
+  Margin="0,0,8,0"
+  VerticalAlignment="Center"
+  Text="Click Me:" />
+
+
             <Button Grid.Row="1" Grid.Column="1"
                 Margin="0,10,5,0"
                 HorizontalAlignment="Center"
@@ -106,6 +113,47 @@
                 VerticalScrollBarVisibility="Auto"
                 IsReadOnly="True"
              />
+            <Button Grid.Column="2" Grid.Row="4" HorizontalAlignment="Left"
+  Style="{StaticResource MaterialDesignFloatingActionLightButton}"
+  Margin="502.2,64.2,-553.4,4.6"
+  Command="{Binding SaveCommand}"
+  materialDesign:ButtonProgressAssist.IsIndicatorVisible="{Binding IsSaving}"
+  materialDesign:ButtonProgressAssist.Value="{Binding SaveProgress}" Click="Button_Click">
+                <!-- simple example of toggling/animating pack icon with a data trigger-->
+                <materialDesign:PackIcon
+    Height="24"
+    Width="24">
+                    <materialDesign:PackIcon.Style>
+                        <Style
+        TargetType="{x:Type materialDesign:PackIcon}"
+        >
+                            <Setter
+          Property="Kind"
+          Value="CloudSync" />
+                            <Style.Triggers>
+                                <DataTrigger
+            Binding="{Binding IsSaveComplete}"
+            Value="True">
+                                    <DataTrigger.EnterActions>
+                                        <BeginStoryboard>
+                                            <Storyboard>
+                                                <DoubleAnimation
+                    Storyboard.TargetProperty="Opacity"
+                    From="0"
+                    To="1"
+                    Duration="0:0:0.8" />
+                                            </Storyboard>
+                                        </BeginStoryboard>
+                                    </DataTrigger.EnterActions>
+                                    <Setter
+              Property="Kind"
+              Value="Check" />
+                                </DataTrigger>
+                            </Style.Triggers>
+                        </Style>
+                    </materialDesign:PackIcon.Style>
+                </materialDesign:PackIcon>
+            </Button>
         </Grid>
     </Grid>
 </Window>

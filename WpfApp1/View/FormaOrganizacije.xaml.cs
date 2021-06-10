@@ -1,8 +1,10 @@
-﻿using organizerEvents.Controler;
+﻿using Microsoft.Win32;
+using organizerEvents.Controler;
 using organizerEvents.model;
 using System;
 using System.Collections.Generic;
 using System.Globalization;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -102,6 +104,7 @@ namespace WpfApp1.View
             DateTime dateTime = datum.AddTicks(vreme.Ticks);
 
             MessageBox.Show("Uspeh!");
+            
             ZahtevZaProslavu proslava = new ZahtevZaProslavu {  Naslov= Naziv, Tip = Tip, Mesto = (Mesto)Combo.SelectedItem, DatumVreme = dateTime, Budzet = budzet, BrojGostiju = brojGostiju, MestoId = ((Mesto)Combo.SelectedItem).Id, Narucilac = (Narucilac)DataBase.trenutniKorisnik, NarucilacId = DataBase.trenutniKorisnik.Id, Opis = Opis, OrganizatorId = org.Id, Organizator = org };
             DataBase.zahtevZaProslave.Add(proslava);
             org.Zahtevi.Add(proslava);
