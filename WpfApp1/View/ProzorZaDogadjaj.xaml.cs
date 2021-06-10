@@ -52,13 +52,23 @@ namespace WpfApp1.View
         private void Button_Click_1(object sender, RoutedEventArgs e)
         {
             TabelaSaradnika tabelaSaradnika = new TabelaSaradnika();
+            tabelaSaradnika.Closed += showParentOnClose;
+            this.Hide();
             tabelaSaradnika.Show();
         }
 
         private void Button_Click_2(object sender, RoutedEventArgs e)
         {
             PregledStolova pregledStolova = new PregledStolova();
+            pregledStolova.Closed+= showParentOnClose;
+            this.Hide();
             pregledStolova.Show();
+        }
+
+        public void showParentOnClose(object sender, EventArgs e)
+        {
+
+            this.Show();
         }
     }
 }

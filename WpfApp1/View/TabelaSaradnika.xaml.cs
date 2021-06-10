@@ -35,10 +35,16 @@ namespace WpfApp1.View
             this.Saradnici.ItemsSource = this.kontroler.ucitaj();
         }
 
+        public void showParentOnClose(object sender, EventArgs e)
+        {
 
+            this.Show();
+        }
         private void kreirajNovogSaradnika(object sender, RoutedEventArgs e)
         {
             UnosNovogSaradnika noviSaradnik = new UnosNovogSaradnika();
+            noviSaradnik.Closed += showParentOnClose;
+            this.Hide();
             noviSaradnik.Show();
         }
 
@@ -47,16 +53,16 @@ namespace WpfApp1.View
             selektovan =(Saradnik) this.Saradnici.SelectedItem;
             DataGridRow row = sender as DataGridRow;
             DetaljanPregledSaradnika detaljanPregledSaradnik = new DetaljanPregledSaradnika(this.kontroler.ucitaj()[row.GetIndex()]);
+            detaljanPregledSaradnik.Closed += showParentOnClose;
+            this.Hide();
             detaljanPregledSaradnik.Show();
         }
         
         //undo
         private void Button_Click(object sender, RoutedEventArgs e)
         {
-            Console.WriteLine("aaaa");
             if (deleteUndo.Count == 0)
             {
-                Console.WriteLine("agaa");
                 return;
             }
             var org = deleteUndo.Pop();
@@ -66,7 +72,7 @@ namespace WpfApp1.View
                 Console.WriteLine(token.Id);
                 if (token.Id == org.Key.Id)
                 {
-                    Console.WriteLine("aaaa");
+                    
                     token.izbrisan = false; //ili false
 
 
@@ -107,8 +113,7 @@ namespace WpfApp1.View
                 novi = DataBase.dobaviPostojeceSaradnike();
                 this.Saradnici.ItemsSource = novi;
 
-                //kontroler.obrisi(this.selektovan.Id);
-                //todo ponovo obavesti
+                
             }
         }
     }
