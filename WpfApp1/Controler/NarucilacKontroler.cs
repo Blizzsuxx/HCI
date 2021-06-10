@@ -33,7 +33,7 @@ namespace WpfApp1.Controler
 
         internal Narucilac pronadji(long v)
         {
-            DataBase.ucitajPodatke();
+            //DataBase.ucitajPodatke();
             foreach (Narucilac n in DataBase.narucioci) {
                 if (n.Id==v) { return n; } }
             return null;
