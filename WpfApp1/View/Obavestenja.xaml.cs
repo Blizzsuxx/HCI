@@ -52,5 +52,7 @@ namespace WpfApp1.View
                 }
             }
         }
+
+        
     }
 }

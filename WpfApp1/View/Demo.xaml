@@ -1,0 +1,55 @@
+﻿<Window x:Class="WpfApp1.View.Demo"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:WpfApp1"
+        mc:Ignorable="d"
+        WindowStartupLocation="CenterScreen"
+       
+        
+        xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes" xmlns:local11="clr-namespace:WpfApp1.Controler"
+        TextElement.Foreground="{DynamicResource MaterialDesignBody}"
+        TextElement.FontWeight="Regular"
+        TextElement.FontSize="13"
+        TextOptions.TextFormattingMode="Ideal"
+        TextOptions.TextRenderingMode="Auto"
+        Background="{DynamicResource MaterialDesignPaper}"
+        FontFamily="{DynamicResource MaterialDesignFont}"
+        Title="Demo"  MaxHeight="430" MaxWidth="750" Height="430" Width="750">
+    <Grid>
+        <Grid.ColumnDefinitions>
+        <ColumnDefinition Width="20"></ColumnDefinition>
+        <ColumnDefinition Width="*"></ColumnDefinition>
+        <ColumnDefinition Width="20"></ColumnDefinition>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="20"></RowDefinition>
+            <RowDefinition Height="auto"></RowDefinition>
+           
+            <RowDefinition Height="*"></RowDefinition>
+            <RowDefinition Height="20"></RowDefinition>
+        </Grid.RowDefinitions>
+
+        <Rectangle Grid.Row="0" Grid.Column="0" Fill="MediumPurple" />
+        <Rectangle Grid.Row="0" Grid.Column="1" Fill="MediumPurple" />
+        <Rectangle Grid.Row="0" Grid.Column="2" Fill="MediumPurple" />
+
+        <Rectangle Grid.Row="5" Grid.Column="0" Fill="MediumPurple" />
+        <Rectangle Grid.Row="5" Grid.Column="1" Fill="MediumPurple" />
+        <Rectangle Grid.Row="5" Grid.Column="2" Fill="MediumPurple" />
+        <ScrollViewer Grid.Row="1" Grid.Column="1" VerticalScrollBarVisibility="Auto">
+            <StackPanel  x:Name="Tijelo">
+                <MediaElement Name="VideoControl" 
+                          
+                     Source="kreirajSaradnike.mp4" >
+                </MediaElement>
+
+                
+
+    
+            </StackPanel>
+        </ScrollViewer>
+        
+    </Grid>
+</Window>
