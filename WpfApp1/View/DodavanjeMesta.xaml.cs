@@ -51,5 +51,10 @@ namespace WpfApp1.View
             
 
         }
+
+        private void CommandBinding_Executed(object sender, ExecutedRoutedEventArgs e)
+        {
+            dodaj_Click(sender, e);
+        }
     }
 }
