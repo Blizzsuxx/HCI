@@ -48,10 +48,18 @@ namespace WpfApp1.View
             Proslava proslava = new Proslava(this.zahtev);
             this.zahtev.Odobren = 1;
             proslava.Organizator = (DataBase.trenutniKorisnik as Organizator);
+            proslava.OrganizatorId = (DataBase.trenutniKorisnik as Organizator).Id;
             proslava.Id = DataBase.proslave[DataBase.proslave.Count - 1].Id + 1;
+            this.zahtev.Narucilac.Proslave.Add(proslava);
+            this.zahtev.Narucilac.ProslaveId.Add(proslava.Id);
+            (DataBase.trenutniKorisnik as Organizator).Proslave.Add(proslava);
+            (DataBase.trenutniKorisnik as Organizator).ProslaveId.Add(proslava.Id);
             DataBase.proslave.Add(proslava);
             DataBase.sacuvajProslave();
+            DataBase.sacuvajNarucioce();
+            DataBase.sacuvajOrganizatore();
             DataBase.sacuvajZahteveZaProslavu();
+            
             this.Close();
         }
 

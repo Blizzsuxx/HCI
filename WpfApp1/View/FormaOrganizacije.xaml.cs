@@ -102,12 +102,13 @@ namespace WpfApp1.View
             DateTime dateTime = datum.AddTicks(vreme.Ticks);
 
             MessageBox.Show("Uspeh!");
-            Proslava proslava = new Proslava { Naslov = Naziv, Tip = Tip, Mesto = (Mesto)Combo.SelectedItem, DatumVreme = dateTime, Budzet = budzet, BrojGostiju = brojGostiju, MestoId = ((Mesto)Combo.SelectedItem).Id, Narucilac = (Narucilac)DataBase.trenutniKorisnik, NarucilacId = DataBase.trenutniKorisnik.Id, Opis = Opis, OrganizatorId = org.Id, Organizator = org };
-            DataBase.proslave.Add(proslava);
-            org.Proslave.Add(proslava);
-            org.ProslaveId.Add(proslava.Id);
-            (DataBase.trenutniKorisnik as Narucilac).Proslave.Add(proslava);
-            (DataBase.trenutniKorisnik as Narucilac).ProslaveId.Add(proslava.Id);
+            ZahtevZaProslavu proslava = new ZahtevZaProslavu {  Naslov= Naziv, Tip = Tip, Mesto = (Mesto)Combo.SelectedItem, DatumVreme = dateTime, Budzet = budzet, BrojGostiju = brojGostiju, MestoId = ((Mesto)Combo.SelectedItem).Id, Narucilac = (Narucilac)DataBase.trenutniKorisnik, NarucilacId = DataBase.trenutniKorisnik.Id, Opis = Opis, OrganizatorId = org.Id, Organizator = org };
+            DataBase.zahtevZaProslave.Add(proslava);
+            org.Zahtevi.Add(proslava);
+            org.ZahteviId.Add(proslava.Id);
+            
+            (DataBase.trenutniKorisnik as Narucilac).Zahtevi.Add(proslava);
+            (DataBase.trenutniKorisnik as Narucilac).ZahteviId.Add(proslava.Id);
         }
 
         private void odustani_Click(object sender, RoutedEventArgs e)

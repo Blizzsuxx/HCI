@@ -67,8 +67,15 @@ namespace WpfApp1.View
 
         public void showParentOnClose(object sender, EventArgs e)
         {
+            try
+            {
 
-            this.Show();
+                this.Show();
+            }
+            catch
+            {
+
+            }
         }
 
         private void Logout(object sender, RoutedEventArgs e)
