@@ -30,14 +30,17 @@ namespace WpfApp1.View
             int counter = 0;
             foreach(var zahtev in zahtevZaProslavu)
             {
-                ZahtevUserControl zahtevUserControl = new ZahtevUserControl(zahtev);
-                Telo.Children.Add(zahtevUserControl);
-                Grid.SetColumn(zahtevUserControl, 0);
-                Grid.SetRow(zahtevUserControl, counter);
-                counter++;
-                RowDefinition rowDefinition = new RowDefinition();
-                rowDefinition.MinHeight = 50;
-                Telo.RowDefinitions.Add(rowDefinition);
+                if (zahtev.Odobren == 0)
+                {
+                    ZahtevUserControl zahtevUserControl = new ZahtevUserControl(zahtev);
+                    Telo.Children.Add(zahtevUserControl);
+                    Grid.SetColumn(zahtevUserControl, 0);
+                    Grid.SetRow(zahtevUserControl, counter);
+                    counter++;
+                    RowDefinition rowDefinition = new RowDefinition();
+                    rowDefinition.MinHeight = 50;
+                    Telo.RowDefinitions.Add(rowDefinition);
+                }
             }
         }
         private void Logout(object sender, RoutedEventArgs e)

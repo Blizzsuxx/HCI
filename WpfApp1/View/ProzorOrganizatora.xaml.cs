@@ -36,6 +36,7 @@ namespace WpfApp1.View
 
             foreach(var token in (DataBase.trenutniKorisnik as Organizator).Proslave)
             {
+                Console.WriteLine(token.Naslov);
                 Expander expander = new Expander();
                 expander.Header = token.Naslov;
                 expander.Content = new ToDoUserControl(token.Zadaci, token);

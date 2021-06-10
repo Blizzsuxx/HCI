@@ -30,6 +30,20 @@ namespace WpfApp1.View
 
         }
 
+        public void showParentOnClose(object sender, EventArgs e)
+        {
+
+            try
+            {
+
+                this.Show();
+            }
+            catch
+            {
+
+            }
+        }
+
 
         private void zakazi_proslavu(object sender, MouseButtonEventArgs args)
         {
@@ -37,6 +51,8 @@ namespace WpfApp1.View
             int row = Grid.GetRow(element);
             var el = Lista[row];
             FormaOrganizacije formaOrganizacije = new FormaOrganizacije(el);
+            formaOrganizacije.Closed += showParentOnClose;
+            this.Hide();
             formaOrganizacije.Show();
         }
 
@@ -45,6 +61,8 @@ namespace WpfApp1.View
             UIElement element = (UIElement)Tabela.InputHitTest(args.GetPosition(Tabela));
             int row = Grid.GetRow(element);
             PregledJednogOrganizatora pregledJednogOrganizatora = new PregledJednogOrganizatora(Lista[row]);
+            pregledJednogOrganizatora.Closed += showParentOnClose;
+            this.Hide();
             pregledJednogOrganizatora.Show();
         }
 

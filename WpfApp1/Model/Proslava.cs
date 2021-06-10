@@ -76,6 +76,10 @@ namespace organizerEvents.model
             this.Mesto = zahtev.Mesto;
             this.Opis = zahtev.Opis;
             this.Tip = zahtev.Tip;
+            this.Narucilac = zahtev.Narucilac;
+            this.NarucilacId = zahtev.NarucilacId;
+            
+            
 
 
 

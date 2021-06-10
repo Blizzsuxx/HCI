@@ -47,7 +47,7 @@ namespace WpfApp1.View
             Combo.ItemsSource = DogovoriZaProslavu;
             Combo.DisplayMemberPath = "Ime";
             Combo.SelectedValuePath = "Id";
-
+            if(DogovoriZaProslavu.Count!=0)
             Combo.SelectedValue = DogovoriZaProslavu[0].Id;
 
 
