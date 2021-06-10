@@ -38,7 +38,15 @@ namespace WpfApp1.View
         public void showParentOnClose(object sender, EventArgs e)
         {
 
-            this.Show();
+            try
+            {
+
+                this.Show();
+            }
+            catch
+            {
+
+            }
         }
         private void dobaviPonude()
         {
@@ -59,6 +67,19 @@ namespace WpfApp1.View
             kreiranjePonude.Closed  += showParentOnClose;
             this.Hide();
             kreiranjePonude.Show();
+        }
+
+        private void Logout(object sender, RoutedEventArgs e)
+        {
+            this.Close();
+            DataBase.LogoutProzor.Show();
+            foreach (Window window in Application.Current.Windows)
+            {
+                if (!window.Equals((Window)DataBase.LogoutProzor))
+                {
+                    window.Close();
+                }
+            }
         }
 
         private void Button_Click(object sender, RoutedEventArgs e)

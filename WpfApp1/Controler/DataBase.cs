@@ -7,12 +7,13 @@ using System.Text.Json;
 using System.Text;
 using System.Threading.Tasks;
 using System.Xml;
+using WpfApp1;
 
 namespace organizerEvents.Controler
 {
     public class DataBase
     {
-
+        public static MainWindow LogoutProzor;
         public static List<Organizator> organizatori = new List<Organizator>();
         public static List<Administrator> administratori = new List<Administrator>();
         public static List<Dogovor> dogovori = new List<Dogovor>();

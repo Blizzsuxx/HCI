@@ -33,5 +33,20 @@ namespace WpfApp1.View
             Mesto.Text = proslava.Mesto.NazivMesta;
             Organizator.Text = proslava.Organizator.KorisnickoIme;
         }
+
+        private void Logout(object sender, RoutedEventArgs e)
+        {
+            this.Close();
+            DataBase.LogoutProzor.Show();
+            foreach (Window window in Application.Current.Windows)
+            {
+                if (!window.Equals((Window)DataBase.LogoutProzor))
+                {
+                    window.Close();
+                }
+            }
+        }
     }
+
+
 }
