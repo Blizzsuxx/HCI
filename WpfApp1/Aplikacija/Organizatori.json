@@ -1,0 +1,26 @@
+[
+  {
+    "Plata": 12342.120000000001,
+    "izbrisan": false,
+    "VodioProslava": 1,
+    "ZahteviId": [
+      1,
+      2,
+      3
+    ],
+    "ProslaveId": [
+      11
+    ],
+    "DogovoriId": [],
+    "SaradniciID": [
+      1
+    ],
+    "Ime": "Suki",
+    "Id": 2,
+    "Prezime": "Suljic",
+    "BrojTelefona": "12315124312",
+    "Email": "a@gmail.com",
+    "KorisnickoIme": "sule",
+    "Sifra": "123"
+  }
+]

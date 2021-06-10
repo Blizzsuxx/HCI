@@ -1,0 +1,19 @@
+[
+  {
+    "ZahteviId": [
+      1,
+      2,
+      3
+    ],
+    "ProslaveId": [
+      11
+    ],
+    "Ime": "Nrucilac",
+    "Id": 3,
+    "Prezime": "Naruciocic",
+    "BrojTelefona": "123124124112",
+    "Email": "lole@gmail.com",
+    "KorisnickoIme": "momcina",
+    "Sifra": "123"
+  }
+]

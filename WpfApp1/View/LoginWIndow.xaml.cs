@@ -29,8 +29,8 @@ namespace WpfApp1
         {
             InitializeComponent();
             //DataBase.ucitajPodatke();
-            //DataBase.inicijalizujPodatke();
-            //DataBase.sacuvajPodatke();
+            DataBase.inicijalizujPodatke();
+            DataBase.sacuvajPodatke();
             DataBase.ucitajPodatke();
         }
 

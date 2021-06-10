@@ -1,0 +1,12 @@
+{
+  "Id": 2,
+  "Pojmovi": {
+    "a": "b",
+    "REC": "definicija reci je",
+    "c": "b",
+    "d": "definicija reci je",
+    "e": "b",
+    "f": "definicija reci je"
+  },
+  "ZahteviZaRecnik": {}
+}

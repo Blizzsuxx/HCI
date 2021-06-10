@@ -1,0 +1,41 @@
+[
+  {
+    "Id": 1,
+    "Naslov": "Ovo je naslov",
+    "DatumVreme": "2021-06-10T06:39:08.6825106+02:00",
+    "BrojGostiju": 15,
+    "Budzet": 1222.2000000000001,
+    "Tip": "Sahrana",
+    "MestoId": 1,
+    "Opis": "Zahtjev",
+    "OrganizatorId": 2,
+    "NarucilacId": 3,
+    "Odobren": 0
+  },
+  {
+    "Id": 2,
+    "Naslov": "Ovo je naslov1231231",
+    "DatumVreme": "2021-06-10T06:39:08.6825106+02:00",
+    "BrojGostiju": 11,
+    "Budzet": 1222.2000000000001,
+    "Tip": "Svadba",
+    "MestoId": 1,
+    "Opis": "Zahtjev",
+    "OrganizatorId": 2,
+    "NarucilacId": 3,
+    "Odobren": 0
+  },
+  {
+    "Id": 3,
+    "Naslov": "Ovo je asd",
+    "DatumVreme": "2021-06-10T06:39:08.6825106+02:00",
+    "BrojGostiju": 152,
+    "Budzet": 12312.120000000001,
+    "Tip": "Rodjendan",
+    "MestoId": 1,
+    "Opis": "Zahtjev",
+    "OrganizatorId": 2,
+    "NarucilacId": 3,
+    "Odobren": 0
+  }
+]

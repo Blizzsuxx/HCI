@@ -1,0 +1,58 @@
+[
+  {
+    "Id": 1,
+    "Vreme": "06:39:08",
+    "Datum": "10.06.2021",
+    "Naslov": "Ide gas",
+    "DatumVreme": "2021-06-10T06:39:08.679507+02:00",
+    "BrojGostiju": 10,
+    "BrojStolova": 21,
+    "Budzet": 100000,
+    "Tip": "sahrana",
+    "MestoId": 1,
+    "Opis": "I\u0027m on a highway to hell",
+    "OrganizatorId": 2,
+    "NarucilacId": 3,
+    "PorukeId": [
+      1
+    ],
+    "ZadaciId": [],
+    "DogovoriId": [],
+    "GodstiId": [],
+    "Raspored": false
+  },
+  {
+    "Id": 11,
+    "Vreme": "06:39:08",
+    "Datum": "10.06.2021",
+    "Naslov": "Naslov Proslave",
+    "DatumVreme": "2021-06-10T06:39:08.6825106+02:00",
+    "BrojGostiju": 3,
+    "BrojStolova": 21,
+    "Budzet": 123123123,
+    "Tip": "UwU",
+    "MestoId": 1,
+    "Opis": "opis proslave",
+    "OrganizatorId": 2,
+    "NarucilacId": 3,
+    "PorukeId": [
+      2,
+      3,
+      4,
+      5,
+      6
+    ],
+    "ZadaciId": [
+      11
+    ],
+    "DogovoriId": [
+      1
+    ],
+    "GodstiId": [
+      1,
+      2,
+      3
+    ],
+    "Raspored": true
+  }
+]

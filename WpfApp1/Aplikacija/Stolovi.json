@@ -1,0 +1,22 @@
+[
+  {
+    "Id": 1,
+    "BrojStola": 10,
+    "TipStola": "carski",
+    "Opis": "prvi sto",
+    "BrojLjudi": 100,
+    "GostiId": [
+      1
+    ],
+    "DogovorId": 1
+  },
+  {
+    "Id": 2,
+    "BrojStola": 10,
+    "TipStola": "trpezarijski",
+    "Opis": "drugi sto",
+    "BrojLjudi": 100,
+    "GostiId": [],
+    "DogovorId": 1
+  }
+]

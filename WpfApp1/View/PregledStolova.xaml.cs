@@ -121,6 +121,8 @@ namespace WpfApp1.View
                 Gost g = null;
                 if (el.Attribute("gost").Value != "nema")
                 {
+                    Console.WriteLine("Aaaaaaaaaaaaaaaa");
+                    Console.WriteLine(DataBase.trenutnaProslava.Gosti.Count);
                     foreach (Gost gostic in DataBase.trenutnaProslava.Gosti)
                         if (gostic.Id.ToString() == el.Attribute("gost").Value)
                         {
@@ -202,7 +204,7 @@ namespace WpfApp1.View
 
         private void sacuvajUXml()
         {
-            XElement podaci = XElement.Load("..\\..\\resources\\stanja.xml");
+            XElement podaci = XElement.Load("stanja.xml");
 
             var stanja = podaci.Descendants("stanje").FirstOrDefault(
                 x => x.Attribute("id").Value == DataBase.trenutnaProslava.Id.ToString());
@@ -222,7 +224,7 @@ namespace WpfApp1.View
                 new XAttribute("gost", tag.Gost == null ? "nema" : tag.Gost.Id.ToString())), new XAttribute("id", DataBase.trenutnaProslava.Id.ToString()));
             podaci.Add(stanjeEl);
 
-            using (StreamWriter output = new StreamWriter("..\\..\\resources\\stanja.xml"))
+            using (StreamWriter output = new StreamWriter("stanja.xml"))
             {
                 output.WriteLine(podaci.ToString());
             }
