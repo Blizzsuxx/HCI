@@ -14,7 +14,9 @@ namespace organizerEvents.model
         public String PosebanZahtev{ get; set; }
         public String BrTelefona { get; set; }
 
-        public Gost() { }
+        public static long SledeciId = 1;
+
+        public Gost() { this.Id = SledeciId++; }
         public Gost(String ime, String prezime, String pZahtev, String brTelefona) {
             this.Ime = ime;
             this.Prezime = prezime;

@@ -16,7 +16,9 @@ namespace organizerEvents.model
         public String KorisnickoIme { get; set; }
         public String Sifra { get; set; }
 
-        public Korisnik() { }
+        public static long SledeciId = 1;
+
+        public Korisnik() { this.Id = SledeciId++; }
         public Korisnik(String ime, String prezime, String brojTelefona, String email, String korisnickoIme, String sifra) 
         {
             this.Ime = ime;

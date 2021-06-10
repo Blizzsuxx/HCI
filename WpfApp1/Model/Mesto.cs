@@ -18,6 +18,8 @@ namespace organizerEvents.model
         public int MaxBrStolova { get; set; }
         public List<long> StoloviId { get; set; }
 
+        public static long SledeciID = 1;
+
         public bool izbrisan { get; set; }
         [JsonIgnore]
         public List<Sto> Stolovi { get; set; }
