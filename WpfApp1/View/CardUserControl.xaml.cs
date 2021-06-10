@@ -37,12 +37,14 @@ namespace WpfApp1.View
             {
                 DataBase.trenutnaProslava = proslava;
                 this.roditelj.Hide();
+                ProzorZaDogadjaj pregledJedneProslave = new ProzorZaDogadjaj(proslava.Id);
                 pregledJedneProslave.Closed += this.roditelj.showParentOnClose;
                 pregledJedneProslave.Show();
             } else
             {
                 DataBase.trenutnaProslava = proslava;
                 this.roditelj.Hide();
+                ProzorZaDogadjajKorisnika prozorZaDogadjajKorisnika = new ProzorZaDogadjajKorisnika();
                 prozorZaDogadjajKorisnika.Closed += this.roditelj.showParentOnClose;
                 prozorZaDogadjajKorisnika.Show();
             }
