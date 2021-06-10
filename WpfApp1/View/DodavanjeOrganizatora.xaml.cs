@@ -106,5 +106,10 @@ namespace WpfApp1.View
             this.Prezime.Text="";
             this.Plata.Text = "";
         }
+
+        private void CommandBinding_Executed(object sender, ExecutedRoutedEventArgs e)
+        {
+            Sacuvaj_Organizatora_Click(sender,e);
+        }
     }
 }

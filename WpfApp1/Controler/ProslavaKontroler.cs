@@ -15,7 +15,7 @@ namespace WpfApp1.Controler
 
         internal List<Proslava> ucitaj()
         {
-            DataBase.ucitajPodatke();
+            //DataBase.ucitajPodatke();
             this.sveProslave = DataBase.proslave;
             /* this.sveProslave = new List<Proslava>();
             Proslava p1 = new Proslava(DateTime.Now, 10000, "rodjendan");
@@ -33,7 +33,7 @@ namespace WpfApp1.Controler
         internal Proslava dobaviProslavu(long id)
         {
             // DataBase.inicijalizujPodatke();
-            DataBase.ucitajPodatke();
+            //DataBase.ucitajPodatke();
             sveProslave = DataBase.proslave;
             foreach (Proslava p in sveProslave) {
                 Console.WriteLine(p.Id);
