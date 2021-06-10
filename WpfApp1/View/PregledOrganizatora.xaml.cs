@@ -56,9 +56,18 @@ namespace WpfApp1
         }
         private void Otvori_ovaj_prozor(object sender, System.EventArgs e)
         {
-            this.organizatori.ItemsSource = null;
-            this.organizatori.ItemsSource = DataBase.dobaviPostojeceOrganizatore();
-            this.Show();
+            try
+            {
+
+                this.organizatori.ItemsSource = null;
+                this.organizatori.ItemsSource = DataBase.dobaviPostojeceOrganizatore();
+                this.Show();
+            }
+            catch
+            {
+
+            }
+           
         }
 
         private void Button_Click(object sender, RoutedEventArgs e)

@@ -14,6 +14,7 @@ using System.Windows.Shapes;
 using WpfApp1.Controler;
 using organizerEvents.model;
 using MaterialDesignThemes.Wpf;
+using organizerEvents.Controler;
 
 namespace WpfApp1.View
 {
@@ -41,6 +42,19 @@ namespace WpfApp1.View
             {
                 Lozinka.BorderBrush = Brushes.Black;
                 Lozinka.Foreground = Brushes.Black;
+            }
+        }
+
+        private void Logout(object sender, RoutedEventArgs e)
+        {
+            this.Close();
+            DataBase.LogoutProzor.Show();
+            foreach (Window window in Application.Current.Windows)
+            {
+                if (!window.Equals((Window)DataBase.LogoutProzor))
+                {
+                    window.Close();
+                }
             }
         }
         private void Sacuvaj_Organizatora_Click(object sender, RoutedEventArgs e)

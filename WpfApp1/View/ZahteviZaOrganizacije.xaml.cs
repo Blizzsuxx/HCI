@@ -1,4 +1,5 @@
-﻿using organizerEvents.model;
+﻿using organizerEvents.Controler;
+using organizerEvents.model;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -37,6 +38,18 @@ namespace WpfApp1.View
                 RowDefinition rowDefinition = new RowDefinition();
                 rowDefinition.MinHeight = 50;
                 Telo.RowDefinitions.Add(rowDefinition);
+            }
+        }
+        private void Logout(object sender, RoutedEventArgs e)
+        {
+            this.Close();
+            DataBase.LogoutProzor.Show();
+            foreach (Window window in Application.Current.Windows)
+            {
+                if (!window.Equals((Window)DataBase.LogoutProzor))
+                {
+                    window.Close();
+                }
             }
         }
     }

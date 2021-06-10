@@ -201,11 +201,33 @@ namespace WpfApp1.View
         {
             if (this.roditelj != null)
             {
-                this.roditelj.Show();
+
+                try
+                {
+
+                    
+                    this.roditelj.Show();
+                }
+                catch
+                {
+
+                }
+
+                
             }
             if(this.roditeljKreiranje!= null)
             {
-                this.roditeljKreiranje.Show();
+                try
+                {
+
+
+                    this.roditeljKreiranje.Show();
+                }
+                catch
+                {
+
+                }
+              
             }
         }
     }

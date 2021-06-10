@@ -251,6 +251,20 @@ namespace WpfApp1.View
             }
             return id;
         }
+
+        private void Logout(object sender, RoutedEventArgs e)
+        {
+            this.Close();
+            DataBase.LogoutProzor.Show();
+            foreach (Window window in Application.Current.Windows)
+            {
+                if (!window.Equals((Window)DataBase.LogoutProzor))
+                {
+                    window.Close();
+                }
+            }
+        }
+
     }
 
 }

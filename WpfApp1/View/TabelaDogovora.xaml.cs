@@ -72,7 +72,18 @@ namespace WpfApp1.View
 
         private void Window_Closing(object sender, System.ComponentModel.CancelEventArgs e)
         {
-            this.ChatRoditelj.Show();
+
+            try
+            {
+
+
+                this.ChatRoditelj.Show();
+            }
+            catch
+            {
+
+            }
+            
         }
     }
 }

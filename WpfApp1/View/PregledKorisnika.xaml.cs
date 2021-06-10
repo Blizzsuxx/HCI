@@ -13,6 +13,7 @@ using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
 using WpfApp1.Controler;
 using organizerEvents.model;
+using organizerEvents.Controler;
 
 namespace WpfApp1.View
 {
@@ -32,7 +33,18 @@ namespace WpfApp1.View
             this.Korisnici.ItemsSource = narucilackontroler.ucitaj();
 
         }
-
+        private void Logout(object sender, RoutedEventArgs e)
+        {
+            this.Close();
+            DataBase.LogoutProzor.Show();
+            foreach (Window window in Application.Current.Windows)
+            {
+                if (!window.Equals((Window)DataBase.LogoutProzor))
+                {
+                    window.Close();
+                }
+            }
+        }
         private void profil_Click(object sender, RoutedEventArgs e)
         {
             if (this.narucilac == null) { } else
