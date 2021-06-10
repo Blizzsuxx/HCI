@@ -2,9 +2,9 @@
   <stanje id="11">
     <objekat x="30" y="30" tip="Osoba" gost="1">0</objekat>
     <objekat x="30" y="30" tip="Osoba" gost="2">0</objekat>
-    <objekat x="87.199999999999989" y="49.600000000000009" tip="Osoba" gost="3">0</objekat>
+    <objekat x="52" y="136" tip="Osoba" gost="3">0</objekat>
     <objekat x="60" y="60" tip="Sto" gost="nema">1</objekat>
     <objekat x="60" y="60" tip="Sto" gost="nema">2</objekat>
-    <objekat x="106.39999999999998" y="154.39999999999998" tip="Sto" gost="nema">3</objekat>
+    <objekat x="60" y="60" tip="Sto" gost="nema">3</objekat>
   </stanje>
 </Baza>

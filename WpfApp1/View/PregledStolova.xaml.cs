@@ -95,7 +95,7 @@ namespace WpfApp1.View
 
         private void ucitajPozicije()
         {
-            XElement xmlData = XElement.Load("..\\..\\resources\\stanja.xml");
+            XElement xmlData = XElement.Load("stanja.xml");
             var odgovarajuceStanje = xmlData.Descendants("stanje").First(x => x.Attribute("id").Value == DataBase.trenutnaProslava.Id.ToString());
             Console.WriteLine(odgovarajuceStanje);
             var objekti = odgovarajuceStanje.Descendants("objekat");
