@@ -1,0 +1,18 @@
+[
+  {
+    "Id": 1,
+    "NazivMesta": "Prvo mjest",
+    "Broj": "1",
+    "Ulica": "Prva",
+    "PovrsinaSale": 500,
+    "MaxBrLjudi": 3,
+    "MaxBrStolova": 3,
+    "StoloviId": [
+      1,
+      2,
+      1,
+      2
+    ],
+    "izbrisan": false
+  }
+]

@@ -1,0 +1,15 @@
+[
+  {
+    "Id": 11,
+    "Naziv": "naziv",
+    "Opis": "Opis",
+    "Budzet": 50,
+    "Informacije": "ma ide gas",
+    "Tip": "Prodavnica benzina",
+    "SaradnikId": 1,
+    "Cenovnik": {
+      "dizel": 23,
+      "obican gas": 12
+    }
+  }
+]

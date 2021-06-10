@@ -1,0 +1,14 @@
+[
+  {
+    "Id": 1,
+    "Stanje": 3,
+    "Ime": "Ime dogovora",
+    "PonudeId": [
+      1
+    ],
+    "StanjaPonuda": {},
+    "ProslavaId": 11,
+    "SelektovanaPonudaId": 1,
+    "SelektovanaPonuda": null
+  }
+]

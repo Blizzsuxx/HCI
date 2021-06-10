@@ -1,0 +1,32 @@
+[
+  {
+    "Id": 1,
+    "AutorId": 1,
+    "Text": "Ovo je tako dobar sadrzaj"
+  },
+  {
+    "Id": 2,
+    "AutorId": 2,
+    "Text": "E sta radis"
+  },
+  {
+    "Id": 3,
+    "AutorId": 3,
+    "Text": "Ma pusti me"
+  },
+  {
+    "Id": 4,
+    "AutorId": 3,
+    "Text": "Radim HCI"
+  },
+  {
+    "Id": 5,
+    "AutorId": 2,
+    "Text": "OOF, RIP, sto nisi ranije poceo da radis"
+  },
+  {
+    "Id": 6,
+    "AutorId": 3,
+    "Text": ";-;"
+  }
+]

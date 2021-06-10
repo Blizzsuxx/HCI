@@ -1,0 +1,10 @@
+[
+  {
+    "Id": 1,
+    "Naziv": "Firma",
+    "Mesto": "Preko Brda Preko Brega",
+    "Opis": "Opis",
+    "Tip": "Tip",
+    "izbrisan": false
+  }
+]

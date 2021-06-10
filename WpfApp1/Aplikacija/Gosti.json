@@ -1,0 +1,30 @@
+[
+  {
+    "Id": 4,
+    "Ime": "Marko",
+    "Prezime": "Markovic",
+    "PosebanZahtev": "Alergican na vodu",
+    "BrTelefona": "1231231231"
+  },
+  {
+    "Id": 1,
+    "Ime": "Marko",
+    "Prezime": "Bjelica",
+    "PosebanZahtev": "Zelim sto 1",
+    "BrTelefona": "123"
+  },
+  {
+    "Id": 2,
+    "Ime": "Dragan",
+    "Prezime": "Arsic",
+    "PosebanZahtev": "Zelim sto 1",
+    "BrTelefona": "123"
+  },
+  {
+    "Id": 3,
+    "Ime": "Natasa",
+    "Prezime": "Rajtarov",
+    "PosebanZahtev": "Zelim sto 1",
+    "BrTelefona": "123"
+  }
+]
