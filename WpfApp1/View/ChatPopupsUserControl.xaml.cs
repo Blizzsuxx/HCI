@@ -23,6 +23,7 @@ namespace WpfApp1.View
     public partial class ChatPopupsUserControl : UserControl
     {
         public Proslava Proslava { get; set; }
+        public ChatMeni roditelj { get; set; }
         public ChatPopupsUserControl(Proslava Proslava)
         {
             InitializeComponent();
@@ -42,6 +43,8 @@ namespace WpfApp1.View
         {
             DataBase.trenutnaProslava = Proslava;
             Chat chat = new Chat(Proslava);
+            chat.Closed += this.roditelj.showParentOnClose;
+            this.roditelj.Hide();
             chat.Show();
             
         }

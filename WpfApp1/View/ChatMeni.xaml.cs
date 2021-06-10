@@ -21,6 +21,13 @@ namespace WpfApp1.View
     public partial class ChatMeni : Window
     {
         public List<Proslava> Proslave { get; set; }
+
+
+
+        public void showParentOnClose(object sender, EventArgs e)
+        {
+            this.Show();
+        }
         public ChatMeni(List<Proslava> proslave)
         {
             InitializeComponent();
@@ -30,6 +37,7 @@ namespace WpfApp1.View
             foreach (var proslava in Proslave)
             {
                 ChatPopupsUserControl zahtevUserControl = new ChatPopupsUserControl(proslava);
+                zahtevUserControl.roditelj = this;
                 Telo.Children.Add(zahtevUserControl);
                 Grid.SetColumn(zahtevUserControl, 0);
                 Grid.SetRow(zahtevUserControl, counter);

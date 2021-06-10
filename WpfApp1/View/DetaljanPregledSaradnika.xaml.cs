@@ -35,6 +35,11 @@ namespace WpfApp1.View
 
 
         }
+        public void showParentOnClose(object sender, EventArgs e)
+        {
+
+            this.Show();
+        }
         private void dobaviPonude()
         {
             List<Ponuda> ponude = new List<Ponuda>();
@@ -51,6 +56,8 @@ namespace WpfApp1.View
         private void kreirajNovuPonudu(object sender, RoutedEventArgs e)
         {
             KreiranjePonuda kreiranjePonude = new KreiranjePonuda(this.saradnik);
+            kreiranjePonude.Closed  += showParentOnClose;
+            this.Hide();
             kreiranjePonude.Show();
         }
 

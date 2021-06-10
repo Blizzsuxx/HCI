@@ -23,6 +23,7 @@ namespace WpfApp1.View
     public partial class CardUserControl : UserControl
     {
         public Proslava proslava { get; set; }
+        public KalendarWindow roditelj { get; set; }
         public CardUserControl(Proslava proslava)
         {
             InitializeComponent();
@@ -36,11 +37,15 @@ namespace WpfApp1.View
             {
                 ProzorZaDogadjaj pregledJedneProslave = new ProzorZaDogadjaj(proslava.Id);
                 DataBase.trenutnaProslava = proslava;
+                this.roditelj.Hide();
+                pregledJedneProslave.Closed += this.roditelj.showParentOnClose;
                 pregledJedneProslave.Show();
             } else
             {
                 ProzorZaDogadjajKorisnika prozorZaDogadjajKorisnika = new ProzorZaDogadjajKorisnika();
                 DataBase.trenutnaProslava = proslava;
+                this.roditelj.Hide();
+                prozorZaDogadjajKorisnika.Closed += this.roditelj.showParentOnClose;
                 prozorZaDogadjajKorisnika.Show();
             }
         }
