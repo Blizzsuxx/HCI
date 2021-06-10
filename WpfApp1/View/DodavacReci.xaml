@@ -5,6 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:WpfApp1"
         mc:Ignorable="d"
+        WindowStartupLocation="CenterScreen"
         Title="Pojmovnik" MaxHeight="430" MaxWidth="750" Height="430" Width="430"
         xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes" xmlns:local11="clr-namespace:WpfApp1.Controler"
         TextElement.Foreground="{DynamicResource MaterialDesignBody}"
