@@ -18,7 +18,7 @@ namespace organizerEvents.model
         public int MaxBrStolova { get; set; }
         public List<long> StoloviId { get; set; }
 
-        public static long SledeciID = 1;
+        public static long SledeciId = 1;
 
         public bool izbrisan { get; set; }
         [JsonIgnore]
@@ -38,7 +38,7 @@ namespace organizerEvents.model
         
         }
         public Mesto() {
-
+            this.Id = SledeciId++;
             this.Stolovi = new List<Sto>();
             this.StoloviId = new List<long>();
 

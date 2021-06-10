@@ -17,7 +17,7 @@ namespace organizerEvents.model
         public Dogovor Dogovor { get; set; }        
         public String OpisZadatka { get; set; }
         public Stanje StanjeZadatka { get; set; }
-
+        public static long SledeciId = 1;
         [JsonIgnore]
         public String ImeDogovora { get { return Dogovor?.Ime; } }
 
@@ -47,7 +47,7 @@ namespace organizerEvents.model
             }
         }
         public ToDo() {
-            
+            this.Id = SledeciId++;
         }
         public ToDo(String opis, Stanje stanje)
         {

@@ -48,8 +48,11 @@ namespace organizerEvents.model
         public List<Gost> Gosti { get; set; }
 
         public bool Raspored { get; set; }
+
+        public static long SledeciId = 1;
         public Proslava()
         {
+            this.Id = SledeciId++;
             this.Poruke = new List<Poruke>();
             this.PorukeId = new List<long>();
             this.Zadaci = new List<ToDo>();

@@ -28,13 +28,14 @@ namespace organizerEvents.model
         public Narucilac Narucilac { get; set; }
 
         public int Odobren { get; set; }
-
+        public static long SledeciId = 1;
         public ZahtevZaProslavu()
         {
 
         }
         public ZahtevZaProslavu(String naslov, DateTime datum, int brGostiju, double budzet, String tip, Mesto mesto, String opis, Narucilac narucilac, Organizator organizator)
         {
+            this.Id = SledeciId++;
             this.Odobren = 0;
             this.Naslov = naslov;
             this.DatumVreme = datum;
