@@ -40,7 +40,15 @@
                    FontWeight="UltraBlack" FontSize="18" Text="Zahtevi"
                    Margin="0,10,0,10" HorizontalAlignment="Center"></TextBlock>
 
+        <Button Grid.Column="1" Grid.Row="1"  Width="25px" Height="25px" Background="White" Foreground="MediumPurple"
+          Style="{StaticResource MaterialDesignFloatingActionMiniLightButton}"
+          ToolTip="Ponude" Click="Logout" HorizontalAlignment="Right" VerticalAlignment="Center" RenderTransformOrigin="0.504,0.5">
+            <materialDesign:PackIcon
+            Kind="ExitToApp"
+            
+          />
 
+        </Button>
         <Grid Grid.Row="2" Grid.Column="1" x:Name="Telo">
             <Grid.ColumnDefinitions>
                 

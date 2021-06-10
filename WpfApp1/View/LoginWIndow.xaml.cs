@@ -36,7 +36,15 @@ namespace WpfApp1
 
         private void Otvori_ovaj_prozor(object sender, System.EventArgs e)
         {
-            this.Show();
+            try
+            {
+
+                this.Show();
+            }
+            catch
+            {
+
+            }
         }
 
 
@@ -54,8 +62,12 @@ namespace WpfApp1
             
             Korisnik korisnik = DataBase.nadjiKorisnika(KorisnickoImeV.Text, Lozinka.Password);
             DataBase.trenutniKorisnik = korisnik;
+
             if (korisnik is Administrator)
             {
+                DataBase.LogoutProzor = this;
+                KorisnickoImeV.Text = "";
+                Lozinka.Password = "";
                 PregledOrganizatora pregled = new PregledOrganizatora();
                 pregled.Closed += new EventHandler(this.Otvori_ovaj_prozor);
                 pregled.Show();
@@ -63,6 +75,9 @@ namespace WpfApp1
                 return;
             } else if(korisnik is Organizator)
             {
+                KorisnickoImeV.Text = "";
+                Lozinka.Password = "";
+                DataBase.LogoutProzor = this;
                 ProzorOrganizatora zadaci = new ProzorOrganizatora();
                 zadaci.Closed += new EventHandler(this.Otvori_ovaj_prozor);
                 zadaci.Show();
@@ -70,6 +85,9 @@ namespace WpfApp1
                 return;
             } else if(korisnik is Narucilac)
             {
+                KorisnickoImeV.Text = "";
+                Lozinka.Password = "";
+                DataBase.LogoutProzor = this;
                 KalendarWindow kalendarWindow = new KalendarWindow();
                 kalendarWindow.Closed += new EventHandler(this.Otvori_ovaj_prozor);
                 kalendarWindow.Show();

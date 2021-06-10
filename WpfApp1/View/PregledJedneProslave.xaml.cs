@@ -15,6 +15,7 @@ using WpfApp1.Controler;
 using WpfApp1.Model;
 using organizerEvents.model;
 using System.ComponentModel;
+using organizerEvents.Controler;
 
 namespace WpfApp1.View
 {
@@ -32,7 +33,18 @@ namespace WpfApp1.View
             ConnectionViewModel vm = new ConnectionViewModel();
             DataContext = vm;
         }
-
+        private void Logout(object sender, RoutedEventArgs e)
+        {
+            this.Close();
+            DataBase.LogoutProzor.Show();
+            foreach (Window window in Application.Current.Windows)
+            {
+                if (!window.Equals((Window)DataBase.LogoutProzor))
+                {
+                    window.Close();
+                }
+            }
+        }
         private void dobaviInfoProslave(long id)
         {
             

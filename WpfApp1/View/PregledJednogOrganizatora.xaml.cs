@@ -13,6 +13,7 @@ using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
 using WpfApp1.Controler;
 using organizerEvents.model;
+using organizerEvents.Controler;
 
 namespace WpfApp1.View
 {
@@ -33,6 +34,19 @@ namespace WpfApp1.View
                 this.brTel.Text = org.BrojTelefona;
                 this.kIme.Text = org.KorisnickoIme;
                 this.Proslave.ItemsSource = org.Proslave;
+            }
+        }
+
+        private void Logout(object sender, RoutedEventArgs e)
+        {
+            this.Close();
+            DataBase.LogoutProzor.Show();
+            foreach (Window window in Application.Current.Windows)
+            {
+                if (!window.Equals((Window)DataBase.LogoutProzor))
+                {
+                    window.Close();
+                }
             }
         }
     }

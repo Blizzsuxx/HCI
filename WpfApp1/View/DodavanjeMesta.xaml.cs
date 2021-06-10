@@ -1,4 +1,5 @@
-﻿using System;
+﻿using organizerEvents.Controler;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -25,6 +26,20 @@ namespace WpfApp1.View
         {
             kontroler = new MestoKontroler();
             InitializeComponent();
+        }
+
+
+        private void Logout(object sender, RoutedEventArgs e)
+        {
+            this.Close();
+            DataBase.LogoutProzor.Show();
+            foreach (Window window in Application.Current.Windows)
+            {
+                if (!window.Equals((Window)DataBase.LogoutProzor))
+                {
+                    window.Close();
+                }
+            }
         }
 
         private void dodaj_Click(object sender, RoutedEventArgs e)

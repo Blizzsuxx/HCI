@@ -29,6 +29,19 @@ namespace WpfApp1.View
             this.saradnik = saradnik;
         }
 
+        private void Logout(object sender, RoutedEventArgs e)
+        {
+            this.Close();
+            DataBase.LogoutProzor.Show();
+            foreach (Window window in Application.Current.Windows)
+            {
+                if (!window.Equals((Window)DataBase.LogoutProzor))
+                {
+                    window.Close();
+                }
+            }
+        }
+
         private void Kreiraj_Ponudu(object sender, RoutedEventArgs e)
         {
             string naziv = this.Naziv.Text;
