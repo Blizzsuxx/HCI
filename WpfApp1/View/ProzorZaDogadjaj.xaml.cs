@@ -25,23 +25,16 @@ namespace WpfApp1.View
         {
 
             InitializeComponent();
-            int indikator = 0;
-            foreach(ToDo zadatak in DataBase.toDos)
+            Proslava prosl = null;
+            foreach(var pro in DataBase.proslave)
             {
-                if(zadatak.Dogovor.Proslava.Organizator.Id == DataBase.trenutniKorisnik.Id && zadatak.Dogovor.Proslava.Id==proslava)
+                if(pro.Id == proslava)
                 {
-                    Expander expander = new Expander();
-                    expander.Header = zadatak.OpisZadatka;
-                    zadaci.Children.Add(expander);
-                    var novRed = new RowDefinition();
-                    novRed.MinHeight = 50;
-                    zadaci.RowDefinitions.Add(novRed);
-                    Grid.SetColumn(expander, 1);
-                    Grid.SetRow(expander, indikator);
-                    expander.HorizontalAlignment = HorizontalAlignment.Left;
-                    indikator++;
+                    prosl = pro;
                 }
             }
+            ToDoUserControl toDoUserControl = new ToDoUserControl(prosl.Zadaci, prosl);
+            zadaci.Children.Add(toDoUserControl);
         }
 
         private void Button_Click(object sender, RoutedEventArgs e)

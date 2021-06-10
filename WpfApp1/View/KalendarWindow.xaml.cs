@@ -29,7 +29,12 @@ namespace WpfApp1
         {
             InitializeComponent();
             if (DataBase.trenutniKorisnik is Organizator)
+            {
                 proslave = (DataBase.trenutniKorisnik as Organizator).Proslave;
+                Organizatori.Visibility = Visibility.Collapsed;
+                Poruke.Visibility = Visibility.Collapsed;
+                Obavestenja.Visibility = Visibility.Collapsed;
+            }
             else
                 proslave = (DataBase.trenutniKorisnik as Narucilac).Proslave;
 

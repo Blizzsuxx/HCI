@@ -118,12 +118,7 @@
 
 
         <Grid Grid.Column="1" Grid.Row="3" x:Name="zadaci">
-            <Grid.ColumnDefinitions>
-                <ColumnDefinition Width="20"></ColumnDefinition>
-                <ColumnDefinition Width="*"></ColumnDefinition>
-                <ColumnDefinition Width="20"></ColumnDefinition>
-            </Grid.ColumnDefinitions>
-           
+            
             
         </Grid>
     </Grid>

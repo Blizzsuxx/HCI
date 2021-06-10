@@ -72,6 +72,7 @@
         </Button>
         <Button Grid.Column="1" Grid.Row="2" Margin="5,10,5,5" HorizontalAlignment="Left"
                 Width="25px" Height="25px" Foreground="White"
+                Visibility="Collapsed"
           Style="{StaticResource MaterialDesignFloatingActionMiniLightButton}"
           ToolTip="Tabela događaja.">
             <materialDesign:PackIcon
@@ -79,7 +80,7 @@
              />
         </Button>
         <Button Grid.Column="1" Grid.Row="2" Margin="40,10,5,5" HorizontalAlignment="Left"
-                Width="25px" Height="25px" Foreground="White"
+                Width="25px" Height="25px" Foreground="White" x:Name="Organizatori"
           Style="{StaticResource MaterialDesignFloatingActionMiniLightButton}"
           ToolTip="Kalendar događaja." Click="Button_Click_7">
             <materialDesign:PackIcon
@@ -94,7 +95,7 @@
             Kind="Portrait"
              />
         </Button>
-        <Button Grid.Column="1" Grid.Row="2" Margin="75,10,5,5" HorizontalAlignment="Left"
+        <Button Grid.Column="1" Grid.Row="2" Margin="75,10,5,5" HorizontalAlignment="Left" x:Name="Obavestenja"
                 Width="25px" Height="25px" Foreground="White"
           Style="{StaticResource MaterialDesignFloatingActionMiniLightButton}"
           ToolTip="Obavještenja." Click="Button_Click_1">
@@ -102,7 +103,7 @@
             Kind="Bell"
              />
         </Button>
-        <Button Grid.Column="1" Grid.Row="2" Margin="110,10,5,5" HorizontalAlignment="Left"
+        <Button Grid.Column="1" Grid.Row="2" Margin="110,10,5,5" HorizontalAlignment="Left" x:Name="Poruke"
                 Width="25px" Height="25px" Foreground="White" Click="poruke_on_click"
           Style="{StaticResource MaterialDesignFloatingActionMiniLightButton}"
           ToolTip="Poruka.">
