@@ -42,7 +42,7 @@ namespace WpfApp1
                 int sati = proslava.DatumVreme.Hour - 6;
                 sati = Math.Max(sati, 1);
                 CardUserControl karta = new CardUserControl(proslava);
-                
+                karta.roditelj = this;
                 Kalendar.Children.Add(karta);
                 Grid.SetColumn(karta, dan);
                 Grid.SetRow(karta, sati);
@@ -52,16 +52,9 @@ namespace WpfApp1
 
 
 
-
-
-
-
-
-
-
-
-        private void showParentOnClose(object sender, EventArgs e)
+        public void showParentOnClose(object sender, EventArgs e)
         {
+
             this.Show();
         }
 
@@ -108,6 +101,7 @@ namespace WpfApp1
         private void Button_Click_2(object sender, RoutedEventArgs e)
         {
             Recnik recnik = new Recnik();
+            recnik.Closed += showParentOnClose;
             recnik.Show();
         }
 
@@ -119,6 +113,7 @@ namespace WpfApp1
         private void Button_Click_7(object sender, RoutedEventArgs e)
         {
             PretragaOrganizatora pretragaOrganizatora = new PretragaOrganizatora();
+            pretragaOrganizatora.Closed += showParentOnClose;
             pretragaOrganizatora.Show();
         }
 
