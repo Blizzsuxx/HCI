@@ -110,6 +110,7 @@ namespace WpfApp1
         {
             Recnik recnik = new Recnik();
             recnik.Closed += showParentOnClose;
+            this.Hide();
             recnik.Show();
         }
 
@@ -122,6 +123,7 @@ namespace WpfApp1
         {
             PretragaOrganizatora pretragaOrganizatora = new PretragaOrganizatora();
             pretragaOrganizatora.Closed += showParentOnClose;
+            this.Hide();
             pretragaOrganizatora.Show();
         }
 
@@ -146,6 +148,7 @@ namespace WpfApp1
         {
             TabelaDogadjaja tabelaDogadjaja = new TabelaDogadjaja((DataBase.trenutniKorisnik as Organizator).Proslave);
             tabelaDogadjaja.Closed += this.showParentOnClose;
+            this.Hide();
             tabelaDogadjaja.Show();
             this.Hide();
         }

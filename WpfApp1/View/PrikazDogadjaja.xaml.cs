@@ -59,7 +59,6 @@ namespace WpfApp1.View
             DataBase.sacuvajNarucioce();
             DataBase.sacuvajOrganizatore();
             DataBase.sacuvajZahteveZaProslavu();
-            
             this.Close();
         }
 
