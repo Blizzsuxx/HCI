@@ -3,14 +3,14 @@
     "Id": 2,
     "DogovorId": 1,
     "OpisZadatka": "Ovo je inicijalni zadatak",
-    "StanjeZadatka": 0,
+    "StanjeZadatka": 3,
     "Odradjen": false
   },
   {
     "Id": 11,
     "DogovorId": 1,
     "OpisZadatka": "Opis Zadatka",
-    "StanjeZadatka": 2,
-    "Odradjen": false
+    "StanjeZadatka": 1,
+    "Odradjen": true
   }
 ]

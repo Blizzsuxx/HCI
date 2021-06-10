@@ -1,10 +1,10 @@
 [
   {
     "Id": 1,
-    "Vreme": "06:52:05",
+    "Vreme": "06:56:35",
     "Datum": "10.06.2021",
     "Naslov": "Ide gas",
-    "DatumVreme": "2021-06-10T06:52:05.7430449+02:00",
+    "DatumVreme": "2021-06-10T06:56:35.2687216+02:00",
     "BrojGostiju": 10,
     "BrojStolova": 21,
     "Budzet": 100000,
@@ -23,10 +23,10 @@
   },
   {
     "Id": 11,
-    "Vreme": "06:52:05",
+    "Vreme": "06:56:35",
     "Datum": "10.06.2021",
     "Naslov": "Naslov Proslave",
-    "DatumVreme": "2021-06-10T06:52:05.7450596+02:00",
+    "DatumVreme": "2021-06-10T06:56:35.2717192+02:00",
     "BrojGostiju": 3,
     "BrojStolova": 21,
     "Budzet": 123123123,
@@ -53,6 +53,6 @@
       2,
       3
     ],
-    "Raspored": true
+    "Raspored": false
   }
 ]
